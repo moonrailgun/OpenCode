@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		BA3AD1FA1CCA245A0034B21E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD1F91CCA245A0034B21E /* AppDelegate.swift */; };
-		BA3AD1FC1CCA245A0034B21E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD1FB1CCA245A0034B21E /* FirstViewController.swift */; };
 		BA3AD1FE1CCA245A0034B21E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD1FD1CCA245A0034B21E /* SecondViewController.swift */; };
 		BA3AD2011CCA245A0034B21E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD1FF1CCA245A0034B21E /* Main.storyboard */; };
 		BA3AD2031CCA245A0034B21E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD2021CCA245A0034B21E /* Images.xcassets */; };
@@ -16,6 +15,7 @@
 		BA3AD2121CCA245A0034B21E /* OpenCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD2111CCA245A0034B21E /* OpenCodeTests.swift */; };
 		BA3AD21E1CCA278B0034B21E /* Github.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD21D1CCA278B0034B21E /* Github.swift */; };
 		BA3AD2201CCA29B60034B21E /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD21F1CCA29B60034B21E /* HttpRequest.swift */; };
+		BA7C1F901CCB57F600B5EE6A /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7C1F8F1CCB57F600B5EE6A /* NewsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +32,6 @@
 		BA3AD1F41CCA245A0034B21E /* OpenCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA3AD1F81CCA245A0034B21E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA3AD1F91CCA245A0034B21E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BA3AD1FB1CCA245A0034B21E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		BA3AD1FD1CCA245A0034B21E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		BA3AD2001CCA245A0034B21E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BA3AD2021CCA245A0034B21E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -42,6 +41,7 @@
 		BA3AD2111CCA245A0034B21E /* OpenCodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCodeTests.swift; sourceTree = "<group>"; };
 		BA3AD21D1CCA278B0034B21E /* Github.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Github.swift; sourceTree = "<group>"; };
 		BA3AD21F1CCA29B60034B21E /* HttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
+		BA7C1F8F1CCB57F600B5EE6A /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,10 +83,10 @@
 		BA3AD1F61CCA245A0034B21E /* OpenCode */ = {
 			isa = PBXGroup;
 			children = (
+				BA7C1F8E1CCB57C200B5EE6A /* Controller */,
 				BA3AD21C1CCA27730034B21E /* API */,
 				BA3AD21B1CCA27660034B21E /* Utils */,
 				BA3AD1F91CCA245A0034B21E /* AppDelegate.swift */,
-				BA3AD1FB1CCA245A0034B21E /* FirstViewController.swift */,
 				BA3AD1FD1CCA245A0034B21E /* SecondViewController.swift */,
 				BA3AD1FF1CCA245A0034B21E /* Main.storyboard */,
 				BA3AD2021CCA245A0034B21E /* Images.xcassets */,
@@ -135,6 +135,14 @@
 				BA3AD21D1CCA278B0034B21E /* Github.swift */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		BA7C1F8E1CCB57C200B5EE6A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA7C1F8F1CCB57F600B5EE6A /* NewsTableViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,8 +248,8 @@
 				BA3AD1FE1CCA245A0034B21E /* SecondViewController.swift in Sources */,
 				BA3AD2201CCA29B60034B21E /* HttpRequest.swift in Sources */,
 				BA3AD21E1CCA278B0034B21E /* Github.swift in Sources */,
+				BA7C1F901CCB57F600B5EE6A /* NewsTableViewController.swift in Sources */,
 				BA3AD1FA1CCA245A0034B21E /* AppDelegate.swift in Sources */,
-				BA3AD1FC1CCA245A0034B21E /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
