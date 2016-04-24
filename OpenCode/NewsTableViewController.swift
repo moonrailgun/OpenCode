@@ -10,12 +10,16 @@ import UIKit
 
 class NewsTableViewController: UITableView , UITableViewDataSource, UITableViewDelegate{
     let TAG_CELL_LABEL = 1
-    var dataArr = ["1","2","3"]
+    let TAG_CELL_LABEL_TIME = 2
+    
+    var dataArr = [GithubEvent]()
     
     required init(coder aDecoder:NSCoder){
         super.init(coder: aDecoder)
         self.dataSource = self
         self.delegate = self
+        
+        updateEventList()
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -26,16 +30,34 @@ class NewsTableViewController: UITableView , UITableViewDataSource, UITableViewD
         var cell: AnyObject! = tableView.dequeueReusableCellWithIdentifier("newscell")
         
         var label = cell!.viewWithTag(TAG_CELL_LABEL) as UILabel
-        label.text = dataArr[indexPath.row]
+        label.text = dataArr[indexPath.row].type
+        
+        var time = cell!.viewWithTag(TAG_CELL_LABEL_TIME) as UILabel
+        time.text = dataArr[indexPath.row].time
         
         return cell as UITableViewCell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return dataArr.count
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("选中了\(indexPath.row)行数据")
+        println(dataArr[indexPath.row].repo)
+    }
+    
+    func updateEventList(){
+        Github.getEvents({events, error in
+            
+            for event in events {
+                println(event)
+            }
+            
+            for index in 0 ... events.count - 1{
+                self.dataArr.append(events[index])
+            }
+            self.reloadData()
+        })
     }
 }
