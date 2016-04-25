@@ -19,7 +19,7 @@ class Github {
     let API_URL = "https://api.github.com/"
     
     class func getEvents(completionHandler:([GithubEvent]!,NSError?) -> ()) {
-        HttpRequest<NSData>.request("https://api.github.com/events", completionHandler: {object,error in
+        HttpDataRequest<NSData>.request("https://api.github.com/events", completionHandler: {object,error in
             let json: AnyObject! = NSJSONSerialization.JSONObjectWithData(object!, options: NSJSONReadingOptions.MutableContainers, error: nil)
             let jsonArr = json as NSArray
             var events = [GithubEvent]()

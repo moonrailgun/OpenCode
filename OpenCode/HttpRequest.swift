@@ -46,8 +46,8 @@ extension UIImage:ResponseConvertible{
 发送HTTP网络请求数据
 usage:HttpRequest<NSData>.Request("http://baidu.com", {data,error in println("\(data)")})
 */
-class HttpRequest<T:ResponseConvertible>{
-    class func request (url:String, completionHandler:(T.Result?,NSError!) -> ()) {
+class HttpDataRequest<T:ResponseConvertible>{
+    class func request (url:String, completionHandler:(T.Result?,NSError!) -> Void) {
         let requestUrl = NSURL(string: url)!
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithURL(requestUrl, completionHandler: {(data, response, error)->Void in
@@ -59,7 +59,12 @@ class HttpRequest<T:ResponseConvertible>{
         
         task.resume()
     }
-    
+}
+
+class HttpRequest{
+    /*
+    发送HTTP GET请求
+    */
     class func sendSyncRequest(url:NSURL) -> (NSData?, NSURLResponse?, NSError?) {
         var resp:NSURLResponse?
         var error:NSError?
@@ -69,7 +74,18 @@ class HttpRequest<T:ResponseConvertible>{
         return (data, resp, error)
     }
     
-    class func sendAsyncRequest(url:NSURL, completionHandler:((NSURLResponse!, NSData!, NSError!))->()){
+    class func sendAsyncRequest(url:NSURL, completionHandler: (NSURLResponse!, NSData!, NSError!)->Void) {
         NSURLConnection.sendAsynchronousRequest(NSURLRequest(URL: url), queue: NSOperationQueue(),completionHandler: completionHandler)
+    }
+    
+    /*
+    发送HTTP POST请求
+    */
+    class func sendAsyncPostRequest(url:NSURL,data:String, completionHandler: (NSURLResponse!, NSData!, NSError!)->Void){
+        var req = NSMutableURLRequest(URL: url)
+        req.HTTPMethod = "POST"
+        req.HTTPBody = NSString(string: data).dataUsingEncoding(NSUTF8StringEncoding)
+        
+        NSURLConnection.sendAsynchronousRequest(req, queue: NSOperationQueue(), completionHandler: completionHandler)
     }
 }
