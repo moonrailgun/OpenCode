@@ -18,12 +18,12 @@ extension NSJSONSerialization:ResponseConvertible{
     public typealias Result = AnyObject
     public class func convertFromData(data:NSData!) -> (Result?, NSError?){
         let json:AnyObject! = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil)
-//        switch json.type{
-//        case .Null:
-//            return (value, value.error)
-//        default:
-//            return (value, nil)
-//        }
+        //        switch json.type{
+        //        case .Null:
+        //            return (value, value.error)
+        //        default:
+        //            return (value, nil)
+        //        }
         return (json,nil)
     }
 }
@@ -43,11 +43,11 @@ extension UIImage:ResponseConvertible{
 }
 
 /*
-发送HTTP网络请求
+发送HTTP网络请求数据
 usage:HttpRequest<NSData>.Request("http://baidu.com", {data,error in println("\(data)")})
 */
 class HttpRequest<T:ResponseConvertible>{
-    class func Request (url:String, completionHandler:(T.Result?,NSError!) -> ()) {
+    class func request (url:String, completionHandler:(T.Result?,NSError!) -> ()) {
         let requestUrl = NSURL(string: url)!
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithURL(requestUrl, completionHandler: {(data, response, error)->Void in
@@ -56,7 +56,20 @@ class HttpRequest<T:ResponseConvertible>{
                 completionHandler(object,converError)
             }
         })
-    
+        
         task.resume()
+    }
+    
+    class func sendSyncRequest(url:NSURL) -> (NSData?, NSURLResponse?, NSError?) {
+        var resp:NSURLResponse?
+        var error:NSError?
+        
+        var data = NSURLConnection.sendSynchronousRequest(NSURLRequest(URL: url), returningResponse: &resp, error: &error)
+        
+        return (data, resp, error)
+    }
+    
+    class func sendAsyncRequest(url:NSURL, completionHandler:((NSURLResponse!, NSData!, NSError!))->()){
+        NSURLConnection.sendAsynchronousRequest(NSURLRequest(URL: url), queue: NSOperationQueue(),completionHandler: completionHandler)
     }
 }
