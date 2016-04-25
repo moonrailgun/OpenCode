@@ -49,15 +49,17 @@ class NewsTableViewController: UITableView , UITableViewDataSource, UITableViewD
     
     func updateEventList(){
         Github.getEvents({events, error in
-            
-            for event in events {
-                println(event)
+            for _event in events {
+                var time = Github.parseGithubTime(_event.time)
+                let event = GithubEvent(type: _event.type, time: time, actor: _event.actor, repo: _event.repo)
+                
+                self.dataArr.append(event)
             }
             
-            for index in 0 ... events.count - 1{
-                self.dataArr.append(events[index])
-            }
-            self.reloadData()
+            
+            OperationQueueHelper.operateInMainQueue({ () -> Void in
+                self.reloadData()
+            })
         })
     }
 }

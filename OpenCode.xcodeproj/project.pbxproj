@@ -16,6 +16,7 @@
 		BA3AD21E1CCA278B0034B21E /* Github.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD21D1CCA278B0034B21E /* Github.swift */; };
 		BA3AD2201CCA29B60034B21E /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD21F1CCA29B60034B21E /* HttpRequest.swift */; };
 		BA6F3B101CCE3EA400F6984B /* OperationQueueHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F3B0F1CCE3EA400F6984B /* OperationQueueHelper.swift */; };
+		BA6F3B121CCE478D00F6984B /* TimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F3B111CCE478D00F6984B /* TimeHelper.swift */; };
 		BA7C1F901CCB57F600B5EE6A /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7C1F8F1CCB57F600B5EE6A /* NewsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		BA3AD21D1CCA278B0034B21E /* Github.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Github.swift; sourceTree = "<group>"; };
 		BA3AD21F1CCA29B60034B21E /* HttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
 		BA6F3B0F1CCE3EA400F6984B /* OperationQueueHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationQueueHelper.swift; sourceTree = "<group>"; };
+		BA6F3B111CCE478D00F6984B /* TimeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeHelper.swift; sourceTree = "<group>"; };
 		BA7C1F8F1CCB57F600B5EE6A /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,6 +130,7 @@
 			children = (
 				BA3AD21F1CCA29B60034B21E /* HttpRequest.swift */,
 				BA6F3B0F1CCE3EA400F6984B /* OperationQueueHelper.swift */,
+				BA6F3B111CCE478D00F6984B /* TimeHelper.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA3AD1FE1CCA245A0034B21E /* SecondViewController.swift in Sources */,
+				BA6F3B121CCE478D00F6984B /* TimeHelper.swift in Sources */,
 				BA3AD2201CCA29B60034B21E /* HttpRequest.swift in Sources */,
 				BA3AD21E1CCA278B0034B21E /* Github.swift in Sources */,
 				BA6F3B101CCE3EA400F6984B /* OperationQueueHelper.swift in Sources */,

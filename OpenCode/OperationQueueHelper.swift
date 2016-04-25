@@ -9,7 +9,7 @@
 import Foundation
 
 class OperationQueueHelper {
-    class func operationInMainQueue(handler: ()->Void) {
+    class func operateInMainQueue(handler: ()->Void) {
         dispatch_sync(dispatch_get_main_queue(), handler)
     }
 }

@@ -28,13 +28,24 @@ class Github {
                 let tmp: AnyObject = jsonArr[index]
                 let event = GithubEvent(type: tmp["type"] as String, time: tmp["created_at"] as String, actor: tmp["actor"]!, repo: tmp["repo"]!)
                 
-                //println(event.actor)
-                //println(index)
-                
                 events.append(event)
             }
             
             completionHandler(events,error)
         })
+    }
+    
+    class func parseGithubTime(string:String) -> String{
+        var formatter = NSDateFormatter()
+        //formatter.timeZone = NSTimeZone(name: "Asia/Shanghai")
+        formatter.timeZone = NSTimeZone(forSecondsFromGMT: 8 * 60 * 60)
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        var date = NSDate.parseWithFormatter(string, formatter: formatter)
+        
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let timeStr = dateFormatter.stringFromDate(date!)
+        
+        return timeStr
     }
 }
