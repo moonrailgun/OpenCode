@@ -45,6 +45,7 @@ class NewsTableViewController: UITableView , UITableViewDataSource, UITableViewD
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("选中了\(indexPath.row)行数据")
         println(dataArr[indexPath.row].repo)
+        
     }
     
     func updateEventList(){
@@ -55,7 +56,6 @@ class NewsTableViewController: UITableView , UITableViewDataSource, UITableViewD
                 
                 self.dataArr.append(event)
             }
-            
             
             OperationQueueHelper.operateInMainQueue({ () -> Void in
                 self.reloadData()

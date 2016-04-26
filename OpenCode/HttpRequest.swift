@@ -6,8 +6,8 @@
 //  Copyright (c) 2016年 moonrailgun. All rights reserved.
 //
 
-//import Foundation
 import UIKit
+import SwiftyJSON
 
 public protocol ResponseConvertible{
     typealias Result

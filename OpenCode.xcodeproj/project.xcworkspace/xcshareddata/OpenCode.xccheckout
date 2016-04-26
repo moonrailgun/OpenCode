@@ -12,6 +12,8 @@
 	<dict>
 		<key>9CD2424DA32A82EC56274115A3753A1DCCA54B7C</key>
 		<string>https://github.com/moonrailgun/OpenCode.git</string>
+		<key>C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3</key>
+		<string>https://github.com/lingoer/SwiftyJSON.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>OpenCode.xcodeproj</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>9CD2424DA32A82EC56274115A3753A1DCCA54B7C</key>
 		<string>../..</string>
+		<key>C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3</key>
+		<string>../../SwiftyJSON/</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/moonrailgun/OpenCode.git</string>
@@ -35,6 +39,14 @@
 			<string>9CD2424DA32A82EC56274115A3753A1DCCA54B7C</string>
 			<key>IDESourceControlWCCName</key>
 			<string>OpenCode</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SwiftyJSON</string>
 		</dict>
 	</array>
 </dict>
