@@ -61,8 +61,9 @@ class Github {
                     println("登录失败:\(httpResp.statusCode)")
                     break
                 }
-            }else{
-                println("出现错误\(resp)")
+            } else {
+                let message = JSON(data: data)["message"]
+                println("登录失败: \(message)")
             }
         }
         
