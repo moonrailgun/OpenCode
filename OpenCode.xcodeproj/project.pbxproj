@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		BA3AD1FA1CCA245A0034B21E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD1F91CCA245A0034B21E /* AppDelegate.swift */; };
-		BA3AD1FE1CCA245A0034B21E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD1FD1CCA245A0034B21E /* SecondViewController.swift */; };
 		BA3AD2011CCA245A0034B21E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD1FF1CCA245A0034B21E /* Main.storyboard */; };
 		BA3AD2031CCA245A0034B21E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD2021CCA245A0034B21E /* Images.xcassets */; };
 		BA3AD2061CCA245A0034B21E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD2041CCA245A0034B21E /* LaunchScreen.xib */; };
@@ -18,6 +17,7 @@
 		BA6F3B101CCE3EA400F6984B /* OperationQueueHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F3B0F1CCE3EA400F6984B /* OperationQueueHelper.swift */; };
 		BA6F3B121CCE478D00F6984B /* TimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F3B111CCE478D00F6984B /* TimeHelper.swift */; };
 		BA7C1F901CCB57F600B5EE6A /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7C1F8F1CCB57F600B5EE6A /* NewsTableViewController.swift */; };
+		BA8DA32C1CD05D7F00F9B391 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DA32B1CD05D7F00F9B391 /* MyViewController.swift */; };
 		BAC1E35D1CCF5AB500CBBD5F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC1E3561CCF5A5C00CBBD5F /* SwiftyJSON.framework */; };
 		BAC1E35E1CCF5AB500CBBD5F /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BAC1E3561CCF5A5C00CBBD5F /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -85,7 +85,6 @@
 		BA3AD1F41CCA245A0034B21E /* OpenCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA3AD1F81CCA245A0034B21E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA3AD1F91CCA245A0034B21E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BA3AD1FD1CCA245A0034B21E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		BA3AD2001CCA245A0034B21E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BA3AD2021CCA245A0034B21E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BA3AD2051CCA245A0034B21E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -97,6 +96,7 @@
 		BA6F3B0F1CCE3EA400F6984B /* OperationQueueHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationQueueHelper.swift; sourceTree = "<group>"; };
 		BA6F3B111CCE478D00F6984B /* TimeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeHelper.swift; sourceTree = "<group>"; };
 		BA7C1F8F1CCB57F600B5EE6A /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
+		BA8DA32B1CD05D7F00F9B391 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		BAC1E34E1CCF5A5C00CBBD5F /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = SwiftyJSON/SwiftyJSON.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,7 +145,6 @@
 				BA3AD21C1CCA27730034B21E /* API */,
 				BA3AD21B1CCA27660034B21E /* Utils */,
 				BA3AD1F91CCA245A0034B21E /* AppDelegate.swift */,
-				BA3AD1FD1CCA245A0034B21E /* SecondViewController.swift */,
 				BA3AD1FF1CCA245A0034B21E /* Main.storyboard */,
 				BA3AD2021CCA245A0034B21E /* Images.xcassets */,
 				BA3AD2041CCA245A0034B21E /* LaunchScreen.xib */,
@@ -201,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				BA7C1F8F1CCB57F600B5EE6A /* NewsTableViewController.swift */,
+				BA8DA32B1CD05D7F00F9B391 /* MyViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -355,12 +355,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA3AD1FE1CCA245A0034B21E /* SecondViewController.swift in Sources */,
 				BA6F3B121CCE478D00F6984B /* TimeHelper.swift in Sources */,
 				BA3AD2201CCA29B60034B21E /* HttpRequest.swift in Sources */,
 				BA3AD21E1CCA278B0034B21E /* Github.swift in Sources */,
 				BA6F3B101CCE3EA400F6984B /* OperationQueueHelper.swift in Sources */,
 				BA7C1F901CCB57F600B5EE6A /* NewsTableViewController.swift in Sources */,
+				BA8DA32C1CD05D7F00F9B391 /* MyViewController.swift in Sources */,
 				BA3AD1FA1CCA245A0034B21E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

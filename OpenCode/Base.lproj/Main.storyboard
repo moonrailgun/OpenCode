@@ -61,10 +61,10 @@
             </objects>
             <point key="canvasLocation" x="750" y="-322"/>
         </scene>
-        <!--my-->
+        <!--My-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="OpenCode" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="MyViewController" customModule="OpenCode" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -73,29 +73,82 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="195" y="279" width="210" height="42"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9CZ-Zr-ejX" userLabel="LoginView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="登录到Github" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="faP-UV-wzw">
+                                        <rect key="frame" x="195" y="45" width="210" height="42"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="用户名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QiV-A1-zIN">
+                                        <rect key="frame" x="164" y="113" width="273" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JiS-aF-PJf">
+                                        <rect key="frame" x="164" y="171" width="273" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8C-To-IBa">
+                                        <rect key="frame" x="168" y="214" width="99" height="30"/>
+                                        <state key="normal" title="登录Github">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="GithubLogin:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="vXS-76-Wmd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4if-f1-hKy">
+                                        <rect key="frame" x="330" y="214" width="105" height="30"/>
+                                        <state key="normal" title="注册Github">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="192" y="329" width="216" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="faP-UV-wzw" secondAttribute="centerX" id="gdS-gY-tbY"/>
+                                    <constraint firstAttribute="centerX" secondItem="C8C-To-IBa" secondAttribute="centerX" constant="82" id="opo-9s-1iw"/>
+                                    <constraint firstAttribute="centerX" secondItem="JiS-aF-PJf" secondAttribute="centerX" id="pJT-xQ-gyV"/>
+                                    <constraint firstAttribute="centerX" secondItem="4if-f1-hKy" secondAttribute="centerX" constant="-82" id="vcu-OD-RdT"/>
+                                    <constraint firstAttribute="centerX" secondItem="QiV-A1-zIN" secondAttribute="centerX" id="yNg-Gh-lY5"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZsD-CV-phT" userLabel="ProfileView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXn-9R-Bdt">
+                                        <rect key="frame" x="257" y="84" width="49" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstItem="ZsD-CV-phT" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" id="AB0-50-jaJ"/>
+                            <constraint firstItem="ZsD-CV-phT" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="BPK-W7-UlC"/>
+                            <constraint firstItem="9CZ-Zr-ejX" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="JKW-RG-5Wr"/>
+                            <constraint firstAttribute="bottom" secondItem="ZsD-CV-phT" secondAttribute="bottom" id="Y7n-ia-5Wb"/>
+                            <constraint firstAttribute="bottom" secondItem="9CZ-Zr-ejX" secondAttribute="bottom" id="YfV-nU-Dyq"/>
+                            <constraint firstItem="9CZ-Zr-ejX" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" id="a3I-7o-chC"/>
+                            <constraint firstAttribute="trailing" secondItem="ZsD-CV-phT" secondAttribute="trailing" id="aKa-SM-HVQ"/>
+                            <constraint firstAttribute="trailing" secondItem="9CZ-Zr-ejX" secondAttribute="trailing" id="pzs-qT-RE7"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="my" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="My" image="second" id="rRl-z3-M8s"/>
+                    <connections>
+                        <outlet property="githubPassword" destination="JiS-aF-PJf" id="w2o-gk-9mU"/>
+                        <outlet property="githubUsername" destination="QiV-A1-zIN" id="Cnp-TZ-3zK"/>
+                        <outlet property="loginView" destination="9CZ-Zr-ejX" id="RxU-1l-0Iq"/>
+                        <outlet property="profileView" destination="ZsD-CV-phT" id="VRE-ah-QYJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
