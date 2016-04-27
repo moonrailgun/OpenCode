@@ -202,8 +202,8 @@
 		BA7C1F8E1CCB57C200B5EE6A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BA7C1F8F1CCB57F600B5EE6A /* NewsTableViewController.swift */,
-				BA8DA32B1CD05D7F00F9B391 /* MyViewController.swift */,
+				BAD2CFD81CD0DDEE00BB910C /* News */,
+				BAD2CFD41CD0DDE000BB910C /* My */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -217,6 +217,22 @@
 				BAC1E35C1CCF5A5C00CBBD5F /* SwiftyJSONOSXTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		BAD2CFD41CD0DDE000BB910C /* My */ = {
+			isa = PBXGroup;
+			children = (
+				BA8DA32B1CD05D7F00F9B391 /* MyViewController.swift */,
+			);
+			name = My;
+			sourceTree = "<group>";
+		};
+		BAD2CFD81CD0DDEE00BB910C /* News */ = {
+			isa = PBXGroup;
+			children = (
+				BA7C1F8F1CCB57F600B5EE6A /* NewsTableViewController.swift */,
+			);
+			name = News;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

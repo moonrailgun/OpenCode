@@ -37,7 +37,7 @@ class Github {
     }
     
     //登录到github并返回一个token
-    class func login(username:String, password: String) -> String{
+    class func login(username:String, password: String, completionHandler:(token:String?,statusCode: Int!,errorMsg:String?) -> ()) -> Void{
         let str = username + ":" + password
         let authorization = "Basic " + Base64.encrypt(str)!
         var header = NSDictionary()
@@ -49,25 +49,27 @@ class Github {
                 switch httpResp.statusCode{
                 case 422:
                     println("已经登录过了")
+                    completionHandler(token: nil, statusCode: 422, errorMsg: nil)
                     break
                 case 201:
                     println("登录成功")
                     let json = JSON(data: data)
                     let authorizationId = json["id"]
                     let authorizationToken = json["token"]
-                    println("token : \(authorizationToken)")
+                    println("id: \(authorizationId) token : \(authorizationToken)")
+                    completionHandler(token: authorizationToken.string, statusCode: 201, errorMsg: nil)
                     break
                 default:
                     println("登录失败:\(httpResp.statusCode)")
+                    completionHandler(token: nil, statusCode: httpResp.statusCode, errorMsg: nil)
                     break
                 }
             } else {
                 let message = JSON(data: data)["message"]
                 println("登录失败: \(message)")
+                completionHandler(token: nil, statusCode: 0, errorMsg: message.string)
             }
         }
-        
-        return str
     }
     
     class func parseGithubTime(string:String) -> String{

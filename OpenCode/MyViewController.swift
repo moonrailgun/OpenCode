@@ -19,10 +19,17 @@ class MyViewController: UIViewController {
         //self.performSegueWithIdentifier("GithubLogin", sender: self)
         
         if(githubUsername.text != "" && githubPassword.text != ""){
-            let token = Github.login(githubUsername.text, password: githubPassword.text)
-            println(token)
-            
-            //showProfileView()
+            //Github.login(githubUsername.text, password: githubPassword.text)
+            Github.login(githubUsername.text, password: githubPassword.text, completionHandler: { (token, statusCode, errorMsg) -> () in
+                if token != nil{
+                    var ud = NSUserDefaults.standardUserDefaults()
+                    ud.setObject(token, forKey: "GithubToken")
+                    println("显示档案页面")
+                    self.showProfileView()
+                }else{
+                    //提示出错
+                }
+            })
         }else{
             println("账号或密码不得为空")
         }
@@ -32,9 +39,9 @@ class MyViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
         var token:String?
-        if((token) != nil){
+        var ud = NSUserDefaults.standardUserDefaults()
+        if let token: AnyObject = ud.objectForKey("GithubToken"){
             showProfileView()
         }else{
             showLoginView()
