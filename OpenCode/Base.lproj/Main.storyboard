@@ -73,7 +73,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9CZ-Zr-ejX" userLabel="LoginView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9CZ-Zr-ejX" userLabel="LoginView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="登录到Github" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="faP-UV-wzw">
@@ -118,7 +118,7 @@
                                     <constraint firstAttribute="centerX" secondItem="QiV-A1-zIN" secondAttribute="centerX" id="yNg-Gh-lY5"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZsD-CV-phT" userLabel="ProfileView">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZsD-CV-phT" userLabel="ProfileView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXn-9R-Bdt">
@@ -132,13 +132,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ZsD-CV-phT" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" id="AB0-50-jaJ"/>
-                            <constraint firstItem="ZsD-CV-phT" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="BPK-W7-UlC"/>
                             <constraint firstItem="9CZ-Zr-ejX" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="JKW-RG-5Wr"/>
-                            <constraint firstAttribute="bottom" secondItem="ZsD-CV-phT" secondAttribute="bottom" id="Y7n-ia-5Wb"/>
                             <constraint firstAttribute="bottom" secondItem="9CZ-Zr-ejX" secondAttribute="bottom" id="YfV-nU-Dyq"/>
                             <constraint firstItem="9CZ-Zr-ejX" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" id="a3I-7o-chC"/>
-                            <constraint firstAttribute="trailing" secondItem="ZsD-CV-phT" secondAttribute="trailing" id="aKa-SM-HVQ"/>
                             <constraint firstAttribute="trailing" secondItem="9CZ-Zr-ejX" secondAttribute="trailing" id="pzs-qT-RE7"/>
                         </constraints>
                     </view>

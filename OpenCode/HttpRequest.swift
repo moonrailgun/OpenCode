@@ -88,4 +88,19 @@ class HttpRequest{
         
         NSURLConnection.sendAsynchronousRequest(req, queue: NSOperationQueue(), completionHandler: completionHandler)
     }
+    
+    /*
+    发送带http头的POST 请求
+    */
+    class func sendAsyncPostRequest(url:NSURL,header: NSDictionary ,data:String, completionHandler: (NSURLResponse!, NSData!, NSError!)->Void){
+        var req = NSMutableURLRequest(URL: url)
+        req.HTTPMethod = "POST"
+        //配置头
+        for aKey in header.allKeys{
+            req.setValue(header.objectForKey(aKey) as? String, forHTTPHeaderField: aKey as String)
+        }
+        req.HTTPBody = NSString(string: data).dataUsingEncoding(NSUTF8StringEncoding)
+        
+        NSURLConnection.sendAsynchronousRequest(req, queue: NSOperationQueue(), completionHandler: completionHandler)
+    }
 }

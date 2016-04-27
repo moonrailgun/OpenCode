@@ -18,6 +18,7 @@
 		BA6F3B121CCE478D00F6984B /* TimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F3B111CCE478D00F6984B /* TimeHelper.swift */; };
 		BA7C1F901CCB57F600B5EE6A /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7C1F8F1CCB57F600B5EE6A /* NewsTableViewController.swift */; };
 		BA8DA32C1CD05D7F00F9B391 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DA32B1CD05D7F00F9B391 /* MyViewController.swift */; };
+		BA8DA3311CD080A500F9B391 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DA3301CD080A500F9B391 /* Crypto.swift */; };
 		BAC1E35D1CCF5AB500CBBD5F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC1E3561CCF5A5C00CBBD5F /* SwiftyJSON.framework */; };
 		BAC1E35E1CCF5AB500CBBD5F /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BAC1E3561CCF5A5C00CBBD5F /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -97,6 +98,7 @@
 		BA6F3B111CCE478D00F6984B /* TimeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeHelper.swift; sourceTree = "<group>"; };
 		BA7C1F8F1CCB57F600B5EE6A /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
 		BA8DA32B1CD05D7F00F9B391 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
+		BA8DA3301CD080A500F9B391 /* Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
 		BAC1E34E1CCF5A5C00CBBD5F /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = SwiftyJSON/SwiftyJSON.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -184,6 +186,7 @@
 				BA3AD21F1CCA29B60034B21E /* HttpRequest.swift */,
 				BA6F3B0F1CCE3EA400F6984B /* OperationQueueHelper.swift */,
 				BA6F3B111CCE478D00F6984B /* TimeHelper.swift */,
+				BA8DA3301CD080A500F9B391 /* Crypto.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA8DA3311CD080A500F9B391 /* Crypto.swift in Sources */,
 				BA6F3B121CCE478D00F6984B /* TimeHelper.swift in Sources */,
 				BA3AD2201CCA29B60034B21E /* HttpRequest.swift in Sources */,
 				BA3AD21E1CCA278B0034B21E /* Github.swift in Sources */,

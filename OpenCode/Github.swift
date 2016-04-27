@@ -36,6 +36,39 @@ class Github {
         })
     }
     
+    //登录到github并返回一个token
+    class func login(username:String, password: String) -> String{
+        let str = username + ":" + password
+        let authorization = "Basic " + Base64.encrypt(str)!
+        var header = NSDictionary()
+        header = ["Authorization": authorization, "Content-Type": "application/json"]
+        let data = "{\"note\":\"OpenCodeApp\"}"
+        
+        HttpRequest.sendAsyncPostRequest(NSURL(string: "https://api.github.com/authorizations")!, header: header, data: data) { (resp:NSURLResponse!, data:NSData!, error:NSError!) -> Void in
+            if let httpResp = resp as? NSHTTPURLResponse{
+                switch httpResp.statusCode{
+                case 422:
+                    println("已经登录过了")
+                    break
+                case 201:
+                    println("登录成功")
+                    let json = JSON(data: data)
+                    let authorizationId = json["id"]
+                    let authorizationToken = json["token"]
+                    println("token : \(authorizationToken)")
+                    break
+                default:
+                    println("登录失败:\(httpResp.statusCode)")
+                    break
+                }
+            }else{
+                println("出现错误\(resp)")
+            }
+        }
+        
+        return str
+    }
+    
     class func parseGithubTime(string:String) -> String{
         var formatter = NSDateFormatter()
         //formatter.timeZone = NSTimeZone(name: "Asia/Shanghai")

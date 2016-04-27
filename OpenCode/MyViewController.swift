@@ -18,7 +18,15 @@ class MyViewController: UIViewController {
         println("账号：\(githubUsername.text), 密码：\(githubPassword.text)")
         //self.performSegueWithIdentifier("GithubLogin", sender: self)
         
-        showProfileView()
+        if(githubUsername.text != "" && githubPassword.text != ""){
+            let token = Github.login(githubUsername.text, password: githubPassword.text)
+            println(token)
+            
+            //showProfileView()
+        }else{
+            println("账号或密码不得为空")
+        }
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
