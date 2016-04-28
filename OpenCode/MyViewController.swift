@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 
 class MyViewController: UIViewController {
-    
+    //login view
     @IBOutlet weak var loginView: UIView!
     @IBOutlet weak var profileView: UIView!
     @IBOutlet weak var githubUsername: UITextField!
@@ -35,6 +35,19 @@ class MyViewController: UIViewController {
         }
         
     }
+    
+    //profile view
+    @IBOutlet weak var userAvatar: UIImageView!
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var userEmail: UILabel!
+    @IBOutlet weak var userLocation: UILabel!
+    @IBOutlet weak var userCompany: UILabel!
+    
+    @IBAction func GithubLogout(sender: AnyObject) {
+        println("登出")
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -67,6 +80,19 @@ class MyViewController: UIViewController {
     func loadProfileData() {
         Github.getUserInfo { (userinfo) -> Void in
             println(userinfo)
+            if let u: AnyObject = userinfo{
+                OperationQueueHelper.operateInMainQueue({ () -> Void in
+                    let json = JSON(u)
+                    if let avatarData:NSData? = NSData(contentsOfURL: NSURL(string: json["avatar_url"].string!)!){
+                        self.userAvatar.image = UIImage(data: avatarData!)
+                    }
+                    
+                    self.userName.text = json["name"].string
+                    self.userEmail.text = json["email"].string
+                    self.userLocation.text = json["location"].string
+                    self.userCompany.text = json["company"].string
+                })
+            }
         }
     }
     
