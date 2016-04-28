@@ -207,9 +207,18 @@
                         <outlet property="githubUsername" destination="QiV-A1-zIN" id="Cnp-TZ-3zK"/>
                         <outlet property="loginView" destination="9CZ-Zr-ejX" id="RxU-1l-0Iq"/>
                         <outlet property="profileView" destination="ZsD-CV-phT" id="VRE-ah-QYJ"/>
+                        <outlet property="searchDisplayController" destination="hAv-qa-VJp" id="vrv-ws-xNo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="hAv-qa-VJp">
+                    <connections>
+                        <outlet property="delegate" destination="8rJ-Kc-sve" id="Act-Wo-wgg"/>
+                        <outlet property="searchContentsController" destination="8rJ-Kc-sve" id="wBK-1e-ir9"/>
+                        <outlet property="searchResultsDataSource" destination="8rJ-Kc-sve" id="tx5-ve-tjF"/>
+                        <outlet property="searchResultsDelegate" destination="8rJ-Kc-sve" id="uLg-Lk-Jqq"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
         </scene>

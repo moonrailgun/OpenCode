@@ -72,6 +72,23 @@ class Github {
         }
     }
     
+    class func getUserInfo(completionHandler:(AnyObject?) -> Void) {
+        if let token:String = getToken() {
+            //todo token失效 清空数据后处理
+            HttpRequest.sendAsyncRequest(NSURL(string:"https://api.github.com/user?access_token=\(token)")! , completionHandler: { (resp:NSURLResponse?, data:NSData?, error:NSError?) -> Void in
+                if let d = data{
+                    let json = JSON(data: d)
+                    completionHandler(json.object)
+                } else{
+                    println("无法获取数据: resp:\(resp) data:\(data) error:\(error)")
+                }
+            })
+        } else{
+            println("token 不存在，无法获取数据")
+            completionHandler(nil)
+        }
+    }
+    
     class func parseGithubTime(string:String) -> String{
         var formatter = NSDateFormatter()
         //formatter.timeZone = NSTimeZone(name: "Asia/Shanghai")
@@ -84,5 +101,14 @@ class Github {
         let timeStr = dateFormatter.stringFromDate(date!)
         
         return timeStr
+    }
+    
+    class func setToken(token:String){
+        var ud = NSUserDefaults.standardUserDefaults()
+        ud.setObject(token, forKey: "GithubToken")
+    }
+    class func getToken() -> String?{
+        var ud = NSUserDefaults.standardUserDefaults()
+        return ud.objectForKey("GithubToken") as? String
     }
 }

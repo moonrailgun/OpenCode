@@ -74,14 +74,14 @@ class HttpRequest{
         return (data, resp, error)
     }
     
-    class func sendAsyncRequest(url:NSURL, completionHandler: (NSURLResponse!, NSData!, NSError!)->Void) {
-        NSURLConnection.sendAsynchronousRequest(NSURLRequest(URL: url), queue: NSOperationQueue(),completionHandler: completionHandler)
+    class func sendAsyncRequest(url:NSURL, completionHandler: (NSURLResponse?, NSData?, NSError?)->Void) {
+        NSURLConnection.sendAsynchronousRequest(NSURLRequest(URL: url), queue: NSOperationQueue(), completionHandler: completionHandler)
     }
     
     /*
     发送HTTP POST请求
     */
-    class func sendAsyncPostRequest(url:NSURL,data:String, completionHandler: (NSURLResponse!, NSData!, NSError!)->Void){
+    class func sendAsyncPostRequest(url:NSURL,data:String, completionHandler: (NSURLResponse?, NSData?, NSError?)->Void){
         var req = NSMutableURLRequest(URL: url)
         req.HTTPMethod = "POST"
         req.HTTPBody = NSString(string: data).dataUsingEncoding(NSUTF8StringEncoding)
