@@ -226,7 +226,7 @@
             </objects>
             <point key="canvasLocation" x="833" y="340"/>
         </scene>
-        <!--我的项目-->
+        <!--项目-->
         <scene sceneID="HLo-iW-19g">
             <objects>
                 <tableViewController id="opv-y9-Gjf" customClass="RepositoryTableViewController" customModule="OpenCode" customModuleProvider="target" sceneMemberID="viewController">
@@ -247,7 +247,7 @@
                             <outlet property="delegate" destination="opv-y9-Gjf" id="wUh-RG-Rc2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="我的项目" id="TsH-em-taL"/>
+                    <navigationItem key="navigationItem" title="项目" id="TsH-em-taL"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nHE-uq-mDQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

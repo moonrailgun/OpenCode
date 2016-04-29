@@ -85,14 +85,13 @@ class Github {
             }
         }
     }
-    
+    //获取用户信息
     class func getUserInfo(completionHandler:(AnyObject?) -> Void) {
         if let token:String = getToken() {
             //todo token失效 清空数据后处理
             HttpRequest.sendAsyncRequest(NSURL(string:"https://api.github.com/user?access_token=\(token)")! , completionHandler: { (resp:NSURLResponse?, data:NSData?, error:NSError?) -> Void in
                 if let d = data{
-                    let json = JSON(data: d)
-                    completionHandler(json.object)
+                    completionHandler(self.convertDataToJSONObj(d))
                 } else{
                     println("无法获取数据: resp:\(resp) data:\(data) error:\(error)")
                 }
@@ -100,6 +99,30 @@ class Github {
         } else{
             println("token 不存在，无法获取数据")
             completionHandler(nil)
+        }
+    }
+    //获取当前用户的项目列表数据
+    class func getCurrentUserRepositories(completionHandler:(AnyObject?) -> Void){
+        if let token:String = getToken(){
+            HttpRequest.sendAsyncRequest(NSURL(string: "https://api.github.com/user/repos?access_token=\(token)")!, completionHandler: { (resp:NSURLResponse?, data:NSData?, error:NSError?) -> Void in
+                if let d = data{
+                    completionHandler(self.convertDataToJSONObj(d))
+                }else{
+                    println("无法获取数据: resp:\(resp) data:\(data) error:\(error)")
+                }
+            })
+        } else{
+            println("token 不存在，无法获取数据")
+            completionHandler(nil)
+        }
+    }
+    //将二进制对象转化为JSON的通用对象
+    class func convertDataToJSONObj(data:NSData?) ->AnyObject? {
+        if let d = data{
+            let json = JSON(data: d, options: NSJSONReadingOptions.AllowFragments, error: nil)
+            return json.object
+        }else{
+            return nil
         }
     }
     
