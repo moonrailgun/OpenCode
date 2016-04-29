@@ -43,6 +43,14 @@ class MyViewController: UIViewController {
     @IBOutlet weak var userLocation: UILabel!
     @IBOutlet weak var userCompany: UILabel!
     
+    @IBAction func ShowMyRepositories(sender: UIButton) {
+        println("我的项目")
+        self.performSegueWithIdentifier("showRepositories", sender: sender)
+    }
+    @IBAction func ShowMyStars(sender: UIButton) {
+        println("我的收藏")
+        self.performSegueWithIdentifier("showRepositories", sender: sender)
+    }
     @IBAction func GithubLogout(sender: AnyObject) {
         println("登出")
     }
@@ -97,14 +105,29 @@ class MyViewController: UIViewController {
     }
     
     
-    /*
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "showRepositories" {
+            var repo = segue.destinationViewController as RepositoryTableViewController
+            //repo.repositoryData = "wqeqwe" as AnyObject
+            
+            if sender is UIButton{
+                let button = sender as UIButton
+                
+                if button.titleLabel?.text == "我的项目" {
+                    repo.navigationItem.title = "我的项目"
+                    repo.repositoryData = "我的项目" as AnyObject
+                } else if button.titleLabel?.text == "我的收藏"{
+                    repo.navigationItem.title = "我的收藏"
+                    repo.repositoryData = "我的收藏" as AnyObject
+                }
+            }
+        }
+        
     }
-    */
     
 }

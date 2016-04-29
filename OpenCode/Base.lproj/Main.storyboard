@@ -23,18 +23,18 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Ev-nj-byd" id="Krz-LU-pQg">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PZL-W1-taH">
-                                                    <rect key="frame" x="16" y="8" width="331" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rRG-yO-9Vv">
-                                                    <rect key="frame" x="429" y="60" width="163" height="21"/>
+                                                    <rect key="frame" x="149" y="60" width="163" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PZL-W1-taH">
+                                                    <rect key="frame" x="13" y="8" width="200" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -163,7 +163,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="我的项目"/>
                                         <connections>
-                                            <segue destination="opv-y9-Gjf" kind="push" id="SX0-Tt-a0t"/>
+                                            <action selector="ShowMyRepositories:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="PLz-Tu-piG"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MGJ-9J-0Ku">
@@ -190,7 +190,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="我的收藏"/>
                                         <connections>
-                                            <segue destination="DVY-5y-bcw" kind="push" id="3Nl-ym-lGC"/>
+                                            <action selector="ShowMyStars:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="Cgn-2o-80c"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -211,6 +211,7 @@
                         <outlet property="userEmail" destination="N4D-3d-7M6" id="kGm-X9-Fdo"/>
                         <outlet property="userLocation" destination="QFv-gB-QCu" id="tIH-bU-lPV"/>
                         <outlet property="userName" destination="xkR-Hh-vOu" id="c9c-MM-chG"/>
+                        <segue destination="opv-y9-Gjf" kind="push" identifier="showRepositories" id="YN8-Yb-QWp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -228,7 +229,7 @@
         <!--我的项目-->
         <scene sceneID="HLo-iW-19g">
             <objects>
-                <tableViewController id="opv-y9-Gjf" sceneMemberID="viewController">
+                <tableViewController id="opv-y9-Gjf" customClass="RepositoryTableViewController" customModule="OpenCode" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="W3k-Le-kv9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -250,34 +251,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nHE-uq-mDQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1331" y="-222"/>
-        </scene>
-        <!--我的收藏-->
-        <scene sceneID="iic-o9-Z0c">
-            <objects>
-                <tableViewController id="DVY-5y-bcw" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Iiw-OT-zss">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="sXZ-KH-6dR">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sXZ-KH-6dR" id="Ulx-PL-tqQ">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="DVY-5y-bcw" id="2AA-TP-pFg"/>
-                            <outlet property="delegate" destination="DVY-5y-bcw" id="jum-hH-VMg"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="我的收藏" id="BCc-eC-d9n"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0rR-f4-XyX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1331" y="473"/>
+            <point key="canvasLocation" x="1329" y="340"/>
         </scene>
         <!--我的粉丝-->
         <scene sceneID="cLr-eM-u9k">

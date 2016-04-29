@@ -16,6 +16,20 @@ struct GithubEvent{
     let repo: AnyObject!
 }
 
+struct GithubRepository {
+    let id: Int
+    let name: String
+    let fullName: String
+    let description: String
+    let isPrivate: Bool
+    let html_url: String
+    let isFork: Bool
+    let created_at:String
+    let pushed_at:String
+    let size: Int
+    let forks: Int
+}
+
 class Github {
     let API_URL = "https://api.github.com/"
     

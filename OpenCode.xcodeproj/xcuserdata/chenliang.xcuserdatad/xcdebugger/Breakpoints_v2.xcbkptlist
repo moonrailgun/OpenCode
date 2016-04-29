@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenCode/Github.swift"
-            timestampString = "483510396.321767"
+            timestampString = "483608018.840227"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "getUserInfo(_:)"
             landmarkType = "5">
          </BreakpointContent>
