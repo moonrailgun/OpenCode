@@ -87,35 +87,53 @@ class Github {
     }
     //获取用户信息
     class func getUserInfo(completionHandler:(AnyObject?) -> Void) {
-        if let token:String = getToken() {
-            //todo token失效 清空数据后处理
-            HttpRequest.sendAsyncRequest(NSURL(string:"https://api.github.com/user?access_token=\(token)")! , completionHandler: { (resp:NSURLResponse?, data:NSData?, error:NSError?) -> Void in
-                if let d = data{
-                    completionHandler(self.convertDataToJSONObj(d))
-                } else{
-                    println("无法获取数据: resp:\(resp) data:\(data) error:\(error)")
-                }
-            })
-        } else{
-            println("token 不存在，无法获取数据")
-            completionHandler(nil)
-        }
+        requestPrivateData("https://api.github.com/user", completionHandler: completionHandler)
     }
     //获取当前用户的项目列表数据
     class func getCurrentUserRepositories(completionHandler:(AnyObject?) -> Void){
+        requestPrivateData("https://api.github.com/user/repos", completionHandler: completionHandler)
+    }
+    //获取当前用户的粉丝
+    class func getCurrentUserFollowers(completionHandler:(AnyObject?) -> Void) {
+        requestPrivateData("https://api.github.com/user/followers", completionHandler: completionHandler)
+    }
+    //获取当前用户的关注
+    class func getCurrentUserFollowing(completionHandler:(AnyObject?) -> Void){
+        requestPrivateData("https://api.github.com/user/following", completionHandler: completionHandler)
+    }
+    //获取用户收藏
+    class func getUserStarred(username:String, completionHandler:(AnyObject?) -> Void) {
+        requestPublicData("https://api.github.com/users/\(username)/starred", completionHandler: completionHandler)
+    }
+    
+    //获取公开数据通用方法
+    class private func requestPublicData(url: String, completionHandler:(AnyObject?) -> Void){
+        HttpRequest.sendAsyncRequest(NSURL(string: url)!, completionHandler: { (resp:NSURLResponse?, data:NSData?, error:NSError?) -> Void in
+            if let d = data{
+                completionHandler(self.convertDataToJSONObj(d))
+            }else{
+                println("\(url): 无法获取数据: resp:\(resp) data:\(data) error:\(error)")
+                completionHandler(nil)
+            }
+        })
+    }
+    //获取私人数据通用方法
+    class private func requestPrivateData(url:String, completionHandler:(AnyObject?) -> Void){
         if let token:String = getToken(){
-            HttpRequest.sendAsyncRequest(NSURL(string: "https://api.github.com/user/repos?access_token=\(token)")!, completionHandler: { (resp:NSURLResponse?, data:NSData?, error:NSError?) -> Void in
+            HttpRequest.sendAsyncRequest(NSURL(string: url + "?access_token=\(token)")!, completionHandler: { (resp:NSURLResponse?, data:NSData?, error:NSError?) -> Void in
                 if let d = data{
                     completionHandler(self.convertDataToJSONObj(d))
                 }else{
-                    println("无法获取数据: resp:\(resp) data:\(data) error:\(error)")
+                    println("\(url): 无法获取数据: resp:\(resp) data:\(data) error:\(error)")
+                    completionHandler(nil)
                 }
             })
         } else{
-            println("token 不存在，无法获取数据")
+            println("\(url): token 不存在，无法获取数据")
             completionHandler(nil)
         }
     }
+    
     //将二进制对象转化为JSON的通用对象
     class func convertDataToJSONObj(data:NSData?) ->AnyObject? {
         if let d = data{
