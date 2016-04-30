@@ -55,7 +55,8 @@ class MyViewController: UIViewController {
         println("登出")
     }
     
-    
+    var userInfo:JSON?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -87,10 +88,10 @@ class MyViewController: UIViewController {
     
     func loadProfileData() {
         Github.getUserInfo { (userinfo) -> Void in
-            println(userinfo)
             if let u: AnyObject = userinfo{
+                let json = JSON(u)
+                self.userInfo = json
                 OperationQueueHelper.operateInMainQueue({ () -> Void in
-                    let json = JSON(u)
                     if let avatarData:NSData? = NSData(contentsOfURL: NSURL(string: json["avatar_url"].string!)!){
                         self.userAvatar.image = UIImage(data: avatarData!)
                     }
@@ -120,10 +121,8 @@ class MyViewController: UIViewController {
                 
                 if button.titleLabel?.text == "我的项目" {
                     repo.navigationItem.title = "我的项目"
-                    repo.repositoryData = "我的项目" as AnyObject
                 } else if button.titleLabel?.text == "我的收藏"{
                     repo.navigationItem.title = "我的收藏"
-                    repo.repositoryData = "我的收藏" as AnyObject
                 }
             }
         }

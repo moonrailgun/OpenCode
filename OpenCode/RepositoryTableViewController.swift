@@ -7,15 +7,27 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class RepositoryTableViewController: UITableViewController {
+    let TAG_CELL_LABEL_NAME = 1
+    let TAG_CELL_LABEL_DESC = 2
+    let TAG_CELL_LABEL_TIME = 3
     
-    var repositoryData:AnyObject?
+    var repositoryDataList:JSON?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        println(self.repositoryData! as String)
+        Github.getCurrentUserRepositories { (data:AnyObject?) -> Void in
+            let list = JSON(data!)
+            
+            self.repositoryDataList = list
+            println("加载完毕，共有\(list.count)条项目")
+            OperationQueueHelper.operateInMainQueue({ () -> Void in
+                self.tableView.reloadData()
+            })
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -34,24 +46,38 @@ class RepositoryTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        if let list = repositoryDataList{
+            return list.count
+        }else{
+            return 0
+        }
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("repositoryCell") as UITableViewCell
+        
         // Configure the cell...
+        if let list = repositoryDataList{
+            let repo = list[indexPath.row]
+            
+            let nameLabel = cell.viewWithTag(TAG_CELL_LABEL_NAME) as UILabel
+            nameLabel.text = repo["name"].string
+            
+            let descLabel = cell.viewWithTag(TAG_CELL_LABEL_DESC) as UILabel
+            descLabel.text = repo["description"].string
+            
+            let timeLabel = cell.viewWithTag(TAG_CELL_LABEL_TIME) as UILabel
+            timeLabel.text = repo["pushed_at"].string
+        }
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

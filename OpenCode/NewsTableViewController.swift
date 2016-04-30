@@ -17,16 +17,12 @@ class NewsTableViewController: UITableViewController {
     
     required init(coder aDecoder:NSCoder){
         super.init(coder: aDecoder)
-//        self.dataSource = self
-//        self.delegate = self
         
         updateEventList()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //updateEventList()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -132,11 +128,9 @@ class NewsTableViewController: UITableViewController {
                 self.dataArr.append(event)
             }
             
-            println(self.dataArr)
-            
             OperationQueueHelper.operateInMainQueue({ () -> Void in
                 //todo 刷新列表数据
-                
+                self.tableView.reloadData()
             })
         })
     }
