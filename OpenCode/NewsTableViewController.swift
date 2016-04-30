@@ -9,8 +9,9 @@
 import UIKit
 
 class NewsTableViewController: UITableView , UITableViewDataSource, UITableViewDelegate{
-    let TAG_CELL_LABEL = 1
+    let TAG_CELL_LABEL_EVENT = 1
     let TAG_CELL_LABEL_TIME = 2
+    let TAG_CELL_LABEL_DESC = 3
     
     var dataArr = [GithubEvent]()
     
@@ -28,12 +29,16 @@ class NewsTableViewController: UITableView , UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: AnyObject! = tableView.dequeueReusableCellWithIdentifier("newscell")
+        let data = dataArr[indexPath.row]
         
-        var label = cell!.viewWithTag(TAG_CELL_LABEL) as UILabel
-        label.text = dataArr[indexPath.row].type
+        var eventLabel = cell!.viewWithTag(TAG_CELL_LABEL_EVENT) as UILabel
+        eventLabel.text = data.type
         
-        var time = cell!.viewWithTag(TAG_CELL_LABEL_TIME) as UILabel
-        time.text = dataArr[indexPath.row].time
+        var timeLabel = cell!.viewWithTag(TAG_CELL_LABEL_TIME) as UILabel
+        timeLabel.text = data.time
+        
+        var descLabel = cell.viewWithTag(TAG_CELL_LABEL_DESC) as UILabel
+        descLabel.text = generateDescriptionStr(data.type,username: data.actor.objectForKey("login") as String, repositoryName: data.repo.objectForKey("name") as String)
         
         return cell as UITableViewCell
     }
@@ -48,6 +53,7 @@ class NewsTableViewController: UITableView , UITableViewDataSource, UITableViewD
         
     }
     
+    //更新事件列表
     func updateEventList(){
         Github.getEvents({events, error in
             for _event in events {
@@ -61,5 +67,27 @@ class NewsTableViewController: UITableView , UITableViewDataSource, UITableViewD
                 self.reloadData()
             })
         })
+    }
+    
+    private func generateDescriptionStr(eventType:String ,username:String, repositoryName:String) -> String{
+        var str:String = ""
+        let type = Github.parseEventType(eventType)
+        
+        var desc = ""
+        switch type{
+        case .CreateEvent:desc = "创建了一个项目"
+        case .ForkEvent:desc = "创建了一个分支"
+        case .GollumEvent:desc = "建立了一条wiki"
+        case .IssueCommentEvent:desc = "提交了一条问题"
+        case .PullRequestEvent:desc = "发送了一条拉取请求"
+        case .PushEvent:desc = "提交了一些代码"
+        case .Unknow:desc = "进行了一些操作"
+        case .WatchEvent:desc = "观察了项目"
+        case .DeleteEvent:desc = "进行了删除操作"
+        }
+        
+        str = "\(username) \(desc)到 \(repositoryName)"
+        
+        return str
     }
 }

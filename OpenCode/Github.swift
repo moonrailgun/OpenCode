@@ -9,6 +9,19 @@
 import UIKit
 import SwiftyJSON
 
+enum GithubEventType{
+    case
+    CreateEvent,
+    PushEvent,
+    WatchEvent,
+    ForkEvent,
+    PullRequestEvent,
+    IssueCommentEvent,
+    GollumEvent,
+    DeleteEvent,
+    Unknow
+}
+
 struct GithubEvent{
     let type: String
     let time: String
@@ -165,5 +178,30 @@ class Github {
     class func getToken() -> String?{
         var ud = NSUserDefaults.standardUserDefaults()
         return ud.objectForKey("GithubToken") as? String
+    }
+    class func parseEventType(eventType:String) -> GithubEventType{
+        var type:GithubEventType
+        switch eventType{
+        case "CreateEvent":
+            type = .CreateEvent
+        case "PushEvent":
+            type = .PushEvent
+        case "WatchEvent":
+            type = .WatchEvent
+        case "ForkEvent":
+            type = .ForkEvent
+        case "PullRequestEvent":
+            type = .PullRequestEvent
+        case "IssusCommentEvent":
+            type = .IssueCommentEvent
+        case "GollumEvent":
+            type = .GollumEvent
+        case "DeleteEvent":
+            type = .DeleteEvent
+        default:
+            type = .Unknow
+        }
+        
+        return type
     }
 }
