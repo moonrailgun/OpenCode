@@ -51,6 +51,14 @@ class MyViewController: UIViewController {
         println("我的收藏")
         self.performSegueWithIdentifier("showRepositories", sender: sender)
     }
+    @IBAction func ShowMyFollowing(sender: UIButton) {
+        println("我的关注")
+        self.performSegueWithIdentifier("showUserList", sender: sender)
+    }
+    @IBAction func ShowMyFollowers(sender: UIButton) {
+        println("我的收藏")
+        self.performSegueWithIdentifier("showUserList", sender: sender)
+    }
     @IBAction func GithubLogout(sender: AnyObject) {
         println("登出")
     }
@@ -112,21 +120,15 @@ class MyViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "showRepositories" {
-            var repo = segue.destinationViewController as RepositoryTableViewController
-            //repo.repositoryData = "wqeqwe" as AnyObject
-            
-            if sender is UIButton{
-                let button = sender as UIButton
-                
-                if button.titleLabel?.text == "我的项目" {
-                    repo.navigationItem.title = "我的项目"
-                } else if button.titleLabel?.text == "我的收藏"{
-                    repo.navigationItem.title = "我的收藏"
-                }
+        if let button = sender as? UIButton{
+            if segue.identifier == "showRepositories" {
+                var repo = segue.destinationViewController as RepositoryTableViewController
+            }else if segue.identifier == "showUserList" {
+                var user = segue.destinationViewController as UserTableViewController
             }
+            
+            segue.destinationViewController.navigationItem.title = button.titleLabel?.text
         }
-        
     }
     
 }

@@ -171,22 +171,13 @@
                                             <action selector="ShowMyRepositories:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="PLz-Tu-piG"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MGJ-9J-0Ku">
-                                        <rect key="frame" x="14" y="176" width="111" height="38"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="我的关注"/>
-                                        <connections>
-                                            <segue destination="hlm-4b-BNE" kind="push" id="TUD-kg-BvT"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ILG-1s-Men">
                                         <rect key="frame" x="191" y="176" width="111" height="38"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="我的粉丝"/>
                                         <connections>
-                                            <segue destination="nly-4m-rZI" kind="push" id="Mrf-LS-04L"/>
+                                            <action selector="ShowMyFollowers:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="fMj-Y0-42O"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sgJ-d9-hgt">
@@ -196,6 +187,15 @@
                                         <state key="normal" title="我的收藏"/>
                                         <connections>
                                             <action selector="ShowMyStars:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="Cgn-2o-80c"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MGJ-9J-0Ku">
+                                        <rect key="frame" x="14" y="176" width="111" height="38"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="我的关注"/>
+                                        <connections>
+                                            <action selector="ShowMyFollowing:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="Ekl-xc-FkN"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -217,6 +217,7 @@
                         <outlet property="userLocation" destination="QFv-gB-QCu" id="tIH-bU-lPV"/>
                         <outlet property="userName" destination="xkR-Hh-vOu" id="c9c-MM-chG"/>
                         <segue destination="opv-y9-Gjf" kind="push" identifier="showRepositories" id="YN8-Yb-QWp"/>
+                        <segue destination="hlm-4b-BNE" kind="push" identifier="showUserList" id="XNb-dv-uHc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -281,37 +282,10 @@
             </objects>
             <point key="canvasLocation" x="1329" y="340"/>
         </scene>
-        <!--我的粉丝-->
-        <scene sceneID="cLr-eM-u9k">
-            <objects>
-                <tableViewController id="nly-4m-rZI" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Sej-hJ-Cc1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="wKE-WU-eaO">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wKE-WU-eaO" id="EpO-kV-cP7">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="nly-4m-rZI" id="QYz-12-qzb"/>
-                            <outlet property="delegate" destination="nly-4m-rZI" id="Bt3-Oz-pUZ"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="我的粉丝" id="LlK-cG-fGY"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jPk-Hh-zD7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="635" y="1193"/>
-        </scene>
-        <!--我的关注-->
+        <!--用户列表-->
         <scene sceneID="9MJ-ZZ-Hdj">
             <objects>
-                <tableViewController id="hlm-4b-BNE" sceneMemberID="viewController">
+                <tableViewController id="hlm-4b-BNE" customClass="UserTableViewController" customModule="OpenCode" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lBy-Ak-8yw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -329,11 +303,11 @@
                             <outlet property="delegate" destination="hlm-4b-BNE" id="4PK-cl-O14"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="我的关注" id="Lxz-q4-Gl7"/>
+                    <navigationItem key="navigationItem" title="用户列表" id="Lxz-q4-Gl7"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RjE-sQ-GGj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1083" y="1193"/>
+            <point key="canvasLocation" x="833" y="1054"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
