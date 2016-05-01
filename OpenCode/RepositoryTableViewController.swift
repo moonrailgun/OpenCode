@@ -9,26 +9,38 @@
 import UIKit
 import SwiftyJSON
 
+enum RepositorySource{
+    case currentUser, currentStarred
+}
+
 class RepositoryTableViewController: UITableViewController {
     let TAG_CELL_LABEL_NAME = 1
     let TAG_CELL_LABEL_DESC = 2
     let TAG_CELL_LABEL_TIME = 3
     let TAG_CELL_LABEL_STAR_NUM = 4
     
+    let repositorySource:RepositorySource = RepositorySource.currentUser
+    
     var repositoryDataList:JSON?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Github.getCurrentUserRepositories { (data:AnyObject?) -> Void in
-            let list = JSON(data!)
-            
-            self.repositoryDataList = list
-            println("加载完毕，共有\(list.count)条项目")
-            OperationQueueHelper.operateInMainQueue({ () -> Void in
-                self.tableView.reloadData()
-            })
+        switch repositorySource{
+        case .currentUser:
+            Github.getCurrentUserRepositories { (data:AnyObject?) -> Void in
+                let list = JSON(data!)
+                
+                self.repositoryDataList = list
+                println("加载完毕，共有\(list.count)条项目")
+                OperationQueueHelper.operateInMainQueue({ () -> Void in
+                    self.tableView.reloadData()
+                })
+            }
+        case .currentStarred:
+            println("尚未实现")
         }
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

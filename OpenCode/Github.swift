@@ -106,6 +106,9 @@ class Github {
     class func getCurrentUserRepositories(completionHandler:(AnyObject?) -> Void){
         requestPrivateData("https://api.github.com/user/repos", completionHandler: completionHandler)
     }
+    class func getCurrentUserStarred(completionHandler:(AnyObject?) -> Void){
+        requestPrivateData("https://api.github.com/user/starred", completionHandler: completionHandler)
+    }
     //获取当前用户的粉丝
     class func getCurrentUserFollowers(completionHandler:(AnyObject?) -> Void) {
         requestPrivateData("https://api.github.com/user/followers", completionHandler: completionHandler)
@@ -118,7 +121,31 @@ class Github {
     class func getUserStarred(username:String, completionHandler:(AnyObject?) -> Void) {
         requestPublicData("https://api.github.com/users/\(username)/starred", completionHandler: completionHandler)
     }
-    
+    //获取github代码搜索结果
+    class func getGithubCodeSearch(query:String, page:Int?, perPage:Int?, sort:Int?, order:Int?, completionHandler:(AnyObject?) -> Void){
+        var url:String = "https://api.github.com/search/code?q=\(query)"
+        if page != nil{
+            url += "&page=\(page)"
+        }
+        if perPage != nil{
+            url += "&per_page=\(perPage)"
+        }
+        if sort != nil{
+            url += "&sort=\(sort)"
+        }
+        if order != nil{
+            url += "&order=\(order)"
+        }
+        requestPublicData(url, completionHandler: completionHandler)
+    }
+    //自定义地址的github api获取
+    class func customRequest(url:String, isPublic:Bool, completionHandler:(AnyObject?) -> Void){
+        if(isPublic){
+            requestPublicData(url, completionHandler: completionHandler)
+        }else{
+            requestPrivateData(url, completionHandler: completionHandler)
+        }
+    }
     //获取公开数据通用方法
     class private func requestPublicData(url: String, completionHandler:(AnyObject?) -> Void){
         HttpRequest.sendAsyncRequest(NSURL(string: url)!, completionHandler: { (resp:NSURLResponse?, data:NSData?, error:NSError?) -> Void in
