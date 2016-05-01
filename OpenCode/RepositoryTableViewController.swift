@@ -13,6 +13,7 @@ class RepositoryTableViewController: UITableViewController {
     let TAG_CELL_LABEL_NAME = 1
     let TAG_CELL_LABEL_DESC = 2
     let TAG_CELL_LABEL_TIME = 3
+    let TAG_CELL_LABEL_STAR_NUM = 4
     
     var repositoryDataList:JSON?
     
@@ -73,10 +74,23 @@ class RepositoryTableViewController: UITableViewController {
             descLabel.text = repo["description"].string
             
             let timeLabel = cell.viewWithTag(TAG_CELL_LABEL_TIME) as UILabel
-            timeLabel.text = repo["pushed_at"].string
+            timeLabel.text = Github.parseGithubTime(repo["pushed_at"].string!)
+            
+            let starNumLabel = cell.viewWithTag(TAG_CELL_LABEL_STAR_NUM) as UILabel
+            starNumLabel.text = repo["stargazers_count"].int?.description
         }
 
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if let cell = tableView.cellForRowAtIndexPath(indexPath){
+            println("进入项目详细页")
+            if let list = repositoryDataList{
+                println(list[indexPath.row])
+            }
+            self.performSegueWithIdentifier("showRepositoryDetail", sender: cell)
+        }
     }
 
     /*

@@ -16,7 +16,7 @@ enum GithubEventType{
     WatchEvent,
     ForkEvent,
     PullRequestEvent,
-    IssueCommentEvent,
+    IssuesCommentEvent,
     GollumEvent,
     DeleteEvent,
     Unknow
@@ -192,8 +192,8 @@ class Github {
             type = .ForkEvent
         case "PullRequestEvent":
             type = .PullRequestEvent
-        case "IssusCommentEvent":
-            type = .IssueCommentEvent
+        case "IssuesCommentEvent":
+            type = .IssuesCommentEvent
         case "GollumEvent":
             type = .GollumEvent
         case "DeleteEvent":

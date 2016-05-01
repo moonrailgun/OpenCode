@@ -145,7 +145,7 @@ class NewsTableViewController: UITableViewController {
         case .CreateEvent:desc = "创建了一个项目"
         case .ForkEvent:desc = "创建了一个分支"
         case .GollumEvent:desc = "建立了一条wiki"
-        case .IssueCommentEvent:desc = "提交了一条问题"
+        case .IssuesCommentEvent:desc = "提交了一条问题"
         case .PullRequestEvent:desc = "发送了一条拉取请求"
         case .PushEvent:desc = "提交了一些代码"
         case .Unknow:desc = "进行了一些操作"
