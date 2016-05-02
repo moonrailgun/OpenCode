@@ -10,9 +10,10 @@ import UIKit
 import SwiftyJSON
 
 class MyViewController: UIViewController {
-    //login view
     @IBOutlet weak var loginView: UIView!
     @IBOutlet weak var profileView: UIView!
+    
+    //login view
     @IBOutlet weak var githubUsername: UITextField!
     @IBOutlet weak var githubPassword: UITextField!
     @IBAction func GithubLogin(sender: AnyObject) {
