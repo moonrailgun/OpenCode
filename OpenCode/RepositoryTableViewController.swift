@@ -97,11 +97,20 @@ class RepositoryTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if let cell = tableView.cellForRowAtIndexPath(indexPath){
-            println("进入项目详细页")
-            if let list = repositoryDataList{
-                println(list[indexPath.row])
-            }
             self.performSegueWithIdentifier("showRepositoryDetail", sender: cell)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let indexPath = self.tableView.indexPathForSelectedRow(){
+            if segue.identifier == "showRepositoryDetail"{
+                let repoDetail = segue.destinationViewController as RepositoryDetailViewController
+                if let list = repositoryDataList{
+                    repoDetail.repoDetailData = list[indexPath.row].object
+                }
+            }else if segue.identifier == "showUserList"{
+                println("尚未完成")
+            }
         }
     }
 
