@@ -21,9 +21,11 @@
 		BA8DA32C1CD05D7F00F9B391 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DA32B1CD05D7F00F9B391 /* MyViewController.swift */; };
 		BA8DA3311CD080A500F9B391 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DA3301CD080A500F9B391 /* Crypto.swift */; };
 		BAA6CD921CD475D40069863F /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA6CD911CD475D40069863F /* NewsTableViewController.swift */; };
-		BABCF6851CD5BF5B00564FBB /* RepositoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCF6841CD5BF5B00564FBB /* RepositoryDetailViewController.swift */; };
+		BABCF6851CD5BF5B00564FBB /* OldRepositoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCF6841CD5BF5B00564FBB /* OldRepositoryDetailViewController.swift */; };
 		BAC1E35D1CCF5AB500CBBD5F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC1E3561CCF5A5C00CBBD5F /* SwiftyJSON.framework */; };
 		BAC1E35E1CCF5AB500CBBD5F /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BAC1E3561CCF5A5C00CBBD5F /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BAF7F99A1CD8A2CA0071C5F6 /* BasicBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF7F9991CD8A2CA0071C5F6 /* BasicBlock.swift */; };
+		BAF7F9A01CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF7F99F1CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,8 +106,10 @@
 		BA8DA32B1CD05D7F00F9B391 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		BA8DA3301CD080A500F9B391 /* Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
 		BAA6CD911CD475D40069863F /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
-		BABCF6841CD5BF5B00564FBB /* RepositoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewController.swift; sourceTree = "<group>"; };
+		BABCF6841CD5BF5B00564FBB /* OldRepositoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldRepositoryDetailViewController.swift; sourceTree = "<group>"; };
 		BAC1E34E1CCF5A5C00CBBD5F /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = SwiftyJSON/SwiftyJSON.xcodeproj; sourceTree = "<group>"; };
+		BAF7F9991CD8A2CA0071C5F6 /* BasicBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasicBlock.swift; path = UI/BasicBlock.swift; sourceTree = "<group>"; };
+		BAF7F99F1CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryDetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +153,7 @@
 		BA3AD1F61CCA245A0034B21E /* OpenCode */ = {
 			isa = PBXGroup;
 			children = (
+				BAF7F9951CD8A2750071C5F6 /* UI */,
 				BA7C1F8E1CCB57C200B5EE6A /* Controller */,
 				BA3AD21C1CCA27730034B21E /* API */,
 				BA3AD21B1CCA27660034B21E /* Utils */,
@@ -210,7 +215,8 @@
 			children = (
 				BA5F71A61CD350DC0043CBB5 /* RepositoryTableViewController.swift */,
 				BA69EBE31CD4980C0090816C /* UserTableViewController.swift */,
-				BABCF6841CD5BF5B00564FBB /* RepositoryDetailViewController.swift */,
+				BABCF6841CD5BF5B00564FBB /* OldRepositoryDetailViewController.swift */,
+				BAF7F99F1CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift */,
 			);
 			name = Page;
 			sourceTree = "<group>";
@@ -250,6 +256,14 @@
 				BAA6CD911CD475D40069863F /* NewsTableViewController.swift */,
 			);
 			name = News;
+			sourceTree = "<group>";
+		};
+		BAF7F9951CD8A2750071C5F6 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				BAF7F9991CD8A2CA0071C5F6 /* BasicBlock.swift */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,12 +407,14 @@
 			files = (
 				BA69EBE41CD4980C0090816C /* UserTableViewController.swift in Sources */,
 				BA8DA3311CD080A500F9B391 /* Crypto.swift in Sources */,
-				BABCF6851CD5BF5B00564FBB /* RepositoryDetailViewController.swift in Sources */,
+				BABCF6851CD5BF5B00564FBB /* OldRepositoryDetailViewController.swift in Sources */,
 				BA6F3B121CCE478D00F6984B /* TimeHelper.swift in Sources */,
+				BAF7F99A1CD8A2CA0071C5F6 /* BasicBlock.swift in Sources */,
 				BA3AD2201CCA29B60034B21E /* HttpRequest.swift in Sources */,
 				BAA6CD921CD475D40069863F /* NewsTableViewController.swift in Sources */,
 				BA3AD21E1CCA278B0034B21E /* Github.swift in Sources */,
 				BA6F3B101CCE3EA400F6984B /* OperationQueueHelper.swift in Sources */,
+				BAF7F9A01CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift in Sources */,
 				BA5F71A81CD350DC0043CBB5 /* RepositoryTableViewController.swift in Sources */,
 				BA8DA32C1CD05D7F00F9B391 /* MyViewController.swift in Sources */,
 				BA3AD1FA1CCA245A0034B21E /* AppDelegate.swift in Sources */,

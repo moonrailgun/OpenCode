@@ -1,28 +1,35 @@
 //
-//  NewsTableViewController.swift
+//  RepositoryDetailTableViewController.swift
 //  OpenCode
 //
-//  Created by 陈亮 on 16-4-30.
+//  Created by 陈亮 on 16-5-3.
 //  Copyright (c) 2016年 moonrailgun. All rights reserved.
 //
 
 import UIKit
+import SwiftyJSON
 
-class NewsTableViewController: UITableViewController {
-    let TAG_CELL_LABEL_EVENT = 1
-    let TAG_CELL_LABEL_TIME = 2
-    let TAG_CELL_LABEL_DESC = 3
-    
-    var dataArr = [GithubEvent]()
-    
-    required init(coder aDecoder:NSCoder){
-        super.init(coder: aDecoder)
-        
-        updateEventList()
-    }
+class RepositoryDetailTableViewController: UITableViewController {
+
+    var repoDetailData:AnyObject?
+    @IBOutlet weak var fullNamelabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var forksNumLabel: UILabel!
+    @IBOutlet weak var openIssuesNumLabel: UILabel!
+    @IBOutlet weak var pushedTimeLabel: UILabel!
+    @IBOutlet weak var watcherNumLabel: UILabel!
+    @IBOutlet weak var createdTimeLabel: UILabel!
+    @IBOutlet weak var stargazersNumLabel: UILabel!
+    @IBOutlet weak var languageLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let detail: AnyObject = repoDetailData{
+            println("项目详细页参数\(detail)")
+        }
+        
+        updateRepositoryDetail()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -41,37 +48,41 @@ class NewsTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 1
+        return 0
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return dataArr.count
-    }
-
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        //let cell = tableView.dequeueReusableCellWithIdentifier("eventCell", forIndexPath: indexPath) as UITableViewCell
-        let cell = tableView.dequeueReusableCellWithIdentifier("eventCell") as UITableViewCell
-        
-        // Configure the cell...
-        let data = dataArr[indexPath.row]
-        var eventLabel = cell.viewWithTag(TAG_CELL_LABEL_EVENT) as UILabel
-        eventLabel.text = data.type
-        
-        var timeLabel = cell.viewWithTag(TAG_CELL_LABEL_TIME) as UILabel
-        timeLabel.text = data.time
-        
-        var descLabel = cell.viewWithTag(TAG_CELL_LABEL_DESC) as UILabel
-        descLabel.text = generateDescriptionStr(data.type,username: data.actor.objectForKey("login") as String, repositoryName: data.repo.objectForKey("name") as String)
-        
-        return cell
+        return 0
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("选中了\(indexPath.row)行数据")
-        println(dataArr[indexPath.row].repo)
+    func updateRepositoryDetail(){
+        if let detail: AnyObject = repoDetailData{
+            let j = JSON(detail)
+            self.navigationItem.title = j["name"].description
+            /*
+            fullNamelabel.text = j["full_name"].description
+            descriptionLabel.text = j["description"].description
+            forksNumLabel.text = j["forks_count"].description + " Forks"
+            openIssuesNumLabel.text = j["open_issues_count"].description + " Issues"
+            pushedTimeLabel.text = j["updated_at"].description
+            watcherNumLabel.text = j["watchers"].description + " Watcher"
+            createdTimeLabel.text = j["created_at"].description
+            stargazersNumLabel.text = j["stargazers_count"].description + " Star"
+            languageLabel.text = j["language"].description*/
+        }
     }
+
+    /*
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
+
+        // Configure the cell...
+
+        return cell
+    }
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -117,44 +128,5 @@ class NewsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    //更新事件列表
-    func updateEventList(){
-        Github.getEvents({events, error in
-            for _event in events {
-                var time = Github.parseGithubTime(_event.time)
-                let event = GithubEvent(type: _event.type, time: time, actor: _event.actor, repo: _event.repo)
-                
-                self.dataArr.append(event)
-            }
-            
-            OperationQueueHelper.operateInMainQueue({ () -> Void in
-                //todo 刷新列表数据
-                self.tableView.reloadData()
-            })
-        })
-    }
 
-
-    private func generateDescriptionStr(eventType:String ,username:String, repositoryName:String) -> String{
-        var str:String = ""
-        let type = Github.parseEventType(eventType)
-        
-        var desc = ""
-        switch type{
-        case .CreateEvent:desc = "创建了一个项目"
-        case .ForkEvent:desc = "创建了一个分支"
-        case .GollumEvent:desc = "建立了一条wiki"
-        case .IssuesCommentEvent:desc = "提交了一条问题"
-        case .PullRequestEvent:desc = "发送了一条拉取请求"
-        case .PushEvent:desc = "提交了一些代码"
-        case .Unknow:desc = "进行了一些操作"
-        case .WatchEvent:desc = "观察了项目"
-        case .DeleteEvent:desc = "进行了删除操作"
-        }
-        
-        str = "\(username) \(desc)到 \(repositoryName)"
-        
-        return str
-    }
 }

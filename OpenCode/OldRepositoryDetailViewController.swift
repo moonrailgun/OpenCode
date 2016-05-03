@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class RepositoryDetailViewController: UIViewController {
+class OldRepositoryDetailViewController: UITableViewController {
     
     var repoDetailData:AnyObject?
     @IBOutlet weak var fullNamelabel: UILabel!
