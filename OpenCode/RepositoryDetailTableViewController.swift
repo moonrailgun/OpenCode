@@ -12,15 +12,18 @@ import SwiftyJSON
 class RepositoryDetailTableViewController: UITableViewController {
 
     var repoDetailData:AnyObject?
+    @IBOutlet weak var repositoryHeaderImg: UIImageView!
     @IBOutlet weak var fullNamelabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var forksNumLabel: UILabel!
-    @IBOutlet weak var openIssuesNumLabel: UILabel!
-    @IBOutlet weak var pushedTimeLabel: UILabel!
     @IBOutlet weak var watcherNumLabel: UILabel!
-    @IBOutlet weak var createdTimeLabel: UILabel!
     @IBOutlet weak var stargazersNumLabel: UILabel!
+    @IBOutlet weak var forksNumLabel: UILabel!
+    @IBOutlet weak var isPublicLabel: UILabel!
     @IBOutlet weak var languageLabel: UILabel!
+    @IBOutlet weak var openIssuesNumLabel: UILabel!
+    @IBOutlet weak var branchNumLabel: UILabel!
+    @IBOutlet weak var createdTimeLabel: UILabel!
+    @IBOutlet weak var RepositorySizeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,13 +51,15 @@ class RepositoryDetailTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 4
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        let rowInSection = [2,4,2,3]
+        
+        return rowInSection[section]
     }
     
     func updateRepositoryDetail(){
