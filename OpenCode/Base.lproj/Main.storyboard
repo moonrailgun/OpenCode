@@ -33,7 +33,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="alexal9 创建了项目ics51alexal9 创建了项目ics51ics51alexal9 创建了项目ics51ics51alexal9 创建了项目ics51ics51alexal9 创建了项目ics51" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VSd-T1-oNh">
-                                            <rect key="frame" x="10" y="8" width="299" height="51"/>
+                                            <rect key="frame" x="24" y="8" width="285" height="51"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                             <color key="textColor" red="0.30701348909999998" green="0.30703922189999999" blue="0.2782076081" alpha="0.91000000000000003" colorSpace="calibratedRGB"/>
@@ -370,7 +370,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2234" y="-291"/>
+            <point key="canvasLocation" x="2153" y="-291"/>
         </scene>
         <!--项目-->
         <scene sceneID="HLo-iW-19g">
@@ -751,7 +751,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" id="q5Z-ko-Hd4">
-                                                    <rect key="frame" x="0.0" y="1" width="106" height="50"/>
+                                                    <rect key="frame" x="0.0" y="1" width="426" height="100"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SAn-yN-cPQ">
@@ -780,7 +780,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" id="etO-dj-YDl">
-                                                    <rect key="frame" x="107" y="1" width="106" height="50"/>
+                                                    <rect key="frame" x="107" y="1" width="426" height="100"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dsm-5O-zom" userLabel="Stars">
@@ -809,7 +809,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" id="Iyu-1w-Gs7">
-                                                    <rect key="frame" x="214" y="1" width="106" height="50"/>
+                                                    <rect key="frame" x="214" y="1" width="426" height="100"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vNA-kh-za9">
@@ -843,7 +843,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="X1Z-1n-CpN">
+                            <tableViewSection id="X1Z-1n-CpN" propertyAccessControl="localizable">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="40" id="z0J-6M-56z">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -851,7 +851,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" id="M5q-rS-o9G">
-                                                    <rect key="frame" x="161" y="0.0" width="160" height="40"/>
+                                                    <rect key="frame" x="161" y="0.0" width="160" height="39"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="box" id="4Xa-Y3-awY">
@@ -877,13 +877,9 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" id="C3S-AW-anI">
-                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="40"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="39"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="box" id="4L4-V7-Kpb">
-                                                            <rect key="frame" x="8" y="8" width="24" height="24"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Public" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1zM-zK-evW">
                                                             <rect key="frame" x="47" y="9" width="105" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -891,6 +887,10 @@
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="box" id="4L4-V7-Kpb">
+                                                            <rect key="frame" x="8" y="8" width="24" height="24"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <userDefinedRuntimeAttributes>
@@ -912,7 +912,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" id="dAb-Xd-APd">
-                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="40"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="39"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="box" id="5Od-RW-Dmt">
@@ -938,7 +938,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" id="0Jz-B5-vWj">
-                                                    <rect key="frame" x="161" y="0.0" width="160" height="40"/>
+                                                    <rect key="frame" x="161" y="0.0" width="160" height="39"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="box" id="PSK-IL-nq9">
@@ -973,7 +973,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" id="4AT-Tk-Thz">
-                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="40"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="39"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="box" id="qhs-Ad-AuT">
@@ -999,7 +999,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" id="aSA-SJ-wyB">
-                                                    <rect key="frame" x="161" y="0.0" width="160" height="40"/>
+                                                    <rect key="frame" x="161" y="0.0" width="160" height="39"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="box" id="2L3-Su-ZMm">
@@ -1170,7 +1170,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hQv-IC-Bxc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1876" y="-291"/>
+            <point key="canvasLocation" x="1798" y="-291"/>
         </scene>
     </scenes>
     <resources>
@@ -1184,6 +1184,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="S8a-gM-ogq"/>
+        <segue reference="XMH-jg-Sm2"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -22,13 +22,6 @@ enum GithubEventType{
     Unknow
 }
 
-struct GithubEvent{
-    let type: String
-    let time: String
-    let actor: AnyObject!
-    let repo: AnyObject!
-}
-
 struct GithubRepository {
     let id: Int
     let name: String
@@ -46,8 +39,8 @@ struct GithubRepository {
 class Github {
     let API_URL = "https://api.github.com/"
     
-    class func getEvents(completionHandler:([GithubEvent]!,NSError?) -> ()) {
-        HttpDataRequest<NSData>.request("https://api.github.com/events", completionHandler: {object,error in
+    class func getEvents(completionHandler:(AnyObject?) -> Void) {
+        /*HttpDataRequest<NSData>.request("https://api.github.com/events", completionHandler: {object,error in
             let json: AnyObject! = NSJSONSerialization.JSONObjectWithData(object!, options: NSJSONReadingOptions.MutableContainers, error: nil)
             let jsonArr = json as NSArray
             var events = [GithubEvent]()
@@ -60,7 +53,9 @@ class Github {
             }
             
             completionHandler(events,error)
-        })
+        })*/
+        
+        requestPublicData("https://api.github.com/events", completionHandler: completionHandler)
     }
     
     //登录到github并返回一个token
