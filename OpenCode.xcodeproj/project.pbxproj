@@ -15,6 +15,8 @@
 		BA3AD21E1CCA278B0034B21E /* Github.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD21D1CCA278B0034B21E /* Github.swift */; };
 		BA3AD2201CCA29B60034B21E /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD21F1CCA29B60034B21E /* HttpRequest.swift */; };
 		BA5F71A81CD350DC0043CBB5 /* RepositoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5F71A61CD350DC0043CBB5 /* RepositoryTableViewController.swift */; };
+		BA69C3131CDE0EFF00E3BAB4 /* RepositoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69C3121CDE0EFF00E3BAB4 /* RepositoryDetailViewController.swift */; };
+		BA69C3151CDE0F3C00E3BAB4 /* RepositoryDetailListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69C3141CDE0F3C00E3BAB4 /* RepositoryDetailListTableViewController.swift */; };
 		BA69EBE41CD4980C0090816C /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69EBE31CD4980C0090816C /* UserTableViewController.swift */; };
 		BA6F3B101CCE3EA400F6984B /* OperationQueueHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F3B0F1CCE3EA400F6984B /* OperationQueueHelper.swift */; };
 		BA6F3B121CCE478D00F6984B /* TimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F3B111CCE478D00F6984B /* TimeHelper.swift */; };
@@ -100,6 +102,8 @@
 		BA3AD21D1CCA278B0034B21E /* Github.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Github.swift; sourceTree = "<group>"; };
 		BA3AD21F1CCA29B60034B21E /* HttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
 		BA5F71A61CD350DC0043CBB5 /* RepositoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewController.swift; sourceTree = "<group>"; };
+		BA69C3121CDE0EFF00E3BAB4 /* RepositoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepositoryDetailViewController.swift; path = Controller/RepoDetail/RepositoryDetailViewController.swift; sourceTree = "<group>"; };
+		BA69C3141CDE0F3C00E3BAB4 /* RepositoryDetailListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepositoryDetailListTableViewController.swift; path = Controller/RepoDetail/RepositoryDetailListTableViewController.swift; sourceTree = "<group>"; };
 		BA69EBE31CD4980C0090816C /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
 		BA6F3B0F1CCE3EA400F6984B /* OperationQueueHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationQueueHelper.swift; sourceTree = "<group>"; };
 		BA6F3B111CCE478D00F6984B /* TimeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeHelper.swift; sourceTree = "<group>"; };
@@ -221,9 +225,19 @@
 			name = Page;
 			sourceTree = "<group>";
 		};
+		BA69C30E1CDE0EC500E3BAB4 /* RepoDetail */ = {
+			isa = PBXGroup;
+			children = (
+				BA69C3121CDE0EFF00E3BAB4 /* RepositoryDetailViewController.swift */,
+				BA69C3141CDE0F3C00E3BAB4 /* RepositoryDetailListTableViewController.swift */,
+			);
+			name = RepoDetail;
+			sourceTree = "<group>";
+		};
 		BA7C1F8E1CCB57C200B5EE6A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BA69C30E1CDE0EC500E3BAB4 /* RepoDetail */,
 				BA5F71A51CD350BD0043CBB5 /* Page */,
 				BAD2CFD81CD0DDEE00BB910C /* News */,
 				BAD2CFD41CD0DDE000BB910C /* My */,
@@ -410,6 +424,7 @@
 				BABCF6851CD5BF5B00564FBB /* OldRepositoryDetailViewController.swift in Sources */,
 				BA6F3B121CCE478D00F6984B /* TimeHelper.swift in Sources */,
 				BAF7F99A1CD8A2CA0071C5F6 /* BasicBlock.swift in Sources */,
+				BA69C3131CDE0EFF00E3BAB4 /* RepositoryDetailViewController.swift in Sources */,
 				BA3AD2201CCA29B60034B21E /* HttpRequest.swift in Sources */,
 				BAA6CD921CD475D40069863F /* NewsTableViewController.swift in Sources */,
 				BA3AD21E1CCA278B0034B21E /* Github.swift in Sources */,
@@ -417,6 +432,7 @@
 				BAF7F9A01CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift in Sources */,
 				BA5F71A81CD350DC0043CBB5 /* RepositoryTableViewController.swift in Sources */,
 				BA8DA32C1CD05D7F00F9B391 /* MyViewController.swift in Sources */,
+				BA69C3151CDE0F3C00E3BAB4 /* RepositoryDetailListTableViewController.swift in Sources */,
 				BA3AD1FA1CCA245A0034B21E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
