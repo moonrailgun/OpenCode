@@ -21,6 +21,8 @@
 		BA69EBE41CD4980C0090816C /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69EBE31CD4980C0090816C /* UserTableViewController.swift */; };
 		BA6F3B101CCE3EA400F6984B /* OperationQueueHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F3B0F1CCE3EA400F6984B /* OperationQueueHelper.swift */; };
 		BA6F3B121CCE478D00F6984B /* TimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F3B111CCE478D00F6984B /* TimeHelper.swift */; };
+		BA7B2A0F1CE47D5200455F68 /* GlobalDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7B2A0E1CE47D5200455F68 /* GlobalDefine.swift */; };
+		BA7B2A111CE4800500455F68 /* RepoDetailHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7B2A101CE4800500455F68 /* RepoDetailHeaderCell.swift */; };
 		BA8619051CDF289D00BE9E9C /* RepositoryDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8619041CDF289D00BE9E9C /* RepositoryDetailController.swift */; };
 		BA8619071CDF2DD000BE9E9C /* RepositortDescView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8619061CDF2DD000BE9E9C /* RepositortDescView.swift */; };
 		BA8619091CDF31F000BE9E9C /* RepositoryInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8619081CDF31F000BE9E9C /* RepositoryInfoView.swift */; };
@@ -63,6 +65,8 @@
 		BA69EBE31CD4980C0090816C /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
 		BA6F3B0F1CCE3EA400F6984B /* OperationQueueHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationQueueHelper.swift; sourceTree = "<group>"; };
 		BA6F3B111CCE478D00F6984B /* TimeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeHelper.swift; sourceTree = "<group>"; };
+		BA7B2A0E1CE47D5200455F68 /* GlobalDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalDefine.swift; path = Classes/Other/GlobalDefine.swift; sourceTree = "<group>"; };
+		BA7B2A101CE4800500455F68 /* RepoDetailHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoDetailHeaderCell.swift; path = Classes/RepositoryDetail/View/RepoDetailHeaderCell.swift; sourceTree = "<group>"; };
 		BA8619041CDF289D00BE9E9C /* RepositoryDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepositoryDetailController.swift; path = Classes/RepositoryDetail/Controller/RepositoryDetailController.swift; sourceTree = "<group>"; };
 		BA8619061CDF2DD000BE9E9C /* RepositortDescView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepositortDescView.swift; path = Classes/RepositoryDetail/View/RepositortDescView.swift; sourceTree = "<group>"; };
 		BA8619081CDF31F000BE9E9C /* RepositoryInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepositoryInfoView.swift; path = Classes/RepositoryDetail/View/RepositoryInfoView.swift; sourceTree = "<group>"; };
@@ -202,6 +206,14 @@
 			name = RepoDetail;
 			sourceTree = "<group>";
 		};
+		BA7B2A0D1CE47D3500455F68 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				BA7B2A0E1CE47D5200455F68 /* GlobalDefine.swift */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
 		BA7C1F8E1CCB57C200B5EE6A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +228,7 @@
 		BA8618FD1CDF22F800BE9E9C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BA7B2A0D1CE47D3500455F68 /* Other */,
 				BA8619011CDF230E00BE9E9C /* RepositoryDetail */,
 			);
 			name = Classes;
@@ -243,6 +256,7 @@
 			children = (
 				BA8619061CDF2DD000BE9E9C /* RepositortDescView.swift */,
 				BA8619081CDF31F000BE9E9C /* RepositoryInfoView.swift */,
+				BA7B2A101CE4800500455F68 /* RepoDetailHeaderCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -448,8 +462,10 @@
 				BAF7F9A01CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift in Sources */,
 				BA5F71A81CD350DC0043CBB5 /* RepositoryTableViewController.swift in Sources */,
 				BA8DA32C1CD05D7F00F9B391 /* MyViewController.swift in Sources */,
+				BA7B2A111CE4800500455F68 /* RepoDetailHeaderCell.swift in Sources */,
 				BA69C3151CDE0F3C00E3BAB4 /* RepositoryDetailListTableViewController.swift in Sources */,
 				BA3AD1FA1CCA245A0034B21E /* AppDelegate.swift in Sources */,
+				BA7B2A0F1CE47D5200455F68 /* GlobalDefine.swift in Sources */,
 				BA8619071CDF2DD000BE9E9C /* RepositortDescView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

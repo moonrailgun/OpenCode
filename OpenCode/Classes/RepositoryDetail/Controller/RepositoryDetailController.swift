@@ -8,11 +8,16 @@
 
 import UIKit
 
-class RepositoryDetailController: UIViewController {
-
+class RepositoryDetailController: UIViewController, UITableViewDataSource {
+    var tableView:UITableView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView = UITableView(frame: CGRectMake(0, 0, self.view.frame.width, self.view.frame.height), style: UITableViewStyle.Grouped)
+        tableView!.dataSource = self
 
+        initNavItem()
         initView()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -26,8 +31,25 @@ class RepositoryDetailController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func initNavItem(){
+        self.title = "项目详情"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "查看源码", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+    }
+    
     func initView(){
-        let headerView:UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 200))
+        self.view.addSubview(self.tableView!)
+        self.tableView!.layer.borderColor = UIColor.redColor().CGColor
+        self.tableView!.backgroundColor = GlobalDefine.BackgroundColor
+        self.tableView!.registerClass(RepoDetailHeaderCell.classForCoder(), forCellReuseIdentifier: "header")
+        
+        self.tableView!.sectionHeaderHeight = 0;
+        self.tableView!.sectionFooterHeight = 10;
+        //self.tableView!.contentInset = UIEdgeInsetsMake(-25, 0, 0, 0);
+        print(self.tableView?.contentInset)
+        
+        
+        
+        /*let headerView:UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 200))
         headerView.backgroundColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1)
         
         let headerImg:UIImageView = UIImageView(frame: CGRect(x: headerView.frame.width / 2 - 50, y: 25, width: 100, height: 100))
@@ -48,33 +70,31 @@ class RepositoryDetailController: UIViewController {
         repoDesc.textAlignment = NSTextAlignment.Center
         headerView.addSubview(repoDesc)
         
-        self.view.addSubview(headerView)
+        self.view.addSubview(headerView)*/
     }
 
-    /*
+    
     // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 3
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
-    }*/
+        return 1
+    }
 
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("header", forIndexPath: indexPath) as UITableViewCell
 
         // Configure the cell...
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
