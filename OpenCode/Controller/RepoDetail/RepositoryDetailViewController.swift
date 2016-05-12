@@ -12,11 +12,11 @@ class RepositoryDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var headerView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 200))
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 200))
         headerView.backgroundColor = UIColor(white: 1, alpha: 1)
         //self.view.addSubview(headerView)
         
-        var headerImageView = UIImageView(frame: CGRect(x: /*self.view.frame.width / 2 - 50*/ 20, y: 0, width: 100, height: 100))
+        let headerImageView = UIImageView(frame: CGRect(x: /*self.view.frame.width / 2 - 50*/ 20, y: 0, width: 100, height: 100))
         headerImageView.image = UIImage(named: "Box")
         headerImageView.tintColor = UIColor(red: 1, green: 0.5, blue: 0.5, alpha: 1)
         self.view.addSubview(headerImageView)

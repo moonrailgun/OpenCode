@@ -17,22 +17,22 @@ class MyViewController: UIViewController {
     @IBOutlet weak var githubUsername: UITextField!
     @IBOutlet weak var githubPassword: UITextField!
     @IBAction func GithubLogin(sender: AnyObject) {
-        println("账号：\(githubUsername.text), 密码：\(githubPassword.text)")
+        print("账号：\(githubUsername.text), 密码：\(githubPassword.text)")
         //self.performSegueWithIdentifier("GithubLogin", sender: self)
         
         if(githubUsername.text != "" && githubPassword.text != ""){
             //Github.login(githubUsername.text, password: githubPassword.text)
-            Github.login(githubUsername.text, password: githubPassword.text, completionHandler: { (token, statusCode, errorMsg) -> () in
+            Github.login(githubUsername.text!, password: githubPassword.text!, completionHandler: { (token, statusCode, errorMsg) -> () in
                 if token != nil{
                     Github.setToken(token!)
-                    println("显示档案页面")
+                    print("显示档案页面")
                     self.showProfileView()
                 }else{
                     //提示出错
                 }
             })
         } else {
-            println("账号或密码不得为空")
+            print("账号或密码不得为空")
         }
         
     }
@@ -45,23 +45,23 @@ class MyViewController: UIViewController {
     @IBOutlet weak var userCompany: UILabel!
     
     @IBAction func ShowMyRepositories(sender: UIButton) {
-        println("我的项目")
+        print("我的项目")
         self.performSegueWithIdentifier("showRepositories", sender: sender)
     }
     @IBAction func ShowMyStars(sender: UIButton) {
-        println("我的收藏")
+        print("我的收藏")
         self.performSegueWithIdentifier("showRepositories", sender: sender)
     }
     @IBAction func ShowMyFollowing(sender: UIButton) {
-        println("我的关注")
+        print("我的关注")
         self.performSegueWithIdentifier("showUserList", sender: sender)
     }
     @IBAction func ShowMyFollowers(sender: UIButton) {
-        println("我的收藏")
+        print("我的收藏")
         self.performSegueWithIdentifier("showUserList", sender: sender)
     }
     @IBAction func GithubLogout(sender: AnyObject) {
-        println("登出")
+        print("登出")
     }
     
     var userInfo:JSON?
@@ -123,9 +123,9 @@ class MyViewController: UIViewController {
         // Pass the selected object to the new view controller.
         if let button = sender as? UIButton{
             if segue.identifier == "showRepositories" {
-                var repo = segue.destinationViewController as RepositoryTableViewController
+                var repo = segue.destinationViewController as! RepositoryTableViewController
             }else if segue.identifier == "showUserList" {
-                var user = segue.destinationViewController as UserTableViewController
+                var user = segue.destinationViewController as! UserTableViewController
             }
             
             segue.destinationViewController.navigationItem.title = button.titleLabel?.text

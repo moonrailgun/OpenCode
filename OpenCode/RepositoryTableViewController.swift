@@ -32,13 +32,13 @@ class RepositoryTableViewController: UITableViewController {
                 let list = JSON(data!)
                 
                 self.repositoryDataList = list
-                println("加载完毕，共有\(list.count)条项目")
+                print("加载完毕，共有\(list.count)条项目")
                 OperationQueueHelper.operateInMainQueue({ () -> Void in
                     self.tableView.reloadData()
                 })
             }
         case .currentStarred:
-            println("尚未实现")
+            print("尚未实现")
         }
         
 
@@ -73,22 +73,22 @@ class RepositoryTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("repositoryCell") as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("repositoryCell")! as UITableViewCell
         
         // Configure the cell...
         if let list = repositoryDataList{
             let repo = list[indexPath.row]
             
-            let nameLabel = cell.viewWithTag(TAG_CELL_LABEL_NAME) as UILabel
+            let nameLabel = cell.viewWithTag(TAG_CELL_LABEL_NAME) as! UILabel
             nameLabel.text = repo["name"].string
             
-            let descLabel = cell.viewWithTag(TAG_CELL_LABEL_DESC) as UILabel
+            let descLabel = cell.viewWithTag(TAG_CELL_LABEL_DESC) as! UILabel
             descLabel.text = repo["description"].string
             
-            let timeLabel = cell.viewWithTag(TAG_CELL_LABEL_TIME) as UILabel
+            let timeLabel = cell.viewWithTag(TAG_CELL_LABEL_TIME) as! UILabel
             timeLabel.text = Github.parseGithubTime(repo["pushed_at"].string!)
             
-            let starNumLabel = cell.viewWithTag(TAG_CELL_LABEL_STAR_NUM) as UILabel
+            let starNumLabel = cell.viewWithTag(TAG_CELL_LABEL_STAR_NUM) as! UILabel
             starNumLabel.text = repo["stargazers_count"].int?.description
         }
 
@@ -102,14 +102,14 @@ class RepositoryTableViewController: UITableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let indexPath = self.tableView.indexPathForSelectedRow(){
+        if let indexPath = self.tableView.indexPathForSelectedRow{
             if segue.identifier == "showRepositoryDetail"{
-                let repoDetail = segue.destinationViewController as RepositoryDetailTableViewController
+                let repoDetail = segue.destinationViewController as! RepositoryDetailTableViewController
                 if let list = repositoryDataList {
                     repoDetail.repoDetailData = list[indexPath.row].object
                 }
             }else if segue.identifier == "showUserList"{
-                println("尚未完成")
+                print("尚未完成")
             }
         }
     }

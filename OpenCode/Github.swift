@@ -66,31 +66,32 @@ class Github {
         header = ["Authorization": authorization, "Content-Type": "application/json"]
         let data = "{\"note\":\"OpenCodeApp\"}"
         
-        HttpRequest.sendAsyncPostRequest(NSURL(string: "https://api.github.com/authorizations")!, header: header, data: data) { (resp:NSURLResponse!, data:NSData!, error:NSError!) -> Void in
+        HttpRequest.sendAsyncPostRequest(NSURL(string: "https://api.github.com/authorizations")!, header: header, data: data) { (resp:NSURLResponse?, data:NSData?, error:NSError?) in
             if let httpResp = resp as? NSHTTPURLResponse{
                 switch httpResp.statusCode{
                 case 422:
-                    println("已经登录过了")
+                    print("已经登录过了")
                     completionHandler(token: nil, statusCode: 422, errorMsg: nil)
                     break
                 case 201:
-                    println("登录成功")
-                    let json = JSON(data: data)
+                    print("登录成功")
+                    let json = JSON(data: data!)
                     let authorizationId = json["id"]
                     let authorizationToken = json["token"]
-                    println("id: \(authorizationId) token : \(authorizationToken)")
+                    print("id: \(authorizationId) token : \(authorizationToken)")
                     completionHandler(token: authorizationToken.string, statusCode: 201, errorMsg: nil)
                     break
                 default:
-                    println("登录失败:\(httpResp.statusCode)")
+                    print("登录失败:\(httpResp.statusCode)")
                     completionHandler(token: nil, statusCode: httpResp.statusCode, errorMsg: nil)
                     break
                 }
             } else {
-                let message = JSON(data: data)["message"]
-                println("登录失败: \(message)")
+                let message = JSON(data: data!)["message"]
+                print("登录失败: \(message)")
                 completionHandler(token: nil, statusCode: 0, errorMsg: message.string)
             }
+
         }
     }
     //获取用户信息
@@ -147,7 +148,7 @@ class Github {
             if let d = data{
                 completionHandler(self.convertDataToJSONObj(d))
             }else{
-                println("\(url): 无法获取数据: resp:\(resp) data:\(data) error:\(error)")
+                print("\(url): 无法获取数据: resp:\(resp) data:\(data) error:\(error)")
                 completionHandler(nil)
             }
         })
@@ -159,12 +160,12 @@ class Github {
                 if let d = data{
                     completionHandler(self.convertDataToJSONObj(d))
                 }else{
-                    println("\(url): 无法获取数据: resp:\(resp) data:\(data) error:\(error)")
+                    print("\(url): 无法获取数据: resp:\(resp) data:\(data) error:\(error)")
                     completionHandler(nil)
                 }
             })
         } else{
-            println("\(url): token 不存在，无法获取数据")
+            print("\(url): token 不存在，无法获取数据")
             completionHandler(nil)
         }
     }
@@ -180,13 +181,13 @@ class Github {
     }
     
     class func parseGithubTime(string:String) -> String{
-        var formatter = NSDateFormatter()
+        let formatter = NSDateFormatter()
         //formatter.timeZone = NSTimeZone(name: "Asia/Shanghai")
         formatter.timeZone = NSTimeZone(forSecondsFromGMT: 8 * 60 * 60)
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        var date = NSDate.parseWithFormatter(string, formatter: formatter)
+        let date = NSDate.parseWithFormatter(string, formatter: formatter)
         
-        var dateFormatter = NSDateFormatter()
+        let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let timeStr = dateFormatter.stringFromDate(date!)
         
@@ -194,11 +195,11 @@ class Github {
     }
     
     class func setToken(token:String){
-        var ud = NSUserDefaults.standardUserDefaults()
+        let ud = NSUserDefaults.standardUserDefaults()
         ud.setObject(token, forKey: "GithubToken")
     }
     class func getToken() -> String?{
-        var ud = NSUserDefaults.standardUserDefaults()
+        let ud = NSUserDefaults.standardUserDefaults()
         return ud.objectForKey("GithubToken") as? String
     }
     class func parseEventType(eventType:String) -> GithubEventType{

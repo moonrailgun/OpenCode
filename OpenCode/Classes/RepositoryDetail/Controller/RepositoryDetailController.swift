@@ -27,20 +27,20 @@ class RepositoryDetailController: UIViewController {
     }
     
     func initView(){
-        var headerView:UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 200))
+        let headerView:UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 200))
         headerView.backgroundColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1)
         
-        var headerImg:UIImageView = UIImageView(frame: CGRect(x: headerView.frame.width / 2 - 50, y: 25, width: 100, height: 100))
+        let headerImg:UIImageView = UIImageView(frame: CGRect(x: headerView.frame.width / 2 - 50, y: 25, width: 100, height: 100))
         headerImg.backgroundColor = UIColor(white: 1, alpha: 1)
         headerView.addSubview(headerImg)
         
-        var repoTitle:UILabel = UILabel(frame: CGRect(x: 0, y: 130, width: self.view.frame.width, height: 40))
+        let repoTitle:UILabel = UILabel(frame: CGRect(x: 0, y: 130, width: self.view.frame.width, height: 40))
         repoTitle.text = "项目名"
         repoTitle.textColor = UIColor(white: 1, alpha: 1)
         repoTitle.font = UIFont(descriptor: UIFontDescriptor(), size: 20)
         repoTitle.textAlignment = NSTextAlignment.Center
         headerView.addSubview(repoTitle)
-        var repoDesc:UILabel = UILabel(frame: CGRect(x: 0, y: 160, width: self.view.frame.width, height: 40))
+        let repoDesc:UILabel = UILabel(frame: CGRect(x: 0, y: 160, width: self.view.frame.width, height: 40))
         repoDesc.text = "描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述"
         repoDesc.numberOfLines = 2
         repoDesc.textColor = UIColor(white: 1, alpha: 1)

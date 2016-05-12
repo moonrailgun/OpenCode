@@ -18,7 +18,7 @@ class NewsTableViewController: UITableViewController {
     var dataArr:JSON?
     
     required init(coder aDecoder:NSCoder){
-        super.init(coder: aDecoder)
+        super.init(coder: aDecoder)!
         
         updateEventList()
     }
@@ -58,30 +58,30 @@ class NewsTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //let cell = tableView.dequeueReusableCellWithIdentifier("eventCell", forIndexPath: indexPath) as UITableViewCell
-        let cell = tableView.dequeueReusableCellWithIdentifier("eventCell") as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("eventCell")! as UITableViewCell
         
         // Configure the cell...
         let data = dataArr![indexPath.row]
-        var eventLabel = cell.viewWithTag(TAG_CELL_LABEL_EVENT) as UILabel
+        var eventLabel = cell.viewWithTag(TAG_CELL_LABEL_EVENT) as! UILabel
         eventLabel.text = data["type"].string
         
-        var timeLabel = cell.viewWithTag(TAG_CELL_LABEL_TIME) as UILabel
+        var timeLabel = cell.viewWithTag(TAG_CELL_LABEL_TIME) as! UILabel
         timeLabel.text = Github.parseGithubTime(data["created_at"].string!)
         
-        var descLabel = cell.viewWithTag(TAG_CELL_LABEL_DESC) as UILabel
+        var descLabel = cell.viewWithTag(TAG_CELL_LABEL_DESC) as! UILabel
         descLabel.text = generateDescriptionStr(data["type"].string!,username: data["actor"]["login"].string!, repositoryName: data["repo"]["name"].string!)
         
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("选中了\(indexPath.row)行数据")
+        print("选中了\(indexPath.row)行数据")
         
         let data = dataArr![indexPath.row]
         //println(data)
         
         Github.customRequest(data["repo"]["url"].string!, isPublic: true) { (data:AnyObject?) -> Void in
-            println("数据加载完毕")
+            print("数据加载完毕")
             self.performSegueWithIdentifier("showRepositoryDetail", sender: data)
         }
     }
@@ -134,7 +134,7 @@ class NewsTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "showRepositoryDetail"){
             //跳转到项目详细页面
-            var detail = segue.destinationViewController as RepositoryDetailTableViewController
+            var detail = segue.destinationViewController as! RepositoryDetailTableViewController
             detail.repoDetailData = sender
         }
     }
@@ -158,7 +158,7 @@ class NewsTableViewController: UITableViewController {
         Github.getEvents { (data:AnyObject?) -> Void in
             var json = JSON(data!)
             self.dataArr = json
-            println("github事件 数据加载完毕")
+            print("github事件 数据加载完毕")
             
             OperationQueueHelper.operateInMainQueue({ () -> Void in
                 //todo 刷新列表数据

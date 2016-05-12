@@ -11,14 +11,14 @@ import Foundation
 class Base64 {
     class func encrypt(plain: String) -> String?{
         let plainData = plain.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
-        let base64Str = plainData?.base64EncodedStringWithOptions(.allZeros)
+        let base64Str = plainData?.base64EncodedStringWithOptions([])
         return base64Str
     }
     
     class func decrypt(base64:String) -> String?{
         //let decodedData = NSData
-        let decodedData = NSData(base64EncodedString: base64, options: .allZeros)
+        let decodedData = NSData(base64EncodedString: base64, options: [])
         let decodedString = NSString(data: decodedData!, encoding: NSUTF8StringEncoding)
-        return decodedString
+        return decodedString as? String
     }
 }

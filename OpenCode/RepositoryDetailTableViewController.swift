@@ -29,7 +29,7 @@ class RepositoryDetailTableViewController: UITableViewController {
         super.viewDidLoad()
         
         if let detail: AnyObject = repoDetailData{
-            println("项目详细页参数\(detail)")
+            print("项目详细页参数\(detail)")
         }
         
         updateRepositoryDetail()
