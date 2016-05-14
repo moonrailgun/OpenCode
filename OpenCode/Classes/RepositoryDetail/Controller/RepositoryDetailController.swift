@@ -10,6 +10,7 @@ import UIKit
 
 class RepositoryDetailController: UIViewController, UITableViewDataSource {
     var tableView:UITableView?
+    let MY_CELL_ID = "my"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,13 +40,15 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource {
     func initView(){
         self.view.addSubview(self.tableView!)
         self.tableView!.layer.borderColor = UIColor.redColor().CGColor
-        self.tableView!.backgroundColor = GlobalDefine.BackgroundColor
-        self.tableView!.registerClass(RepoDetailHeaderCell.classForCoder(), forCellReuseIdentifier: "header")
+        self.tableView!.backgroundColor = GlobalDefine.defineBackgroundColor
+        self.tableView!.registerClass(RepoDetailHeaderCell.classForCoder(), forCellReuseIdentifier: MY_CELL_ID)
         
         self.tableView!.sectionHeaderHeight = 0;
         self.tableView!.sectionFooterHeight = 10;
         //self.tableView!.contentInset = UIEdgeInsetsMake(-25, 0, 0, 0);
-        print(self.tableView?.contentInset)
+        
+        self.tableView!.tableHeaderView = RepoDetailHeaderView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 200))
+        
         
         
         
@@ -89,9 +92,11 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource {
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("header", forIndexPath: indexPath) as UITableViewCell
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCellWithIdentifier(MY_CELL_ID, forIndexPath: indexPath) as UITableViewCell
+        
+        if(indexPath.section == 0){
+            //header
+        }
 
         return cell
     }

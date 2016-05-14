@@ -1,26 +1,31 @@
 //
-//  RepoDetailHeaderCell.swift
+//  RepoDetailHeaderView.swift
 //  OpenCode
 //
-//  Created by 陈亮 on 16/5/12.
+//  Created by 陈亮 on 16/5/14.
 //  Copyright © 2016年 moonrailgun. All rights reserved.
 //
 
 import UIKit
 
-class RepoDetailHeaderCell: UITableViewCell {
+class RepoDetailHeaderView: UIView {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    /*
+    // Only override drawRect: if you perform custom drawing.
+    // An empty implementation adversely affects performance during animation.
+    override func drawRect(rect: CGRect) {
+        // Drawing code
+    }
+    */
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
         initView()
     }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
     
     func initView(){
@@ -45,7 +50,6 @@ class RepoDetailHeaderCell: UITableViewCell {
         repoDesc.textAlignment = NSTextAlignment.Center
         headerView.addSubview(repoDesc)
         
-        //self.contentView.frame.height =
-        self.contentView.addSubview(headerView)
+        self.addSubview(headerView)
     }
 }

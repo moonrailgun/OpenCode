@@ -9,5 +9,12 @@
 import UIKit
 
 class GlobalDefine{
-    static let BackgroundColor = UIColor(red: 229/255, green: 229/255, blue: 229/255, alpha: 1)
+    static let defineBackgroundColor = UIColor(red: 229/255, green: 229/255, blue: 229/255, alpha: 1)
+    
+    static func getScreenWidth()->CGFloat{
+        return UIScreen.mainScreen().bounds.size.width
+    }
+    static func getScreenHeight()->CGFloat{
+        return UIScreen.mainScreen().bounds.size.height
+    }
 }
