@@ -23,7 +23,7 @@
 		BA6F3B121CCE478D00F6984B /* TimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F3B111CCE478D00F6984B /* TimeHelper.swift */; };
 		BA7B2A0F1CE47D5200455F68 /* GlobalDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7B2A0E1CE47D5200455F68 /* GlobalDefine.swift */; };
 		BA8619051CDF289D00BE9E9C /* RepositoryDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8619041CDF289D00BE9E9C /* RepositoryDetailController.swift */; };
-		BA8619071CDF2DD000BE9E9C /* RepositortDescView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8619061CDF2DD000BE9E9C /* RepositortDescView.swift */; };
+		BA8619071CDF2DD000BE9E9C /* RepoDescView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8619061CDF2DD000BE9E9C /* RepoDescView.swift */; };
 		BA8619091CDF31F000BE9E9C /* RepositoryInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8619081CDF31F000BE9E9C /* RepositoryInfoView.swift */; };
 		BA8CEBDD1CE7480A0044155A /* RepoDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8CEBDC1CE7480A0044155A /* RepoDetailHeaderView.swift */; };
 		BA8CEBE01CE74DF00044155A /* RepoDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8CEBDE1CE74DF00044155A /* RepoDetailTableViewCell.swift */; };
@@ -68,7 +68,7 @@
 		BA6F3B111CCE478D00F6984B /* TimeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeHelper.swift; sourceTree = "<group>"; };
 		BA7B2A0E1CE47D5200455F68 /* GlobalDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalDefine.swift; path = Classes/Other/GlobalDefine.swift; sourceTree = "<group>"; };
 		BA8619041CDF289D00BE9E9C /* RepositoryDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepositoryDetailController.swift; path = Classes/RepositoryDetail/Controller/RepositoryDetailController.swift; sourceTree = "<group>"; };
-		BA8619061CDF2DD000BE9E9C /* RepositortDescView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepositortDescView.swift; path = Classes/RepositoryDetail/View/RepositortDescView.swift; sourceTree = "<group>"; };
+		BA8619061CDF2DD000BE9E9C /* RepoDescView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoDescView.swift; path = Classes/RepositoryDetail/View/RepoDescView.swift; sourceTree = "<group>"; };
 		BA8619081CDF31F000BE9E9C /* RepositoryInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepositoryInfoView.swift; path = Classes/RepositoryDetail/View/RepositoryInfoView.swift; sourceTree = "<group>"; };
 		BA8CEBDC1CE7480A0044155A /* RepoDetailHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoDetailHeaderView.swift; path = Classes/RepositoryDetail/View/RepoDetailHeaderView.swift; sourceTree = "<group>"; };
 		BA8CEBDE1CE74DF00044155A /* RepoDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoDetailTableViewCell.swift; path = Classes/RepositoryDetail/View/RepoDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -256,7 +256,7 @@
 		BA8619031CDF25CA00BE9E9C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BA8619061CDF2DD000BE9E9C /* RepositortDescView.swift */,
+				BA8619061CDF2DD000BE9E9C /* RepoDescView.swift */,
 				BA8619081CDF31F000BE9E9C /* RepositoryInfoView.swift */,
 				BA8CEBDC1CE7480A0044155A /* RepoDetailHeaderView.swift */,
 				BA8CEBDE1CE74DF00044155A /* RepoDetailTableViewCell.swift */,
@@ -469,7 +469,7 @@
 				BA3AD1FA1CCA245A0034B21E /* AppDelegate.swift in Sources */,
 				BA7B2A0F1CE47D5200455F68 /* GlobalDefine.swift in Sources */,
 				BA8CEBE01CE74DF00044155A /* RepoDetailTableViewCell.swift in Sources */,
-				BA8619071CDF2DD000BE9E9C /* RepositortDescView.swift in Sources */,
+				BA8619071CDF2DD000BE9E9C /* RepoDescView.swift in Sources */,
 				BA8CEBDD1CE7480A0044155A /* RepoDetailHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

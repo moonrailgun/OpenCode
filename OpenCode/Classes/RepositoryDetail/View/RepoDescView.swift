@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RepositortDescView: UIView {
+class RepoDescView: UIView {
     var descLabel:UILabel!
     var iconView:UIImageView!
     
@@ -16,12 +16,14 @@ class RepositortDescView: UIView {
         super.init(frame: frame)
         
         let iconSize = CGSize(width: 24, height: 24)
-        iconView = UIImageView(frame: CGRect(origin: CGPoint(x: 4, y: frame.height - 4), size: iconSize))
+        let iconSpace = (frame.height - iconSize.height) / 2
+        iconView = UIImageView(frame: CGRect(origin: CGPoint(x: iconSpace, y: iconSpace), size: iconSize))
         iconView.image = icon
         self.addSubview(iconView)
         
-        descLabel = UILabel(frame: CGRect(x: 4 + iconSize.width, y: 0, width: frame.width - (4 + iconSize.width), height: frame.height))
+        descLabel = UILabel(frame: CGRect(x: iconSpace * 2 + iconSize.width, y: 0, width: frame.width - (iconSpace * 2 + iconSize.width), height: frame.height))
         descLabel.text = desc
+        descLabel.font = UIFont.systemFontOfSize(14)
         self.addSubview(descLabel!)
     }
 

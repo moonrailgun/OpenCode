@@ -71,35 +71,54 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource {
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(MY_CELL_ID, forIndexPath: indexPath) as UITableViewCell
-        cell.accessoryType = .DisclosureIndicator
         
         switch indexPath.section {
         case 0:
             switch indexPath.row {
             case 0:
-                break
+                cell.addSubview(RepoDescView(frame: CGRectMake(0, 0, cell.frame.width / 2, cell.frame.height), icon: UIImage(named: "box")!, desc: "Public"))
+                cell.addSubview(RepoDescView(frame: CGRectMake(cell.frame.width / 2, 0, cell.frame.width / 2, cell.frame.height), icon: UIImage(named: "box")!, desc: "C#"))
+            case 1:
+                cell.addSubview(RepoDescView(frame: CGRectMake(0, 0, cell.frame.width / 2, cell.frame.height), icon: UIImage(named: "box")!, desc: "1 Issue"))
+                cell.addSubview(RepoDescView(frame: CGRectMake(cell.frame.width / 2, 0, cell.frame.width / 2, cell.frame.height), icon: UIImage(named: "box")!, desc: "1 Branch"))
+            case 2:
+                cell.addSubview(RepoDescView(frame: CGRectMake(0, 0, cell.frame.width / 2, cell.frame.height), icon: UIImage(named: "box")!, desc: "03/13/15"))
+                cell.addSubview(RepoDescView(frame: CGRectMake(cell.frame.width / 2, 0, cell.frame.width / 2, cell.frame.height), icon: UIImage(named: "box")!, desc: "140.9MB"))
+            case 3:
+                cell.accessoryType = .DisclosureIndicator
+                cell.textLabel?.text = "Owner"
+                cell.detailTextLabel?.text = "moonrailgun"//TODO
+                cell.imageView?.image = UIImage(named: "box")
             default:
                 break
             }
         case 1:
+            cell.accessoryType = .DisclosureIndicator
             switch indexPath.row {
             case 0:
                 cell.textLabel?.text = "事件"
+                cell.imageView?.image = UIImage(named: "box")
             case 1:
                 cell.textLabel?.text = "提问"
+                cell.imageView?.image = UIImage(named: "box")
             case 2:
                 cell.textLabel?.text = "README"
+                cell.imageView?.image = UIImage(named: "box")
             default:
                 break
             }
         case 2:
+            cell.accessoryType = .DisclosureIndicator
             switch indexPath.row {
             case 0:
                 cell.textLabel?.text = "提交纪录"
+                cell.imageView?.image = UIImage(named: "box")
             case 1:
                 cell.textLabel?.text = "拉取请求"
+                cell.imageView?.image = UIImage(named: "box")
             case 2:
                 cell.textLabel?.text = "源码文件"
+                cell.imageView?.image = UIImage(named: "box")
             default:
                 break
             }
