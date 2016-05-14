@@ -11,6 +11,7 @@ import UIKit
 class RepositoryDetailController: UIViewController, UITableViewDataSource {
     var tableView:UITableView?
     let MY_CELL_ID = "my"
+    var isFirstRun = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,21 +71,31 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource {
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(MY_CELL_ID, forIndexPath: indexPath) as UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier(MY_CELL_ID, forIndexPath: indexPath) as UITableViewCell
         
         switch indexPath.section {
         case 0:
             switch indexPath.row {
             case 0:
-                cell.addSubview(RepoDescView(frame: CGRectMake(0, 0, cell.frame.width / 2, cell.frame.height), icon: UIImage(named: "box")!, desc: "Public"))
-                cell.addSubview(RepoDescView(frame: CGRectMake(cell.frame.width / 2, 0, cell.frame.width / 2, cell.frame.height), icon: UIImage(named: "box")!, desc: "C#"))
+                if self.isFirstRun{
+                    cell.addSubview(RepoDescView(frame: CGRectMake(0, 0, cell.frame.width / 2, cell.frame.height), icon: UIImage(named: "box")!, desc: "Public"))
+                    cell.addSubview(RepoDescView(frame: CGRectMake(cell.frame.width / 2, 0, cell.frame.width / 2, cell.frame.height), icon: UIImage(named: "box")!, desc: "C#"))
+                }
             case 1:
-                cell.addSubview(RepoDescView(frame: CGRectMake(0, 0, cell.frame.width / 2, cell.frame.height), icon: UIImage(named: "box")!, desc: "1 Issue"))
-                cell.addSubview(RepoDescView(frame: CGRectMake(cell.frame.width / 2, 0, cell.frame.width / 2, cell.frame.height), icon: UIImage(named: "box")!, desc: "1 Branch"))
+                if self.isFirstRun{
+                    cell.addSubview(RepoDescView(frame: CGRectMake(0, 0, cell.frame.width / 2, cell.frame.height), icon: UIImage(named: "box")!, desc: "1 Issue"))
+                    cell.addSubview(RepoDescView(frame: CGRectMake(cell.frame.width / 2, 0, cell.frame.width / 2, cell.frame.height), icon: UIImage(named: "box")!, desc: "1 Branch"))
+                }
             case 2:
-                cell.addSubview(RepoDescView(frame: CGRectMake(0, 0, cell.frame.width / 2, cell.frame.height), icon: UIImage(named: "box")!, desc: "03/13/15"))
-                cell.addSubview(RepoDescView(frame: CGRectMake(cell.frame.width / 2, 0, cell.frame.width / 2, cell.frame.height), icon: UIImage(named: "box")!, desc: "140.9MB"))
+                if self.isFirstRun{
+                    cell.addSubview(RepoDescView(frame: CGRectMake(0, 0, cell.frame.width / 2, cell.frame.height), icon: UIImage(named: "box")!, desc: "03/13/15"))
+                    cell.addSubview(RepoDescView(frame: CGRectMake(cell.frame.width / 2, 0, cell.frame.width / 2, cell.frame.height), icon: UIImage(named: "box")!, desc: "140.9MB"))
+                    
+                    self.isFirstRun = false//顺序绘制最后一项
+                }
             case 3:
+                cell = RepoDetailTableViewCell(style: .Value1, reuseIdentifier: MY_CELL_ID)
+                
                 cell.accessoryType = .DisclosureIndicator
                 cell.textLabel?.text = "Owner"
                 cell.detailTextLabel?.text = "moonrailgun"//TODO
@@ -125,7 +136,6 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource {
         default:
             break
         }
-        
         
         return cell
     }
