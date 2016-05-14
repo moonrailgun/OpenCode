@@ -26,6 +26,7 @@
 		BA8619071CDF2DD000BE9E9C /* RepositortDescView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8619061CDF2DD000BE9E9C /* RepositortDescView.swift */; };
 		BA8619091CDF31F000BE9E9C /* RepositoryInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8619081CDF31F000BE9E9C /* RepositoryInfoView.swift */; };
 		BA8CEBDD1CE7480A0044155A /* RepoDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8CEBDC1CE7480A0044155A /* RepoDetailHeaderView.swift */; };
+		BA8CEBE01CE74DF00044155A /* RepoDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8CEBDE1CE74DF00044155A /* RepoDetailTableViewCell.swift */; };
 		BA8DA32C1CD05D7F00F9B391 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DA32B1CD05D7F00F9B391 /* MyViewController.swift */; };
 		BA8DA3311CD080A500F9B391 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DA3301CD080A500F9B391 /* Crypto.swift */; };
 		BAA6CD921CD475D40069863F /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA6CD911CD475D40069863F /* NewsTableViewController.swift */; };
@@ -70,6 +71,7 @@
 		BA8619061CDF2DD000BE9E9C /* RepositortDescView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepositortDescView.swift; path = Classes/RepositoryDetail/View/RepositortDescView.swift; sourceTree = "<group>"; };
 		BA8619081CDF31F000BE9E9C /* RepositoryInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepositoryInfoView.swift; path = Classes/RepositoryDetail/View/RepositoryInfoView.swift; sourceTree = "<group>"; };
 		BA8CEBDC1CE7480A0044155A /* RepoDetailHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoDetailHeaderView.swift; path = Classes/RepositoryDetail/View/RepoDetailHeaderView.swift; sourceTree = "<group>"; };
+		BA8CEBDE1CE74DF00044155A /* RepoDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoDetailTableViewCell.swift; path = Classes/RepositoryDetail/View/RepoDetailTableViewCell.swift; sourceTree = "<group>"; };
 		BA8DA32B1CD05D7F00F9B391 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		BA8DA3301CD080A500F9B391 /* Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
 		BAA6CD911CD475D40069863F /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				BA8619061CDF2DD000BE9E9C /* RepositortDescView.swift */,
 				BA8619081CDF31F000BE9E9C /* RepositoryInfoView.swift */,
 				BA8CEBDC1CE7480A0044155A /* RepoDetailHeaderView.swift */,
+				BA8CEBDE1CE74DF00044155A /* RepoDetailTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				BA69C3151CDE0F3C00E3BAB4 /* RepositoryDetailListTableViewController.swift in Sources */,
 				BA3AD1FA1CCA245A0034B21E /* AppDelegate.swift in Sources */,
 				BA7B2A0F1CE47D5200455F68 /* GlobalDefine.swift in Sources */,
+				BA8CEBE01CE74DF00044155A /* RepoDetailTableViewCell.swift in Sources */,
 				BA8619071CDF2DD000BE9E9C /* RepositortDescView.swift in Sources */,
 				BA8CEBDD1CE7480A0044155A /* RepoDetailHeaderView.swift in Sources */,
 			);

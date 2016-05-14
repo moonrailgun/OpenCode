@@ -38,42 +38,18 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource {
     }
     
     func initView(){
+        self.view.backgroundColor = GlobalDefine.defineBackgroundColor
+        
         self.view.addSubview(self.tableView!)
         self.tableView!.layer.borderColor = UIColor.redColor().CGColor
         self.tableView!.backgroundColor = GlobalDefine.defineBackgroundColor
-        self.tableView!.registerClass(RepoDetailHeaderCell.classForCoder(), forCellReuseIdentifier: MY_CELL_ID)
+        self.tableView!.registerClass(RepoDetailTableViewCell.classForCoder(), forCellReuseIdentifier: MY_CELL_ID)
         
         self.tableView!.sectionHeaderHeight = 0;
         self.tableView!.sectionFooterHeight = 10;
         //self.tableView!.contentInset = UIEdgeInsetsMake(-25, 0, 0, 0);
         
         self.tableView!.tableHeaderView = RepoDetailHeaderView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 200))
-        
-        
-        
-        
-        /*let headerView:UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 200))
-        headerView.backgroundColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1)
-        
-        let headerImg:UIImageView = UIImageView(frame: CGRect(x: headerView.frame.width / 2 - 50, y: 25, width: 100, height: 100))
-        headerImg.backgroundColor = UIColor(white: 1, alpha: 1)
-        headerView.addSubview(headerImg)
-        
-        let repoTitle:UILabel = UILabel(frame: CGRect(x: 0, y: 130, width: self.view.frame.width, height: 40))
-        repoTitle.text = "项目名"
-        repoTitle.textColor = UIColor(white: 1, alpha: 1)
-        repoTitle.font = UIFont(descriptor: UIFontDescriptor(), size: 20)
-        repoTitle.textAlignment = NSTextAlignment.Center
-        headerView.addSubview(repoTitle)
-        let repoDesc:UILabel = UILabel(frame: CGRect(x: 0, y: 160, width: self.view.frame.width, height: 40))
-        repoDesc.text = "描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述"
-        repoDesc.numberOfLines = 2
-        repoDesc.textColor = UIColor(white: 1, alpha: 1)
-        repoDesc.font = UIFont(descriptor: UIFontDescriptor(), size: 14)
-        repoDesc.textAlignment = NSTextAlignment.Center
-        headerView.addSubview(repoDesc)
-        
-        self.view.addSubview(headerView)*/
     }
 
     
@@ -88,16 +64,50 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 1
+        let arr = [4,3,3]
+        
+        return arr[section]
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(MY_CELL_ID, forIndexPath: indexPath) as UITableViewCell
+        cell.accessoryType = .DisclosureIndicator
         
-        if(indexPath.section == 0){
-            //header
+        switch indexPath.section {
+        case 0:
+            switch indexPath.row {
+            case 0:
+                break
+            default:
+                break
+            }
+        case 1:
+            switch indexPath.row {
+            case 0:
+                cell.textLabel?.text = "事件"
+            case 1:
+                cell.textLabel?.text = "提问"
+            case 2:
+                cell.textLabel?.text = "README"
+            default:
+                break
+            }
+        case 2:
+            switch indexPath.row {
+            case 0:
+                cell.textLabel?.text = "提交纪录"
+            case 1:
+                cell.textLabel?.text = "拉取请求"
+            case 2:
+                cell.textLabel?.text = "源码文件"
+            default:
+                break
+            }
+        default:
+            break
         }
-
+        
+        
         return cell
     }
 
