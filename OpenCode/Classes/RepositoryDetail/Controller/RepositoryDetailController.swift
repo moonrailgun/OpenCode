@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class RepositoryDetailController: UIViewController, UITableViewDataSource {
     var tableView:UITableView?
@@ -14,6 +15,13 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource {
     var isFirstRun = true
     
     var repoDetailData:AnyObject?
+    
+    var isPrivate:RepoDescView?
+    var language:RepoDescView?
+    var issuesCount:RepoDescView?
+    var branchCount:RepoDescView?//todo
+    var date:RepoDescView?
+    var size:RepoDescView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +66,35 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource {
     
     func loadData() {
         //读取远程数据
-        print(repoDetailData)
+        if let data = repoDetailData{
+            let json:JSON = JSON(data)
+            self.title = json["name"].string//设置标题
+            
+            //配置headerView
+            if self.tableView?.tableHeaderView is RepoDetailHeaderView{
+                let headerView = self.tableView?.tableHeaderView as! RepoDetailHeaderView
+                
+                let icon:UIImage = UIImage(data: NSData(contentsOfURL: NSURL(string: json["owner"]["avatar_url"].string!)!)!)!
+                headerView.setData(icon, repoName: json["full_name"].string, repoDesc: json["description"].string, blockValue1: json["stargazers_count"].int, blockValue2: json["watchers_count"].int, blockValue3: json["forks_count"].int)
+            }
+            
+            /* TODO 将描述块不放在列表中
+            //配置cell
+            let language = json["language"].string
+            let issues = json["open_issues_count"].int
+            let date = json["created_at"].string
+            let isPrivate = json["private"].int
+            let size = json["size"].int
+            
+            self.isPrivate?.descLabel.text = isPrivate == 0 ? "Public" : "Private"
+            self.language?.descLabel.text = language
+            self.issuesCount?.descLabel.text = "\(issues) Issues"
+            self.branchCount?.descLabel.text = "1 Branch"
+            self.date?.descLabel.text = Github.parseGithubTime(date!)
+            self.size?.descLabel.text = size! > 1024 ? "\(size! / 1024)MB":"\(size)KB"*/
+        }
+        
+        
     }
 
     
@@ -86,18 +122,24 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource {
             switch indexPath.row {
             case 0:
                 if self.isFirstRun{
-                    cell.addSubview(RepoDescView(frame: CGRectMake(0, 0, cell.frame.width / 2, cell.frame.height), icon: UIImage(named: "box")!, desc: "Public"))
-                    cell.addSubview(RepoDescView(frame: CGRectMake(cell.frame.width / 2, 0, cell.frame.width / 2, cell.frame.height), icon: UIImage(named: "box")!, desc: "C#"))
+                    self.isPrivate = RepoDescView(frame: CGRectMake(0, 0, cell.frame.width / 2, cell.frame.height), icon: UIImage(named: "box")!, desc: "Public")
+                    cell.addSubview(isPrivate!)
+                    self.language = RepoDescView(frame: CGRectMake(cell.frame.width / 2, 0, cell.frame.width / 2, cell.frame.height), icon: UIImage(named: "box")!, desc: "C#")
+                    cell.addSubview(language!)
                 }
             case 1:
                 if self.isFirstRun{
-                    cell.addSubview(RepoDescView(frame: CGRectMake(0, 0, cell.frame.width / 2, cell.frame.height), icon: UIImage(named: "box")!, desc: "1 Issue"))
-                    cell.addSubview(RepoDescView(frame: CGRectMake(cell.frame.width / 2, 0, cell.frame.width / 2, cell.frame.height), icon: UIImage(named: "box")!, desc: "1 Branch"))
+                    self.issuesCount = RepoDescView(frame: CGRectMake(0, 0, cell.frame.width / 2, cell.frame.height), icon: UIImage(named: "box")!, desc: "1 Issue")
+                    cell.addSubview(self.issuesCount!)
+                    self.branchCount = RepoDescView(frame: CGRectMake(cell.frame.width / 2, 0, cell.frame.width / 2, cell.frame.height), icon: UIImage(named: "box")!, desc: "1 Branch")
+                    cell.addSubview(self.branchCount!)
                 }
             case 2:
                 if self.isFirstRun{
-                    cell.addSubview(RepoDescView(frame: CGRectMake(0, 0, cell.frame.width / 2, cell.frame.height), icon: UIImage(named: "box")!, desc: "03/13/15"))
-                    cell.addSubview(RepoDescView(frame: CGRectMake(cell.frame.width / 2, 0, cell.frame.width / 2, cell.frame.height), icon: UIImage(named: "box")!, desc: "140.9MB"))
+                    self.date = RepoDescView(frame: CGRectMake(0, 0, cell.frame.width / 2, cell.frame.height), icon: UIImage(named: "box")!, desc: "03/13/15")
+                    cell.addSubview(self.date!)
+                    self.size = RepoDescView(frame: CGRectMake(cell.frame.width / 2, 0, cell.frame.width / 2, cell.frame.height), icon: UIImage(named: "box")!, desc: "140.9MB")
+                    cell.addSubview(self.size!)
                     
                     self.isFirstRun = false//顺序绘制最后一项
                 }

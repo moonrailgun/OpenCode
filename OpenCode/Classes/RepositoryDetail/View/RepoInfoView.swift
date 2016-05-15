@@ -37,7 +37,7 @@ class RepoInfoView: UIView {
         self.infoNameLabel.text = name
     }
     
-    func setValue(value:Int){
+    func setValue(value:Int!){
         self.infoValueLabel.text = String(value)
     }
     

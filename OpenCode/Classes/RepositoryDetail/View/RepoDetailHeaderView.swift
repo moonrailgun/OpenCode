@@ -18,6 +18,14 @@ class RepoDetailHeaderView: UIView {
     }
     */
     
+    var headerImgView:UIImageView?
+    var repoNameLabel:UILabel?
+    var repoDescLabel:UILabel?
+    
+    var infoBlock1:RepoInfoView?
+    var infoBlock2:RepoInfoView?
+    var infoBlock3:RepoInfoView?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -32,33 +40,42 @@ class RepoDetailHeaderView: UIView {
         let headerView:UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 200))
         headerView.backgroundColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1)
         
-        let headerImg:UIImageView = UIImageView(frame: CGRect(x: headerView.frame.width / 2 - 50, y: 25, width: 100, height: 100))
-        headerImg.backgroundColor = UIColor(white: 1, alpha: 1)
-        headerView.addSubview(headerImg)
+        headerImgView = UIImageView(frame: CGRect(x: headerView.frame.width / 2 - 50, y: 25, width: 100, height: 100))
+        //headerImgView!.backgroundColor = UIColor(white: 1, alpha: 1)
+        headerView.addSubview(headerImgView!)
         
-        let repoTitle:UILabel = UILabel(frame: CGRect(x: 0, y: 130, width: self.frame.width, height: 40))
-        repoTitle.text = "项目名"
-        repoTitle.textColor = UIColor(white: 1, alpha: 1)
-        repoTitle.font = UIFont(descriptor: UIFontDescriptor(), size: 20)
-        repoTitle.textAlignment = NSTextAlignment.Center
-        headerView.addSubview(repoTitle)
-        let repoDesc:UILabel = UILabel(frame: CGRect(x: 0, y: 160, width: self.frame.width, height: 40))
-        repoDesc.text = "描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述"
-        repoDesc.numberOfLines = 2
-        repoDesc.textColor = UIColor(white: 1, alpha: 1)
-        repoDesc.font = UIFont(descriptor: UIFontDescriptor(), size: 14)
-        repoDesc.textAlignment = NSTextAlignment.Center
-        headerView.addSubview(repoDesc)
+        self.repoNameLabel = UILabel(frame: CGRect(x: 0, y: 130, width: self.frame.width, height: 40))
+        repoNameLabel!.text = ""
+        repoNameLabel!.textColor = UIColor(white: 1, alpha: 1)
+        repoNameLabel!.font = UIFont(descriptor: UIFontDescriptor(), size: 20)
+        repoNameLabel!.textAlignment = NSTextAlignment.Center
+        headerView.addSubview(repoNameLabel!)
+        self.repoDescLabel = UILabel(frame: CGRect(x: 0, y: 160, width: self.frame.width, height: 40))
+        repoDescLabel!.text = ""
+        repoDescLabel!.numberOfLines = 2
+        repoDescLabel!.textColor = UIColor(white: 1, alpha: 1)
+        repoDescLabel!.font = UIFont(descriptor: UIFontDescriptor(), size: 14)
+        repoDescLabel!.textAlignment = NSTextAlignment.Center
+        headerView.addSubview(repoDescLabel!)
         
         let infoBlockWidth = floor(frame.width / 3)
         let infoBlockSpace = (frame.width - infoBlockWidth * 3)/2
-        let infoBlock1 = RepoInfoView(frame: CGRectMake(0, 200, infoBlockWidth, 40), name: "data", value: 1)
-        let infoBlock2 = RepoInfoView(frame: CGRectMake(infoBlockWidth * 1 + infoBlockSpace * 1, 200, infoBlockWidth, 40), name: "data2", value: 3)
-        let infoBlock3 = RepoInfoView(frame: CGRectMake(infoBlockWidth * 2 + infoBlockSpace * 2, 200, infoBlockWidth, 40), name: "data3", value: 5)
-        self.addSubview(infoBlock1)
-        self.addSubview(infoBlock2)
-        self.addSubview(infoBlock3)
+        self.infoBlock1 = RepoInfoView(frame: CGRectMake(0, 200, infoBlockWidth, 40), name: "Stargazers", value: 1)
+        self.infoBlock2 = RepoInfoView(frame: CGRectMake(infoBlockWidth * 1 + infoBlockSpace * 1, 200, infoBlockWidth, 40), name: "Watchers", value: 3)
+        self.infoBlock3 = RepoInfoView(frame: CGRectMake(infoBlockWidth * 2 + infoBlockSpace * 2, 200, infoBlockWidth, 40), name: "Forks", value: 5)
+        self.addSubview(infoBlock1!)
+        self.addSubview(infoBlock2!)
+        self.addSubview(infoBlock3!)
         
         self.addSubview(headerView)
+    }
+    
+    func setData(icon:UIImage?, repoName:String?, repoDesc:String?, blockValue1:Int?, blockValue2:Int?, blockValue3:Int?){
+        self.headerImgView?.image = icon
+        self.repoNameLabel?.text = repoName
+        self.repoDescLabel?.text = repoDesc
+        self.infoBlock1?.setValue(blockValue1!)
+        self.infoBlock2?.setValue(blockValue2!)
+        self.infoBlock3?.setValue(blockValue3!)
     }
 }
