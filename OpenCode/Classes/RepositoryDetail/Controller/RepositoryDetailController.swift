@@ -13,6 +13,8 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource {
     let MY_CELL_ID = "my"
     var isFirstRun = true
     
+    var repoDetailData:AnyObject?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,6 +58,7 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource {
     
     func loadData() {
         //读取远程数据
+        print(repoDetailData)
     }
 
     

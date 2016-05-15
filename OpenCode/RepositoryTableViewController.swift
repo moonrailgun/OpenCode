@@ -19,6 +19,8 @@ class RepositoryTableViewController: UITableViewController {
     let TAG_CELL_LABEL_TIME = 3
     let TAG_CELL_LABEL_STAR_NUM = 4
     
+    let REPO_CELL_ID = "repositoryCell"
+    
     let repositorySource:RepositorySource = RepositorySource.currentUser
     
     var repositoryDataList:JSON?
@@ -73,7 +75,7 @@ class RepositoryTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("repositoryCell")! as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(REPO_CELL_ID)! as UITableViewCell
         
         // Configure the cell...
         if let list = repositoryDataList{
@@ -104,7 +106,7 @@ class RepositoryTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let indexPath = self.tableView.indexPathForSelectedRow{
             if segue.identifier == "showRepositoryDetail"{
-                let repoDetail = segue.destinationViewController as! RepositoryDetailTableViewController
+                let repoDetail = segue.destinationViewController as! RepositoryDetailController
                 if let list = repositoryDataList {
                     repoDetail.repoDetailData = list[indexPath.row].object
                 }

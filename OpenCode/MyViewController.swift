@@ -70,9 +70,9 @@ class MyViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        var token:String?
-        var ud = NSUserDefaults.standardUserDefaults()
-        if let token:String = Github.getToken(){
+        /*var token:String?
+        var ud = NSUserDefaults.standardUserDefaults()*/
+        if let _:String = Github.getToken(){
             showProfileView()
         }else{
             showLoginView()
