@@ -21,6 +21,7 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource {
 
         initNavItem()
         initView()
+        loadData()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -50,7 +51,11 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource {
         self.tableView!.sectionFooterHeight = 10;
         //self.tableView!.contentInset = UIEdgeInsetsMake(-25, 0, 0, 0);
         
-        self.tableView!.tableHeaderView = RepoDetailHeaderView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 200))
+        self.tableView!.tableHeaderView = RepoDetailHeaderView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 200 + 50))
+    }
+    
+    func loadData() {
+        //读取远程数据
     }
 
     
@@ -71,7 +76,7 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource {
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier(MY_CELL_ID, forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(MY_CELL_ID, forIndexPath: indexPath) as UITableViewCell
         
         switch indexPath.section {
         case 0:
@@ -94,12 +99,12 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource {
                     self.isFirstRun = false//顺序绘制最后一项
                 }
             case 3:
-                cell = RepoDetailTableViewCell(style: .Value1, reuseIdentifier: MY_CELL_ID)
+                //cell = RepoDetailTableViewCell(style: .Value1, reuseIdentifier: MY_CELL_ID)
                 
                 cell.accessoryType = .DisclosureIndicator
-                cell.textLabel?.text = "Owner"
-                cell.detailTextLabel?.text = "moonrailgun"//TODO
+                cell.textLabel?.text = "拥有人:moonrailgun"
                 cell.imageView?.image = UIImage(named: "box")
+                
             default:
                 break
             }

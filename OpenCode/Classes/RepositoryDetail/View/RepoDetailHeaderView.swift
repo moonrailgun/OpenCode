@@ -50,6 +50,15 @@ class RepoDetailHeaderView: UIView {
         repoDesc.textAlignment = NSTextAlignment.Center
         headerView.addSubview(repoDesc)
         
+        let infoBlockWidth = floor(frame.width / 3)
+        let infoBlockSpace = (frame.width - infoBlockWidth * 3)/2
+        let infoBlock1 = RepoInfoView(frame: CGRectMake(0, 200, infoBlockWidth, 40), name: "data", value: 1)
+        let infoBlock2 = RepoInfoView(frame: CGRectMake(infoBlockWidth * 1 + infoBlockSpace * 1, 200, infoBlockWidth, 40), name: "data2", value: 3)
+        let infoBlock3 = RepoInfoView(frame: CGRectMake(infoBlockWidth * 2 + infoBlockSpace * 2, 200, infoBlockWidth, 40), name: "data3", value: 5)
+        self.addSubview(infoBlock1)
+        self.addSubview(infoBlock2)
+        self.addSubview(infoBlock3)
+        
         self.addSubview(headerView)
     }
 }

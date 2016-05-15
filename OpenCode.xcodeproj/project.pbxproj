@@ -24,7 +24,7 @@
 		BA7B2A0F1CE47D5200455F68 /* GlobalDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7B2A0E1CE47D5200455F68 /* GlobalDefine.swift */; };
 		BA8619051CDF289D00BE9E9C /* RepositoryDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8619041CDF289D00BE9E9C /* RepositoryDetailController.swift */; };
 		BA8619071CDF2DD000BE9E9C /* RepoDescView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8619061CDF2DD000BE9E9C /* RepoDescView.swift */; };
-		BA8619091CDF31F000BE9E9C /* RepositoryInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8619081CDF31F000BE9E9C /* RepositoryInfoView.swift */; };
+		BA8619091CDF31F000BE9E9C /* RepoInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8619081CDF31F000BE9E9C /* RepoInfoView.swift */; };
 		BA8CEBDD1CE7480A0044155A /* RepoDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8CEBDC1CE7480A0044155A /* RepoDetailHeaderView.swift */; };
 		BA8CEBE01CE74DF00044155A /* RepoDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8CEBDE1CE74DF00044155A /* RepoDetailTableViewCell.swift */; };
 		BA8DA32C1CD05D7F00F9B391 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DA32B1CD05D7F00F9B391 /* MyViewController.swift */; };
@@ -69,7 +69,7 @@
 		BA7B2A0E1CE47D5200455F68 /* GlobalDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalDefine.swift; path = Classes/Other/GlobalDefine.swift; sourceTree = "<group>"; };
 		BA8619041CDF289D00BE9E9C /* RepositoryDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepositoryDetailController.swift; path = Classes/RepositoryDetail/Controller/RepositoryDetailController.swift; sourceTree = "<group>"; };
 		BA8619061CDF2DD000BE9E9C /* RepoDescView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoDescView.swift; path = Classes/RepositoryDetail/View/RepoDescView.swift; sourceTree = "<group>"; };
-		BA8619081CDF31F000BE9E9C /* RepositoryInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepositoryInfoView.swift; path = Classes/RepositoryDetail/View/RepositoryInfoView.swift; sourceTree = "<group>"; };
+		BA8619081CDF31F000BE9E9C /* RepoInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoInfoView.swift; path = Classes/RepositoryDetail/View/RepoInfoView.swift; sourceTree = "<group>"; };
 		BA8CEBDC1CE7480A0044155A /* RepoDetailHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoDetailHeaderView.swift; path = Classes/RepositoryDetail/View/RepoDetailHeaderView.swift; sourceTree = "<group>"; };
 		BA8CEBDE1CE74DF00044155A /* RepoDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoDetailTableViewCell.swift; path = Classes/RepositoryDetail/View/RepoDetailTableViewCell.swift; sourceTree = "<group>"; };
 		BA8DA32B1CD05D7F00F9B391 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
@@ -257,7 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				BA8619061CDF2DD000BE9E9C /* RepoDescView.swift */,
-				BA8619081CDF31F000BE9E9C /* RepositoryInfoView.swift */,
+				BA8619081CDF31F000BE9E9C /* RepoInfoView.swift */,
 				BA8CEBDC1CE7480A0044155A /* RepoDetailHeaderView.swift */,
 				BA8CEBDE1CE74DF00044155A /* RepoDetailTableViewCell.swift */,
 			);
@@ -455,7 +455,7 @@
 				BABCF6851CD5BF5B00564FBB /* OldRepositoryDetailViewController.swift in Sources */,
 				BA6F3B121CCE478D00F6984B /* TimeHelper.swift in Sources */,
 				BA8619051CDF289D00BE9E9C /* RepositoryDetailController.swift in Sources */,
-				BA8619091CDF31F000BE9E9C /* RepositoryInfoView.swift in Sources */,
+				BA8619091CDF31F000BE9E9C /* RepoInfoView.swift in Sources */,
 				BAF7F99A1CD8A2CA0071C5F6 /* BasicBlock.swift in Sources */,
 				BA69C3131CDE0EFF00E3BAB4 /* RepositoryDetailViewController.swift in Sources */,
 				BA3AD2201CCA29B60034B21E /* HttpRequest.swift in Sources */,

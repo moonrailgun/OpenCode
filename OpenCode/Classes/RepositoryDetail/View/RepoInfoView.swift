@@ -8,18 +8,22 @@
 
 import UIKit
 
-class RepositoryInfoView: UIView {
+class RepoInfoView: UIView {
     var infoNameLabel:UILabel!
     var infoValueLabel:UILabel!
     
     init(frame: CGRect, name:String,value:Int) {
         super.init(frame: frame)
+        self.backgroundColor = UIColor.whiteColor()
         
-        infoNameLabel = UILabel(frame: CGRect(x: 0, y: 0, width: frame.width, height: 20))
-        infoNameLabel.text = name
-        infoNameLabel.font = UIFont(descriptor: UIFontDescriptor(), size: 20)
-        infoValueLabel = UILabel(frame: CGRect(x: 0, y: 20, width: frame.width, height: 20))
+        infoValueLabel = UILabel(frame: CGRect(x: 0, y: 2, width: frame.width, height: 20))
         infoValueLabel.text = value.description
+        infoValueLabel.font = UIFont.systemFontOfSize(18)
+        infoValueLabel.textAlignment = .Center
+        infoNameLabel = UILabel(frame: CGRect(x: 0, y: 20, width: frame.width, height: 18))
+        infoNameLabel.text = name
+        infoNameLabel.font = UIFont.systemFontOfSize(14)
+        infoNameLabel.textAlignment = .Center
         
         self.addSubview(infoNameLabel)
         self.addSubview(infoValueLabel)
