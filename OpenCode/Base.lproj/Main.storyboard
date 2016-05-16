@@ -232,7 +232,7 @@
                         <outlet property="userLocation" destination="QFv-gB-QCu" id="tIH-bU-lPV"/>
                         <outlet property="userName" destination="xkR-Hh-vOu" id="c9c-MM-chG"/>
                         <segue destination="opv-y9-Gjf" kind="push" identifier="showRepositories" id="YN8-Yb-QWp"/>
-                        <segue destination="hlm-4b-BNE" kind="push" identifier="showUserList" id="XNb-dv-uHc"/>
+                        <segue destination="tqM-ae-ont" kind="push" id="K6L-R0-lbO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -417,34 +417,20 @@
             </objects>
             <point key="canvasLocation" x="1319" y="340"/>
         </scene>
-        <!--用户列表-->
-        <scene sceneID="9MJ-ZZ-Hdj">
+        <!--User List Controller-->
+        <scene sceneID="fQY-kH-ORE">
             <objects>
-                <tableViewController id="hlm-4b-BNE" customClass="UserTableViewController" customModule="OpenCode" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lBy-Ak-8yw">
+                <viewController id="tqM-ae-ont" customClass="UserListController" customModule="OpenCode" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bpc-pi-r6U">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="y6U-sJ-mrX">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="y6U-sJ-mrX" id="f0M-QC-OOH">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="hlm-4b-BNE" id="VIe-Mz-klw"/>
-                            <outlet property="delegate" destination="hlm-4b-BNE" id="4PK-cl-O14"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="用户列表" id="Lxz-q4-Gl7"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RjE-sQ-GGj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="RXC-s4-FYn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZD3-CN-oJb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="641" y="1054"/>
+            <point key="canvasLocation" x="611" y="1054"/>
         </scene>
         <!--设置-->
         <scene sceneID="asu-U3-FQD">
@@ -621,7 +607,7 @@
                             <tableViewSection id="haG-tt-lFy">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="QFW-Wm-UIw">
-                                        <rect key="frame" x="0.0" y="177" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="113" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QFW-Wm-UIw" id="9Qz-gB-qRj">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -629,7 +615,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="jfg-Lt-AD0">
-                                        <rect key="frame" x="0.0" y="221" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="157" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jfg-Lt-AD0" id="nNl-sg-VTi">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -637,7 +623,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="h2Y-ic-Hgn">
-                                        <rect key="frame" x="0.0" y="265" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="201" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h2Y-ic-Hgn" id="eJi-pD-ERO">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>

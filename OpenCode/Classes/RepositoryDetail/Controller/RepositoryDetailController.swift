@@ -163,7 +163,7 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource {
                 cell.textLabel?.text = "提问"
                 cell.imageView?.image = UIImage(named: "box")
             case 2:
-                cell.textLabel?.text = "README"
+                cell.textLabel?.text = "README.md"
                 cell.imageView?.image = UIImage(named: "box")
             default:
                 break

@@ -62,13 +62,13 @@ class NewsTableViewController: UITableViewController {
         
         // Configure the cell...
         let data = dataArr![indexPath.row]
-        var eventLabel = cell.viewWithTag(TAG_CELL_LABEL_EVENT) as! UILabel
+        let eventLabel = cell.viewWithTag(TAG_CELL_LABEL_EVENT) as! UILabel
         eventLabel.text = data["type"].string
         
-        var timeLabel = cell.viewWithTag(TAG_CELL_LABEL_TIME) as! UILabel
+        let timeLabel = cell.viewWithTag(TAG_CELL_LABEL_TIME) as! UILabel
         timeLabel.text = Github.parseGithubTime(data["created_at"].string!)
         
-        var descLabel = cell.viewWithTag(TAG_CELL_LABEL_DESC) as! UILabel
+        let descLabel = cell.viewWithTag(TAG_CELL_LABEL_DESC) as! UILabel
         descLabel.text = generateDescriptionStr(data["type"].string!,username: data["actor"]["login"].string!, repositoryName: data["repo"]["name"].string!)
         
         return cell
@@ -78,10 +78,8 @@ class NewsTableViewController: UITableViewController {
         print("选中了\(indexPath.row)行数据")
         
         let data = dataArr![indexPath.row]
-        //println(data)
         
         Github.customRequest(data["repo"]["url"].string!, isPublic: true) { (data:AnyObject?) -> Void in
-            print("数据加载完毕")
             self.performSegueWithIdentifier("showRepositoryDetail", sender: data)
         }
     }
@@ -134,8 +132,9 @@ class NewsTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "showRepositoryDetail"){
             //跳转到项目详细页面
-            var detail = segue.destinationViewController as! RepositoryDetailTableViewController
+            let detail = segue.destinationViewController as! RepositoryDetailController
             detail.repoDetailData = sender
+            
         }
     }
     
@@ -156,7 +155,7 @@ class NewsTableViewController: UITableViewController {
         })*/
         
         Github.getEvents { (data:AnyObject?) -> Void in
-            var json = JSON(data!)
+            let json = JSON(data!)
             self.dataArr = json
             print("github事件 数据加载完毕")
             
