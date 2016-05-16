@@ -13,6 +13,7 @@ class UserListController: UIViewController, UITableViewDataSource, UITableViewDe
 
     let tableView: UITableView = UITableView()
     var userListDate:AnyObject?
+    var userList = [UserInfo]()
     
     let USER_CELL_ID = "user"
     
@@ -53,36 +54,50 @@ class UserListController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func initData(){
-        if let d = self.userListDate{
-            let json = JSON(d)
-            
+        let data = getDataJson()
+        
+        for d in data.array!{
+            let info = UserInfo(data: d.object)
+            self.userList.append(info)
         }
     }
     
-    
+    func getDataJson()->JSON{
+        if let d = self.userListDate{
+            let json = JSON(d)
+            return json
+        }else{
+            return []
+        }
+    }
 
     // MARK: - Table view data source
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 6
+        return 1
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return getDataJson().count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(USER_CELL_ID, forIndexPath: indexPath)
-
         if let c = cell as? UserCell{
-            
+            let index = indexPath.row
+            let data = self.userList[index]
+            c.setData(UIImage(data: NSData(contentsOfURL: NSURL(string: data.avatarUrl)!)!)!, name: data.name)//TODO 需要懒加载
         }
-        
-        // Configure the cell...
 
         return cell
+    }
+    
+    // MARK: - Table view delegate
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("点击了第\(indexPath.row)项")
     }
 
     /*

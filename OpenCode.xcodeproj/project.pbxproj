@@ -18,6 +18,7 @@
 		BA47B7451CE99B4A00CF3947 /* UserListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47B7441CE99B4A00CF3947 /* UserListController.swift */; };
 		BA47B7491CE99EC200CF3947 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47B7471CE99EC200CF3947 /* UserCell.swift */; };
 		BA47B74A1CE99EC200CF3947 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA47B7481CE99EC200CF3947 /* UserCell.xib */; };
+		BA47B74E1CE9AE7D00CF3947 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47B74D1CE9AE7D00CF3947 /* UserInfo.swift */; };
 		BA5F71A81CD350DC0043CBB5 /* RepositoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5F71A61CD350DC0043CBB5 /* RepositoryTableViewController.swift */; };
 		BA69EBE41CD4980C0090816C /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69EBE31CD4980C0090816C /* UserTableViewController.swift */; };
 		BA6F3B101CCE3EA400F6984B /* OperationQueueHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F3B0F1CCE3EA400F6984B /* OperationQueueHelper.swift */; };
@@ -63,6 +64,7 @@
 		BA47B7441CE99B4A00CF3947 /* UserListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserListController.swift; path = Classes/UserList/Controller/UserListController.swift; sourceTree = "<group>"; };
 		BA47B7471CE99EC200CF3947 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserCell.swift; path = Classes/UserList/View/UserCell.swift; sourceTree = "<group>"; };
 		BA47B7481CE99EC200CF3947 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserCell.xib; path = Classes/UserList/View/UserCell.xib; sourceTree = "<group>"; };
+		BA47B74D1CE9AE7D00CF3947 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInfo.swift; path = Classes/UserList/Model/UserInfo.swift; sourceTree = "<group>"; };
 		BA5F71A61CD350DC0043CBB5 /* RepositoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewController.swift; sourceTree = "<group>"; };
 		BA69EBE31CD4980C0090816C /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
 		BA6F3B0F1CCE3EA400F6984B /* OperationQueueHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationQueueHelper.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 		BA47B7421CE99B0000CF3947 /* UserList */ = {
 			isa = PBXGroup;
 			children = (
+				BA47B74C1CE9AE5400CF3947 /* Model */,
 				BA47B7461CE99CF200CF3947 /* View */,
 				BA47B7431CE99B0800CF3947 /* Controller */,
 			);
@@ -212,6 +215,14 @@
 				BA47B7481CE99EC200CF3947 /* UserCell.xib */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		BA47B74C1CE9AE5400CF3947 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA47B74D1CE9AE7D00CF3947 /* UserInfo.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		BA5F71A51CD350BD0043CBB5 /* Page */ = {
@@ -486,6 +497,7 @@
 				BA7B2A0F1CE47D5200455F68 /* GlobalDefine.swift in Sources */,
 				BA8CEBE01CE74DF00044155A /* RepoDetailTableViewCell.swift in Sources */,
 				BA8619071CDF2DD000BE9E9C /* RepoDescView.swift in Sources */,
+				BA47B74E1CE9AE7D00CF3947 /* UserInfo.swift in Sources */,
 				BA8CEBDD1CE7480A0044155A /* RepoDetailHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

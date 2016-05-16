@@ -53,12 +53,20 @@ class MyViewController: UIViewController {
         self.performSegueWithIdentifier("showRepositories", sender: sender)
     }
     @IBAction func ShowMyFollowing(sender: UIButton) {
-        print("我的关注")
-        self.performSegueWithIdentifier("showUserList", sender: sender)
+        Github.getCurrentUserFollowing { (data:AnyObject?) in
+            print("我的关注")
+            OperationQueueHelper.operateInMainQueue({ 
+                self.performSegueWithIdentifier("showUserList", sender: data)
+            })
+        }
     }
     @IBAction func ShowMyFollowers(sender: UIButton) {
-        print("我的收藏")
-        self.performSegueWithIdentifier("showUserList", sender: sender)
+        Github.getCurrentUserFollowers { (data:AnyObject?) in
+            print("我的粉丝")
+                OperationQueueHelper.operateInMainQueue({
+                    self.performSegueWithIdentifier("showUserList", sender: data)
+            })
+        }
     }
     @IBAction func GithubLogout(sender: AnyObject) {
         print("登出")
@@ -121,14 +129,15 @@ class MyViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "showRepositories" {
+            let repo = segue.destinationViewController as! RepositoryTableViewController
+        }else if segue.identifier == "showUserList" {
+            let user = segue.destinationViewController as! UserListController
+            user.userListDate = sender
+        }
+        
         if let button = sender as? UIButton{
-            if segue.identifier == "showRepositories" {
-                var repo = segue.destinationViewController as! RepositoryTableViewController
-            }else if segue.identifier == "showUserList" {
-                var user = segue.destinationViewController as! UserListController
-                user.userListDate = nil
-            }
-            
             segue.destinationViewController.navigationItem.title = button.titleLabel?.text
         }
     }

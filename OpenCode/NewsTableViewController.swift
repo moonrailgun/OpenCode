@@ -80,7 +80,9 @@ class NewsTableViewController: UITableViewController {
         let data = dataArr![indexPath.row]
         
         Github.customRequest(data["repo"]["url"].string!, isPublic: true) { (data:AnyObject?) -> Void in
-            self.performSegueWithIdentifier("showRepositoryDetail", sender: data)
+            OperationQueueHelper.operateInMainQueue({
+                self.performSegueWithIdentifier("showRepositoryDetail", sender: data)
+            })
         }
     }
 
