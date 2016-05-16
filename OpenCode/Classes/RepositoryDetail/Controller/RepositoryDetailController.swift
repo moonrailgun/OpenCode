@@ -53,9 +53,8 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource {
         self.view.backgroundColor = GlobalDefine.defineBackgroundColor
         
         self.view.addSubview(self.tableView!)
-        self.tableView!.layer.borderColor = UIColor.redColor().CGColor
         self.tableView!.backgroundColor = GlobalDefine.defineBackgroundColor
-        self.tableView!.registerClass(RepoDetailTableViewCell.classForCoder(), forCellReuseIdentifier: MY_CELL_ID)
+        self.tableView!.registerClass(RepoDetailTableViewCell.self, forCellReuseIdentifier: MY_CELL_ID)
         
         self.tableView!.sectionHeaderHeight = 0;
         self.tableView!.sectionFooterHeight = 10;

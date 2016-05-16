@@ -125,7 +125,8 @@ class MyViewController: UIViewController {
             if segue.identifier == "showRepositories" {
                 var repo = segue.destinationViewController as! RepositoryTableViewController
             }else if segue.identifier == "showUserList" {
-                var user = segue.destinationViewController as! UserTableViewController
+                var user = segue.destinationViewController as! UserListController
+                user.userListDate = nil
             }
             
             segue.destinationViewController.navigationItem.title = button.titleLabel?.text

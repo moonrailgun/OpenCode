@@ -16,6 +16,8 @@
 		BA3AD21E1CCA278B0034B21E /* Github.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD21D1CCA278B0034B21E /* Github.swift */; };
 		BA3AD2201CCA29B60034B21E /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD21F1CCA29B60034B21E /* HttpRequest.swift */; };
 		BA47B7451CE99B4A00CF3947 /* UserListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47B7441CE99B4A00CF3947 /* UserListController.swift */; };
+		BA47B7491CE99EC200CF3947 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47B7471CE99EC200CF3947 /* UserCell.swift */; };
+		BA47B74A1CE99EC200CF3947 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA47B7481CE99EC200CF3947 /* UserCell.xib */; };
 		BA5F71A81CD350DC0043CBB5 /* RepositoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5F71A61CD350DC0043CBB5 /* RepositoryTableViewController.swift */; };
 		BA69EBE41CD4980C0090816C /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69EBE31CD4980C0090816C /* UserTableViewController.swift */; };
 		BA6F3B101CCE3EA400F6984B /* OperationQueueHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F3B0F1CCE3EA400F6984B /* OperationQueueHelper.swift */; };
@@ -59,6 +61,8 @@
 		BA3AD21D1CCA278B0034B21E /* Github.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Github.swift; sourceTree = "<group>"; };
 		BA3AD21F1CCA29B60034B21E /* HttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
 		BA47B7441CE99B4A00CF3947 /* UserListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserListController.swift; path = Classes/UserList/Controller/UserListController.swift; sourceTree = "<group>"; };
+		BA47B7471CE99EC200CF3947 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserCell.swift; path = Classes/UserList/View/UserCell.swift; sourceTree = "<group>"; };
+		BA47B7481CE99EC200CF3947 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserCell.xib; path = Classes/UserList/View/UserCell.xib; sourceTree = "<group>"; };
 		BA5F71A61CD350DC0043CBB5 /* RepositoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewController.swift; sourceTree = "<group>"; };
 		BA69EBE31CD4980C0090816C /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
 		BA6F3B0F1CCE3EA400F6984B /* OperationQueueHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationQueueHelper.swift; sourceTree = "<group>"; };
@@ -204,6 +208,8 @@
 		BA47B7461CE99CF200CF3947 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BA47B7471CE99EC200CF3947 /* UserCell.swift */,
+				BA47B7481CE99EC200CF3947 /* UserCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -392,6 +398,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA47B74A1CE99EC200CF3947 /* UserCell.xib in Resources */,
 				BA3AD2011CCA245A0034B21E /* Main.storyboard in Resources */,
 				BA3AD2061CCA245A0034B21E /* LaunchScreen.xib in Resources */,
 				BA3AD2031CCA245A0034B21E /* Images.xcassets in Resources */,
@@ -468,6 +475,7 @@
 				BA8619091CDF31F000BE9E9C /* RepoInfoView.swift in Sources */,
 				BAF7F99A1CD8A2CA0071C5F6 /* BasicBlock.swift in Sources */,
 				BA3AD2201CCA29B60034B21E /* HttpRequest.swift in Sources */,
+				BA47B7491CE99EC200CF3947 /* UserCell.swift in Sources */,
 				BAA6CD921CD475D40069863F /* NewsTableViewController.swift in Sources */,
 				BA3AD21E1CCA278B0034B21E /* Github.swift in Sources */,
 				BA6F3B101CCE3EA400F6984B /* OperationQueueHelper.swift in Sources */,
