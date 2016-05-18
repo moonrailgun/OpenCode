@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-class UserInfo{
+class UserBaseInfo{
     var type:String = ""
     var name:String = ""
     var id:Int = 0

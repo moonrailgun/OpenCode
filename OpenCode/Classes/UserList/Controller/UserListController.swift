@@ -13,7 +13,7 @@ class UserListController: UIViewController, UITableViewDataSource, UITableViewDe
 
     let tableView: UITableView = UITableView()
     var userListDate:AnyObject?
-    var userList = [UserInfo]()
+    var userList = [UserBaseInfo]()
     
     let USER_CELL_ID = "user"
     
@@ -57,7 +57,7 @@ class UserListController: UIViewController, UITableViewDataSource, UITableViewDe
         let data = getDataJson()
         
         for d in data.array!{
-            let info = UserInfo(data: d.object)
+            let info = UserBaseInfo(data: d.object)
             self.userList.append(info)
         }
     }

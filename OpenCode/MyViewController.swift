@@ -104,7 +104,7 @@ class MyViewController: UIViewController {
     }
     
     func loadProfileData() {
-        Github.getUserInfo { (userinfo) -> Void in
+        Github.getCurrentUserInfo { (userinfo) -> Void in
             if let u: AnyObject = userinfo{
                 let json = JSON(u)
                 self.userInfo = json

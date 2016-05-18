@@ -94,8 +94,8 @@ class Github {
 
         }
     }
-    //获取用户信息
-    class func getUserInfo(completionHandler:(AnyObject?) -> Void) {
+    //获取当前用户信息
+    class func getCurrentUserInfo(completionHandler:(AnyObject?) -> Void) {
         requestPrivateData("https://api.github.com/user", completionHandler: completionHandler)
     }
     //获取当前用户的项目列表数据
@@ -112,6 +112,10 @@ class Github {
     //获取当前用户的关注
     class func getCurrentUserFollowing(completionHandler:(AnyObject?) -> Void){
         requestPrivateData("https://api.github.com/user/following", completionHandler: completionHandler)
+    }
+    //获取用户数据
+    class func getUserInfo(username:String, completionHandler:(AnyObject?) -> Void){
+        requestPublicData("https://api.github.com/users/\(username)", completionHandler: completionHandler)
     }
     //获取用户收藏
     class func getUserStarred(username:String, completionHandler:(AnyObject?) -> Void) {
