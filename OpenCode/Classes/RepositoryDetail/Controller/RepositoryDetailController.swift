@@ -147,8 +147,17 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource,UITabl
                 //cell = RepoDetailTableViewCell(style: .Value1, reuseIdentifier: MY_CELL_ID)
                 
                 cell.accessoryType = .DisclosureIndicator
-                cell.textLabel?.text = "拥有人:moonrailgun"
+                cell.textLabel?.text = "拥有人"
                 cell.imageView?.image = UIImage(named: "box")
+                
+                let size = cell.bounds
+                let detail = UILabel(frame: CGRect(x: size.width - 30 - 100, y: 0, width: 100, height: size.height))
+                detail.text = "moonrailgun"
+                detail.textAlignment = .Right
+                detail.baselineAdjustment = .AlignCenters
+                detail.font = UIFont.systemFontOfSize(14)
+                detail.textColor = UIColor(white: 0.4, alpha: 1)
+                cell.contentView.addSubview(detail)
                 
             default:
                 break
@@ -196,14 +205,15 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource,UITabl
         
         if(indexPath.section == 0 && indexPath.row == 3){
             //owner
-            let username:String = JSON(self.repoDetailData!)["owner"]["login"].string!
-            print("owner:\(username)")
-            Github.getUserInfo(username, completionHandler: { (data:AnyObject?) in
-                print(data)
-                OperationQueueHelper.operateInMainQueue({ 
-                    self.performSegueWithIdentifier("showUserInfo", sender: data)
+            if let username:String = JSON(self.repoDetailData!)["owner"]["login"].string{
+                print("owner:\(username)")
+                Github.getUserInfo(username, completionHandler: { (data:AnyObject?) in
+                    print(data)
+                    OperationQueueHelper.operateInMainQueue({
+                        self.performSegueWithIdentifier("showUserInfo", sender: data)
+                    })
                 })
-            })
+            }
         }
     }
     
