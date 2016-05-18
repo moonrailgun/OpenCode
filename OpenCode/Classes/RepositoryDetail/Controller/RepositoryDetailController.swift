@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class RepositoryDetailController: UIViewController, UITableViewDataSource {
+class RepositoryDetailController: UIViewController, UITableViewDataSource,UITableViewDelegate {
     var tableView:UITableView?
     let MY_CELL_ID = "my"
     var isFirstRun = true
@@ -28,6 +28,7 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource {
         
         tableView = UITableView(frame: CGRectMake(0, 0, self.view.frame.width, self.view.frame.height), style: UITableViewStyle.Grouped)
         tableView!.dataSource = self
+        tableView!.delegate = self
 
         initNavItem()
         initView()
@@ -189,6 +190,23 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource {
         return cell
     }
 
+    // MARK: - Table view delegate
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("点击了\(indexPath.row)行")
+        
+        if(indexPath.section == 0 && indexPath.row == 3){
+            //owner
+            let username:String = JSON(self.repoDetailData!)["owner"]["login"].string!
+            print("owner:\(username)")
+            Github.getUserInfo(username, completionHandler: { (data:AnyObject?) in
+                print(data)
+                OperationQueueHelper.operateInMainQueue({ 
+                    self.performSegueWithIdentifier("showUserInfo", sender: data)
+                })
+            })
+        }
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -224,14 +242,17 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        if segue.identifier == "showUserInfo" {
+            if let controller = segue.destinationViewController as? UserInfoController{
+                controller.parseData(sender!)
+            }
+        }
     }
-    */
 
 }

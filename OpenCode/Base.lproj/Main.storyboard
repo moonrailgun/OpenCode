@@ -309,6 +309,21 @@
             </objects>
             <point key="canvasLocation" x="1319" y="340"/>
         </scene>
+        <!--用户信息-->
+        <scene sceneID="BgB-lW-bcZ">
+            <objects>
+                <viewController id="W6D-54-zG2" customClass="UserInfoController" customModule="OpenCode" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wQU-Uo-oBH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="用户信息" id="8Ih-fx-U0r"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rms-hR-PGA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2264" y="-291"/>
+        </scene>
         <!--User List Controller-->
         <scene sceneID="fQY-kH-ORE">
             <objects>
@@ -603,6 +618,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="efA-ZV-4Ua"/>
+                    <connections>
+                        <segue destination="W6D-54-zG2" kind="push" identifier="showUserInfo" id="6nW-Np-qcM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EoO-l4-5qc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

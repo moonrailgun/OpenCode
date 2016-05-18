@@ -12,16 +12,16 @@ import SwiftyJSON
 class UserInfo: UserBaseInfo {
     var followers:Int = 0
     var following:Int = 0
-    var email:String = ""
-    var location:String = ""
-    var company:String = ""
-    var blog:String = ""
+    var email:String? = ""
+    var location:String? = ""
+    var company:String? = ""
+    var blog:String? = ""
     var plan:JSON = []
     
     var repos_url:String = ""
     var events_url:String = ""
     var received_events_url:String = ""
-    var starred_url:String = ""
+    var starred_url:String? = ""
     var gists_url:String = ""
     var followers_url:String = ""
     var following_url:String = ""
@@ -35,10 +35,10 @@ class UserInfo: UserBaseInfo {
         let json = JSON(data)
         self.followers = json["followers"].int!
         self.following = json["following"].int!
-        self.email = json["email"].string!
-        self.location = json["location"].string!
-        self.company = json["company"].string!
-        self.blog = json["blog"].string!
+        self.email = json["email"].string
+        self.location = json["location"].string
+        self.company = json["company"].string
+        self.blog = json["blog"].string
         self.plan = json["plan"]
         
         self.repos_url = json["repos_url"].string!
