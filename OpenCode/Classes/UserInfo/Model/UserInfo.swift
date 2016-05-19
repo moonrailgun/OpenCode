@@ -33,10 +33,12 @@ class UserInfo: UserBaseInfo {
         super.parse(data)
         
         let json = JSON(data)
-        if json == nil{
-            return
+        let name = json["name"]
+        if name != nil {
+            self.name = name.string!
+        }else{
+            print("name为空：\(name)")
         }
-        self.name = json["name"].string!
         
         self.followers = json["followers"].int!
         self.following = json["following"].int!
