@@ -33,6 +33,11 @@ class UserInfo: UserBaseInfo {
         super.parse(data)
         
         let json = JSON(data)
+        if json == nil{
+            return
+        }
+        self.name = json["name"].string!
+        
         self.followers = json["followers"].int!
         self.following = json["following"].int!
         self.email = json["email"].string

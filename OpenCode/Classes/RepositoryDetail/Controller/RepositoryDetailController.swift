@@ -208,7 +208,6 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource,UITabl
             if let username:String = JSON(self.repoDetailData!)["owner"]["login"].string{
                 print("owner:\(username)")
                 Github.getUserInfo(username, completionHandler: { (data:AnyObject?) in
-                    print(data)
                     OperationQueueHelper.operateInMainQueue({
                         self.performSegueWithIdentifier("showUserInfo", sender: data)
                     })
