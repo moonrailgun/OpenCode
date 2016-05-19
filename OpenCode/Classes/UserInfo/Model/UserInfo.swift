@@ -37,7 +37,7 @@ class UserInfo: UserBaseInfo {
         if name != nil {
             self.name = name.string!
         }else{
-            print("name为空：\(name)")
+            print("name为登陆名：\(self.name)")
         }
         
         self.followers = json["followers"].int!
