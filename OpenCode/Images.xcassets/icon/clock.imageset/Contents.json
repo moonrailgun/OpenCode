@@ -2,8 +2,8 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "clock.png"
+      "filename" : "clock.png",
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
