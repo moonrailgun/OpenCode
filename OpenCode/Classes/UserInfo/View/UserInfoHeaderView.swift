@@ -22,6 +22,9 @@ class UserInfoHeaderView: UIView {
     var avatar:UIImageView?
     var name:UILabel?
     
+    var followers:RepoInfoView?
+    var following:RepoInfoView?
+    
     init(){
         super.init(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: 200))
         
@@ -50,12 +53,20 @@ class UserInfoHeaderView: UIView {
         name?.textColor = UIColor.whiteColor()
         headerView?.addSubview(name!)
         
+        self.followers = RepoInfoView(frame: CGRectMake(0, 150, headerView!.frame.width / 2, 40), name: "粉丝", value: 0)
+        self.following = RepoInfoView(frame: CGRectMake(headerView!.frame.width / 2, 150, headerView!.frame.width / 2, 40), name: "关注", value: 0)
+        self.addSubview(followers!)
+        self.addSubview(following!)
+        
+        
         self.addSubview(headerView!)
     }
     
-    func setData(avatar:UIImage, name:String) {
+    func setData(avatar:UIImage, name:String,followersNum:Int, followingNum:Int) {
         self.avatar?.image = avatar
         self.name?.text = name
+        self.followers?.setValue(followersNum)
+        self.following?.setValue(followingNum)
     }
 
 }

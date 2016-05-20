@@ -39,7 +39,7 @@ class UserInfoController: UIViewController, UITableViewDataSource {
         print(userInfo)
         
         self.headerView = UserInfoHeaderView()
-        headerView?.setData(UIImage(data: NSData(contentsOfURL: NSURL(string: userInfo.avatarUrl)!)!)!, name: userInfo.name)
+        headerView?.setData(UIImage(data: NSData(contentsOfURL: NSURL(string: userInfo.avatarUrl)!)!)!, name: userInfo.name, followersNum: userInfo.followers, followingNum: userInfo.following)
         
         //列表
         tableView = UITableView(frame: self.view.bounds, style: .Grouped)
