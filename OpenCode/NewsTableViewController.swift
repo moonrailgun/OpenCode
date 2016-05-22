@@ -62,14 +62,16 @@ class NewsTableViewController: UITableViewController {
         
         // Configure the cell...
         let data = dataArr![indexPath.row]
-        let eventLabel = cell.viewWithTag(TAG_CELL_LABEL_EVENT) as! UILabel
-        eventLabel.text = data["type"].string
-        
-        let timeLabel = cell.viewWithTag(TAG_CELL_LABEL_TIME) as! UILabel
-        timeLabel.text = Github.parseGithubTime(data["created_at"].string!)
-        
-        let descLabel = cell.viewWithTag(TAG_CELL_LABEL_DESC) as! UILabel
-        descLabel.text = generateDescriptionStr(data["type"].string!,username: data["actor"]["login"].string!, repositoryName: data["repo"]["name"].string!)
+        if data != nil{
+            let eventLabel = cell.viewWithTag(TAG_CELL_LABEL_EVENT) as! UILabel
+            eventLabel.text = data["type"].string
+            
+            let timeLabel = cell.viewWithTag(TAG_CELL_LABEL_TIME) as! UILabel
+            timeLabel.text = Github.parseGithubTime(data["created_at"].string!)
+            
+            let descLabel = cell.viewWithTag(TAG_CELL_LABEL_DESC) as! UILabel
+            descLabel.text = generateDescriptionStr(data["type"].string!,username: data["actor"]["login"].string!, repositoryName: data["repo"]["name"].string!)
+        }
         
         return cell
     }
@@ -142,29 +144,16 @@ class NewsTableViewController: UITableViewController {
     
     //更新事件列表
     func updateEventList(){
-        /*Github.getEvents({events, error in
-            for _event in events {
-                var time = Github.parseGithubTime(_event.time)
-                let event = GithubEvent(type: _event.type, time: time, actor: _event.actor, repo: _event.repo)
-                
-                self.dataArr.append(event)
-            }
-            
-            OperationQueueHelper.operateInMainQueue({ () -> Void in
-                //todo 刷新列表数据
-                self.tableView.reloadData()
-            })
-        })*/
-        
         Github.getEvents { (data:AnyObject?) -> Void in
             let json = JSON(data!)
             self.dataArr = json
             print("github事件 数据加载完毕")
-            
-            OperationQueueHelper.operateInMainQueue({ () -> Void in
-                //todo 刷新列表数据
-                self.tableView.reloadData()
-            })
+            if json.count > 0{
+                OperationQueueHelper.operateInMainQueue({ () -> Void in
+                    //todo 刷新列表数据
+                    self.tableView.reloadData()
+                })
+            }
         }
     }
 

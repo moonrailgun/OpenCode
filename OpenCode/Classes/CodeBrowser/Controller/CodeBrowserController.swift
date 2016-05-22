@@ -39,10 +39,12 @@ class CodeBrowserController: UIViewController, UIWebViewDelegate {
     func webViewDidFinishLoad(webView: UIWebView) {
         var script:String
         if let c = code{
-            script = "loadCode('\(c)')"
+            script =  "loadCode(\'" + c + "\')"	
         }else{
             script = "loadCode('发生错误：没有接收到代码')"
         }
+        script = script.stringByReplacingOccurrencesOfString("\n", withString: "<br/>", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        print(script)
         webView.stringByEvaluatingJavaScriptFromString(script)
     }
     func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {

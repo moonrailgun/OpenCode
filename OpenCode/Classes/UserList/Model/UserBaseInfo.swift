@@ -26,7 +26,7 @@ class UserBaseInfo{
     
     func parse(data:AnyObject){
         let json = JSON(data)
-        self.type = json["type"].string!
+        self.type = json["type"].string != nil ? json["type"].string! : ""
         self.id = json["id"].int!
         self.name = json["login"].string!
         self.avatarUrl = json["avatar_url"].string!

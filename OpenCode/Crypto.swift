@@ -17,7 +17,7 @@ class Base64 {
     
     class func decrypt(base64:String) -> String?{
         //let decodedData = NSData
-        let decodedData = NSData(base64EncodedString: base64, options: [])
+        let decodedData = NSData(base64EncodedString: base64, options: .IgnoreUnknownCharacters)
         let decodedString = NSString(data: decodedData!, encoding: NSUTF8StringEncoding)
         return decodedString as? String
     }
