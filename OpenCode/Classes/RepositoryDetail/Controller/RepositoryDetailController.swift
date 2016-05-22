@@ -23,6 +23,8 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource,UITabl
     var date:RepoDescView?
     var size:RepoDescView?
     
+    var ownerName:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -92,6 +94,8 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource,UITabl
                 let size = json["size"].int
                 
                 headerView.setDescData(isPrivate != 0, language: language, issuesNum: issues!, branchNum: 0, createdDate: date!, size: size!)
+                
+                self.ownerName = json["owner"]["login"].string
             }
         }
     }
@@ -128,7 +132,9 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource,UITabl
                 
                 let size = cell.bounds
                 let detail = UILabel(frame: CGRect(x: size.width - 30 - 100, y: 0, width: 100, height: size.height))
-                detail.text = "moonrailgun"
+                if let name = self.ownerName{
+                    detail.text = name
+                }
                 detail.textAlignment = .Right
                 detail.baselineAdjustment = .AlignCenters
                 detail.font = UIFont.systemFontOfSize(14)
@@ -179,7 +185,7 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource,UITabl
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("点击了\(indexPath.row)行")
         
-        if(indexPath.section == 0 && indexPath.row == 3){
+        if(indexPath.section == 0 && indexPath.row == 0){
             //owner
             if let username:String = JSON(self.repoDetailData!)["owner"]["login"].string{
                 print("owner:\(username)")

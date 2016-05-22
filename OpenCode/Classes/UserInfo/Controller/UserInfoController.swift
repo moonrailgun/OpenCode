@@ -58,6 +58,7 @@ class UserInfoController: UIViewController, UITableViewDataSource {
         var cell = tableView.dequeueReusableCellWithIdentifier(self.USERINFO_CELL_ID)
         if cell == nil {
             cell = UITableViewCell(style: .Default, reuseIdentifier: self.USERINFO_CELL_ID)
+            cell?.accessoryType = .DisclosureIndicator
         }
         
         switch indexPath.row {
