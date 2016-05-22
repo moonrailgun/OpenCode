@@ -79,13 +79,19 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource,UITabl
                 headerView.setData(icon, repoName: json["full_name"].string, repoDesc: json["description"].string, blockValue1: json["stargazers_count"].int, blockValue2: json["watchers_count"].int, blockValue3: json["forks_count"].int)
                 
                 //配置描述
-                let language = json["language"].string
+                var language:String
+                if let l = json["language"].string {
+                    language = l
+                }else{
+                    language = "null"
+                }
+                
                 let issues = json["open_issues_count"].int
                 let date = json["created_at"].string
                 let isPrivate = json["private"].int
                 let size = json["size"].int
                 
-                headerView.setDescData(isPrivate != 0, language: language!, issuesNum: issues!, branchNum: 0, createdDate: date!, size: size!)
+                headerView.setDescData(isPrivate != 0, language: language, issuesNum: issues!, branchNum: 0, createdDate: date!, size: size!)
             }
         }
     }
@@ -136,10 +142,10 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource,UITabl
             cell.accessoryType = .DisclosureIndicator
             switch indexPath.row {
             case 0:
-                cell.textLabel?.text = "事件"
+                cell.textLabel?.text = "查看事件"
                 cell.imageView?.image = UIImage(named: "box")
             case 1:
-                cell.textLabel?.text = "提问"
+                cell.textLabel?.text = "查看提问"
                 cell.imageView?.image = UIImage(named: "box")
             case 2:
                 cell.textLabel?.text = "README.md"
