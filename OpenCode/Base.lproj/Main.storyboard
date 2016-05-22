@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="PEE-95-mFl">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -342,6 +342,21 @@
             </objects>
             <point key="canvasLocation" x="2264" y="1134"/>
         </scene>
+        <!--工具-->
+        <scene sceneID="esA-4S-4NX">
+            <objects>
+                <viewController id="ehR-hL-mxO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JtF-6h-qpA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="工具" image="Tools" id="Q8P-fD-5Wb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p7a-SF-T3l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5" y="1199"/>
+        </scene>
         <!--设置-->
         <scene sceneID="asu-U3-FQD">
             <objects>
@@ -499,7 +514,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S7e-oK-tSr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="653" y="1092"/>
+            <point key="canvasLocation" x="739" y="1092"/>
         </scene>
         <!--关于-->
         <scene sceneID="m7W-2X-195">
@@ -552,7 +567,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CRD-1b-iLj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="653" y="1780"/>
+            <point key="canvasLocation" x="739" y="1780"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -567,6 +582,7 @@
                     <connections>
                         <segue destination="Io1-WM-Rqv" kind="relationship" relationship="viewControllers" id="xDV-QT-zgF"/>
                         <segue destination="lVf-O0-qcw" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="ehR-hL-mxO" kind="relationship" relationship="viewControllers" id="gya-iq-nod"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -629,10 +645,25 @@
             </objects>
             <point key="canvasLocation" x="1789" y="-291"/>
         </scene>
+        <!--代码浏览器-->
+        <scene sceneID="I35-WC-0WY">
+            <objects>
+                <viewController title="代码浏览器" id="PEE-95-mFl" customClass="CodeBrowserController" customModule="OpenCode" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="weQ-SU-k4j">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RND-4G-TsH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1789" y="-929"/>
+        </scene>
     </scenes>
     <resources>
         <image name="My" width="24" height="24"/>
         <image name="News" width="24" height="24"/>
+        <image name="Tools" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ydC-W7-aKd"/>
