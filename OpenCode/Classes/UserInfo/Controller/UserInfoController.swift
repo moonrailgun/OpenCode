@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class UserInfoController: UIViewController, UITableViewDataSource {
+class UserInfoController: UIViewController, UITableViewDataSource,UITableViewDelegate {
     let USERINFO_CELL_ID = "userInfoCell"
     var userInfoDate:UserInfo?
     var tableView:UITableView?
@@ -36,19 +36,16 @@ class UserInfoController: UIViewController, UITableViewDataSource {
     }
     
     func initView(userInfo:UserInfo){
-        print(userInfo)
-        
         self.headerView = UserInfoHeaderView()
         headerView?.setData(UIImage(data: NSData(contentsOfURL: NSURL(string: userInfo.avatarUrl)!)!)!, name: userInfo.name, followersNum: userInfo.followers, followingNum: userInfo.following)
         
         //列表
         tableView = UITableView(frame: self.view.bounds, style: .Grouped)
         tableView?.dataSource = self
+        tableView?.delegate = self
         tableView?.tableHeaderView = self.headerView
         self.view.addSubview(self.tableView!)
     }
-    
-    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
@@ -78,6 +75,23 @@ class UserInfoController: UIViewController, UITableViewDataSource {
     }
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if(indexPath.section == 0){
+            switch indexPath.row {
+            case 0:
+                print("事件")
+            case 1:
+                print("组织")
+            case 2:
+                print("项目")
+            case 3:
+                print("gists")
+            default:
+                break
+            }
+        }
     }
 
     /*

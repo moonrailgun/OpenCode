@@ -102,6 +102,7 @@ class Github {
     class func getCurrentUserRepositories(completionHandler:(AnyObject?) -> Void){
         requestPrivateData("https://api.github.com/user/repos", completionHandler: completionHandler)
     }
+    //获取当前用户的收藏
     class func getCurrentUserStarred(completionHandler:(AnyObject?) -> Void){
         requestPrivateData("https://api.github.com/user/starred", completionHandler: completionHandler)
     }
@@ -121,6 +122,25 @@ class Github {
     class func getUserStarred(username:String, completionHandler:(AnyObject?) -> Void) {
         requestPublicData("https://api.github.com/users/\(username)/starred", completionHandler: completionHandler)
     }
+    //获取用户事件
+    class func getUserEvents(username:String, completionHandler:(AnyObject?) -> Void) {
+        requestPublicData("https://api.github.com/users/\(username)/events", completionHandler: completionHandler)
+    }
+    //获取用户项目
+    class func getUserRepos(username:String, completionHandler:(AnyObject?) -> Void){
+        requestPublicData("https://api.github.com/users/\(username)/repos", completionHandler: completionHandler)
+    }
+    //获取用户组织
+    class func getUserOrgs(username:String, completionHandler:(AnyObject?) -> Void){
+        requestPublicData("https://api.github.com/users/\(username)/orgs", completionHandler: completionHandler)
+    }
+    //获取用户Gists数据
+    class func getUserGists(username:String, completionHandler:(AnyObject?) -> Void){
+        requestPublicData("https://api.github.com/users/\(username)/gists", completionHandler: completionHandler)
+    }
+    class func getUserGists(username:String, gistId:Int, completionHandler:(AnyObject?) -> Void){
+        requestPublicData("https://api.github.com/users/\(username)/gists/\(gistId)", completionHandler: completionHandler)
+    }
     //获取github代码搜索结果
     class func getGithubCodeSearch(query:String, page:Int?, perPage:Int?, sort:Int?, order:Int?, completionHandler:(AnyObject?) -> Void){
         var url:String = "https://api.github.com/search/code?q=\(query)"
@@ -138,6 +158,9 @@ class Github {
         }
         requestPublicData(url, completionHandler: completionHandler)
     }
+    
+    
+    
     //自定义地址的github api获取
     class func customRequest(url:String, isPublic:Bool, completionHandler:(AnyObject?) -> Void){
         if(isPublic){
