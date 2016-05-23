@@ -197,38 +197,45 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource,UITabl
             }
         }
         
-        if(indexPath.section == 1 && indexPath.row == 2){
+        if(indexPath.section == 1){
             if let data = repoDetailData{
-                if(indexPath.row == 0){
-                    //查看事件
-                    
-                }
-                
-                if(indexPath.row == 1){
-                    //查看提问
-                }
-                
-                if(indexPath.row == 2){
-                    //README.md
-                    Github.customRequest("https://api.github.com/repos/\(JSON(data)["full_name"].string!)/contents/README.md", isPublic: true, completionHandler: { (data:AnyObject?) in
-                        if let d = data{
-                            let json = JSON(d)
-                            if(json["message"] == "Not Found"){
-                                print("没有readme文件")
-                            }else{
-                                let content = json["content"].string
-                                if let c = content{
-                                    let readme = Base64.decrypt(c)
-                                    
-                                    OperationQueueHelper.operateInMainQueue({
-                                        let codeBrowser = CodeBrowserController()
-                                        codeBrowser.code = readme
-                                        self.navigationController?.pushViewController(codeBrowser, animated: true)
-                                    })
+                if let repoFullName = JSON(data)["full_name"].string {
+                    if(indexPath.row == 0){
+                        //查看事件
+                        Github.getRepoEvents(repoFullName, completionHandler: {(data:AnyObject?) in
+                            print(JSON(data!))
+                        })
+                    }
+
+                    if(indexPath.row == 1){
+                        //查看提问
+                        Github.getRepoIssueEvents(repoFullName, completionHandler: {(data:AnyObject?) in
+                            print(JSON(data!))
+                        })
+                    }
+
+                    if(indexPath.row == 2){
+                        //README.md
+                        Github.customRequest("https://api.github.com/repos/\(repoFullName)/contents/README.md", isPublic: true, completionHandler: { (data:AnyObject?) in
+                            if let d = data{
+                                let json = JSON(d)
+                                if(json["message"] == "Not Found"){
+                                    print("没有readme文件")
+                                }else{
+                                    let content = json["content"].string
+                                    if let c = content{
+                                        let readme = Base64.decrypt(c)
+
+                                        OperationQueueHelper.operateInMainQueue({
+                                            let codeBrowser = CodeBrowserController()
+                                            codeBrowser.code = readme
+                                            self.navigationController?.pushViewController(codeBrowser, animated: true)
+                                        })
+                                    }
                                 }
                             }
-                        }
-                    })
+                        })
+                    }
                 }
             }
         }

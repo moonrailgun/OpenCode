@@ -158,9 +158,15 @@ class Github {
         }
         requestPublicData(url, completionHandler: completionHandler)
     }
-    
-    
-    
+    //获取项目事件
+    class func getRepoEvents(repoFullName:String, completionHandler:(AnyObject?) -> Void){
+        requestPublicData("https://api.github.com/repos/\(repoFullName)/events",completionHandler: completionHandler)
+    }
+    //获取项目问题事件
+    class func getRepoIssueEvents(repoFullName:String, completionHandler:(AnyObject?) -> Void){
+        requestPublicData("https://api.github.com/repos/\(repoFullName)/issues/events",completionHandler: completionHandler)
+    }
+
     //自定义地址的github api获取
     class func customRequest(url:String, isPublic:Bool, completionHandler:(AnyObject?) -> Void){
         if(isPublic){
