@@ -49,8 +49,24 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource,UITabl
     
     func initNavItem(){
         self.title = "项目详情"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "查看源码", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "查看源码", style: UIBarButtonItemStyle.Plain, target: self, action: "openSourceCode:")
     }
+    
+    func openSourceCode(barButtonItem:UIBarButtonItem) {
+        print("查看源码")
+        if let data = repoDetailData{
+            if let repoFullName = JSON(data)["full_name"].string {
+                Github.getRepoContent(repoFullName, path: "", completionHandler: { (data:AnyObject?) in
+                    let fileBrowser = FileBrowserController()
+                    fileBrowser.loadData(data)
+                    OperationQueueHelper.operateInMainQueue({ 
+                        self.navigationController?.pushViewController(fileBrowser, animated: true)
+                    })
+                })
+            }
+        }
+        
+}
     
     func initView(){
         self.view.backgroundColor = GlobalDefine.defineBackgroundColor
