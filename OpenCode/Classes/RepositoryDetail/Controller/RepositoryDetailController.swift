@@ -216,7 +216,7 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource,UITabl
 
                     if(indexPath.row == 2){
                         //README.md
-                        Github.customRequest("https://api.github.com/repos/\(repoFullName)/contents/README.md", isPublic: true, completionHandler: { (data:AnyObject?) in
+                        Github.getRepoContent(repoFullName, path: "README.md", completionHandler: { (data:AnyObject?) in
                             if let d = data{
                                 let json = JSON(d)
                                 if(json["message"] == "Not Found"){
@@ -225,7 +225,7 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource,UITabl
                                     let content = json["content"].string
                                     if let c = content{
                                         let readme = Base64.decrypt(c)
-
+                                        
                                         OperationQueueHelper.operateInMainQueue({
                                             let codeBrowser = CodeBrowserController()
                                             codeBrowser.code = readme
