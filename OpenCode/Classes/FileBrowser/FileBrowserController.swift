@@ -14,6 +14,7 @@ class FileBrowserController: UIViewController, UITableViewDataSource, UITableVie
     let FILE_CELL = "file"
     
     var data:JSON?
+    var repoFullName:String?
     
     var tableView:UITableView?
     
@@ -33,13 +34,15 @@ class FileBrowserController: UIViewController, UITableViewDataSource, UITableVie
         // Dispose of any resources that can be recreated.
     }
     
-    func loadData(data:AnyObject?){
+    func loadData(repoFullName:String?, data:AnyObject?){
         if let d = data{
-            loadData(JSON(d))
+            loadData(repoFullName, data: JSON(d))
         }
     }
     
-    func loadData(data:JSON){
+    func loadData(repoFullName:String?, data:JSON){
+        self.repoFullName = repoFullName
+        
         self.data = data
     }
     
@@ -59,13 +62,47 @@ class FileBrowserController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let index = indexPath.row
+        let fileCell = self.data![index]
+        if let type = fileCell["type"].string{
+            let path = fileCell["path"].string
+            if(type == "file"){
+                //TODO 打开代码浏览器
+            }else if(type == "dir"){
+                //继续浏览
+                Github.getRepoContent(self.repoFullName!, path: path!, completionHandler: { (data:AnyObject?) in
+                    let fileBrowser = FileBrowserController()
+                    fileBrowser.loadData(self.repoFullName, data: data)
+                    fileBrowser.title = path!
+                    OperationQueueHelper.operateInMainQueue({
+                        self.navigationController?.pushViewController(fileBrowser, animated: true)
+                    })
+                })
+            }
+        }
+        
         print(indexPath)
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier(FILE_CELL)
         
         if(cell == nil){
+            let index = indexPath.row
+            let fileCell = self.data![index]
+            
             cell = UITableViewCell(style: .Value1, reuseIdentifier: FILE_CELL)
+            cell?.accessoryType = .DisclosureIndicator
+            cell?.textLabel?.text = fileCell["name"].string
+            
+            let size = fileCell["size"].int!
+            if(size != 0){
+                //文件
+                cell?.accessoryType = .None
+                cell?.detailTextLabel?.text = size < 1024 ? "\(size)KB" : "\(size / 1024)MB"
+            }else{
+                //文件夹
+                
+            }
         }
         
         return cell!

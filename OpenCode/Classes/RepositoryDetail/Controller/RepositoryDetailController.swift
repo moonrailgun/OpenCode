@@ -58,7 +58,8 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource,UITabl
             if let repoFullName = JSON(data)["full_name"].string {
                 Github.getRepoContent(repoFullName, path: "", completionHandler: { (data:AnyObject?) in
                     let fileBrowser = FileBrowserController()
-                    fileBrowser.loadData(data)
+                    fileBrowser.loadData(repoFullName, data: data)
+                    fileBrowser.title = repoFullName
                     OperationQueueHelper.operateInMainQueue({ 
                         self.navigationController?.pushViewController(fileBrowser, animated: true)
                     })
