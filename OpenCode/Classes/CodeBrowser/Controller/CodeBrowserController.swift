@@ -38,17 +38,30 @@ class CodeBrowserController: UIViewController, UIWebViewDelegate {
     
     func webViewDidFinishLoad(webView: UIWebView) {
         var script:String
-        if let c = code{
+        if var c = code{
+            //处理转译
+            c = c.stringByReplacingOccurrencesOfString("\n", withString: "<br/>", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            c = c.stringByReplacingOccurrencesOfString("'", withString: "\'", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            //c = c.stringByReplacingOccurrencesOfString("\'", withString: "\\'", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            
             script =  "loadCode(\'" + c + "\')"	
         }else{
             script = "loadCode('发生错误：没有接收到代码')"
         }
-        script = script.stringByReplacingOccurrencesOfString("\n", withString: "<br/>", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        
         print(script)
         webView.stringByEvaluatingJavaScriptFromString(script)
     }
     func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
         print("网页加载失败:\(error)")
+    }
+    
+    func parseData(content:String, encoding:String){
+        if(encoding == "base64"){
+            self.code = Base64.decrypt(content)
+        }else{
+            print("未知的编码方式")
+        }
     }
     
 

@@ -67,7 +67,23 @@ class FileBrowserController: UIViewController, UITableViewDataSource, UITableVie
         if let type = fileCell["type"].string{
             let path = fileCell["path"].string
             if(type == "file"){
-                //TODO 打开代码浏览器
+                //打开代码浏览器
+                Github.getRepoContent(self.repoFullName!, path: path!, completionHandler: { (data:AnyObject?) in
+                    if let d = data{
+                        let j = JSON(d)
+                        
+                        if(j["type"] != "file"){
+                            print("文件类型出错")
+                            return
+                        }
+                        
+                        let codeBrowser = CodeBrowserController()
+                        codeBrowser.parseData(j["content"].string!, encoding: j["encoding"].string!)
+                        OperationQueueHelper.operateInMainQueue({
+                            self.navigationController?.pushViewController(codeBrowser, animated: true)
+                        })
+                    }
+                })
             }else if(type == "dir"){
                 //继续浏览
                 Github.getRepoContent(self.repoFullName!, path: path!, completionHandler: { (data:AnyObject?) in
@@ -93,16 +109,18 @@ class FileBrowserController: UIViewController, UITableViewDataSource, UITableVie
             cell = UITableViewCell(style: .Value1, reuseIdentifier: FILE_CELL)
             cell?.accessoryType = .DisclosureIndicator
             cell?.textLabel?.text = fileCell["name"].string
-            
-            let size = fileCell["size"].int!
-            if(size != 0){
-                //文件
-                cell?.accessoryType = .None
-                cell?.detailTextLabel?.text = size < 1024 ? "\(size)KB" : "\(size / 1024)MB"
-            }else{
-                //文件夹
                 
+            if let size = fileCell["size"].int{
+                if(size != 0){
+                    //文件
+                    cell?.accessoryType = .None
+                    cell?.detailTextLabel?.text = size < 1024 ? "\(size)KB" : "\(size / 1024)MB"
+                }else{
+                    //文件夹
+                    
+                }
             }
+            
         }
         
         return cell!
