@@ -345,7 +345,7 @@
         <!--工具-->
         <scene sceneID="esA-4S-4NX">
             <objects>
-                <viewController id="ehR-hL-mxO" sceneMemberID="viewController">
+                <viewController id="ehR-hL-mxO" customClass="ToolController" customModule="OpenCode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JtF-6h-qpA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

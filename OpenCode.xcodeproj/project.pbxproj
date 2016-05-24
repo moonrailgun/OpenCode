@@ -19,6 +19,7 @@
 		BA47B7491CE99EC200CF3947 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47B7471CE99EC200CF3947 /* UserCell.swift */; };
 		BA47B74A1CE99EC200CF3947 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA47B7481CE99EC200CF3947 /* UserCell.xib */; };
 		BA47B74E1CE9AE7D00CF3947 /* UserBaseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47B74D1CE9AE7D00CF3947 /* UserBaseInfo.swift */; };
+		BA505B0A1CF3FBB900BE7EC9 /* ToolController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA505B091CF3FBB900BE7EC9 /* ToolController.swift */; };
 		BA5582C11CF1706400157000 /* CodeBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5582C01CF1706400157000 /* CodeBrowserController.swift */; };
 		BA5582C41CF173B400157000 /* CodeBrowser.html in Resources */ = {isa = PBXBuildFile; fileRef = BA5582C31CF173B400157000 /* CodeBrowser.html */; };
 		BA5582CD1CF1827C00157000 /* CodeLoader.js in Resources */ = {isa = PBXBuildFile; fileRef = BA5582CC1CF1827C00157000 /* CodeLoader.js */; };
@@ -71,6 +72,7 @@
 		BA47B7471CE99EC200CF3947 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserCell.swift; path = Classes/UserList/View/UserCell.swift; sourceTree = "<group>"; };
 		BA47B7481CE99EC200CF3947 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserCell.xib; path = Classes/UserList/View/UserCell.xib; sourceTree = "<group>"; };
 		BA47B74D1CE9AE7D00CF3947 /* UserBaseInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserBaseInfo.swift; path = Classes/UserList/Model/UserBaseInfo.swift; sourceTree = "<group>"; };
+		BA505B091CF3FBB900BE7EC9 /* ToolController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToolController.swift; path = Classes/Tool/Controller/ToolController.swift; sourceTree = "<group>"; };
 		BA5582C01CF1706400157000 /* CodeBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CodeBrowserController.swift; path = Classes/CodeBrowser/Controller/CodeBrowserController.swift; sourceTree = "<group>"; };
 		BA5582C31CF173B400157000 /* CodeBrowser.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = CodeBrowser.html; path = CodeBrowser/CodeBrowser.html; sourceTree = "<group>"; };
 		BA5582CC1CF1827C00157000 /* CodeLoader.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = CodeLoader.js; path = CodeBrowser/CodeLoader.js; sourceTree = "<group>"; };
@@ -237,6 +239,22 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		BA505B071CF3FB7A00BE7EC9 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				BA505B081CF3FB8C00BE7EC9 /* Controller */,
+			);
+			name = Tool;
+			sourceTree = "<group>";
+		};
+		BA505B081CF3FB8C00BE7EC9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA505B091CF3FBB900BE7EC9 /* ToolController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		BA5582BE1CF16FF600157000 /* CodeBrowser */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +327,7 @@
 		BA8618FD1CDF22F800BE9E9C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BA505B071CF3FB7A00BE7EC9 /* Tool */,
 				BA647E051CF2F76800DA369F /* FileBrowser */,
 				BA5582BE1CF16FF600157000 /* CodeBrowser */,
 				BAC5DF2E1CEC044C00EB2EFE /* UserInfo */,
@@ -567,6 +586,7 @@
 				BA6F3B121CCE478D00F6984B /* TimeHelper.swift in Sources */,
 				BA8619051CDF289D00BE9E9C /* RepositoryDetailController.swift in Sources */,
 				BA47B7451CE99B4A00CF3947 /* UserListController.swift in Sources */,
+				BA505B0A1CF3FBB900BE7EC9 /* ToolController.swift in Sources */,
 				BA8619091CDF31F000BE9E9C /* RepoInfoView.swift in Sources */,
 				BA3AD2201CCA29B60034B21E /* HttpRequest.swift in Sources */,
 				BA647E081CF2F7C200DA369F /* FileBrowserController.swift in Sources */,
