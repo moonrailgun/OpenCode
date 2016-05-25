@@ -98,7 +98,7 @@ class ToolController: UIViewController, UICollectionViewDataSource {
             let toolList = d.valueForKey(sectionName) as! NSDictionary
             let toolData = toolList.valueForKey(toolList.allKeys[row] as! String) as! NSDictionary
             
-            let toolName = toolData.valueForKey("Name") as! NSString		
+            let toolName = toolData.valueForKey("Name") as! NSString
             cell.setData(UIImage(named: "code")!, text: toolName as String)
         }
         

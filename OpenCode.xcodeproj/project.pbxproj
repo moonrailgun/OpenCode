@@ -30,6 +30,7 @@
 		BA6F3B121CCE478D00F6984B /* TimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F3B111CCE478D00F6984B /* TimeHelper.swift */; };
 		BA79E02B1CF5946800E86258 /* ToolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79E02A1CF5946800E86258 /* ToolCell.swift */; };
 		BA79E0761CF5C49B00E86258 /* ToolList.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA79E0751CF5C49B00E86258 /* ToolList.plist */; };
+		BA79E0781CF5DF8300E86258 /* FlatColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79E0771CF5DF8300E86258 /* FlatColor.swift */; };
 		BA7B2A0F1CE47D5200455F68 /* GlobalDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7B2A0E1CE47D5200455F68 /* GlobalDefine.swift */; };
 		BA7CB1D41CEDF5ED004DDF42 /* UserInfoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7CB1D31CEDF5ED004DDF42 /* UserInfoHeaderView.swift */; };
 		BA8619051CDF289D00BE9E9C /* RepositoryDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8619041CDF289D00BE9E9C /* RepositoryDetailController.swift */; };
@@ -85,6 +86,7 @@
 		BA6F3B111CCE478D00F6984B /* TimeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeHelper.swift; sourceTree = "<group>"; };
 		BA79E02A1CF5946800E86258 /* ToolCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToolCell.swift; path = Classes/Tool/View/ToolCell.swift; sourceTree = "<group>"; };
 		BA79E0751CF5C49B00E86258 /* ToolList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ToolList.plist; sourceTree = "<group>"; };
+		BA79E0771CF5DF8300E86258 /* FlatColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlatColor.swift; path = Classes/Other/FlatColor.swift; sourceTree = "<group>"; };
 		BA7B2A0E1CE47D5200455F68 /* GlobalDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalDefine.swift; path = Classes/Other/GlobalDefine.swift; sourceTree = "<group>"; };
 		BA7CB1D31CEDF5ED004DDF42 /* UserInfoHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInfoHeaderView.swift; path = Classes/UserInfo/View/UserInfoHeaderView.swift; sourceTree = "<group>"; };
 		BA8619041CDF289D00BE9E9C /* RepositoryDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepositoryDetailController.swift; path = Classes/RepositoryDetail/Controller/RepositoryDetailController.swift; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				BA7B2A0E1CE47D5200455F68 /* GlobalDefine.swift */,
+				BA79E0771CF5DF8300E86258 /* FlatColor.swift */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -612,6 +615,7 @@
 				BA3AD21E1CCA278B0034B21E /* Github.swift in Sources */,
 				BA6F3B101CCE3EA400F6984B /* OperationQueueHelper.swift in Sources */,
 				BAF7F9A01CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift in Sources */,
+				BA79E0781CF5DF8300E86258 /* FlatColor.swift in Sources */,
 				BA5F71A81CD350DC0043CBB5 /* RepositoryTableViewController.swift in Sources */,
 				BA8DA32C1CD05D7F00F9B391 /* MyViewController.swift in Sources */,
 				BA3AD1FA1CCA245A0034B21E /* AppDelegate.swift in Sources */,
