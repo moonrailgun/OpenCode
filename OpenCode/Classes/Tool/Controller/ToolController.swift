@@ -13,6 +13,7 @@ class ToolController: UIViewController, UICollectionViewDataSource {
     let TOOL_CELL_ID = "tool"
     
     var collectionView:UICollectionView?
+    var data:NSDictionary?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,16 @@ class ToolController: UIViewController, UICollectionViewDataSource {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
+        initView()
+        initData()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func initView(){
         let flowLayout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = ToolCell.size
         
@@ -31,10 +42,9 @@ class ToolController: UIViewController, UICollectionViewDataSource {
         self.collectionView?.dataSource = self
         self.collectionView?.backgroundColor = UIColor.clearColor()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func initData(){
+        self.data = NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("ToolList", ofType: "plist")!)
     }
 
     /*
@@ -51,18 +61,36 @@ class ToolController: UIViewController, UICollectionViewDataSource {
 
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        if let d = self.data{
+            let num = d.count
+            
+            return num
+        }else{
+            return 0
+        }
     }
 
 
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 10
+        if let d = self.data{
+            let array = d.allKeys
+            if(section > array.count){
+                return 0
+            }else{
+                let key = array[section]
+                return d.objectForKey(key)!.count
+            }
+        }else{
+            return 0
+        }
     }
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(TOOL_CELL_ID, forIndexPath: indexPath)
     
+        let row = indexPath.row
+        
         return cell
     }
 
