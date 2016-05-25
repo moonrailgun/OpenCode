@@ -21,13 +21,14 @@ class ToolCell: UICollectionViewCell {
         
         //image
         image = UIImageView(frame: CGRect(x: 10, y: 5, width: 40, height: 40))
-        image?.image = UIImage(named: "box")
+        image?.image = UIImage(named: "code")
         image?.layer.cornerRadius = 20
         self.addSubview(image!)
         
         label = UILabel(frame: CGRect(x: 0, y: 45, width: ToolCell.size.width, height: 25))
-        label?.text = "text"
+        //label?.text = "text"
         label?.textAlignment = .Center
+        label?.font = UIFont.systemFontOfSize(12)
         self.addSubview(label!)
         
     }

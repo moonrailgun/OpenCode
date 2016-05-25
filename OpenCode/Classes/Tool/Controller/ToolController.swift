@@ -87,9 +87,20 @@ class ToolController: UIViewController, UICollectionViewDataSource {
     }
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(TOOL_CELL_ID, forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(TOOL_CELL_ID, forIndexPath: indexPath) as! ToolCell
     
+        let section = indexPath.section
         let row = indexPath.row
+        
+        if let d = self.data{
+            let sectionName:String = d.allKeys[section] as! String
+            
+            let toolList = d.valueForKey(sectionName) as! NSDictionary
+            let toolData = toolList.valueForKey(toolList.allKeys[row] as! String) as! NSDictionary
+            
+            let toolName = toolData.valueForKey("Name") as! NSString		
+            cell.setData(UIImage(named: "code")!, text: toolName as String)
+        }
         
         return cell
     }
