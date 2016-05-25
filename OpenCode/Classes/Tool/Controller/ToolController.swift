@@ -22,12 +22,12 @@ class ToolController: UIViewController, UICollectionViewDataSource {
 
         // Register cell classes
         let flowLayout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: 100, height: 100)
+        flowLayout.itemSize = ToolCell.size
         
         self.collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: flowLayout)
         self.view.addSubview(collectionView!)
         
-        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: TOOL_CELL_ID)
+        self.collectionView!.registerClass(ToolCell.self, forCellWithReuseIdentifier: TOOL_CELL_ID)
         self.collectionView?.dataSource = self
         self.collectionView?.backgroundColor = UIColor.clearColor()
     }
@@ -62,8 +62,6 @@ class ToolController: UIViewController, UICollectionViewDataSource {
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(TOOL_CELL_ID, forIndexPath: indexPath)
-        
-        cell.backgroundColor = UIColor.blueColor()
     
         return cell
     }

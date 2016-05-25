@@ -340,7 +340,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZD3-CN-oJb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2264" y="1134"/>
+            <point key="canvasLocation" x="2796" y="1134"/>
         </scene>
         <!--工具-->
         <scene sceneID="esA-4S-4NX">
@@ -351,11 +351,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="工具" image="Tools" id="Q8P-fD-5Wb"/>
+                    <navigationItem key="navigationItem" title="工具" id="d2I-CV-uQq"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p7a-SF-T3l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5" y="1199"/>
+            <point key="canvasLocation" x="-5" y="1975"/>
         </scene>
         <!--设置-->
         <scene sceneID="asu-U3-FQD">
@@ -514,7 +514,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S7e-oK-tSr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="739" y="1092"/>
+            <point key="canvasLocation" x="1271" y="1092"/>
         </scene>
         <!--关于-->
         <scene sceneID="m7W-2X-195">
@@ -567,7 +567,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CRD-1b-iLj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="739" y="1780"/>
+            <point key="canvasLocation" x="1271" y="1780"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -582,7 +582,7 @@
                     <connections>
                         <segue destination="Io1-WM-Rqv" kind="relationship" relationship="viewControllers" id="xDV-QT-zgF"/>
                         <segue destination="lVf-O0-qcw" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="ehR-hL-mxO" kind="relationship" relationship="viewControllers" id="gya-iq-nod"/>
+                        <segue destination="Nbg-TI-RyH" kind="relationship" relationship="viewControllers" id="gya-iq-nod"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -658,6 +658,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RND-4G-TsH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1789" y="-929"/>
+        </scene>
+        <!--工具-->
+        <scene sceneID="5np-T3-ZB8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Nbg-TI-RyH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="工具" image="Tools" id="Q8P-fD-5Wb"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hd4-vG-DZj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ehR-hL-mxO" kind="relationship" relationship="rootViewController" id="g08-04-vRu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rEb-I2-Cmh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5" y="1199"/>
         </scene>
     </scenes>
     <resources>

@@ -28,6 +28,8 @@
 		BA69EBE41CD4980C0090816C /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69EBE31CD4980C0090816C /* UserTableViewController.swift */; };
 		BA6F3B101CCE3EA400F6984B /* OperationQueueHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F3B0F1CCE3EA400F6984B /* OperationQueueHelper.swift */; };
 		BA6F3B121CCE478D00F6984B /* TimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F3B111CCE478D00F6984B /* TimeHelper.swift */; };
+		BA79E02B1CF5946800E86258 /* ToolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79E02A1CF5946800E86258 /* ToolCell.swift */; };
+		BA79E0311CF5C0C900E86258 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA79E02F1CF5C0C900E86258 /* Model.xcdatamodeld */; };
 		BA7B2A0F1CE47D5200455F68 /* GlobalDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7B2A0E1CE47D5200455F68 /* GlobalDefine.swift */; };
 		BA7CB1D41CEDF5ED004DDF42 /* UserInfoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7CB1D31CEDF5ED004DDF42 /* UserInfoHeaderView.swift */; };
 		BA8619051CDF289D00BE9E9C /* RepositoryDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8619041CDF289D00BE9E9C /* RepositoryDetailController.swift */; };
@@ -81,6 +83,8 @@
 		BA69EBE31CD4980C0090816C /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
 		BA6F3B0F1CCE3EA400F6984B /* OperationQueueHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationQueueHelper.swift; sourceTree = "<group>"; };
 		BA6F3B111CCE478D00F6984B /* TimeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeHelper.swift; sourceTree = "<group>"; };
+		BA79E02A1CF5946800E86258 /* ToolCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToolCell.swift; path = Classes/Tool/View/ToolCell.swift; sourceTree = "<group>"; };
+		BA79E0301CF5C0C900E86258 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		BA7B2A0E1CE47D5200455F68 /* GlobalDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalDefine.swift; path = Classes/Other/GlobalDefine.swift; sourceTree = "<group>"; };
 		BA7CB1D31CEDF5ED004DDF42 /* UserInfoHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInfoHeaderView.swift; path = Classes/UserInfo/View/UserInfoHeaderView.swift; sourceTree = "<group>"; };
 		BA8619041CDF289D00BE9E9C /* RepositoryDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepositoryDetailController.swift; path = Classes/RepositoryDetail/Controller/RepositoryDetailController.swift; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 			children = (
 				BA5582C21CF1735C00157000 /* CodeBrowser */,
 				BA3AD1F81CCA245A0034B21E /* Info.plist */,
+				BA79E02F1CF5C0C900E86258 /* Model.xcdatamodeld */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 		BA505B071CF3FB7A00BE7EC9 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				BA79E0291CF5944600E86258 /* View */,
 				BA505B081CF3FB8C00BE7EC9 /* Controller */,
 			);
 			name = Tool;
@@ -304,6 +310,14 @@
 				BA647E071CF2F7C200DA369F /* FileBrowserController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		BA79E0291CF5944600E86258 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA79E02A1CF5946800E86258 /* ToolCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		BA7B2A0D1CE47D3500455F68 /* Other */ = {
@@ -584,6 +598,7 @@
 				BA69EBE41CD4980C0090816C /* UserTableViewController.swift in Sources */,
 				BA8DA3311CD080A500F9B391 /* Crypto.swift in Sources */,
 				BA6F3B121CCE478D00F6984B /* TimeHelper.swift in Sources */,
+				BA79E0311CF5C0C900E86258 /* Model.xcdatamodeld in Sources */,
 				BA8619051CDF289D00BE9E9C /* RepositoryDetailController.swift in Sources */,
 				BA47B7451CE99B4A00CF3947 /* UserListController.swift in Sources */,
 				BA505B0A1CF3FBB900BE7EC9 /* ToolController.swift in Sources */,
@@ -607,6 +622,7 @@
 				BA47B74E1CE9AE7D00CF3947 /* UserBaseInfo.swift in Sources */,
 				BAC5DF331CEC051800EB2EFE /* UserInfo.swift in Sources */,
 				BA8CEBDD1CE7480A0044155A /* RepoDetailHeaderView.swift in Sources */,
+				BA79E02B1CF5946800E86258 /* ToolCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -814,6 +830,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BA79E02F1CF5C0C900E86258 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BA79E0301CF5C0C900E86258 /* Model.xcdatamodel */,
+			);
+			currentVersion = BA79E0301CF5C0C900E86258 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BA3AD1EC1CCA245A0034B21E /* Project object */;
 }
