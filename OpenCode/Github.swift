@@ -170,6 +170,17 @@ class Github {
     class func getRepoContent(repoFullName:String, path:String, completionHandler:(AnyObject?) -> Void){
         requestPublicData("https://api.github.com/repos/\(repoFullName)/contents/\(path)", completionHandler: completionHandler)
     }
+    //获取项目提交纪录
+    class func getRepoCommits(repoFullName:String, completionHandler:(AnyObject?) -> Void){
+        requestPublicData("https://api.github.com/repos/\(repoFullName)/commits", completionHandler: completionHandler)
+    }
+    //获取项目拉取
+    class func getRepoPulls(repoFullName:String, completionHandler:(AnyObject?) -> Void){
+        requestPublicData("https://api.github.com/repos/\(repoFullName)/pulls", completionHandler: completionHandler)
+    }
+    class func getRepoBranches(repoFullName:String, completionHandler:(AnyObject?) -> Void){
+        requestPublicData("https://api.github.com/repos/\(repoFullName)/branches", completionHandler: completionHandler)
+    }
 
     //自定义地址的github api获取
     class func customRequest(url:String, isPublic:Bool, completionHandler:(AnyObject?) -> Void){

@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class RepositoryDetailController: UIViewController, UITableViewDataSource,UITableViewDelegate {
+class RepoDetailController: UIViewController, UITableViewDataSource,UITableViewDelegate {
     var tableView:UITableView?
     let MY_CELL_ID = "my"
     var isFirstRun = true
@@ -31,17 +31,17 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource,UITabl
         tableView = UITableView(frame: CGRectMake(0, 0, self.view.frame.width, self.view.frame.height), style: UITableViewStyle.Grouped)
         tableView!.dataSource = self
         tableView!.delegate = self
-
+        
         initNavItem()
         initView()
         loadData()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -60,14 +60,14 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource,UITabl
                     let fileBrowser = FileBrowserController()
                     fileBrowser.loadData(repoFullName, data: data)
                     fileBrowser.title = repoFullName
-                    OperationQueueHelper.operateInMainQueue({ 
+                    OperationQueueHelper.operateInMainQueue({
                         self.navigationController?.pushViewController(fileBrowser, animated: true)
                     })
                 })
             }
         }
         
-}
+    }
     
     func initView(){
         self.view.backgroundColor = GlobalDefine.defineBackgroundColor
@@ -116,7 +116,7 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource,UITabl
             }
         }
     }
-
+    
     
     // MARK: - Table view data source
     
@@ -125,7 +125,7 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource,UITabl
         // Return the number of sections.
         return 3
     }
-
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
@@ -133,7 +133,7 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource,UITabl
         
         return arr[section]
     }
-
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(MY_CELL_ID, forIndexPath: indexPath) as UITableViewCell
         
@@ -186,7 +186,7 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource,UITabl
                 cell.textLabel?.text = "拉取请求"
                 cell.imageView?.image = UIImage(named: "box")
             case 2:
-                cell.textLabel?.text = "源码文件"
+                cell.textLabel?.text = "查看分支"
                 cell.imageView?.image = UIImage(named: "box")
             default:
                 break
@@ -197,7 +197,7 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource,UITabl
         
         return cell
     }
-
+    
     // MARK: - Table view delegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("点击了\(indexPath.row)行")
@@ -214,23 +214,29 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource,UITabl
             }
         }
         
-        if(indexPath.section == 1){
-            if let data = repoDetailData{
-                if let repoFullName = JSON(data)["full_name"].string {
+        if let data = repoDetailData{
+            if let repoFullName = JSON(data)["full_name"].string {
+                if(indexPath.section == 1){
                     if(indexPath.row == 0){
                         //查看事件
                         Github.getRepoEvents(repoFullName, completionHandler: {(data:AnyObject?) in
-                            print(JSON(data!))
+                            //print(JSON(data!))
+                            let controller = RepoEventController()
+                            controller.rawData = data
+                            self.navigationController?.pushViewController(controller, animated: true)
                         })
                     }
-
+                    
                     if(indexPath.row == 1){
                         //查看提问
                         Github.getRepoIssueEvents(repoFullName, completionHandler: {(data:AnyObject?) in
-                            print(JSON(data!))
+                            //print(JSON(data!))
+                            let controller = RepoIssuesController()
+                            controller.rawData = data
+                            self.navigationController?.pushViewController(controller, animated: true)
                         })
                     }
-
+                    
                     if(indexPath.row == 2){
                         //README.md
                         Github.getRepoContent(repoFullName, path: "README.md", completionHandler: { (data:AnyObject?) in
@@ -254,47 +260,65 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource,UITabl
                         })
                     }
                 }
+                else if(indexPath.section == 2){
+                    if(indexPath.row == 0){
+                        //提交纪录
+                        Github.getRepoCommits(repoFullName, completionHandler: { (data:AnyObject?) in
+                            print(JSON(data!))
+                        })
+                    }else if(indexPath.row == 1){
+                        //拉取请求
+                        Github.getRepoPulls(repoFullName, completionHandler: { (data:AnyObject?) in
+                            print(JSON(data!))
+                        })
+                    }else if(indexPath.row == 2){
+                        //查看分支
+                        Github.getRepoBranches(repoFullName, completionHandler: { (data:AnyObject?) in
+                            print(JSON(data!))
+                        })
+                    }
+                }
             }
         }
     }
     
     /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
+     // Override to support conditional editing of the table view.
+     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+     // Return NO if you do not want the specified item to be editable.
+     return true
+     }
+     */
+    
     /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
+     // Override to support editing the table view.
+     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+     if editingStyle == .Delete {
+     // Delete the row from the data source
+     tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+     } else if editingStyle == .Insert {
+     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+     }
+     }
+     */
+    
     /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
+     // Override to support rearranging the table view.
+     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+     
+     }
+     */
+    
     /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
+     // Override to support conditional rearranging of the table view.
+     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+     // Return NO if you do not want the item to be re-orderable.
+     return true
+     }
+     */
+    
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
@@ -305,5 +329,5 @@ class RepositoryDetailController: UIViewController, UITableViewDataSource,UITabl
             }
         }
     }
-
+    
 }

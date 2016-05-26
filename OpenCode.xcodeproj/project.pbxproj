@@ -20,6 +20,8 @@
 		BA47B74A1CE99EC200CF3947 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA47B7481CE99EC200CF3947 /* UserCell.xib */; };
 		BA47B74E1CE9AE7D00CF3947 /* UserBaseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47B74D1CE9AE7D00CF3947 /* UserBaseInfo.swift */; };
 		BA505B0A1CF3FBB900BE7EC9 /* ToolController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA505B091CF3FBB900BE7EC9 /* ToolController.swift */; };
+		BA51C0521CF696D4005CCCC7 /* RepoEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51C0511CF696D4005CCCC7 /* RepoEventController.swift */; };
+		BA51C0541CF69B88005CCCC7 /* RepoIssuesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51C0531CF69B88005CCCC7 /* RepoIssuesController.swift */; };
 		BA5582C11CF1706400157000 /* CodeBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5582C01CF1706400157000 /* CodeBrowserController.swift */; };
 		BA5582C41CF173B400157000 /* CodeBrowser.html in Resources */ = {isa = PBXBuildFile; fileRef = BA5582C31CF173B400157000 /* CodeBrowser.html */; };
 		BA5582CD1CF1827C00157000 /* CodeLoader.js in Resources */ = {isa = PBXBuildFile; fileRef = BA5582CC1CF1827C00157000 /* CodeLoader.js */; };
@@ -33,7 +35,7 @@
 		BA79E0781CF5DF8300E86258 /* FlatColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79E0771CF5DF8300E86258 /* FlatColor.swift */; };
 		BA7B2A0F1CE47D5200455F68 /* GlobalDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7B2A0E1CE47D5200455F68 /* GlobalDefine.swift */; };
 		BA7CB1D41CEDF5ED004DDF42 /* UserInfoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7CB1D31CEDF5ED004DDF42 /* UserInfoHeaderView.swift */; };
-		BA8619051CDF289D00BE9E9C /* RepositoryDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8619041CDF289D00BE9E9C /* RepositoryDetailController.swift */; };
+		BA8619051CDF289D00BE9E9C /* RepoDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8619041CDF289D00BE9E9C /* RepoDetailController.swift */; };
 		BA8619071CDF2DD000BE9E9C /* RepoDescView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8619061CDF2DD000BE9E9C /* RepoDescView.swift */; };
 		BA8619091CDF31F000BE9E9C /* RepoInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8619081CDF31F000BE9E9C /* RepoInfoView.swift */; };
 		BA8CEBDD1CE7480A0044155A /* RepoDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8CEBDC1CE7480A0044155A /* RepoDetailHeaderView.swift */; };
@@ -76,6 +78,8 @@
 		BA47B7481CE99EC200CF3947 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserCell.xib; path = Classes/UserList/View/UserCell.xib; sourceTree = "<group>"; };
 		BA47B74D1CE9AE7D00CF3947 /* UserBaseInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserBaseInfo.swift; path = Classes/UserList/Model/UserBaseInfo.swift; sourceTree = "<group>"; };
 		BA505B091CF3FBB900BE7EC9 /* ToolController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToolController.swift; path = Classes/Tool/Controller/ToolController.swift; sourceTree = "<group>"; };
+		BA51C0511CF696D4005CCCC7 /* RepoEventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoEventController.swift; path = Classes/RepositoryDetail/Controller/RepoEventController.swift; sourceTree = "<group>"; };
+		BA51C0531CF69B88005CCCC7 /* RepoIssuesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoIssuesController.swift; path = Classes/RepositoryDetail/Controller/RepoIssuesController.swift; sourceTree = "<group>"; };
 		BA5582C01CF1706400157000 /* CodeBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CodeBrowserController.swift; path = Classes/CodeBrowser/Controller/CodeBrowserController.swift; sourceTree = "<group>"; };
 		BA5582C31CF173B400157000 /* CodeBrowser.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = CodeBrowser.html; path = CodeBrowser/CodeBrowser.html; sourceTree = "<group>"; };
 		BA5582CC1CF1827C00157000 /* CodeLoader.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = CodeLoader.js; path = CodeBrowser/CodeLoader.js; sourceTree = "<group>"; };
@@ -89,7 +93,7 @@
 		BA79E0771CF5DF8300E86258 /* FlatColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlatColor.swift; path = Classes/Other/FlatColor.swift; sourceTree = "<group>"; };
 		BA7B2A0E1CE47D5200455F68 /* GlobalDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalDefine.swift; path = Classes/Other/GlobalDefine.swift; sourceTree = "<group>"; };
 		BA7CB1D31CEDF5ED004DDF42 /* UserInfoHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInfoHeaderView.swift; path = Classes/UserInfo/View/UserInfoHeaderView.swift; sourceTree = "<group>"; };
-		BA8619041CDF289D00BE9E9C /* RepositoryDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepositoryDetailController.swift; path = Classes/RepositoryDetail/Controller/RepositoryDetailController.swift; sourceTree = "<group>"; };
+		BA8619041CDF289D00BE9E9C /* RepoDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoDetailController.swift; path = Classes/RepositoryDetail/Controller/RepoDetailController.swift; sourceTree = "<group>"; };
 		BA8619061CDF2DD000BE9E9C /* RepoDescView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoDescView.swift; path = Classes/RepositoryDetail/View/RepoDescView.swift; sourceTree = "<group>"; };
 		BA8619081CDF31F000BE9E9C /* RepoInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoInfoView.swift; path = Classes/RepositoryDetail/View/RepoInfoView.swift; sourceTree = "<group>"; };
 		BA8CEBDC1CE7480A0044155A /* RepoDetailHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoDetailHeaderView.swift; path = Classes/RepositoryDetail/View/RepoDetailHeaderView.swift; sourceTree = "<group>"; };
@@ -367,7 +371,9 @@
 		BA8619021CDF236C00BE9E9C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BA8619041CDF289D00BE9E9C /* RepositoryDetailController.swift */,
+				BA8619041CDF289D00BE9E9C /* RepoDetailController.swift */,
+				BA51C0511CF696D4005CCCC7 /* RepoEventController.swift */,
+				BA51C0531CF69B88005CCCC7 /* RepoIssuesController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -602,8 +608,9 @@
 				BA69EBE41CD4980C0090816C /* UserTableViewController.swift in Sources */,
 				BA8DA3311CD080A500F9B391 /* Crypto.swift in Sources */,
 				BA6F3B121CCE478D00F6984B /* TimeHelper.swift in Sources */,
-				BA8619051CDF289D00BE9E9C /* RepositoryDetailController.swift in Sources */,
+				BA8619051CDF289D00BE9E9C /* RepoDetailController.swift in Sources */,
 				BA47B7451CE99B4A00CF3947 /* UserListController.swift in Sources */,
+				BA51C0541CF69B88005CCCC7 /* RepoIssuesController.swift in Sources */,
 				BA505B0A1CF3FBB900BE7EC9 /* ToolController.swift in Sources */,
 				BA8619091CDF31F000BE9E9C /* RepoInfoView.swift in Sources */,
 				BA3AD2201CCA29B60034B21E /* HttpRequest.swift in Sources */,
@@ -625,6 +632,7 @@
 				BA8619071CDF2DD000BE9E9C /* RepoDescView.swift in Sources */,
 				BA47B74E1CE9AE7D00CF3947 /* UserBaseInfo.swift in Sources */,
 				BAC5DF331CEC051800EB2EFE /* UserInfo.swift in Sources */,
+				BA51C0521CF696D4005CCCC7 /* RepoEventController.swift in Sources */,
 				BA8CEBDD1CE7480A0044155A /* RepoDetailHeaderView.swift in Sources */,
 				BA79E02B1CF5946800E86258 /* ToolCell.swift in Sources */,
 			);
