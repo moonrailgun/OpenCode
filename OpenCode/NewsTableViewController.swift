@@ -136,7 +136,7 @@ class NewsTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "showRepositoryDetail"){
             //跳转到项目详细页面
-            let detail = segue.destinationViewController as! RepositoryDetailController
+            let detail = segue.destinationViewController as! RepoDetailController
             detail.repoDetailData = sender
             
         }

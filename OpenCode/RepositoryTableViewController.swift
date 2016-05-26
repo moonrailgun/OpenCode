@@ -106,7 +106,7 @@ class RepositoryTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let indexPath = self.tableView.indexPathForSelectedRow{
             if segue.identifier == "showRepositoryDetail"{
-                let repoDetail = segue.destinationViewController as! RepositoryDetailController
+                let repoDetail = segue.destinationViewController as! RepoDetailController
                 if let list = repositoryDataList {
                     repoDetail.repoDetailData = list[indexPath.row].object
                 }
