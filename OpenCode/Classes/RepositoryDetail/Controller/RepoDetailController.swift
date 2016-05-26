@@ -221,9 +221,12 @@ class RepoDetailController: UIViewController, UITableViewDataSource,UITableViewD
                         //查看事件
                         Github.getRepoEvents(repoFullName, completionHandler: {(data:AnyObject?) in
                             //print(JSON(data!))
-                            let controller = RepoEventController()
-                            controller.rawData = data
-                            self.navigationController?.pushViewController(controller, animated: true)
+                            OperationQueueHelper.operateInMainQueue({ 
+                                let controller = RepoEventController()
+                                controller.rawData = data
+                                self.navigationController?.pushViewController(controller, animated: true)
+
+                            })
                         })
                     }
                     
@@ -231,9 +234,11 @@ class RepoDetailController: UIViewController, UITableViewDataSource,UITableViewD
                         //查看提问
                         Github.getRepoIssueEvents(repoFullName, completionHandler: {(data:AnyObject?) in
                             //print(JSON(data!))
-                            let controller = RepoIssuesController()
-                            controller.rawData = data
-                            self.navigationController?.pushViewController(controller, animated: true)
+                            OperationQueueHelper.operateInMainQueue({ 
+                                let controller = RepoIssuesController()
+                                controller.rawData = data
+                                self.navigationController?.pushViewController(controller, animated: true)
+                            })
                         })
                     }
                     

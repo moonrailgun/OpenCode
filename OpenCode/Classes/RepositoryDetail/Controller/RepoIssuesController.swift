@@ -33,7 +33,7 @@ class RepoIssuesController: UIViewController {
     func initView(){
         tableView = UITableView(frame: self.view.bounds, style: .Plain)
         
-        
+        self.view.addSubview(tableView!)
     }
     
     func initData(){

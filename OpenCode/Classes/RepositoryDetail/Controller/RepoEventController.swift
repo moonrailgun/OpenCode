@@ -33,7 +33,7 @@ class RepoEventController: UIViewController, UITableViewDataSource, UITableViewD
     func initView(){
         tableView = UITableView(frame: self.view.bounds, style: .Plain)
         
-        
+        self.view.addSubview(tableView!)
     }
     
     func initData(){
