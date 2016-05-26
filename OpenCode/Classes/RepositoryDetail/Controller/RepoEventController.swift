@@ -32,13 +32,17 @@ class RepoEventController: UIViewController, UITableViewDataSource, UITableViewD
     
     func initView(){
         tableView = UITableView(frame: self.view.bounds, style: .Plain)
-        
+        tableView?.registerNib(UINib(nibName: "RepoEventCell",bundle: nil), forCellReuseIdentifier: EVENT_CELL_ID)
+        tableView?.dataSource = self
+        tableView?.delegate = self
         self.view.addSubview(tableView!)
     }
     
     func initData(){
         if let raw = rawData{
             self.data = JSON(raw)
+            
+            tableView?.reloadData()
         }
     }
     
@@ -55,13 +59,19 @@ class RepoEventController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier(EVENT_CELL_ID)
+        let cell = tableView.dequeueReusableCellWithIdentifier(EVENT_CELL_ID, forIndexPath: indexPath) as! RepoEventCell
         
-        if(cell == nil){
-            cell = UITableViewCell(style: .Default, reuseIdentifier: EVENT_CELL_ID)
+        if let d = self.data{
+            let event = d[indexPath.row]
+            
+            if let imgUrl = event["actor"]["avatar_url"].string{
+                cell.imageView?.image = UIImage(data: NSData(contentsOfURL: NSURL(string: imgUrl)!)!)
+            }
+            cell.textLabel?.text = event["type"].string
+            cell.detailTextLabel?.text = event["created_at"].string
         }
         
-        return cell!
+        return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

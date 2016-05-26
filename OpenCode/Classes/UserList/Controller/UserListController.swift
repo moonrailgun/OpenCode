@@ -43,7 +43,7 @@ class UserListController: UIViewController, UITableViewDataSource, UITableViewDe
     func initView(){
         self.view.backgroundColor = GlobalDefine.defineBackgroundColor
         
-        self.tableView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        self.tableView.frame = self.view.bounds
         self.tableView.dataSource = self
         self.tableView.delegate = self
         //self.tableView.registerClass(UserCell.self, forCellReuseIdentifier: self.USER_CELL_ID)

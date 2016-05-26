@@ -232,7 +232,7 @@ class RepoDetailController: UIViewController, UITableViewDataSource,UITableViewD
                     
                     if(indexPath.row == 1){
                         //查看提问
-                        Github.getRepoIssueEvents(repoFullName, completionHandler: {(data:AnyObject?) in
+                        Github.getRepoIssues(repoFullName, completionHandler: {(data:AnyObject?) in
                             //print(JSON(data!))
                             OperationQueueHelper.operateInMainQueue({ 
                                 let controller = RepoIssuesController()

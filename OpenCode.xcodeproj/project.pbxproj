@@ -22,6 +22,8 @@
 		BA505B0A1CF3FBB900BE7EC9 /* ToolController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA505B091CF3FBB900BE7EC9 /* ToolController.swift */; };
 		BA51C0521CF696D4005CCCC7 /* RepoEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51C0511CF696D4005CCCC7 /* RepoEventController.swift */; };
 		BA51C0541CF69B88005CCCC7 /* RepoIssuesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51C0531CF69B88005CCCC7 /* RepoIssuesController.swift */; };
+		BA51C0571CF6A7C3005CCCC7 /* RepoEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51C0551CF6A7C3005CCCC7 /* RepoEventCell.swift */; };
+		BA51C0581CF6A7C3005CCCC7 /* RepoEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA51C0561CF6A7C3005CCCC7 /* RepoEventCell.xib */; };
 		BA5582C11CF1706400157000 /* CodeBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5582C01CF1706400157000 /* CodeBrowserController.swift */; };
 		BA5582C41CF173B400157000 /* CodeBrowser.html in Resources */ = {isa = PBXBuildFile; fileRef = BA5582C31CF173B400157000 /* CodeBrowser.html */; };
 		BA5582CD1CF1827C00157000 /* CodeLoader.js in Resources */ = {isa = PBXBuildFile; fileRef = BA5582CC1CF1827C00157000 /* CodeLoader.js */; };
@@ -80,6 +82,8 @@
 		BA505B091CF3FBB900BE7EC9 /* ToolController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToolController.swift; path = Classes/Tool/Controller/ToolController.swift; sourceTree = "<group>"; };
 		BA51C0511CF696D4005CCCC7 /* RepoEventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoEventController.swift; path = Classes/RepositoryDetail/Controller/RepoEventController.swift; sourceTree = "<group>"; };
 		BA51C0531CF69B88005CCCC7 /* RepoIssuesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoIssuesController.swift; path = Classes/RepositoryDetail/Controller/RepoIssuesController.swift; sourceTree = "<group>"; };
+		BA51C0551CF6A7C3005CCCC7 /* RepoEventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoEventCell.swift; path = Classes/RepositoryDetail/View/RepoEventCell.swift; sourceTree = "<group>"; };
+		BA51C0561CF6A7C3005CCCC7 /* RepoEventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RepoEventCell.xib; path = Classes/RepositoryDetail/View/RepoEventCell.xib; sourceTree = "<group>"; };
 		BA5582C01CF1706400157000 /* CodeBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CodeBrowserController.swift; path = Classes/CodeBrowser/Controller/CodeBrowserController.swift; sourceTree = "<group>"; };
 		BA5582C31CF173B400157000 /* CodeBrowser.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = CodeBrowser.html; path = CodeBrowser/CodeBrowser.html; sourceTree = "<group>"; };
 		BA5582CC1CF1827C00157000 /* CodeLoader.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = CodeLoader.js; path = CodeBrowser/CodeLoader.js; sourceTree = "<group>"; };
@@ -385,6 +389,8 @@
 				BA8619081CDF31F000BE9E9C /* RepoInfoView.swift */,
 				BA8CEBDC1CE7480A0044155A /* RepoDetailHeaderView.swift */,
 				BA8CEBDE1CE74DF00044155A /* RepoDetailTableViewCell.swift */,
+				BA51C0551CF6A7C3005CCCC7 /* RepoEventCell.swift */,
+				BA51C0561CF6A7C3005CCCC7 /* RepoEventCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -535,6 +541,7 @@
 			files = (
 				BA47B74A1CE99EC200CF3947 /* UserCell.xib in Resources */,
 				BA3AD2011CCA245A0034B21E /* Main.storyboard in Resources */,
+				BA51C0581CF6A7C3005CCCC7 /* RepoEventCell.xib in Resources */,
 				BA5582CD1CF1827C00157000 /* CodeLoader.js in Resources */,
 				BA79E0761CF5C49B00E86258 /* ToolList.plist in Resources */,
 				BA3AD2061CCA245A0034B21E /* LaunchScreen.xib in Resources */,
@@ -629,6 +636,7 @@
 				BA5582C11CF1706400157000 /* CodeBrowserController.swift in Sources */,
 				BA7B2A0F1CE47D5200455F68 /* GlobalDefine.swift in Sources */,
 				BA8CEBE01CE74DF00044155A /* RepoDetailTableViewCell.swift in Sources */,
+				BA51C0571CF6A7C3005CCCC7 /* RepoEventCell.swift in Sources */,
 				BA8619071CDF2DD000BE9E9C /* RepoDescView.swift in Sources */,
 				BA47B74E1CE9AE7D00CF3947 /* UserBaseInfo.swift in Sources */,
 				BAC5DF331CEC051800EB2EFE /* UserInfo.swift in Sources */,

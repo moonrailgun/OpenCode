@@ -14,15 +14,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="287" height="47"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="My" translatesAutoresizingMaskIntoConstraints="NO" id="4JN-S3-hXI">
+                        <rect key="frame" x="20" y="5" width="38" height="38"/>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="moonrailgun" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XzN-df-h1g">
                         <rect key="frame" x="75" y="5" width="173" height="38"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="My" translatesAutoresizingMaskIntoConstraints="NO" id="4JN-S3-hXI">
-                        <rect key="frame" x="20" y="5" width="38" height="38"/>
-                    </imageView>
                 </subviews>
             </tableViewCellContentView>
             <connections>

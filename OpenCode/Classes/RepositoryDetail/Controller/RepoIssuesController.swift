@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class RepoIssuesController: UIViewController {
+class RepoIssuesController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let ISSUE_CELL_ID = "issues"
     
@@ -32,13 +32,16 @@ class RepoIssuesController: UIViewController {
     
     func initView(){
         tableView = UITableView(frame: self.view.bounds, style: .Plain)
-        
+        tableView?.dataSource = self
+        tableView?.delegate = self
         self.view.addSubview(tableView!)
     }
     
     func initData(){
         if let raw = rawData{
             self.data = JSON(raw)
+            
+            tableView?.reloadData()
         }
     }
     
@@ -58,7 +61,13 @@ class RepoIssuesController: UIViewController {
         var cell = tableView.dequeueReusableCellWithIdentifier(ISSUE_CELL_ID)
         
         if(cell == nil){
-            cell = UITableViewCell(style: .Default, reuseIdentifier: ISSUE_CELL_ID)
+            cell = UITableViewCell(style: .Subtitle, reuseIdentifier: ISSUE_CELL_ID)
+        }
+        
+        if let d = self.data{
+            let issue = d[indexPath.row]
+            cell?.textLabel?.text = issue["title"].string
+            cell?.detailTextLabel?.text = issue["body"].string
         }
         
         return cell!
