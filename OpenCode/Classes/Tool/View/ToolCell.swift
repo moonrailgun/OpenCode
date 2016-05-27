@@ -9,14 +9,14 @@
 import UIKit
 
 class ToolCell: UICollectionViewCell {
-    static let size:CGSize = CGSize(width: 60, height: 60)
+    static let size:CGSize = CGSize(width: 60, height: 70)
     
-    var image:UIImageView?
-    var label:UILabel?
-    
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var label: UILabel!
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        /*
         self.backgroundColor = UIColor.whiteColor()
         
         //image
@@ -28,8 +28,9 @@ class ToolCell: UICollectionViewCell {
         label = UILabel(frame: CGRect(x: 0, y: 45, width: ToolCell.size.width, height: 25))
         //label?.text = "text"
         label?.textAlignment = .Center
+        label?.minimumScaleFactor = 0.5
         label?.font = UIFont.systemFontOfSize(12)
-        self.addSubview(label!)
+        self.addSubview(label!)*/
         
     }
     
@@ -38,7 +39,7 @@ class ToolCell: UICollectionViewCell {
     }
     
     func setData(image:UIImage, text:String){
-        self.image?.image = image
-        self.label?.text = text
+        self.image.image = image
+        self.label.text = text
     }
 }

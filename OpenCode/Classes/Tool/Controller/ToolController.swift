@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ToolController: UIViewController, UICollectionViewDataSource {
+class ToolController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     let TOOL_CELL_ID = "tool"
     
@@ -34,12 +34,18 @@ class ToolController: UIViewController, UICollectionViewDataSource {
     func initView(){
         let flowLayout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = ToolCell.size
+        flowLayout.scrollDirection = .Vertical
+        flowLayout.minimumInteritemSpacing = 5
+        flowLayout.minimumLineSpacing = 10
+        flowLayout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)//section中内容与容器边缘的距离
         
         self.collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: flowLayout)
         self.view.addSubview(collectionView!)
         
-        self.collectionView!.registerClass(ToolCell.self, forCellWithReuseIdentifier: TOOL_CELL_ID)
+        //self.collectionView!.registerClass(ToolCell.self, forCellWithReuseIdentifier: TOOL_CELL_ID)
+        self.collectionView?.registerNib(UINib(nibName: "ToolCell",bundle: nil), forCellWithReuseIdentifier: TOOL_CELL_ID)
         self.collectionView?.dataSource = self
+        self.collectionView?.delegate = self
         self.collectionView?.backgroundColor = UIColor.clearColor()
     }
     
@@ -106,6 +112,10 @@ class ToolController: UIViewController, UICollectionViewDataSource {
     }
 
     // MARK: UICollectionViewDelegate
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        print(indexPath)
+    }
 
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking

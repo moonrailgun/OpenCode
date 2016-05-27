@@ -2,8 +2,25 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Tool</key>
+	<dict>
+		<key>QRCode</key>
+		<dict>
+			<key>Name</key>
+			<string>二维码调试</string>
+			<key>Image</key>
+			<string></string>
+		</dict>
+	</dict>
 	<key>Document</key>
 	<dict>
+		<key>RGB Color</key>
+		<dict>
+			<key>Name</key>
+			<string>RGB颜色参考</string>
+			<key>Image</key>
+			<string></string>
+		</dict>
 		<key>HTTP Status Code</key>
 		<dict>
 			<key>Name</key>
@@ -119,6 +136,13 @@
 				<key>510</key>
 				<string>获取资源所需要的策略并没有没满足。（RFC 2774）</string>
 			</dict>
+		</dict>
+		<key>ASCII</key>
+		<dict>
+			<key>Image</key>
+			<string></string>
+			<key>Name</key>
+			<string>ASCII对照表</string>
 		</dict>
 	</dict>
 </dict>

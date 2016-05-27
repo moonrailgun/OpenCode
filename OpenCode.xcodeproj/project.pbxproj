@@ -42,6 +42,7 @@
 		BA8619091CDF31F000BE9E9C /* RepoInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8619081CDF31F000BE9E9C /* RepoInfoView.swift */; };
 		BA8CEBDD1CE7480A0044155A /* RepoDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8CEBDC1CE7480A0044155A /* RepoDetailHeaderView.swift */; };
 		BA8CEBE01CE74DF00044155A /* RepoDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8CEBDE1CE74DF00044155A /* RepoDetailTableViewCell.swift */; };
+		BA8D68631CF80C62002ED5E2 /* ToolCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA8D68621CF80C62002ED5E2 /* ToolCell.xib */; };
 		BA8DA32C1CD05D7F00F9B391 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DA32B1CD05D7F00F9B391 /* MyViewController.swift */; };
 		BA8DA3311CD080A500F9B391 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DA3301CD080A500F9B391 /* Crypto.swift */; };
 		BAA6CD921CD475D40069863F /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA6CD911CD475D40069863F /* NewsTableViewController.swift */; };
@@ -102,6 +103,7 @@
 		BA8619081CDF31F000BE9E9C /* RepoInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoInfoView.swift; path = Classes/RepositoryDetail/View/RepoInfoView.swift; sourceTree = "<group>"; };
 		BA8CEBDC1CE7480A0044155A /* RepoDetailHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoDetailHeaderView.swift; path = Classes/RepositoryDetail/View/RepoDetailHeaderView.swift; sourceTree = "<group>"; };
 		BA8CEBDE1CE74DF00044155A /* RepoDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoDetailTableViewCell.swift; path = Classes/RepositoryDetail/View/RepoDetailTableViewCell.swift; sourceTree = "<group>"; };
+		BA8D68621CF80C62002ED5E2 /* ToolCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ToolCell.xib; path = Classes/Tool/View/ToolCell.xib; sourceTree = "<group>"; };
 		BA8DA32B1CD05D7F00F9B391 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		BA8DA3301CD080A500F9B391 /* Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
 		BAA6CD911CD475D40069863F /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				BA79E02A1CF5946800E86258 /* ToolCell.swift */,
+				BA8D68621CF80C62002ED5E2 /* ToolCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA8D68631CF80C62002ED5E2 /* ToolCell.xib in Resources */,
 				BA47B74A1CE99EC200CF3947 /* UserCell.xib in Resources */,
 				BA3AD2011CCA245A0034B21E /* Main.storyboard in Resources */,
 				BA51C0581CF6A7C3005CCCC7 /* RepoEventCell.xib in Resources */,
