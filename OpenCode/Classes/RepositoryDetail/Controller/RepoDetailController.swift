@@ -269,17 +269,32 @@ class RepoDetailController: UIViewController, UITableViewDataSource,UITableViewD
                     if(indexPath.row == 0){
                         //提交纪录
                         Github.getRepoCommits(repoFullName, completionHandler: { (data:AnyObject?) in
-                            print(JSON(data!))
+                            //print(JSON(data!))
+                            OperationQueueHelper.operateInMainQueue({
+                                let controller = RepoCommitsController()
+                                controller.rawData = data
+                                self.navigationController?.pushViewController(controller, animated: true)
+                            })
                         })
                     }else if(indexPath.row == 1){
                         //拉取请求
                         Github.getRepoPulls(repoFullName, completionHandler: { (data:AnyObject?) in
-                            print(JSON(data!))
+                            //print(JSON(data!))
+                            OperationQueueHelper.operateInMainQueue({
+                                let controller = RepoPullController()
+                                controller.rawData = data
+                                self.navigationController?.pushViewController(controller, animated: true)
+                            })
                         })
                     }else if(indexPath.row == 2){
                         //查看分支
                         Github.getRepoBranches(repoFullName, completionHandler: { (data:AnyObject?) in
-                            print(JSON(data!))
+                            //print(JSON(data!))
+                            OperationQueueHelper.operateInMainQueue({
+                                let controller = RepoBranchController()
+                                controller.rawData = data
+                                self.navigationController?.pushViewController(controller, animated: true)
+                            })
                         })
                     }
                 }

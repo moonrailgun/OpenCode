@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		130E96D280BE6059A868DF41 /* Pods_OpenCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4027B30C7A06F2720B5696F3 /* Pods_OpenCode.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		BA0ADD741CF836CE00A0B0F1 /* RepoCommitsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0ADD731CF836CE00A0B0F1 /* RepoCommitsController.swift */; };
+		BA0ADD761CF838C500A0B0F1 /* RepoPullController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0ADD751CF838C500A0B0F1 /* RepoPullController.swift */; };
+		BA0ADD781CF839A000A0B0F1 /* RepoBranchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0ADD771CF839A000A0B0F1 /* RepoBranchController.swift */; };
 		BA3AD1FA1CCA245A0034B21E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD1F91CCA245A0034B21E /* AppDelegate.swift */; };
 		BA3AD2011CCA245A0034B21E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD1FF1CCA245A0034B21E /* Main.storyboard */; };
 		BA3AD2031CCA245A0034B21E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD2021CCA245A0034B21E /* Images.xcassets */; };
@@ -65,6 +68,9 @@
 		1BFEDCE35BCBCACC0660C755 /* Pods-OpenCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenCode.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OpenCode/Pods-OpenCode.debug.xcconfig"; sourceTree = "<group>"; };
 		4027B30C7A06F2720B5696F3 /* Pods_OpenCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A561EBFD5690366BF8E17C4D /* Pods-OpenCode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenCode.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenCode/Pods-OpenCode.release.xcconfig"; sourceTree = "<group>"; };
+		BA0ADD731CF836CE00A0B0F1 /* RepoCommitsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoCommitsController.swift; path = Classes/RepositoryDetail/Controller/RepoCommitsController.swift; sourceTree = "<group>"; };
+		BA0ADD751CF838C500A0B0F1 /* RepoPullController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoPullController.swift; path = Classes/RepositoryDetail/Controller/RepoPullController.swift; sourceTree = "<group>"; };
+		BA0ADD771CF839A000A0B0F1 /* RepoBranchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoBranchController.swift; path = Classes/RepositoryDetail/Controller/RepoBranchController.swift; sourceTree = "<group>"; };
 		BA3AD1F41CCA245A0034B21E /* OpenCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA3AD1F81CCA245A0034B21E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA3AD1F91CCA245A0034B21E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -381,6 +387,9 @@
 				BA8619041CDF289D00BE9E9C /* RepoDetailController.swift */,
 				BA51C0511CF696D4005CCCC7 /* RepoEventController.swift */,
 				BA51C0531CF69B88005CCCC7 /* RepoIssuesController.swift */,
+				BA0ADD731CF836CE00A0B0F1 /* RepoCommitsController.swift */,
+				BA0ADD751CF838C500A0B0F1 /* RepoPullController.swift */,
+				BA0ADD771CF839A000A0B0F1 /* RepoBranchController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -625,9 +634,12 @@
 				BA505B0A1CF3FBB900BE7EC9 /* ToolController.swift in Sources */,
 				BA8619091CDF31F000BE9E9C /* RepoInfoView.swift in Sources */,
 				BA3AD2201CCA29B60034B21E /* HttpRequest.swift in Sources */,
+				BA0ADD781CF839A000A0B0F1 /* RepoBranchController.swift in Sources */,
 				BA647E081CF2F7C200DA369F /* FileBrowserController.swift in Sources */,
+				BA0ADD761CF838C500A0B0F1 /* RepoPullController.swift in Sources */,
 				BA7CB1D41CEDF5ED004DDF42 /* UserInfoHeaderView.swift in Sources */,
 				BA47B7491CE99EC200CF3947 /* UserCell.swift in Sources */,
+				BA0ADD741CF836CE00A0B0F1 /* RepoCommitsController.swift in Sources */,
 				BAC5DF351CEC082300EB2EFE /* UserInfoController.swift in Sources */,
 				BAA6CD921CD475D40069863F /* NewsTableViewController.swift in Sources */,
 				BA3AD21E1CCA278B0034B21E /* Github.swift in Sources */,
