@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import SwiftyJSON
 
-class SearchController: UIViewController, UISearchBarDelegate {
-
+class SearchController: UIViewController, UISearchBarDelegate, UITableViewDataSource {
+    let SEARCH_CELL_ID = "search"
+    
     var searchBar:UISearchBar?
+    var searchResultTable:UITableView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +31,42 @@ class SearchController: UIViewController, UISearchBarDelegate {
         self.searchBar = UISearchBar(frame: CGRect(x: 0, y: 64, width: self.view.frame.width, height: 66))
         self.searchBar?.delegate = self
         self.searchBar?.prompt = "在此输入想要搜索的内容"
-        //self.searchBar?.showsCancelButton = true
         
-        self.view.addSubview(searchBar!)
+        self.searchResultTable = UITableView(frame: self.view.bounds, style: .Plain)
+        self.searchResultTable?.dataSource = self
+        self.searchResultTable?.tableHeaderView = self.searchBar!
+        
+        self.view.addSubview(searchResultTable!)
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         let searchText = searchBar.text!
-        print(searchText)
+        print("搜索文本:\(searchText)")
+        
+        Github.getGithubCodeSearch("searchText", page: nil, perPage: nil, sort: nil, order: nil) { (data:AnyObject?) in
+            print(JSON(data!))
+        }
+    }
+    
+    // tableView
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCellWithIdentifier(SEARCH_CELL_ID)
+        
+        if(cell == nil){
+            cell = UITableViewCell(style: .Default, reuseIdentifier: SEARCH_CELL_ID)
+            cell?.accessoryType = .DisclosureIndicator
+        }
+        
+        return cell!
     }
 
     /*

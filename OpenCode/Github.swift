@@ -152,9 +152,13 @@ class Github {
         }
         if sort != nil{
             url += "&sort=\(sort)"
+        }else{
+            url += "&sort=indexed"
         }
         if order != nil{
             url += "&order=\(order)"
+        }else{
+            url += "&order=desc"
         }
         requestPublicData(url, completionHandler: completionHandler)
     }
