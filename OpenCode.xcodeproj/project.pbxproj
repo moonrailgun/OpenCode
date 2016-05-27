@@ -11,6 +11,7 @@
 		BA0ADD741CF836CE00A0B0F1 /* RepoCommitsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0ADD731CF836CE00A0B0F1 /* RepoCommitsController.swift */; };
 		BA0ADD761CF838C500A0B0F1 /* RepoPullController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0ADD751CF838C500A0B0F1 /* RepoPullController.swift */; };
 		BA0ADD781CF839A000A0B0F1 /* RepoBranchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0ADD771CF839A000A0B0F1 /* RepoBranchController.swift */; };
+		BA0ADD7C1CF83DF200A0B0F1 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0ADD7B1CF83DF200A0B0F1 /* SearchController.swift */; };
 		BA3AD1FA1CCA245A0034B21E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD1F91CCA245A0034B21E /* AppDelegate.swift */; };
 		BA3AD2011CCA245A0034B21E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD1FF1CCA245A0034B21E /* Main.storyboard */; };
 		BA3AD2031CCA245A0034B21E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD2021CCA245A0034B21E /* Images.xcassets */; };
@@ -71,6 +72,7 @@
 		BA0ADD731CF836CE00A0B0F1 /* RepoCommitsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoCommitsController.swift; path = Classes/RepositoryDetail/Controller/RepoCommitsController.swift; sourceTree = "<group>"; };
 		BA0ADD751CF838C500A0B0F1 /* RepoPullController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoPullController.swift; path = Classes/RepositoryDetail/Controller/RepoPullController.swift; sourceTree = "<group>"; };
 		BA0ADD771CF839A000A0B0F1 /* RepoBranchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoBranchController.swift; path = Classes/RepositoryDetail/Controller/RepoBranchController.swift; sourceTree = "<group>"; };
+		BA0ADD7B1CF83DF200A0B0F1 /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchController.swift; path = Classes/Search/Controller/SearchController.swift; sourceTree = "<group>"; };
 		BA3AD1F41CCA245A0034B21E /* OpenCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA3AD1F81CCA245A0034B21E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA3AD1F91CCA245A0034B21E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +145,22 @@
 				4027B30C7A06F2720B5696F3 /* Pods_OpenCode.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BA0ADD791CF83D5400A0B0F1 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				BA0ADD7A1CF83D6A00A0B0F1 /* Controller */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		BA0ADD7A1CF83D6A00A0B0F1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA0ADD7B1CF83DF200A0B0F1 /* SearchController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		BA3AD1EB1CCA245A0034B21E = {
@@ -361,6 +379,7 @@
 		BA8618FD1CDF22F800BE9E9C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BA0ADD791CF83D5400A0B0F1 /* Search */,
 				BA505B071CF3FB7A00BE7EC9 /* Tool */,
 				BA647E051CF2F76800DA369F /* FileBrowser */,
 				BA5582BE1CF16FF600157000 /* CodeBrowser */,
@@ -656,6 +675,7 @@
 				BA8619071CDF2DD000BE9E9C /* RepoDescView.swift in Sources */,
 				BA47B74E1CE9AE7D00CF3947 /* UserBaseInfo.swift in Sources */,
 				BAC5DF331CEC051800EB2EFE /* UserInfo.swift in Sources */,
+				BA0ADD7C1CF83DF200A0B0F1 /* SearchController.swift in Sources */,
 				BA51C0521CF696D4005CCCC7 /* RepoEventController.swift in Sources */,
 				BA8CEBDD1CE7480A0044155A /* RepoDetailHeaderView.swift in Sources */,
 				BA79E02B1CF5946800E86258 /* ToolCell.swift in Sources */,
