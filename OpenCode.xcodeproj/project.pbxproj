@@ -19,6 +19,8 @@
 		BA3AD2121CCA245A0034B21E /* OpenCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD2111CCA245A0034B21E /* OpenCodeTests.swift */; };
 		BA3AD21E1CCA278B0034B21E /* Github.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD21D1CCA278B0034B21E /* Github.swift */; };
 		BA3AD2201CCA29B60034B21E /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD21F1CCA29B60034B21E /* HttpRequest.swift */; };
+		BA4609D11CF95AB400D2415B /* SearchRepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4609CF1CF95AB400D2415B /* SearchRepoCell.swift */; };
+		BA4609D21CF95AB400D2415B /* SearchRepoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA4609D01CF95AB400D2415B /* SearchRepoCell.xib */; };
 		BA47B7451CE99B4A00CF3947 /* UserListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47B7441CE99B4A00CF3947 /* UserListController.swift */; };
 		BA47B7491CE99EC200CF3947 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47B7471CE99EC200CF3947 /* UserCell.swift */; };
 		BA47B74A1CE99EC200CF3947 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA47B7481CE99EC200CF3947 /* UserCell.xib */; };
@@ -84,6 +86,8 @@
 		BA3AD2111CCA245A0034B21E /* OpenCodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCodeTests.swift; sourceTree = "<group>"; };
 		BA3AD21D1CCA278B0034B21E /* Github.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Github.swift; sourceTree = "<group>"; };
 		BA3AD21F1CCA29B60034B21E /* HttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
+		BA4609CF1CF95AB400D2415B /* SearchRepoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchRepoCell.swift; path = Classes/Search/View/SearchRepoCell.swift; sourceTree = "<group>"; };
+		BA4609D01CF95AB400D2415B /* SearchRepoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchRepoCell.xib; path = Classes/Search/View/SearchRepoCell.xib; sourceTree = "<group>"; };
 		BA47B7441CE99B4A00CF3947 /* UserListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserListController.swift; path = Classes/UserList/Controller/UserListController.swift; sourceTree = "<group>"; };
 		BA47B7471CE99EC200CF3947 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserCell.swift; path = Classes/UserList/View/UserCell.swift; sourceTree = "<group>"; };
 		BA47B7481CE99EC200CF3947 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserCell.xib; path = Classes/UserList/View/UserCell.xib; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 		BA0ADD791CF83D5400A0B0F1 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				BA4609CE1CF95A6900D2415B /* View */,
 				BA0ADD7A1CF83D6A00A0B0F1 /* Controller */,
 			);
 			name = Search;
@@ -243,6 +248,15 @@
 				BA3AD21D1CCA278B0034B21E /* Github.swift */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		BA4609CE1CF95A6900D2415B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA4609CF1CF95AB400D2415B /* SearchRepoCell.swift */,
+				BA4609D01CF95AB400D2415B /* SearchRepoCell.xib */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		BA47B7421CE99B0000CF3947 /* UserList */ = {
@@ -575,6 +589,7 @@
 				BA3AD2011CCA245A0034B21E /* Main.storyboard in Resources */,
 				BA51C0581CF6A7C3005CCCC7 /* RepoEventCell.xib in Resources */,
 				BA5582CD1CF1827C00157000 /* CodeLoader.js in Resources */,
+				BA4609D21CF95AB400D2415B /* SearchRepoCell.xib in Resources */,
 				BA79E0761CF5C49B00E86258 /* ToolList.plist in Resources */,
 				BA3AD2061CCA245A0034B21E /* LaunchScreen.xib in Resources */,
 				BA5582C41CF173B400157000 /* CodeBrowser.html in Resources */,
@@ -655,6 +670,7 @@
 				BA3AD2201CCA29B60034B21E /* HttpRequest.swift in Sources */,
 				BA0ADD781CF839A000A0B0F1 /* RepoBranchController.swift in Sources */,
 				BA647E081CF2F7C200DA369F /* FileBrowserController.swift in Sources */,
+				BA4609D11CF95AB400D2415B /* SearchRepoCell.swift in Sources */,
 				BA0ADD761CF838C500A0B0F1 /* RepoPullController.swift in Sources */,
 				BA7CB1D41CEDF5ED004DDF42 /* UserInfoHeaderView.swift in Sources */,
 				BA47B7491CE99EC200CF3947 /* UserCell.swift in Sources */,

@@ -15,7 +15,7 @@ class SearchController: UIViewController, UISearchBarDelegate, UITableViewDataSo
     var searchBar:UISearchBar?
     var searchResultTable:UITableView?
     
-    var searchResult:[JSON]?
+    var searchResult:JSON?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +37,8 @@ class SearchController: UIViewController, UISearchBarDelegate, UITableViewDataSo
         self.searchResultTable = UITableView(frame: self.view.bounds, style: .Plain)
         self.searchResultTable?.dataSource = self
         self.searchResultTable?.tableHeaderView = self.searchBar!
+        self.searchResultTable?.registerNib(UINib(nibName: "SearchRepoCell", bundle: nil) , forCellReuseIdentifier: SEARCH_CELL_ID)
+        self.searchResultTable?.rowHeight = 130;
         
         self.view.addSubview(searchResultTable!)
     }
@@ -50,7 +52,7 @@ class SearchController: UIViewController, UISearchBarDelegate, UITableViewDataSo
                 let json = JSON(d)
                 //let totalCount = json["total_count"].string!
                 let items = json["items"]
-                self.searchResult = items.array
+                self.searchResult = items
                 
                 OperationQueueHelper.operateInMainQueue({ 
                     self.searchResultTable?.reloadData()
@@ -78,13 +80,12 @@ class SearchController: UIViewController, UISearchBarDelegate, UITableViewDataSo
         
         //初始化cell
         if(cell == nil){
-            cell = UITableViewCell(style: .Default, reuseIdentifier: SEARCH_CELL_ID)
-            cell?.accessoryType = .DisclosureIndicator
+            cell = SearchRepoCell(style: .Default, reuseIdentifier: SEARCH_CELL_ID)
         }
         
         if(searchResult != nil){
             let item = searchResult![indexPath.row]
-            cell?.textLabel?.text = item["full_name"].string
+            (cell as! SearchRepoCell).setData(item)
         }
         
         return cell!
