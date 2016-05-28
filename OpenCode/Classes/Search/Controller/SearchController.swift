@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class SearchController: UIViewController, UISearchBarDelegate, UITableViewDataSource {
+class SearchController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
     let SEARCH_CELL_ID = "search"
     
     var searchBar:UISearchBar?
@@ -36,6 +36,7 @@ class SearchController: UIViewController, UISearchBarDelegate, UITableViewDataSo
         
         self.searchResultTable = UITableView(frame: self.view.bounds, style: .Plain)
         self.searchResultTable?.dataSource = self
+        self.searchResultTable?.delegate = self
         self.searchResultTable?.tableHeaderView = self.searchBar!
         self.searchResultTable?.registerNib(UINib(nibName: "SearchRepoCell", bundle: nil) , forCellReuseIdentifier: SEARCH_CELL_ID)
         self.searchResultTable?.rowHeight = 130;
@@ -89,6 +90,22 @@ class SearchController: UIViewController, UISearchBarDelegate, UITableViewDataSo
         }
         
         return cell!
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print(indexPath)
+        if(self.searchResult != nil){
+            let item = self.searchResult![indexPath.row]
+            if let fullName = item["full_name"].string {
+                Github.getRepoInfo(fullName, completionHandler: { (data:AnyObject?) in
+                    OperationQueueHelper.operateInMainQueue({ 
+                        let controller = RepoDetailController()
+                        controller.repoDetailData = data
+                        self.navigationController?.pushViewController(controller, animated: true)
+                    })
+                })
+            }
+        }
     }
 
     /*

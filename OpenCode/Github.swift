@@ -171,6 +171,11 @@ class Github {
         }
         requestPublicData(url, completionHandler: completionHandler)
     }
+    
+    //获取项目基本信息
+    class func getRepoInfo(repoFullName:String, completionHandler:(AnyObject?) -> Void){
+        requestPublicData("https://api.github.com/repos/\(repoFullName)", completionHandler: completionHandler)
+    }
     //获取项目事件
     class func getRepoEvents(repoFullName:String, completionHandler:(AnyObject?) -> Void){
         requestPublicData("https://api.github.com/repos/\(repoFullName)/events",completionHandler: completionHandler)
