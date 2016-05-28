@@ -141,6 +141,15 @@ class Github {
     class func getUserGists(username:String, gistId:Int, completionHandler:(AnyObject?) -> Void){
         requestPublicData("https://api.github.com/users/\(username)/gists/\(gistId)", completionHandler: completionHandler)
     }
+    
+    //获取github项目搜索结果
+    class func getGithubRepoSearch(query:String, page:Int?, completionHandler:(AnyObject?) -> Void){
+        var url:String = "https://api.github.com/search/repositories?q=\(query)"
+        if page != nil{
+            url += "&page=\(page)"
+        }
+        requestPublicData(url, completionHandler: completionHandler)
+    }
     //获取github代码搜索结果
     class func getGithubCodeSearch(query:String, page:Int?, perPage:Int?, sort:Int?, order:Int?, completionHandler:(AnyObject?) -> Void){
         var url:String = "https://api.github.com/search/code?q=\(query)"

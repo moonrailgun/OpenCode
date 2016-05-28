@@ -15,6 +15,8 @@ class SearchController: UIViewController, UISearchBarDelegate, UITableViewDataSo
     var searchBar:UISearchBar?
     var searchResultTable:UITableView?
     
+    var searchResult:[JSON]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -43,15 +45,28 @@ class SearchController: UIViewController, UISearchBarDelegate, UITableViewDataSo
         let searchText = searchBar.text!
         print("搜索文本:\(searchText)")
         
-        Github.getGithubCodeSearch("searchText", page: nil, perPage: nil, sort: nil, order: nil) { (data:AnyObject?) in
-            print(JSON(data!))
+        Github.getGithubRepoSearch(searchText, page: nil) { (data:AnyObject?) in
+            if let d = data{
+                let json = JSON(d)
+                //let totalCount = json["total_count"].string!
+                let items = json["items"]
+                self.searchResult = items.array
+                
+                OperationQueueHelper.operateInMainQueue({ 
+                    self.searchResultTable?.reloadData()
+                })
+            }
         }
     }
     
     // tableView
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        if(searchResult != nil && searchResult?.count != nil){
+            return searchResult!.count
+        }else{
+            return 0
+        }
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -61,9 +76,15 @@ class SearchController: UIViewController, UISearchBarDelegate, UITableViewDataSo
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier(SEARCH_CELL_ID)
         
+        //初始化cell
         if(cell == nil){
             cell = UITableViewCell(style: .Default, reuseIdentifier: SEARCH_CELL_ID)
             cell?.accessoryType = .DisclosureIndicator
+        }
+        
+        if(searchResult != nil){
+            let item = searchResult![indexPath.row]
+            cell?.textLabel?.text = item["full_name"].string
         }
         
         return cell!
