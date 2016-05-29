@@ -10,7 +10,7 @@ import UIKit
 
 class NewsScrollView: UIScrollView {
     
-    let windowSize = 4
+    let windowSize:CGFloat = 4
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,7 +29,7 @@ class NewsScrollView: UIScrollView {
         
         self.showsVerticalScrollIndicator = false
         self.showsHorizontalScrollIndicator = false
-        self.contentSize = CGSizeMake(5 * screenWidth, 0);
+        self.contentSize = CGSizeMake(windowSize * screenWidth, 0);
         self.pagingEnabled = true
         self.backgroundColor = UIColor.clearColor()
         self.bounces = false
