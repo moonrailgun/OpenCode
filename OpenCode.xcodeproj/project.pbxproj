@@ -52,6 +52,9 @@
 		BA8DA32C1CD05D7F00F9B391 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DA32B1CD05D7F00F9B391 /* MyViewController.swift */; };
 		BA8DA3311CD080A500F9B391 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DA3301CD080A500F9B391 /* Crypto.swift */; };
 		BAA6CD921CD475D40069863F /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA6CD911CD475D40069863F /* NewsTableViewController.swift */; };
+		BAC055801CFAA60A00DCD236 /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0557F1CFAA60A00DCD236 /* NewsController.swift */; };
+		BAC055831CFAA67C00DCD236 /* NewsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC055821CFAA67C00DCD236 /* NewsScrollView.swift */; };
+		BAC055851CFAA90C00DCD236 /* NewsEventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC055841CFAA90C00DCD236 /* NewsEventListView.swift */; };
 		BAC5DF331CEC051800EB2EFE /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC5DF321CEC051800EB2EFE /* UserInfo.swift */; };
 		BAC5DF351CEC082300EB2EFE /* UserInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC5DF341CEC082300EB2EFE /* UserInfoController.swift */; };
 		BAF7F9A01CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF7F99F1CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift */; };
@@ -119,6 +122,9 @@
 		BA8DA32B1CD05D7F00F9B391 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		BA8DA3301CD080A500F9B391 /* Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
 		BAA6CD911CD475D40069863F /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
+		BAC0557F1CFAA60A00DCD236 /* NewsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsController.swift; path = Classes/News/Controller/NewsController.swift; sourceTree = "<group>"; };
+		BAC055821CFAA67C00DCD236 /* NewsScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsScrollView.swift; path = Classes/News/View/NewsScrollView.swift; sourceTree = "<group>"; };
+		BAC055841CFAA90C00DCD236 /* NewsEventListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsEventListView.swift; path = Classes/News/View/NewsEventListView.swift; sourceTree = "<group>"; };
 		BAC5DF321CEC051800EB2EFE /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInfo.swift; path = Classes/UserInfo/Model/UserInfo.swift; sourceTree = "<group>"; };
 		BAC5DF341CEC082300EB2EFE /* UserInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInfoController.swift; path = Classes/UserInfo/Controller/UserInfoController.swift; sourceTree = "<group>"; };
 		BAF7F99F1CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryDetailTableViewController.swift; sourceTree = "<group>"; };
@@ -393,6 +399,7 @@
 		BA8618FD1CDF22F800BE9E9C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BAC0557D1CFAA5B400DCD236 /* News */,
 				BA0ADD791CF83D5400A0B0F1 /* Search */,
 				BA505B071CF3FB7A00BE7EC9 /* Tool */,
 				BA647E051CF2F76800DA369F /* FileBrowser */,
@@ -436,6 +443,32 @@
 				BA8CEBDE1CE74DF00044155A /* RepoDetailTableViewCell.swift */,
 				BA51C0551CF6A7C3005CCCC7 /* RepoEventCell.swift */,
 				BA51C0561CF6A7C3005CCCC7 /* RepoEventCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		BAC0557D1CFAA5B400DCD236 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				BAC055811CFAA64D00DCD236 /* View */,
+				BAC0557E1CFAA5CC00DCD236 /* Controller */,
+			);
+			name = News;
+			sourceTree = "<group>";
+		};
+		BAC0557E1CFAA5CC00DCD236 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BAC0557F1CFAA60A00DCD236 /* NewsController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		BAC055811CFAA64D00DCD236 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BAC055821CFAA67C00DCD236 /* NewsScrollView.swift */,
+				BAC055841CFAA90C00DCD236 /* NewsEventListView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -673,11 +706,13 @@
 				BA4609D11CF95AB400D2415B /* SearchRepoCell.swift in Sources */,
 				BA0ADD761CF838C500A0B0F1 /* RepoPullController.swift in Sources */,
 				BA7CB1D41CEDF5ED004DDF42 /* UserInfoHeaderView.swift in Sources */,
+				BAC055831CFAA67C00DCD236 /* NewsScrollView.swift in Sources */,
 				BA47B7491CE99EC200CF3947 /* UserCell.swift in Sources */,
 				BA0ADD741CF836CE00A0B0F1 /* RepoCommitsController.swift in Sources */,
 				BAC5DF351CEC082300EB2EFE /* UserInfoController.swift in Sources */,
 				BAA6CD921CD475D40069863F /* NewsTableViewController.swift in Sources */,
 				BA3AD21E1CCA278B0034B21E /* Github.swift in Sources */,
+				BAC055851CFAA90C00DCD236 /* NewsEventListView.swift in Sources */,
 				BA6F3B101CCE3EA400F6984B /* OperationQueueHelper.swift in Sources */,
 				BAF7F9A01CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift in Sources */,
 				BA79E0781CF5DF8300E86258 /* FlatColor.swift in Sources */,
@@ -685,6 +720,7 @@
 				BA8DA32C1CD05D7F00F9B391 /* MyViewController.swift in Sources */,
 				BA3AD1FA1CCA245A0034B21E /* AppDelegate.swift in Sources */,
 				BA5582C11CF1706400157000 /* CodeBrowserController.swift in Sources */,
+				BAC055801CFAA60A00DCD236 /* NewsController.swift in Sources */,
 				BA7B2A0F1CE47D5200455F68 /* GlobalDefine.swift in Sources */,
 				BA8CEBE01CE74DF00044155A /* RepoDetailTableViewCell.swift in Sources */,
 				BA51C0571CF6A7C3005CCCC7 /* RepoEventCell.swift in Sources */,
