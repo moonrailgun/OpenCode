@@ -83,6 +83,38 @@ class NewsEventListView: UIView, UITableViewDataSource, UITableViewDelegate {
             cell = NewsEventCell(style: .Default, reuseIdentifier: NEWS_EVENT_CELL_ID)
         }
         
+        if let d = self.dataArr{
+            let event = d[indexPath.row]
+            
+            let type = event["type"].string!
+            let username = event["actor"]["login"].string!
+            let reponame = event["repo"]["name"].string!
+            
+            (cell as! NewsEventCell).setData(type, dataStr: Github.parseGithubTime(event["created_at"].string!), userAvatarUrl: event["actor"]["avatar_url"].string!, descText: generateDescriptionStr(type, username: username, repositoryName: reponame))
+        }
+        
         return cell!
+    }
+    
+    private func generateDescriptionStr(eventType:String ,username:String, repositoryName:String) -> String{
+        var str:String = ""
+        let type = Github.parseEventType(eventType)
+        
+        var desc = ""
+        switch type{
+        case .CreateEvent:desc = "创建了一个项目"
+        case .ForkEvent:desc = "创建了一个分支"
+        case .GollumEvent:desc = "建立了一条wiki"
+        case .IssuesCommentEvent:desc = "提交了一条问题"
+        case .PullRequestEvent:desc = "发送了一条拉取请求"
+        case .PushEvent:desc = "提交了一些代码"
+        case .Unknow:desc = "进行了一些操作"
+        case .WatchEvent:desc = "观察了项目"
+        case .DeleteEvent:desc = "进行了删除操作"
+        }
+        
+        str = "\(username) \(desc)到 \(repositoryName)"
+        
+        return str
     }
 }
