@@ -42,6 +42,8 @@ class NewsEventListView: UIView, UITableViewDataSource, UITableViewDelegate {
         self.tableView = UITableView(frame: self.bounds, style: .Plain)
         tableView?.dataSource = self
         tableView?.delegate = self
+        tableView?.rowHeight = 90
+        tableView?.registerNib(UINib(nibName: "NewsEventCell", bundle: nil), forCellReuseIdentifier: NEWS_EVENT_CELL_ID)
         self.addSubview(tableView!)
     }
     func initData(){
@@ -78,7 +80,7 @@ class NewsEventListView: UIView, UITableViewDataSource, UITableViewDelegate {
         var cell = tableView.dequeueReusableCellWithIdentifier(NEWS_EVENT_CELL_ID)
         
         if(cell == nil){
-            cell = UITableViewCell(style: .Default, reuseIdentifier: NEWS_EVENT_CELL_ID)
+            cell = NewsEventCell(style: .Default, reuseIdentifier: NEWS_EVENT_CELL_ID)
         }
         
         return cell!
