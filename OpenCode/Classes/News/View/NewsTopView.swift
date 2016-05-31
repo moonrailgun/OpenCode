@@ -20,7 +20,7 @@ class NewsTopView: UIView {
     
     var delegate:NewsTopDelegate?
     var lastTouchBtnTag:Int = 100
-    lazy var underLine = UIView(frame: CGRect(x: 10, y: 34, width: UIScreen.mainScreen().bounds.size.width / 5 - 20, height: 2))
+    lazy var underLine = UIView(frame: CGRect(x: 10, y: 34, width: UIScreen.mainScreen().bounds.size.width / 4 - 20, height: 2))
     let names = ["新鲜事","热门项目","趋势","暂定"]
 
     override init(frame: CGRect) {
@@ -43,7 +43,7 @@ class NewsTopView: UIView {
             let btn = UIButton(type: .Custom)
             btn.setTitle(names[i], forState: .Normal)
             btn.frame = CGRect(x: screenWidth / CGFloat(column) * CGFloat(i), y: 2, width: screenWidth / CGFloat(column), height: 32)
-            btn.setTitleColor(UIColor(white: 0.9, alpha: 1), forState: .Normal)
+            btn.setTitleColor(UIColor(white: 1, alpha: 1), forState: .Normal)
             
             btn.addTarget(self, action: #selector(moveUnderLine(_:)), forControlEvents: .TouchUpInside)
             

@@ -33,9 +33,11 @@ class NewsController: UIViewController, UIScrollViewDelegate, NewsTopDelegate {
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        //let x = scrollView.contentOffset.x
-        
-        //print(x)
+        let x = scrollView.contentOffset.x
+        let column = CGFloat(self.topView.names.count)
+        UIView.animateWithDuration(0.25) { 
+            self.topView.underLine.transform = CGAffineTransformMakeTranslation(x / column, 0);
+        }
     }
     
     func onTopViewBtnClick(tag: Int) {
