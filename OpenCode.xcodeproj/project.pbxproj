@@ -57,7 +57,6 @@
 		BA8D68631CF80C62002ED5E2 /* ToolCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA8D68621CF80C62002ED5E2 /* ToolCell.xib */; };
 		BA8DA32C1CD05D7F00F9B391 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DA32B1CD05D7F00F9B391 /* MyViewController.swift */; };
 		BA8DA3311CD080A500F9B391 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DA3301CD080A500F9B391 /* Crypto.swift */; };
-		BAA6CD921CD475D40069863F /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA6CD911CD475D40069863F /* NewsTableViewController.swift */; };
 		BAC055801CFAA60A00DCD236 /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0557F1CFAA60A00DCD236 /* NewsController.swift */; };
 		BAC055831CFAA67C00DCD236 /* NewsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC055821CFAA67C00DCD236 /* NewsScrollView.swift */; };
 		BAC055851CFAA90C00DCD236 /* NewsEventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC055841CFAA90C00DCD236 /* NewsEventListView.swift */; };
@@ -133,7 +132,6 @@
 		BA8D68621CF80C62002ED5E2 /* ToolCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ToolCell.xib; path = Classes/Tool/View/ToolCell.xib; sourceTree = "<group>"; };
 		BA8DA32B1CD05D7F00F9B391 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		BA8DA3301CD080A500F9B391 /* Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
-		BAA6CD911CD475D40069863F /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
 		BAC0557F1CFAA60A00DCD236 /* NewsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsController.swift; path = Classes/News/Controller/NewsController.swift; sourceTree = "<group>"; };
 		BAC055821CFAA67C00DCD236 /* NewsScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsScrollView.swift; path = Classes/News/View/NewsScrollView.swift; sourceTree = "<group>"; };
 		BAC055841CFAA90C00DCD236 /* NewsEventListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsEventListView.swift; path = Classes/News/View/NewsEventListView.swift; sourceTree = "<group>"; };
@@ -410,7 +408,6 @@
 			isa = PBXGroup;
 			children = (
 				BA5F71A51CD350BD0043CBB5 /* Page */,
-				BAD2CFD81CD0DDEE00BB910C /* News */,
 				BAD2CFD41CD0DDE000BB910C /* My */,
 			);
 			name = Controller;
@@ -539,14 +536,6 @@
 				BA8DA32B1CD05D7F00F9B391 /* MyViewController.swift */,
 			);
 			name = My;
-			sourceTree = "<group>";
-		};
-		BAD2CFD81CD0DDEE00BB910C /* News */ = {
-			isa = PBXGroup;
-			children = (
-				BAA6CD911CD475D40069863F /* NewsTableViewController.swift */,
-			);
-			name = News;
 			sourceTree = "<group>";
 		};
 		D7F22D4ECA5475ECD3576BFE /* Pods */ = {
@@ -739,7 +728,6 @@
 				BA47B7491CE99EC200CF3947 /* UserCell.swift in Sources */,
 				BA0ADD741CF836CE00A0B0F1 /* RepoCommitsController.swift in Sources */,
 				BAC5DF351CEC082300EB2EFE /* UserInfoController.swift in Sources */,
-				BAA6CD921CD475D40069863F /* NewsTableViewController.swift in Sources */,
 				BA3AD21E1CCA278B0034B21E /* Github.swift in Sources */,
 				BA715DFF1CFD287000887D73 /* NewsTopView.swift in Sources */,
 				BA634F211CFC290400915CF2 /* NewsEventCell.swift in Sources */,
