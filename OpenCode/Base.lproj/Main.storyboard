@@ -1,62 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="rMM-p2-6Eu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--事件-->
-        <scene sceneID="KWS-Af-FCw">
+        <scene sceneID="ln7-Bx-JTu">
             <objects>
-                <tableViewController id="1xP-X0-HBk" customClass="NewsTableViewController" customModule="OpenCode" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="22" sectionFooterHeight="22" id="5sg-6X-COq">
+                <viewController id="ZIK-sm-rpF" customClass="NewsController" customModule="OpenCode" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bxg-PD-50E">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="85" id="3h6-Sy-Qx5">
-                                <rect key="frame" x="0.0" y="86" width="320" height="85"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3h6-Sy-Qx5" id="Wfz-MM-7A0">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9Vm-eo-Oeh">
-                                            <rect key="frame" x="146" y="61" width="163" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="alexal9 创建了项目ics51alexal9 创建了项目ics51ics51alexal9 创建了项目ics51ics51alexal9 创建了项目ics51ics51alexal9 创建了项目ics51" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VSd-T1-oNh">
-                                            <rect key="frame" x="24" y="8" width="285" height="51"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                            <color key="textColor" red="0.30701348909999998" green="0.30703922189999999" blue="0.2782076081" alpha="0.91000000000000003" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="K4i-Y7-DDl" userLabel="Event">
-                                            <rect key="frame" x="17" y="61" width="128" height="16"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="1xP-X0-HBk" id="jBD-rW-Ibx"/>
-                            <outlet property="delegate" destination="1xP-X0-HBk" id="9jJ-CR-QYS"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="事件" id="HIr-AS-RbF"/>
-                    <connections>
-                        <segue destination="j5d-Jn-fGS" kind="push" identifier="showRepositoryDetail" id="OJm-Zz-PpR"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VD0-Ly-m2Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="事件" id="VK7-7g-0XB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Ow-QC-Qel" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="833" y="-291"/>
         </scene>
@@ -667,7 +627,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="1xP-X0-HBk" kind="relationship" relationship="rootViewController" id="Uub-GJ-eDD"/>
+                        <segue destination="ZIK-sm-rpF" kind="relationship" relationship="rootViewController" id="BCJ-W8-l5a"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xuh-F0-vw0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -734,6 +694,5 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="K6L-R0-lbO"/>
-        <segue reference="YrS-fe-iQA"/>
     </inferredMetricsTieBreakers>
 </document>

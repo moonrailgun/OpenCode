@@ -8,8 +8,9 @@
 
 import UIKit
 
-class NewsController: UIViewController, UIScrollViewDelegate {
-    var mainScrollView:UIScrollView?
+class NewsController: UIViewController, UIScrollViewDelegate, NewsTopDelegate {
+    lazy var topView:NewsTopView = NewsTopView(frame: CGRect(x: 0, y: 64, width:Int(self.view.frame.size.width), height: 36))
+    lazy var mainScrollView:NewsScrollView = NewsScrollView(frame: CGRect(x: 0, y: 100, width:Int(self.view.frame.size.width), height: Int(self.view.frame.size.height) - 100))
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,15 +25,23 @@ class NewsController: UIViewController, UIScrollViewDelegate {
     }
     
     func initView(){
-        self.mainScrollView = NewsScrollView(frame: self.view.bounds)
-        self.mainScrollView?.delegate = self
-        self.view.addSubview(mainScrollView!)
+        self.topView.delegate = self
+        self.view.addSubview(topView)
+        
+        self.mainScrollView.delegate = self
+        self.view.addSubview(mainScrollView)
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         //let x = scrollView.contentOffset.x
         
         //print(x)
+    }
+    
+    func onTopViewBtnClick(tag: Int) {
+        print(tag)
+        let screenWidth = UIScreen.mainScreen().bounds.size.width
+        self.mainScrollView.contentOffset = CGPointMake(CGFloat(tag - 100) * screenWidth, 0);
     }
 
     /*
