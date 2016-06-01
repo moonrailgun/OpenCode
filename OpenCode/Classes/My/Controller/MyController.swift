@@ -19,8 +19,14 @@ class MyController: UIViewController, UITableViewDataSource {
 
         // Do any additional setup after loading the view.
         
-        initData()
-        initView()
+        if let _:String = Github.getToken() {
+            //显示正常页
+            //initProfileView()
+            initLoginView()
+        }else{
+            //显示登陆页面
+            initLoginView()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,13 +34,14 @@ class MyController: UIViewController, UITableViewDataSource {
         // Dispose of any resources that can be recreated.
     }
     
-    func initView(){
-        tableView.dataSource = self
+    func initLoginView(){
+        self.view.addSubview(MyLoginView(frame: self.view.bounds))
     }
     
-    func initData() {
-        tableDataSource.removeAll()
+    func initProfileView(){
+        tableView.dataSource = self
         
+        tableDataSource.removeAll()
         tableDataSource.append(MyCellDataModel(title: "我的项目", image: ""))
         tableDataSource.append(MyCellDataModel(title: "我的收藏", image: ""))
         tableDataSource.append(MyCellDataModel(title: "我的粉丝", image: ""))

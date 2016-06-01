@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		130E96D280BE6059A868DF41 /* Pods_OpenCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4027B30C7A06F2720B5696F3 /* Pods_OpenCode.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		BA05E7471CFEDB7900855A9E /* MyLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA05E7461CFEDB7900855A9E /* MyLoginView.swift */; };
 		BA0ADD741CF836CE00A0B0F1 /* RepoCommitsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0ADD731CF836CE00A0B0F1 /* RepoCommitsController.swift */; };
 		BA0ADD761CF838C500A0B0F1 /* RepoPullController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0ADD751CF838C500A0B0F1 /* RepoPullController.swift */; };
 		BA0ADD781CF839A000A0B0F1 /* RepoBranchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0ADD771CF839A000A0B0F1 /* RepoBranchController.swift */; };
@@ -81,6 +82,7 @@
 		1BFEDCE35BCBCACC0660C755 /* Pods-OpenCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenCode.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OpenCode/Pods-OpenCode.debug.xcconfig"; sourceTree = "<group>"; };
 		4027B30C7A06F2720B5696F3 /* Pods_OpenCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A561EBFD5690366BF8E17C4D /* Pods-OpenCode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenCode.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenCode/Pods-OpenCode.release.xcconfig"; sourceTree = "<group>"; };
+		BA05E7461CFEDB7900855A9E /* MyLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyLoginView.swift; path = Classes/My/View/MyLoginView.swift; sourceTree = "<group>"; };
 		BA0ADD731CF836CE00A0B0F1 /* RepoCommitsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoCommitsController.swift; path = Classes/RepositoryDetail/Controller/RepoCommitsController.swift; sourceTree = "<group>"; };
 		BA0ADD751CF838C500A0B0F1 /* RepoPullController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoPullController.swift; path = Classes/RepositoryDetail/Controller/RepoPullController.swift; sourceTree = "<group>"; };
 		BA0ADD771CF839A000A0B0F1 /* RepoBranchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoBranchController.swift; path = Classes/RepositoryDetail/Controller/RepoBranchController.swift; sourceTree = "<group>"; };
@@ -411,6 +413,7 @@
 		BA715E051CFD383800887D73 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BA05E7461CFEDB7900855A9E /* MyLoginView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -768,6 +771,7 @@
 				BA47B7491CE99EC200CF3947 /* UserCell.swift in Sources */,
 				BA0ADD741CF836CE00A0B0F1 /* RepoCommitsController.swift in Sources */,
 				BAC5DF351CEC082300EB2EFE /* UserInfoController.swift in Sources */,
+				BA05E7471CFEDB7900855A9E /* MyLoginView.swift in Sources */,
 				BA3AD21E1CCA278B0034B21E /* Github.swift in Sources */,
 				BA715DFF1CFD287000887D73 /* NewsTopView.swift in Sources */,
 				BA634F211CFC290400915CF2 /* NewsEventCell.swift in Sources */,
