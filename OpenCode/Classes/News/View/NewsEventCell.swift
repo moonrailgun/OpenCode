@@ -26,10 +26,34 @@ class NewsEventCell: UITableViewCell {
     }
     
     func setData(eventName:String, dataStr:String, userAvatarUrl:String, descText:String){
+        let imageName = getEventIcon(eventName)
+        if (imageName != "") {
+            self.eventImage.image = UIImage(named: imageName)
+        }else{
+            print("未知的图标事件\(eventName)")
+        }
+        
         self.dateLabel.text = dataStr
         if let url = NSURL(string: userAvatarUrl){//判定URL合法性
             self.userAvatarImage.image = UIImage(data: NSData(contentsOfURL: url)!)//需要图片懒加载
         }
         self.descText.text = descText
+    }
+    
+    func getEventIcon(eventName:String) -> String{
+        switch eventName {
+        case "ForkEvent":
+            return "fork"
+        case "CreateEvent":
+            return "repo"
+        case "GollumEvent":
+            return "repo"
+        case "DeleteEvent":
+            return "deleted"
+        case "PullRequestEvent":
+            return "merge"
+        default:
+            return ""
+        }
     }
 }

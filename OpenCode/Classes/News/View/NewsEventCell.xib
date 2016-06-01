@@ -14,9 +14,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="287" height="91"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BcZ-Sl-sjG">
-                        <rect key="frame" x="28" y="8" width="20" height="20"/>
-                    </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="My" translatesAutoresizingMaskIntoConstraints="NO" id="7Ud-HW-YuQ">
                         <rect key="frame" x="8" y="36" width="44" height="44"/>
                     </imageView>
@@ -33,6 +30,9 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BcZ-Sl-sjG">
+                        <rect key="frame" x="36" y="10" width="16" height="16"/>
+                    </imageView>
                 </subviews>
             </tableViewCellContentView>
             <connections>
