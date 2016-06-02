@@ -31,6 +31,8 @@
 		BA51C0541CF69B88005CCCC7 /* RepoIssuesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51C0531CF69B88005CCCC7 /* RepoIssuesController.swift */; };
 		BA51C0571CF6A7C3005CCCC7 /* RepoEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51C0551CF6A7C3005CCCC7 /* RepoEventCell.swift */; };
 		BA51C0581CF6A7C3005CCCC7 /* RepoEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA51C0561CF6A7C3005CCCC7 /* RepoEventCell.xib */; };
+		BA53E2DC1CFFD86900FD46F2 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA53E2DB1CFFD86900FD46F2 /* MyProfileView.swift */; };
+		BA53E2DE1CFFDCCE00FD46F2 /* MyUserInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA53E2DD1CFFDCCE00FD46F2 /* MyUserInfoHeader.swift */; };
 		BA5582C11CF1706400157000 /* CodeBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5582C01CF1706400157000 /* CodeBrowserController.swift */; };
 		BA5582C41CF173B400157000 /* CodeBrowser.html in Resources */ = {isa = PBXBuildFile; fileRef = BA5582C31CF173B400157000 /* CodeBrowser.html */; };
 		BA5582CD1CF1827C00157000 /* CodeLoader.js in Resources */ = {isa = PBXBuildFile; fileRef = BA5582CC1CF1827C00157000 /* CodeLoader.js */; };
@@ -109,6 +111,8 @@
 		BA51C0531CF69B88005CCCC7 /* RepoIssuesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoIssuesController.swift; path = Classes/RepositoryDetail/Controller/RepoIssuesController.swift; sourceTree = "<group>"; };
 		BA51C0551CF6A7C3005CCCC7 /* RepoEventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoEventCell.swift; path = Classes/RepositoryDetail/View/RepoEventCell.swift; sourceTree = "<group>"; };
 		BA51C0561CF6A7C3005CCCC7 /* RepoEventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RepoEventCell.xib; path = Classes/RepositoryDetail/View/RepoEventCell.xib; sourceTree = "<group>"; };
+		BA53E2DB1CFFD86900FD46F2 /* MyProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyProfileView.swift; path = Classes/My/View/MyProfileView.swift; sourceTree = "<group>"; };
+		BA53E2DD1CFFDCCE00FD46F2 /* MyUserInfoHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyUserInfoHeader.swift; path = Classes/My/View/MyUserInfoHeader.swift; sourceTree = "<group>"; };
 		BA5582C01CF1706400157000 /* CodeBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CodeBrowserController.swift; path = Classes/CodeBrowser/Controller/CodeBrowserController.swift; sourceTree = "<group>"; };
 		BA5582C31CF173B400157000 /* CodeBrowser.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = CodeBrowser.html; path = CodeBrowser/CodeBrowser.html; sourceTree = "<group>"; };
 		BA5582CC1CF1827C00157000 /* CodeLoader.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = CodeLoader.js; path = CodeBrowser/CodeLoader.js; sourceTree = "<group>"; };
@@ -414,6 +418,8 @@
 			isa = PBXGroup;
 			children = (
 				BA05E7461CFEDB7900855A9E /* MyLoginView.swift */,
+				BA53E2DB1CFFD86900FD46F2 /* MyProfileView.swift */,
+				BA53E2DD1CFFDCCE00FD46F2 /* MyUserInfoHeader.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -765,6 +771,7 @@
 				BA0ADD781CF839A000A0B0F1 /* RepoBranchController.swift in Sources */,
 				BA647E081CF2F7C200DA369F /* FileBrowserController.swift in Sources */,
 				BA4609D11CF95AB400D2415B /* SearchRepoCell.swift in Sources */,
+				BA53E2DC1CFFD86900FD46F2 /* MyProfileView.swift in Sources */,
 				BA0ADD761CF838C500A0B0F1 /* RepoPullController.swift in Sources */,
 				BA7CB1D41CEDF5ED004DDF42 /* UserInfoHeaderView.swift in Sources */,
 				BAC055831CFAA67C00DCD236 /* NewsScrollView.swift in Sources */,
@@ -791,6 +798,7 @@
 				BA47B74E1CE9AE7D00CF3947 /* UserBaseInfo.swift in Sources */,
 				BAC5DF331CEC051800EB2EFE /* UserInfo.swift in Sources */,
 				BA0ADD7C1CF83DF200A0B0F1 /* SearchController.swift in Sources */,
+				BA53E2DE1CFFDCCE00FD46F2 /* MyUserInfoHeader.swift in Sources */,
 				BA715DFD1CFD26BB00887D73 /* HotRepoView.swift in Sources */,
 				BA51C0521CF696D4005CCCC7 /* RepoEventController.swift in Sources */,
 				BA8CEBDD1CE7480A0044155A /* RepoDetailHeaderView.swift in Sources */,

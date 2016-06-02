@@ -112,5 +112,7 @@ class MyLoginView: UIView {
     
     func register(){
         print("注册")
+        
+        UIApplication.sharedApplication().openURL(NSURL(string: "https://github.com/join")!)
     }
 }

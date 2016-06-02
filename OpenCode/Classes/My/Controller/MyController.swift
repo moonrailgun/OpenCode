@@ -8,16 +8,17 @@
 
 import UIKit
 
-class MyController: UIViewController, UITableViewDataSource {
-    let MY_CELL_ID = "my"
+class MyController: UIViewController {
     
-    var tableDataSource = [MyCellDataModel]()
-    lazy var tableView:UITableView = UITableView(frame: self.view.bounds, style: .Plain)
+    lazy var loginView:MyLoginView = MyLoginView(frame: self.view.bounds)
+    lazy var profileView:MyProfileView = MyProfileView(frame: self.view.bounds)
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.navigationController?.title = "个人中心"
         
         if let _:String = Github.getToken() {
             //显示正常页
@@ -33,41 +34,15 @@ class MyController: UIViewController, UITableViewDataSource {
         // Dispose of any resources that can be recreated.
     }
     
-    func initLoginView(){
-        self.view.addSubview(MyLoginView(frame: self.view.bounds))
+    func initLoginView() {
+        self.view.addSubview(loginView)
     }
     
-    func initProfileView(){
-        tableView.dataSource = self
-        
-        tableDataSource.removeAll()
-        tableDataSource.append(MyCellDataModel(title: "我的项目", image: ""))
-        tableDataSource.append(MyCellDataModel(title: "我的收藏", image: ""))
-        tableDataSource.append(MyCellDataModel(title: "我的粉丝", image: ""))
-        tableDataSource.append(MyCellDataModel(title: "我的关注", image: ""))
+    func initProfileView() {
+        self.view.addSubview(profileView)
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableDataSource.count
-    }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier(MY_CELL_ID)
-        
-        if(cell == nil){
-            cell = UITableViewCell(style: .Default, reuseIdentifier: MY_CELL_ID)
-            let model = self.tableDataSource[indexPath.row]
-            
-            cell?.textLabel?.text = model.title
-            cell?.imageView?.image = UIImage(named: model.image)
-        }
-        
-        return cell!
-    }
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
     
 
     /*
