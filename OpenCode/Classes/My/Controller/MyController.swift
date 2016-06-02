@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class MyController: UIViewController {
+class MyController: UIViewController, UITableViewDelegate {
     
     lazy var loginView:MyLoginView = MyLoginView(frame: self.view.bounds)
     //lazy var profileView:MyProfileView = MyProfileView(frame: self.view.frame)
@@ -39,6 +39,7 @@ class MyController: UIViewController {
     }
     
     func initProfileView() {
+        profileView.tableView.delegate = self
         self.view.addSubview(profileView)
         
         initNav()
@@ -57,8 +58,26 @@ class MyController: UIViewController {
     }
     
     func initData(){
-        Github.getCurrentUserInfo { (data:AnyObject?) in
-            print(JSON(data!))
+        
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if(indexPath.row == 0){
+            print("我的项目")
+            Github.getCurrentUserRepositories({ (data:AnyObject?) in
+                let controller = MyRepoController(style: UITableViewStyle.Plain)
+                controller.repositoryDataList = JSON(data!)
+                
+                OperationQueueHelper.operateInMainQueue({
+                    self.navigationController?.pushViewController(controller, animated: true)
+                })
+            })
+        }else if(indexPath.row == 1){
+            print("我的收藏")
+        }else if(indexPath.row == 2){
+            print("我的粉丝")
+        }else if(indexPath.row == 3){
+            print("我的关注")
         }
     }
 

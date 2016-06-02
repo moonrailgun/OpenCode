@@ -126,15 +126,6 @@
                                             <action selector="GithubLogout:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="4ll-Ly-kOa"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9NL-Jn-vTB">
-                                        <rect key="frame" x="14" y="125" width="111" height="38"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="我的项目"/>
-                                        <connections>
-                                            <action selector="ShowMyRepositories:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="PLz-Tu-piG"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ILG-1s-Men">
                                         <rect key="frame" x="191" y="176" width="111" height="38"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -171,6 +162,15 @@
                                         <state key="normal" title="设置"/>
                                         <connections>
                                             <segue destination="7mm-5g-P3L" kind="push" id="ffG-ef-uer"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9NL-Jn-vTB">
+                                        <rect key="frame" x="14" y="125" width="111" height="38"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="我的项目"/>
+                                        <connections>
+                                            <action selector="ShowMyRepositories:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="PLz-Tu-piG"/>
                                         </connections>
                                     </button>
                                 </subviews>

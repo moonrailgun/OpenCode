@@ -49,6 +49,7 @@
 		BA715E021CFD2EC800887D73 /* NewsTopDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA715E011CFD2EC800887D73 /* NewsTopDelegate.swift */; };
 		BA715E071CFD389C00887D73 /* MyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA715E061CFD389C00887D73 /* MyController.swift */; };
 		BA715E0A1CFD3A6600887D73 /* MyCellDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA715E091CFD3A6600887D73 /* MyCellDataModel.swift */; };
+		BA75B46E1D002936008D2A3D /* MyRepoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA75B46D1D002936008D2A3D /* MyRepoController.swift */; };
 		BA79E02B1CF5946800E86258 /* ToolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79E02A1CF5946800E86258 /* ToolCell.swift */; };
 		BA79E0761CF5C49B00E86258 /* ToolList.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA79E0751CF5C49B00E86258 /* ToolList.plist */; };
 		BA79E0781CF5DF8300E86258 /* FlatColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79E0771CF5DF8300E86258 /* FlatColor.swift */; };
@@ -129,6 +130,7 @@
 		BA715E011CFD2EC800887D73 /* NewsTopDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTopDelegate.swift; sourceTree = "<group>"; };
 		BA715E061CFD389C00887D73 /* MyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyController.swift; path = Classes/My/Controller/MyController.swift; sourceTree = "<group>"; };
 		BA715E091CFD3A6600887D73 /* MyCellDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCellDataModel.swift; sourceTree = "<group>"; };
+		BA75B46D1D002936008D2A3D /* MyRepoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyRepoController.swift; path = Classes/My/Controller/MyRepoController.swift; sourceTree = "<group>"; };
 		BA79E02A1CF5946800E86258 /* ToolCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToolCell.swift; path = Classes/Tool/View/ToolCell.swift; sourceTree = "<group>"; };
 		BA79E0751CF5C49B00E86258 /* ToolList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ToolList.plist; sourceTree = "<group>"; };
 		BA79E0771CF5DF8300E86258 /* FlatColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlatColor.swift; path = Classes/Other/FlatColor.swift; sourceTree = "<group>"; };
@@ -410,6 +412,7 @@
 			isa = PBXGroup;
 			children = (
 				BA715E061CFD389C00887D73 /* MyController.swift */,
+				BA75B46D1D002936008D2A3D /* MyRepoController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -792,6 +795,7 @@
 				BA3AD1FA1CCA245A0034B21E /* AppDelegate.swift in Sources */,
 				BA5582C11CF1706400157000 /* CodeBrowserController.swift in Sources */,
 				BAC055801CFAA60A00DCD236 /* NewsController.swift in Sources */,
+				BA75B46E1D002936008D2A3D /* MyRepoController.swift in Sources */,
 				BA7B2A0F1CE47D5200455F68 /* GlobalDefine.swift in Sources */,
 				BA8CEBE01CE74DF00044155A /* RepoDetailTableViewCell.swift in Sources */,
 				BA51C0571CF6A7C3005CCCC7 /* RepoEventCell.swift in Sources */,

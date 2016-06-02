@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SwiftyJSON
 
-class MyProfileView: UIView, UITableViewDataSource,UITableViewDelegate {
+class MyProfileView: UIView, UITableViewDataSource {
 
     /*
     // Only override drawRect: if you perform custom drawing.
@@ -24,8 +25,8 @@ class MyProfileView: UIView, UITableViewDataSource,UITableViewDelegate {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        initData()
         initView()
+        initData()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -34,13 +35,24 @@ class MyProfileView: UIView, UITableViewDataSource,UITableViewDelegate {
 
     func initData(){
         tableView.dataSource = self
-        tableView.delegate = self
         
         tableDataSource.removeAll()
         tableDataSource.append(MyCellDataModel(title: "我的项目", image: "repo"))
         tableDataSource.append(MyCellDataModel(title: "我的收藏", image: "star"))
         tableDataSource.append(MyCellDataModel(title: "我的粉丝", image: "team"))
         tableDataSource.append(MyCellDataModel(title: "我的关注", image: "team"))
+        
+        Github.getCurrentUserInfo { (data:AnyObject?) in
+            print(JSON(data!))
+            OperationQueueHelper.operateInMainQueue({ 
+                if let d = data{
+                    let json = JSON(d)
+                    if let header = self.tableView.tableHeaderView as? MyUserInfoHeader{
+                        header.setData(UIImage(data: NSData(contentsOfURL: NSURL(string: json["avatar_url"].string!)!)!)!, username: json["login"].string!)
+                    }
+                }
+            })
+        }
     }
     
     func initView(){
@@ -70,9 +82,5 @@ class MyProfileView: UIView, UITableViewDataSource,UITableViewDelegate {
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print(indexPath)
     }
 }
