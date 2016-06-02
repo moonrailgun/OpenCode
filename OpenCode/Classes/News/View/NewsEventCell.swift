@@ -40,6 +40,7 @@ class NewsEventCell: UITableViewCell {
         self.descText.text = descText
     }
     
+    //返回事件图标
     func getEventIcon(eventName:String) -> String{
         switch eventName {
         case "ForkEvent":
@@ -52,6 +53,14 @@ class NewsEventCell: UITableViewCell {
             return "deleted"
         case "PullRequestEvent":
             return "merge"
+        case "PushEvent":
+            return "commit"
+        case "IssueCommentEvent":
+            return "comment"
+        case "IssuesEvent":
+            return "comment"
+        case "WatchEvent":
+            return "watch"
         default:
             return ""
         }
