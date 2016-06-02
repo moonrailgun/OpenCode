@@ -43,19 +43,25 @@ class MyLoginView: UIView {
         
         let textFieldSize = CGSize(width: bounds.width * 0.8, height: 32)
         usernameTextField = UITextField(frame: CGRect(x: bounds.width / 2 - textFieldSize.width / 2, y: 200, width: textFieldSize.width, height: textFieldSize.height))
+        usernameTextField?.autocorrectionType = .No
+        usernameTextField?.autocapitalizationType = .None
         usernameTextField?.borderStyle = .RoundedRect
         usernameTextField?.placeholder="请输入用户名"
         usernameTextField?.textAlignment = .Center
         usernameTextField?.contentVerticalAlignment = .Center
+        usernameTextField?.contentHorizontalAlignment = .Center
         usernameTextField?.clearButtonMode = .WhileEditing
         self.addSubview(usernameTextField!)
         
         passwordTextField = UITextField(frame: CGRect(x: bounds.width / 2 - textFieldSize.width / 2, y: 240, width: textFieldSize.width, height: textFieldSize.height))
+        passwordTextField?.autocorrectionType = .No
+        passwordTextField?.autocapitalizationType = .None
         passwordTextField?.borderStyle = .RoundedRect
         passwordTextField?.secureTextEntry = true
         passwordTextField?.placeholder="请输入密码"
         passwordTextField?.textAlignment = .Center
         passwordTextField?.contentVerticalAlignment = .Center
+        passwordTextField?.contentHorizontalAlignment = .Center
         passwordTextField?.clearButtonMode = .WhileEditing
         self.addSubview(passwordTextField!)
         
@@ -76,7 +82,32 @@ class MyLoginView: UIView {
     }
     
     func login(){
-        print("登陆")
+        if let _ = Github.getToken(){
+            print("已经登陆过")
+            return
+        }
+        
+        print("登陆 － 账号：\(usernameTextField!.text)")
+        
+        if(usernameTextField!.text != "" && passwordTextField!.text != ""){
+            //Github.login(githubUsername.text, password: githubPassword.text)
+            Github.login(usernameTextField!.text!, password: passwordTextField!.text!, completionHandler: { (token, statusCode, errorMsg) -> () in
+                if token != nil{
+                    Github.setToken(token!)
+                    print("显示档案页面")
+                    
+                    //关闭该页面
+                    OperationQueueHelper.operateInMainQueue({ 
+                        self.removeFromSuperview()
+                    })
+                }else{
+                    //提示出错
+                    print("出错 - token:\(token),code:\(statusCode),errorMsg:\(errorMsg)")
+                }
+            })
+        } else {
+            print("账号或密码不得为空")
+        }
     }
     
     func register(){

@@ -21,8 +21,7 @@ class MyController: UIViewController, UITableViewDataSource {
         
         if let _:String = Github.getToken() {
             //显示正常页
-            //initProfileView()
-            initLoginView()
+            initProfileView()
         }else{
             //显示登陆页面
             initLoginView()
