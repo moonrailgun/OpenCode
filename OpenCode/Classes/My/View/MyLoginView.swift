@@ -75,7 +75,7 @@ class MyLoginView: UIView {
         let attributedStr = NSMutableAttributedString(string: "还没有帐号么？点此注册")
         attributedStr.addAttribute(NSForegroundColorAttributeName, value: UIColor.peterRiverFlatColor(), range: NSMakeRange(7, 4))
         attributedStr.addAttribute(NSFontAttributeName, value: UIFont.systemFontOfSize(12), range: NSMakeRange(0, 11))
-        registerBtn = UIButton(frame: CGRectMake(bounds.width / 2 - buttonSize.width / 2, bounds.height - 60, buttonSize.width, buttonSize.height))
+        registerBtn = UIButton(frame: CGRectMake(bounds.width / 2 - buttonSize.width / 2, bounds.height - 100, buttonSize.width, buttonSize.height))
         registerBtn?.setAttributedTitle(attributedStr, forState: .Normal)
         registerBtn?.addTarget(self, action: #selector(MyLoginView.register), forControlEvents: .TouchUpInside)
         self.addSubview(registerBtn!)

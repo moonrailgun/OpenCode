@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyProfileView: UIView, UITableViewDataSource {
+class MyProfileView: UIView, UITableViewDataSource,UITableViewDelegate {
 
     /*
     // Only override drawRect: if you perform custom drawing.
@@ -34,6 +34,7 @@ class MyProfileView: UIView, UITableViewDataSource {
 
     func initData(){
         tableView.dataSource = self
+        tableView.delegate = self
         
         tableDataSource.removeAll()
         tableDataSource.append(MyCellDataModel(title: "我的项目", image: "repo"))
@@ -44,13 +45,11 @@ class MyProfileView: UIView, UITableViewDataSource {
     
     func initView(){
         self.addSubview(tableView)
+        
+        tableView.tableHeaderView = MyUserInfoHeader()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        
-        
-        
         return tableDataSource.count
     }
     
@@ -71,5 +70,9 @@ class MyProfileView: UIView, UITableViewDataSource {
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print(indexPath)
     }
 }

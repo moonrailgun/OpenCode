@@ -648,6 +648,7 @@
 				TargetAttributes = {
 					BA3AD1F31CCA245A0034B21E = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 2XHLW8HGMG;
 					};
 					BA3AD20A1CCA245A0034B21E = {
 						CreatedOnToolsVersion = 6.1;
@@ -926,10 +927,13 @@
 			baseConfigurationReference = 1BFEDCE35BCBCACC0660C755 /* Pods-OpenCode.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = OpenCode/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -938,10 +942,13 @@
 			baseConfigurationReference = A561EBFD5690366BF8E17C4D /* Pods-OpenCode.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = OpenCode/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

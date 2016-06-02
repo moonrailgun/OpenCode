@@ -17,7 +17,32 @@ class MyUserInfoHeader: UIView {
         // Drawing code
     }
     */
+    init(){
+        super.init(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 180 + 44))
+        
+        let background = UIImageView(image: UIImage(named: "bg"))
+        background.frame = self.bounds
+        self.addSubview(background)
+        
+        let avatarSize = CGSize(width: 90, height: 90)
+        let avatar = UIImageView(frame: CGRectMake(self.bounds.width/2-avatarSize.width/2, 64 , avatarSize.width, avatarSize.height))
+        avatar.backgroundColor = UIColor(white: 1, alpha: 1)
+        self.addSubview(avatar)
+        
+        let labelSize = CGSize(width: self.bounds.width, height: 28)
+        let username = UILabel(frame: CGRectMake(0, 160, labelSize.width, labelSize.height))
+        username.text = "@username"
+        username.textColor = UIColor.whiteColor()
+        username.textAlignment = .Center
+        username.font = UIFont.systemFontOfSize(18)
+        self.addSubview(username)
+    }
     
+    override init(frame: CGRect){
+        super.init(frame:frame)
+    }
     
-
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
