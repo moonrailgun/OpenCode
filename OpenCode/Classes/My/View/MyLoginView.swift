@@ -20,6 +20,8 @@ class MyLoginView: UIView {
     var avatarImageView:UIImageView?
     var usernameTextField:UITextField?
     var passwordTextField:UITextField?
+    var loginBtn:UIButton?
+    var registerBtn:UIButton?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -54,7 +56,30 @@ class MyLoginView: UIView {
         passwordTextField?.placeholder="请输入密码"
         passwordTextField?.textAlignment = .Center
         passwordTextField?.contentVerticalAlignment = .Center
-        usernameTextField?.clearButtonMode = .WhileEditing
+        passwordTextField?.clearButtonMode = .WhileEditing
         self.addSubview(passwordTextField!)
+        
+        let buttonSize = CGSize(width: bounds.width * 0.8, height: 40)
+        loginBtn = UIButton(frame: CGRectMake(bounds.width / 2 - buttonSize.width / 2, 300, buttonSize.width, buttonSize.height))
+        loginBtn?.setTitle("登陆", forState: .Normal)
+        loginBtn?.backgroundColor = UIColor.peterRiverFlatColor()
+        loginBtn?.addTarget(self, action: #selector(MyLoginView.login), forControlEvents: .TouchUpInside)
+        self.addSubview(loginBtn!)
+        
+        let attributedStr = NSMutableAttributedString(string: "还没有帐号么？点此注册")
+        attributedStr.addAttribute(NSForegroundColorAttributeName, value: UIColor.peterRiverFlatColor(), range: NSMakeRange(7, 4))
+        attributedStr.addAttribute(NSFontAttributeName, value: UIFont.systemFontOfSize(12), range: NSMakeRange(0, 11))
+        registerBtn = UIButton(frame: CGRectMake(bounds.width / 2 - buttonSize.width / 2, bounds.height - 60, buttonSize.width, buttonSize.height))
+        registerBtn?.setAttributedTitle(attributedStr, forState: .Normal)
+        registerBtn?.addTarget(self, action: #selector(MyLoginView.register), forControlEvents: .TouchUpInside)
+        self.addSubview(registerBtn!)
+    }
+    
+    func login(){
+        print("登陆")
+    }
+    
+    func register(){
+        print("注册")
     }
 }
