@@ -48,7 +48,7 @@ class MyProfileView: UIView, UITableViewDataSource {
                 if let d = data{
                     let json = JSON(d)
                     if let header = self.tableView.tableHeaderView as? MyUserInfoHeader{
-                        header.setData(UIImage(data: NSData(contentsOfURL: NSURL(string: json["avatar_url"].string!)!)!)!, username: json["login"].string!)
+                        header.setData(NSURL(string: json["avatar_url"].string!)!, username: json["login"].string!)
                     }
                 }
             })

@@ -150,6 +150,21 @@ class Github {
         }
         requestPublicData(url, completionHandler: completionHandler)
     }
+    //获取github热门项目
+    class func getGithubHotSearch(page:Int?, completionHandler:(AnyObject?) -> Void){
+        var url:String = "https://api.github.com/search/repositories?sort=stars&order=desc&q=stars:>=500"
+        if page != nil{
+            url += "&page=\(page)"
+        }
+        requestPublicData(url, completionHandler: completionHandler)
+    }
+    class func getGithubHotSearch(page:Int?, withLanguage language:String, completionHandler:(AnyObject?) -> Void){
+        var url:String = "https://api.github.com/search/repositories?sort=stars&order=desc&q=stars:>=500 language:\(language)"
+        if page != nil{
+            url += "&page=\(page)"
+        }
+        requestPublicData(url, completionHandler: completionHandler)
+    }
     //获取github代码搜索结果
     class func getGithubCodeSearch(query:String, page:Int?, perPage:Int?, sort:Int?, order:Int?, completionHandler:(AnyObject?) -> Void){
         var url:String = "https://api.github.com/search/code?q=\(query)"

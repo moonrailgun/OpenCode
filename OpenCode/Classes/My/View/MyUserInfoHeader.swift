@@ -49,8 +49,8 @@ class MyUserInfoHeader: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setData(avatarImg:UIImage, username:String){
-        self.avatar?.image = avatarImg
+    func setData(avatarImgUrl:NSURL, username:String){
+        self.avatar?.sd_setImageWithURL(avatarImgUrl)
         self.username?.text = "@\(username)"
     }
 }
