@@ -77,14 +77,15 @@ class NewsEventListView: UIView, UITableViewDataSource, UITableViewDelegate {
         print(indexPath)
         
         if let d = dataArr{
-            let repo = d[indexPath.row]
+            let item = d[indexPath.row]
             
-            print(repo)
-            print("数据处理等待解决")
-            return
-            let controller = RepoDetailController()
-            controller.repoDetailData = repo.object
-            self.controller?.navigationController?.pushViewController(controller, animated: true)
+            Github.getRepoInfo(item["repo"]["name"].string!, completionHandler: { (data:AnyObject?) in
+                let controller = RepoDetailController()
+                controller.repoDetailData = data
+                OperationQueueHelper.operateInMainQueue({ 
+                    self.controller?.navigationController?.pushViewController(controller, animated: true)
+                })
+            })
         }
     }
     

@@ -69,6 +69,8 @@
 		BAC5DF331CEC051800EB2EFE /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC5DF321CEC051800EB2EFE /* UserInfo.swift */; };
 		BAC5DF351CEC082300EB2EFE /* UserInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC5DF341CEC082300EB2EFE /* UserInfoController.swift */; };
 		BAF47C191D01387300F6A03B /* UIViewAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF47C181D01387300F6A03B /* UIViewAdditions.swift */; };
+		BAF47C1B1D01462000F6A03B /* CodeLoading.gif in Resources */ = {isa = PBXBuildFile; fileRef = BAF47C1A1D01462000F6A03B /* CodeLoading.gif */; };
+		BAF47C1D1D01462B00F6A03B /* CodeBrowser.css in Resources */ = {isa = PBXBuildFile; fileRef = BAF47C1C1D01462B00F6A03B /* CodeBrowser.css */; };
 		BAF7F9A01CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF7F99F1CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -151,6 +153,8 @@
 		BAC5DF321CEC051800EB2EFE /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInfo.swift; path = Classes/UserInfo/Model/UserInfo.swift; sourceTree = "<group>"; };
 		BAC5DF341CEC082300EB2EFE /* UserInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInfoController.swift; path = Classes/UserInfo/Controller/UserInfoController.swift; sourceTree = "<group>"; };
 		BAF47C181D01387300F6A03B /* UIViewAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewAdditions.swift; sourceTree = "<group>"; };
+		BAF47C1A1D01462000F6A03B /* CodeLoading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = CodeLoading.gif; path = CodeBrowser/CodeLoading.gif; sourceTree = "<group>"; };
+		BAF47C1C1D01462B00F6A03B /* CodeBrowser.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = CodeBrowser.css; path = CodeBrowser/CodeBrowser.css; sourceTree = "<group>"; };
 		BAF7F99F1CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryDetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -361,6 +365,8 @@
 		BA5582C21CF1735C00157000 /* CodeBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				BAF47C1C1D01462B00F6A03B /* CodeBrowser.css */,
+				BAF47C1A1D01462000F6A03B /* CodeLoading.gif */,
 				BA5582CC1CF1827C00157000 /* CodeLoader.js */,
 				BA5582C31CF173B400157000 /* CodeBrowser.html */,
 			);
@@ -686,6 +692,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAF47C1D1D01462B00F6A03B /* CodeBrowser.css in Resources */,
+				BAF47C1B1D01462000F6A03B /* CodeLoading.gif in Resources */,
 				BA8D68631CF80C62002ED5E2 /* ToolCell.xib in Resources */,
 				BA634F221CFC290400915CF2 /* NewsEventCell.xib in Resources */,
 				BA47B74A1CE99EC200CF3947 /* UserCell.xib in Resources */,
