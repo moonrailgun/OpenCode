@@ -12,19 +12,19 @@ class NewsScrollView: UIScrollView {
     
     let windowSize:CGFloat = 4
     
-    override init(frame: CGRect) {
+    init(frame: CGRect, controller:UIViewController) {
         super.init(frame: frame)
         
-        initView()
+        initView(controller)
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        initView()
+        initView(nil)
     }
     
-    func initView(){
+    func initView(controller:UIViewController?){
         let screenWidth = UIScreen.mainScreen().bounds.width
         
         self.showsVerticalScrollIndicator = false
@@ -41,7 +41,7 @@ class NewsScrollView: UIScrollView {
             self.addSubview(view)
         }*/
         
-        let view1 = NewsEventListView(frame: CGRect(x: 0 * screenWidth, y: 0, width: screenWidth, height: self.bounds.height))
+        let view1 = NewsEventListView(frame: CGRect(x: 0 * screenWidth, y: 0, width: screenWidth, height: self.bounds.height), controller: controller)
         self.addSubview(view1)
         let view2 = HotRepoView(frame: CGRect(x: 1 * screenWidth, y: 0, width: screenWidth, height: self.bounds.height))
         self.addSubview(view2)

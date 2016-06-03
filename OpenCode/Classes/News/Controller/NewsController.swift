@@ -10,7 +10,7 @@ import UIKit
 
 class NewsController: UIViewController, UIScrollViewDelegate, NewsTopDelegate {
     lazy var topView:NewsTopView = NewsTopView(frame: CGRect(x: 0, y: 64, width:Int(self.view.frame.size.width), height: 36))
-    lazy var mainScrollView:NewsScrollView = NewsScrollView(frame: CGRect(x: 0, y: 100, width:Int(self.view.frame.size.width), height: Int(self.view.frame.size.height) - 100))
+    lazy var mainScrollView:NewsScrollView = NewsScrollView(frame: CGRect(x: 0, y: 100, width:Int(self.view.frame.size.width), height: Int(self.view.frame.size.height) - 100 - 48), controller:self)
 
     override func viewDidLoad() {
         super.viewDidLoad()

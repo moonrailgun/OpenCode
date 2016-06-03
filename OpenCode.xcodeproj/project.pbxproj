@@ -68,6 +68,7 @@
 		BAC055851CFAA90C00DCD236 /* NewsEventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC055841CFAA90C00DCD236 /* NewsEventListView.swift */; };
 		BAC5DF331CEC051800EB2EFE /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC5DF321CEC051800EB2EFE /* UserInfo.swift */; };
 		BAC5DF351CEC082300EB2EFE /* UserInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC5DF341CEC082300EB2EFE /* UserInfoController.swift */; };
+		BAF47C191D01387300F6A03B /* UIViewAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF47C181D01387300F6A03B /* UIViewAdditions.swift */; };
 		BAF7F9A01CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF7F99F1CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -149,6 +150,7 @@
 		BAC055841CFAA90C00DCD236 /* NewsEventListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsEventListView.swift; path = Classes/News/View/NewsEventListView.swift; sourceTree = "<group>"; };
 		BAC5DF321CEC051800EB2EFE /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInfo.swift; path = Classes/UserInfo/Model/UserInfo.swift; sourceTree = "<group>"; };
 		BAC5DF341CEC082300EB2EFE /* UserInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInfoController.swift; path = Classes/UserInfo/Controller/UserInfoController.swift; sourceTree = "<group>"; };
+		BAF47C181D01387300F6A03B /* UIViewAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewAdditions.swift; sourceTree = "<group>"; };
 		BAF7F99F1CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryDetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -266,6 +268,7 @@
 				BA6F3B0F1CCE3EA400F6984B /* OperationQueueHelper.swift */,
 				BA6F3B111CCE478D00F6984B /* TimeHelper.swift */,
 				BA8DA3301CD080A500F9B391 /* Crypto.swift */,
+				BAF47C181D01387300F6A03B /* UIViewAdditions.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -803,6 +806,7 @@
 				BA47B74E1CE9AE7D00CF3947 /* UserBaseInfo.swift in Sources */,
 				BAC5DF331CEC051800EB2EFE /* UserInfo.swift in Sources */,
 				BA0ADD7C1CF83DF200A0B0F1 /* SearchController.swift in Sources */,
+				BAF47C191D01387300F6A03B /* UIViewAdditions.swift in Sources */,
 				BA53E2DE1CFFDCCE00FD46F2 /* MyUserInfoHeader.swift in Sources */,
 				BA715DFD1CFD26BB00887D73 /* HotRepoView.swift in Sources */,
 				BA51C0521CF696D4005CCCC7 /* RepoEventController.swift in Sources */,

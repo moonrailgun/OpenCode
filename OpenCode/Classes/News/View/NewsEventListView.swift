@@ -23,10 +23,12 @@ class NewsEventListView: UIView, UITableViewDataSource, UITableViewDelegate {
     let NEWS_EVENT_CELL_ID = "newsEvent"
     var tableView:UITableView?
     var dataArr:JSON?
+    var controller:UIViewController?
     
-    override init(frame: CGRect) {
+    init(frame: CGRect, controller:UIViewController?) {
         super.init(frame: frame)
 
+        self.controller = controller
         initView()
         initData()
     }
@@ -73,6 +75,17 @@ class NewsEventListView: UIView, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(indexPath)
+        
+        if let d = dataArr{
+            let repo = d[indexPath.row]
+            
+            print(repo)
+            print("数据处理等待解决")
+            return
+            let controller = RepoDetailController()
+            controller.repoDetailData = repo.object
+            self.controller?.navigationController?.pushViewController(controller, animated: true)
+        }
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

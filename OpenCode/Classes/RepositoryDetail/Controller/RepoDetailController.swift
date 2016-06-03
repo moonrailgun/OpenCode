@@ -208,7 +208,11 @@ class RepoDetailController: UIViewController, UITableViewDataSource,UITableViewD
                 print("owner:\(username)")
                 Github.getUserInfo(username, completionHandler: { (data:AnyObject?) in
                     OperationQueueHelper.operateInMainQueue({
-                        self.performSegueWithIdentifier("showUserInfo", sender: data)
+                        if let d = data{
+                            let controller = UserInfoController()
+                            controller.parseData(d)
+                            self.navigationController?.pushViewController(controller, animated: true)
+                        }
                     })
                 })
             }
