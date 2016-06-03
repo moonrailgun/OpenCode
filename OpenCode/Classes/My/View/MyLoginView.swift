@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyLoginView: UIView {
+class MyLoginView: UIView, UITextFieldDelegate {
 
     /*
     // Only override drawRect: if you perform custom drawing.
@@ -51,6 +51,7 @@ class MyLoginView: UIView {
         usernameTextField?.contentVerticalAlignment = .Center
         usernameTextField?.contentHorizontalAlignment = .Center
         usernameTextField?.clearButtonMode = .WhileEditing
+        usernameTextField?.delegate = self
         self.addSubview(usernameTextField!)
         
         passwordTextField = UITextField(frame: CGRect(x: bounds.width / 2 - textFieldSize.width / 2, y: 240, width: textFieldSize.width, height: textFieldSize.height))
@@ -63,6 +64,7 @@ class MyLoginView: UIView {
         passwordTextField?.contentVerticalAlignment = .Center
         passwordTextField?.contentHorizontalAlignment = .Center
         passwordTextField?.clearButtonMode = .WhileEditing
+        passwordTextField?.delegate = self
         self.addSubview(passwordTextField!)
         
         let buttonSize = CGSize(width: bounds.width * 0.8, height: 40)
@@ -82,6 +84,8 @@ class MyLoginView: UIView {
     }
     
     func login(){
+        
+        
         if let _ = Github.getToken(){
             print("已经登陆过")
             return
@@ -114,5 +118,9 @@ class MyLoginView: UIView {
         print("注册")
         
         UIApplication.sharedApplication().openURL(NSURL(string: "https://github.com/join")!)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        return textField.resignFirstResponder()
     }
 }

@@ -48,6 +48,8 @@ class SearchController: UIViewController, UISearchBarDelegate, UITableViewDataSo
         let searchText = searchBar.text!
         print("搜索文本:\(searchText)")
         
+        self.searchBar!.resignFirstResponder()
+        
         Github.getGithubRepoSearch(searchText, page: nil) { (data:AnyObject?) in
             if let d = data{
                 let json = JSON(d)

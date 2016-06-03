@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import MJRefresh
 
 class NewsEventListView: UIView, UITableViewDataSource, UITableViewDelegate {
 
@@ -25,11 +26,7 @@ class NewsEventListView: UIView, UITableViewDataSource, UITableViewDelegate {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        /*
-        let label = UILabel(frame: CGRect(x: 20, y: 20, width: 200, height: 40))
-        label.text = "画面"
-        self.addSubview(label)*/
+
         initView()
         initData()
     }
@@ -45,6 +42,11 @@ class NewsEventListView: UIView, UITableViewDataSource, UITableViewDelegate {
         tableView?.rowHeight = 90
         tableView?.registerNib(UINib(nibName: "NewsEventCell", bundle: nil), forCellReuseIdentifier: NEWS_EVENT_CELL_ID)
         self.addSubview(tableView!)
+        
+        //下拉刷新
+        self.tableView?.mj_header = MJRefreshNormalHeader(refreshingBlock: {
+            self.initData()
+        })
     }
     func initData(){
         Github.getEvents { (data:AnyObject?) -> Void in
@@ -53,8 +55,9 @@ class NewsEventListView: UIView, UITableViewDataSource, UITableViewDelegate {
             print("github事件 数据加载完毕")
             if json.count > 0{
                 OperationQueueHelper.operateInMainQueue({ () -> Void in
-                    //todo 刷新列表数据
                     self.tableView!.reloadData()
+                    
+                    self.endRefresh()
                 })
             }
         }
@@ -116,5 +119,13 @@ class NewsEventListView: UIView, UITableViewDataSource, UITableViewDelegate {
         str = "\(username) \(desc)到 \(repositoryName)"
         
         return str
+    }
+    
+    private func beginRefresh(){
+        self.tableView?.mj_header.beginRefreshing()
+    }
+    
+    private func endRefresh(){
+        self.tableView?.mj_header.endRefreshing()
     }
 }
