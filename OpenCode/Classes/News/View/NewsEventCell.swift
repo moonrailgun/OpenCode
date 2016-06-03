@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class NewsEventCell: UITableViewCell {
 
@@ -35,7 +36,7 @@ class NewsEventCell: UITableViewCell {
         
         self.dateLabel.text = dataStr
         if let url = NSURL(string: userAvatarUrl){//判定URL合法性
-            self.userAvatarImage.image = UIImage(data: NSData(contentsOfURL: url)!)//需要图片懒加载
+            self.userAvatarImage.sd_setImageWithURL(url, placeholderImage: UIImage())
         }
         self.descText.text = descText
     }
