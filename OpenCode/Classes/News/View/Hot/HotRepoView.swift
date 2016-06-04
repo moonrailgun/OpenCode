@@ -29,7 +29,7 @@ class HotRepoView: UIView, UITableViewDataSource {
         Github.getGithubHotSearch(nil) { (data:AnyObject?) in
             if let d = data{
                 let json = JSON(d)
-                print(json)
+                //print(json)
                 let items = json["items"]
                 self.hotRepoData = items
                 

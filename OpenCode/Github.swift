@@ -152,14 +152,14 @@ class Github {
     }
     //获取github热门项目
     class func getGithubHotSearch(page:Int?, completionHandler:(AnyObject?) -> Void){
-        var url:String = "https://api.github.com/search/repositories?sort=stars&order=desc&q=stars:>=500"
+        var url:String = "https://api.github.com/search/repositories?sort=stars&order=desc&q=stars:>500"
         if page != nil{
             url += "&page=\(page)"
         }
         requestPublicData(url, completionHandler: completionHandler)
     }
     class func getGithubHotSearch(page:Int?, withLanguage language:String, completionHandler:(AnyObject?) -> Void){
-        var url:String = "https://api.github.com/search/repositories?sort=stars&order=desc&q=stars:>=500 language:\(language)"
+        var url:String = "https://api.github.com/search/repositories?sort=stars&order=desc&q=stars:>=500+language:\(language)"
         if page != nil{
             url += "&page=\(page)"
         }
@@ -225,7 +225,8 @@ class Github {
     }
     //获取公开数据通用方法
     class private func requestPublicData(url: String, completionHandler:(AnyObject?) -> Void){
-        HttpRequest.sendAsyncRequest(NSURL(string: url)!, completionHandler: { (resp:NSURLResponse?, data:NSData?, error:NSError?) -> Void in
+        let _url = NSURL(string: url.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)
+        HttpRequest.sendAsyncRequest(_url!, completionHandler: { (resp:NSURLResponse?, data:NSData?, error:NSError?) -> Void in
             if let d = data{
                 completionHandler(self.convertDataToJSONObj(d))
             }else{
@@ -237,7 +238,8 @@ class Github {
     //获取私人数据通用方法
     class private func requestPrivateData(url:String, completionHandler:(AnyObject?) -> Void){
         if let token:String = getToken(){
-            HttpRequest.sendAsyncRequest(NSURL(string: url + "?access_token=\(token)")!, completionHandler: { (resp:NSURLResponse?, data:NSData?, error:NSError?) -> Void in
+            let _url = NSURL(string: (url + "?access_token=\(token)").stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)
+            HttpRequest.sendAsyncRequest(_url!, completionHandler: { (resp:NSURLResponse?, data:NSData?, error:NSError?) -> Void in
                 if let d = data{
                     completionHandler(self.convertDataToJSONObj(d))
                 }else{
