@@ -23,17 +23,18 @@ class QRCodeController: UIViewController {
     }
     
     func initView(){
+        self.view.backgroundColor = UIColor.whiteColor()
+        
         let button = UIButton(type: .System)
-        button.frame = CGRectMake(20, 20, 200, 40)
+        button.frame = CGRectMake(20, 120, 200, 40)
         button.setTitle("扫描二维码", forState: .Normal)
         button.addTarget(self, action: #selector(QRCodeController.enterScanning), forControlEvents: .TouchUpInside)
-        
         self.view.addSubview(button)
     }
     
     //进入二维码调试
     func enterScanning(){
-        
+        self.navigationController?.pushViewController(QRCodeScanningController(), animated: true)
     }
     
 
