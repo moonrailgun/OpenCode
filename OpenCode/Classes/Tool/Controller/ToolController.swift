@@ -115,6 +115,12 @@ class ToolController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         print(indexPath)
+        
+        if(indexPath.row == 0 && indexPath.section == 0){
+            print("二维码扫描器")
+            let controller = QRCodeController()
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
     }
 
     /*

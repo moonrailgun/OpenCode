@@ -26,6 +26,8 @@
 		BA47B7491CE99EC200CF3947 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47B7471CE99EC200CF3947 /* UserCell.swift */; };
 		BA47B74A1CE99EC200CF3947 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA47B7481CE99EC200CF3947 /* UserCell.xib */; };
 		BA47B74E1CE9AE7D00CF3947 /* UserBaseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47B74D1CE9AE7D00CF3947 /* UserBaseInfo.swift */; };
+		BA4F89E61D040C860051A525 /* QRCodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F89E51D040C860051A525 /* QRCodeController.swift */; };
+		BA4F89E81D040EB80051A525 /* QRCodeScanningController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F89E71D040EB80051A525 /* QRCodeScanningController.swift */; };
 		BA505B0A1CF3FBB900BE7EC9 /* ToolController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA505B091CF3FBB900BE7EC9 /* ToolController.swift */; };
 		BA51C0521CF696D4005CCCC7 /* RepoEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51C0511CF696D4005CCCC7 /* RepoEventController.swift */; };
 		BA51C0541CF69B88005CCCC7 /* RepoIssuesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51C0531CF69B88005CCCC7 /* RepoIssuesController.swift */; };
@@ -110,6 +112,8 @@
 		BA47B7471CE99EC200CF3947 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserCell.swift; path = Classes/UserList/View/UserCell.swift; sourceTree = "<group>"; };
 		BA47B7481CE99EC200CF3947 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserCell.xib; path = Classes/UserList/View/UserCell.xib; sourceTree = "<group>"; };
 		BA47B74D1CE9AE7D00CF3947 /* UserBaseInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserBaseInfo.swift; path = Classes/UserList/Model/UserBaseInfo.swift; sourceTree = "<group>"; };
+		BA4F89E51D040C860051A525 /* QRCodeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QRCodeController.swift; path = Classes/Tool/QRCode/Controller/QRCodeController.swift; sourceTree = "<group>"; };
+		BA4F89E71D040EB80051A525 /* QRCodeScanningController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QRCodeScanningController.swift; path = Classes/Tool/QRCode/Controller/QRCodeScanningController.swift; sourceTree = "<group>"; };
 		BA505B091CF3FBB900BE7EC9 /* ToolController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToolController.swift; path = Classes/Tool/Controller/ToolController.swift; sourceTree = "<group>"; };
 		BA51C0511CF696D4005CCCC7 /* RepoEventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoEventController.swift; path = Classes/RepositoryDetail/Controller/RepoEventController.swift; sourceTree = "<group>"; };
 		BA51C0531CF69B88005CCCC7 /* RepoIssuesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoIssuesController.swift; path = Classes/RepositoryDetail/Controller/RepoIssuesController.swift; sourceTree = "<group>"; };
@@ -329,9 +333,27 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		BA4F89E31D0409DB0051A525 /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				BA4F89E41D040C4D0051A525 /* Controller */,
+			);
+			name = QRCode;
+			sourceTree = "<group>";
+		};
+		BA4F89E41D040C4D0051A525 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA4F89E51D040C860051A525 /* QRCodeController.swift */,
+				BA4F89E71D040EB80051A525 /* QRCodeScanningController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		BA505B071CF3FB7A00BE7EC9 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				BA4F89E31D0409DB0051A525 /* QRCode */,
 				BA79E0291CF5944600E86258 /* View */,
 				BA505B081CF3FB8C00BE7EC9 /* Controller */,
 			);
@@ -814,6 +836,8 @@
 				BA4609D11CF95AB400D2415B /* SearchRepoCell.swift in Sources */,
 				BA53E2DC1CFFD86900FD46F2 /* MyProfileView.swift in Sources */,
 				BA0ADD761CF838C500A0B0F1 /* RepoPullController.swift in Sources */,
+				BA4F89E81D040EB80051A525 /* QRCodeScanningController.swift in Sources */,
+				BA4F89E61D040C860051A525 /* QRCodeController.swift in Sources */,
 				BA7CB1D41CEDF5ED004DDF42 /* UserInfoHeaderView.swift in Sources */,
 				BAC055831CFAA67C00DCD236 /* NewsScrollView.swift in Sources */,
 				BA47B7491CE99EC200CF3947 /* UserCell.swift in Sources */,
