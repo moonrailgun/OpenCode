@@ -11,6 +11,7 @@ import AVFoundation
 
 class QRCodeScanningController: UIViewController,AVCaptureMetadataOutputObjectsDelegate {
     let QRCODE_SCANNING_ID = "qrcode-scanning"
+    let screenSize = UIScreen.mainScreen().bounds.size
     
     var session:AVCaptureSession?
     var device:AVCaptureDevice?
@@ -19,6 +20,10 @@ class QRCodeScanningController: UIViewController,AVCaptureMetadataOutputObjectsD
     var layer:AVCaptureVideoPreviewLayer?
     
     var lastScanningResult:String = ""
+    
+    var scanningFrame:UIImageView?
+    var scanningLine:UIImageView?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +31,10 @@ class QRCodeScanningController: UIViewController,AVCaptureMetadataOutputObjectsD
         // Do any additional setup after loading the view.
         initScanningContent()
         initFrame()
+        initView()
+        
+        self.performSelectorOnMainThread(#selector(QRCodeScanningController.timerFired), withObject: nil, waitUntilDone: false)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(QRCodeScanningController.sessionStartRunning), name: UIApplicationDidBecomeActiveNotification, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,7 +64,6 @@ class QRCodeScanningController: UIViewController,AVCaptureMetadataOutputObjectsD
     }
     
     func initFrame(){
-        let screenSize = UIScreen.mainScreen().bounds.size
         let scanningRect = CGRectMake(screenSize.width / 7, 114, screenSize.width / 7 * 5, screenSize.width / 7 * 5)
         
         //设置扫描作用域范围(中间透明的扫描框)
@@ -76,20 +84,49 @@ class QRCodeScanningController: UIViewController,AVCaptureMetadataOutputObjectsD
         maskView.layer.mask = maskLayer//设置蒙板
         
         //扫描框
+        scanningFrame = UIImageView(frame: scanningRect)
+        scanningFrame?.image = UIImage(named: "qr-frame")
+        self.view.addSubview(scanningFrame!)
         
+        scanningLine = UIImageView(frame: CGRectMake(scanningRect.minX, scanningRect.minY, scanningRect.width, 3))
+        scanningLine?.image = UIImage(named: "qr-line")
+        self.view.addSubview(scanningLine!)
     }
     
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
         if(metadataObjects.count > 0){
             let metadataObject:AVMetadataMachineReadableCodeObject = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
-            if(metadataObject.stringValue != self.lastScanningResult){
-                print("stringValue = \(metadataObject.stringValue)")
-                self.lastScanningResult = metadataObject.stringValue
-                
+            
+            let resultText = metadataObject.stringValue
+            if(resultText != self.lastScanningResult){
+                print("扫描结果 = \(resultText)")
+                self.lastScanningResult = resultText
             }
         }
     }
+    
+    func sessionStartRunning(){
+        if(session != nil){
+            print("session 开始执行")
+            session?.startRunning()
+            self.performSelectorOnMainThread(Selector("timerFired"), withObject: nil, waitUntilDone: false)
+        }
+    }
+    
+    func timerFired(){
+        self.scanningLine?.layer.addAnimation(self.scanningAnimation(3, y: Float(screenSize.width)/7*5-8), forKey: nil)
+    }
 
+    func scanningAnimation(time:Double, y:Float) -> CABasicAnimation{
+        let animation = CABasicAnimation(keyPath: "transform.translation.y")
+        animation.toValue = y
+        animation.duration = time
+        animation.removedOnCompletion = true
+        animation.repeatCount = Float.infinity
+        animation.fillMode = kCAFillModeForwards
+        
+        return animation
+    }
 
     /*
     // MARK: - Navigation
