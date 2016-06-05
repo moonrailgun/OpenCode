@@ -41,7 +41,6 @@ class NewsController: UIViewController, UIScrollViewDelegate, NewsTopDelegate {
     }
     
     func onTopViewBtnClick(tag: Int) {
-        print(tag)
         let screenWidth = UIScreen.mainScreen().bounds.size.width
         self.mainScrollView.contentOffset = CGPointMake(CGFloat(tag - 100) * screenWidth, 0);
     }

@@ -146,7 +146,7 @@ class Github {
     class func getGithubRepoSearch(query:String, page:Int?, completionHandler:(AnyObject?) -> Void){
         var url:String = "https://api.github.com/search/repositories?q=\(query)"
         if page != nil{
-            url += "&page=\(page)"
+            url += "&page=\(page!)"
         }
         requestPublicData(url, completionHandler: completionHandler)
     }
@@ -154,14 +154,14 @@ class Github {
     class func getGithubHotSearch(page:Int?, completionHandler:(AnyObject?) -> Void){
         var url:String = "https://api.github.com/search/repositories?sort=stars&order=desc&q=stars:>500"
         if page != nil{
-            url += "&page=\(page)"
+            url += "&page=\(page!)"
         }
         requestPublicData(url, completionHandler: completionHandler)
     }
     class func getGithubHotSearch(page:Int?, withLanguage language:String, completionHandler:(AnyObject?) -> Void){
         var url:String = "https://api.github.com/search/repositories?sort=stars&order=desc&q=stars:>=500+language:\(language)"
         if page != nil{
-            url += "&page=\(page)"
+            url += "&page=\(page!)"
         }
         requestPublicData(url, completionHandler: completionHandler)
     }
@@ -169,18 +169,18 @@ class Github {
     class func getGithubCodeSearch(query:String, page:Int?, perPage:Int?, sort:Int?, order:Int?, completionHandler:(AnyObject?) -> Void){
         var url:String = "https://api.github.com/search/code?q=\(query)"
         if page != nil{
-            url += "&page=\(page)"
+            url += "&page=\(page!)"
         }
         if perPage != nil{
-            url += "&per_page=\(perPage)"
+            url += "&per_page=\(perPage!)"
         }
         if sort != nil{
-            url += "&sort=\(sort)"
+            url += "&sort=\(sort!)"
         }else{
             url += "&sort=indexed"
         }
         if order != nil{
-            url += "&order=\(order)"
+            url += "&order=\(order!)"
         }else{
             url += "&order=desc"
         }
