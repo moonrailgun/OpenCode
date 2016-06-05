@@ -24,6 +24,7 @@ class QRCodeScanningController: UIViewController,AVCaptureMetadataOutputObjectsD
     var scanningFrame:UIImageView?
     var scanningLine:UIImageView?
     
+    var scanningResult:UITextView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,6 +94,18 @@ class QRCodeScanningController: UIViewController,AVCaptureMetadataOutputObjectsD
         self.view.addSubview(scanningLine!)
     }
     
+    func initView(){
+        scanningResult = UITextView(frame: CGRectMake(0, screenSize.height * 0.7, screenSize.width, 40))
+        scanningResult?.backgroundColor = UIColor.clearColor()
+        scanningResult?.textColor = UIColor.whiteColor()
+        scanningResult?.font = UIFont.systemFontOfSize(14)
+        scanningResult?.textAlignment = .Center
+        scanningResult?.editable = false
+        scanningResult?.selectable = false
+        self.view.addSubview(scanningResult!)
+    }
+    
+    //扫描结果
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
         if(metadataObjects.count > 0){
             let metadataObject:AVMetadataMachineReadableCodeObject = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
@@ -101,6 +114,7 @@ class QRCodeScanningController: UIViewController,AVCaptureMetadataOutputObjectsD
             if(resultText != self.lastScanningResult){
                 print("扫描结果 = \(resultText)")
                 self.lastScanningResult = resultText
+                self.scanningResult?.text = resultText
             }
         }
     }
