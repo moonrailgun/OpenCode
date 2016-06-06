@@ -26,7 +26,7 @@ class NewsEventCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setData(eventName:String, dataStr:String, userAvatarUrl:String, descText:String){
+    func setData(eventName:String, dateStr:String, userAvatarUrl:String, descText:String){
         let imageName = getEventIcon(eventName)
         if (imageName != "") {
             self.eventImage.image = UIImage(named: imageName)
@@ -34,7 +34,7 @@ class NewsEventCell: UITableViewCell {
             print("未知的图标事件\(eventName)")
         }
         
-        self.dateLabel.text = dataStr
+        self.dateLabel.text = dateStr
         if let url = NSURL(string: userAvatarUrl){//判定URL合法性
             self.userAvatarImage.sd_setImageWithURL(url, placeholderImage: UIImage())
         }

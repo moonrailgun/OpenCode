@@ -82,7 +82,7 @@ class MyController: UIViewController, UITableViewDelegate {
         if(indexPath.row == 0){
             print("我的项目")
             Github.getCurrentUserRepositories({ (data:AnyObject?) in
-                let controller = MyRepoController(style: UITableViewStyle.Plain)
+                let controller = MyRepoController(style: .Plain)
                 controller.repositoryDataList = JSON(data!)
                 
                 OperationQueueHelper.operateInMainQueue({
@@ -91,6 +91,14 @@ class MyController: UIViewController, UITableViewDelegate {
             })
         }else if(indexPath.row == 1){
             print("我的收藏")
+            Github.getCurrentUserStarred({ (data:AnyObject?) in
+                let controller = MyRepoController(style: .Plain)
+                controller.repositoryDataList = JSON(data!)
+                
+                OperationQueueHelper.operateInMainQueue({ 
+                    self.navigationController?.pushViewController(controller, animated: true)
+                })
+            })
         }else if(indexPath.row == 2){
             print("我的粉丝")
         }else if(indexPath.row == 3){

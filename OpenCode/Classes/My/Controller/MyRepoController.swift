@@ -22,7 +22,8 @@ class MyRepoController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        print(repositoryDataList)
+        self.tableView.registerNib(UINib(nibName: "SearchRepoCell", bundle: nil), forCellReuseIdentifier: REPO_CELL_ID)//暂时使用
+        self.tableView.rowHeight = 130
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,14 +48,28 @@ class MyRepoController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier")
+        var cell = tableView.dequeueReusableCellWithIdentifier(REPO_CELL_ID)
 
         if(cell == nil){
-            cell = UITableViewCell(style: .Default, reuseIdentifier: REPO_CELL_ID)
-            cell?.accessoryType = .DisclosureIndicator
+            cell = SearchRepoCell(style: .Default, reuseIdentifier: REPO_CELL_ID)
+            //cell?.accessoryType = .DisclosureIndicator
+        }
+        
+        if let list = self.repositoryDataList{
+            let repo = list[indexPath.row]
+            
+            (cell as! SearchRepoCell).setData(repo)
         }
 
         return cell!
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if let list = self.repositoryDataList{
+            let controller = RepoDetailController()
+            controller.repoDetailData = list[indexPath.row].object
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
     }
 
     /*

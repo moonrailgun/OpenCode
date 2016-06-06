@@ -107,7 +107,7 @@ class NewsEventListView: UIView, UITableViewDataSource, UITableViewDelegate {
             let username = event["actor"]["login"].string!
             let reponame = event["repo"]["name"].string!
             
-            (cell as! NewsEventCell).setData(type, dataStr: Github.parseGithubTime(event["created_at"].string!), userAvatarUrl: event["actor"]["avatar_url"].string!, descText: generateDescriptionStr(type, username: username, repositoryName: reponame))
+            (cell as! NewsEventCell).setData(type, dateStr: Github.parseGithubTime(event["created_at"].string!), userAvatarUrl: event["actor"]["avatar_url"].string!, descText: generateDescriptionStr(type, username: username, repositoryName: reponame))
         }
         
         return cell!
