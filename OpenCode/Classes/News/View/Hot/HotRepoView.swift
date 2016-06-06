@@ -14,11 +14,14 @@ class HotRepoView: UIView, UITableViewDataSource, UITableViewDelegate {
     let HOT_CELL_ID = "hot"
     lazy var tableView:UITableView = UITableView(frame: self.bounds, style: .Plain)
     var hotRepoData:JSON?
+    var controller:UIViewController?
     
     var currentMaxPage = 1
     
-    override init(frame: CGRect) {
+    init(frame: CGRect, controller:UIViewController?) {
         super.init(frame: frame)
+
+        self.controller = controller
         
         initView()
         initData()
@@ -38,6 +41,14 @@ class HotRepoView: UIView, UITableViewDataSource, UITableViewDelegate {
                 self.hotRepoData = items
                 
                 OperationQueueHelper.operateInMainQueue({
+                    let header = UILabel(frame: CGRectMake(0,0,self.bounds.width,24))
+                    header.text = "共\(json["total_count"].int!)个热门项目"
+                    header.textColor = UIColor.whiteColor()
+                    header.backgroundColor = UIColor.alizarinFlatColor()
+                    header.textAlignment = .Center
+                    header.font = UIFont.systemFontOfSize(14)
+                    self.tableView.tableHeaderView = header
+                    
                     self.tableView.reloadData()
                 })
             }
@@ -71,6 +82,7 @@ class HotRepoView: UIView, UITableViewDataSource, UITableViewDelegate {
         tableView.registerNib(UINib(nibName: "SearchRepoCell", bundle: nil), forCellReuseIdentifier: HOT_CELL_ID)
         tableView.rowHeight = 130
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
             self.currentMaxPage += 1
             self.addonData(self.currentMaxPage)
@@ -107,6 +119,16 @@ class HotRepoView: UIView, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(indexPath)
+        let item = self.hotRepoData![indexPath.row]
+        if let repoFullName = item["full_name"].string{
+            Github.getRepoInfo(repoFullName, completionHandler: { (data:AnyObject?) in
+                let controller = RepoDetailController()
+                controller.repoDetailData = data
+                OperationQueueHelper.operateInMainQueue({ 
+                    self.controller?.navigationController?.pushViewController(controller, animated: true)
+                })
+            })
+        }
     }
     
     private func endRefresh(){
