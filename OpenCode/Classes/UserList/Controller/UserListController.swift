@@ -12,7 +12,7 @@ import SwiftyJSON
 class UserListController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     let tableView: UITableView = UITableView()
-    var userListDate:AnyObject?
+    var userListData:AnyObject?
     var userList = [UserBaseInfo]()
     
     let USER_CELL_ID = "user"
@@ -63,7 +63,7 @@ class UserListController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func getDataJson()->JSON{
-        if let d = self.userListDate{
+        if let d = self.userListData{
             let json = JSON(d)
             return json
         }else{

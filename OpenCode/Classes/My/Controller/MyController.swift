@@ -101,8 +101,22 @@ class MyController: UIViewController, UITableViewDelegate {
             })
         }else if(indexPath.row == 2){
             print("我的粉丝")
+            Github.getCurrentUserFollowers({ (data:AnyObject?) in
+                let controller = UserListController()
+                controller.userListData = data
+                OperationQueueHelper.operateInMainQueue({ 
+                    self.navigationController?.pushViewController(controller, animated: true)
+                })
+            })
         }else if(indexPath.row == 3){
             print("我的关注")
+            Github.getCurrentUserFollowing({ (data:AnyObject?) in
+                let controller = UserListController()
+                controller.userListData = data
+                OperationQueueHelper.operateInMainQueue({
+                    self.navigationController?.pushViewController(controller, animated: true)
+                })
+            })
         }
     }
 

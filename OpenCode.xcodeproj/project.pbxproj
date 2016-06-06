@@ -64,7 +64,6 @@
 		BA8CEBDD1CE7480A0044155A /* RepoDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8CEBDC1CE7480A0044155A /* RepoDetailHeaderView.swift */; };
 		BA8CEBE01CE74DF00044155A /* RepoDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8CEBDE1CE74DF00044155A /* RepoDetailTableViewCell.swift */; };
 		BA8D68631CF80C62002ED5E2 /* ToolCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA8D68621CF80C62002ED5E2 /* ToolCell.xib */; };
-		BA8DA32C1CD05D7F00F9B391 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DA32B1CD05D7F00F9B391 /* MyViewController.swift */; };
 		BA8DA3311CD080A500F9B391 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DA3301CD080A500F9B391 /* Crypto.swift */; };
 		BAC055801CFAA60A00DCD236 /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0557F1CFAA60A00DCD236 /* NewsController.swift */; };
 		BAC055831CFAA67C00DCD236 /* NewsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC055821CFAA67C00DCD236 /* NewsScrollView.swift */; };
@@ -150,7 +149,6 @@
 		BA8CEBDC1CE7480A0044155A /* RepoDetailHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoDetailHeaderView.swift; path = Classes/RepositoryDetail/View/RepoDetailHeaderView.swift; sourceTree = "<group>"; };
 		BA8CEBDE1CE74DF00044155A /* RepoDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoDetailTableViewCell.swift; path = Classes/RepositoryDetail/View/RepoDetailTableViewCell.swift; sourceTree = "<group>"; };
 		BA8D68621CF80C62002ED5E2 /* ToolCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ToolCell.xib; path = Classes/Tool/View/ToolCell.xib; sourceTree = "<group>"; };
-		BA8DA32B1CD05D7F00F9B391 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		BA8DA3301CD080A500F9B391 /* Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
 		BAC0557F1CFAA60A00DCD236 /* NewsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsController.swift; path = Classes/News/Controller/NewsController.swift; sourceTree = "<group>"; };
 		BAC055821CFAA67C00DCD236 /* NewsScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsScrollView.swift; path = Classes/News/View/NewsScrollView.swift; sourceTree = "<group>"; };
@@ -514,7 +512,6 @@
 			isa = PBXGroup;
 			children = (
 				BA5F71A51CD350BD0043CBB5 /* Page */,
-				BAD2CFD41CD0DDE000BB910C /* My */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -633,14 +630,6 @@
 				BAC5DF341CEC082300EB2EFE /* UserInfoController.swift */,
 			);
 			name = Controller;
-			sourceTree = "<group>";
-		};
-		BAD2CFD41CD0DDE000BB910C /* My */ = {
-			isa = PBXGroup;
-			children = (
-				BA8DA32B1CD05D7F00F9B391 /* MyViewController.swift */,
-			);
-			name = My;
 			sourceTree = "<group>";
 		};
 		D7F22D4ECA5475ECD3576BFE /* Pods */ = {
@@ -851,7 +840,6 @@
 				BA79E0781CF5DF8300E86258 /* FlatColor.swift in Sources */,
 				BA5AF8391D02C3660015B601 /* NewsEventCell.swift in Sources */,
 				BA5F71A81CD350DC0043CBB5 /* RepositoryTableViewController.swift in Sources */,
-				BA8DA32C1CD05D7F00F9B391 /* MyViewController.swift in Sources */,
 				BA3AD1FA1CCA245A0034B21E /* AppDelegate.swift in Sources */,
 				BA5582C11CF1706400157000 /* CodeBrowserController.swift in Sources */,
 				BAC055801CFAA60A00DCD236 /* NewsController.swift in Sources */,
