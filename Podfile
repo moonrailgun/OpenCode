@@ -7,6 +7,7 @@ target 'OpenCode' do
     pod 'SwiftyJSON'
     pod 'SDWebImage'
     pod 'MJRefresh'
+    pod 'LTNavigationBar'
 end
 
 target 'OpenCodeTests' do

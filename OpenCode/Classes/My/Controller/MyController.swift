@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import LTNavigationBar
 
 class MyController: UIViewController, UITableViewDelegate {
     
@@ -19,7 +20,7 @@ class MyController: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        hideNav()
         if let _:String = Github.getToken() {
             //显示正常页
             initProfileView()
@@ -27,6 +28,14 @@ class MyController: UIViewController, UITableViewDelegate {
             //显示登陆页面
             initLoginView()
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        hideNav()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        showNav()
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,7 +51,6 @@ class MyController: UIViewController, UITableViewDelegate {
         profileView.tableView.delegate = self
         self.view.addSubview(profileView)
         
-        initNav()
         initData()
     }
     
@@ -54,7 +62,16 @@ class MyController: UIViewController, UITableViewDelegate {
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
         
         //self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "个人资料", style: .Plain, target: self, action: Selector("showProfileDetail"))
-        
+    }
+    
+    func hideNav(){
+        self.navigationController?.navigationBar.lt_setElementsAlpha(0)
+        self.navigationController?.navigationBar.lt_setBackgroundColor(UIColor.clearColor())
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+    }
+    
+    func showNav(){
+        self.navigationController?.navigationBar.lt_reset()
     }
     
     func initData(){
