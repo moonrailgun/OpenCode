@@ -22,6 +22,7 @@
 		BA3AD2201CCA29B60034B21E /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD21F1CCA29B60034B21E /* HttpRequest.swift */; };
 		BA4465751D068A55007AEC2F /* CommitDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4465741D068A55007AEC2F /* CommitDetailController.swift */; };
 		BA44657A1D068F7D007AEC2F /* UserEventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4465791D068F7D007AEC2F /* UserEventsController.swift */; };
+		BA44657C1D0693EB007AEC2F /* GithubTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA44657B1D0693EB007AEC2F /* GithubTime.swift */; };
 		BA4609D11CF95AB400D2415B /* SearchRepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4609CF1CF95AB400D2415B /* SearchRepoCell.swift */; };
 		BA4609D21CF95AB400D2415B /* SearchRepoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA4609D01CF95AB400D2415B /* SearchRepoCell.xib */; };
 		BA47B7451CE99B4A00CF3947 /* UserListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47B7441CE99B4A00CF3947 /* UserListController.swift */; };
@@ -109,6 +110,7 @@
 		BA3AD21F1CCA29B60034B21E /* HttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
 		BA4465741D068A55007AEC2F /* CommitDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommitDetailController.swift; path = Classes/CommitDetail/Controller/CommitDetailController.swift; sourceTree = "<group>"; };
 		BA4465791D068F7D007AEC2F /* UserEventsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserEventsController.swift; path = Classes/UserEvents/Controller/UserEventsController.swift; sourceTree = "<group>"; };
+		BA44657B1D0693EB007AEC2F /* GithubTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubTime.swift; path = Classes/Other/GithubTime.swift; sourceTree = "<group>"; };
 		BA4609CF1CF95AB400D2415B /* SearchRepoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchRepoCell.swift; path = Classes/Search/View/SearchRepoCell.swift; sourceTree = "<group>"; };
 		BA4609D01CF95AB400D2415B /* SearchRepoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchRepoCell.xib; path = Classes/Search/View/SearchRepoCell.xib; sourceTree = "<group>"; };
 		BA47B7441CE99B4A00CF3947 /* UserListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserListController.swift; path = Classes/UserList/Controller/UserListController.swift; sourceTree = "<group>"; };
@@ -548,6 +550,7 @@
 			children = (
 				BA7B2A0E1CE47D5200455F68 /* GlobalDefine.swift */,
 				BA79E0771CF5DF8300E86258 /* FlatColor.swift */,
+				BA44657B1D0693EB007AEC2F /* GithubTime.swift */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -904,6 +907,7 @@
 				BA44657A1D068F7D007AEC2F /* UserEventsController.swift in Sources */,
 				BA8CEBDD1CE7480A0044155A /* RepoDetailHeaderView.swift in Sources */,
 				BA79E02B1CF5946800E86258 /* ToolCell.swift in Sources */,
+				BA44657C1D0693EB007AEC2F /* GithubTime.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
