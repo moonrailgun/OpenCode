@@ -20,6 +20,7 @@
 		BA3AD2121CCA245A0034B21E /* OpenCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD2111CCA245A0034B21E /* OpenCodeTests.swift */; };
 		BA3AD21E1CCA278B0034B21E /* Github.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD21D1CCA278B0034B21E /* Github.swift */; };
 		BA3AD2201CCA29B60034B21E /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD21F1CCA29B60034B21E /* HttpRequest.swift */; };
+		BA4465751D068A55007AEC2F /* CommitDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4465741D068A55007AEC2F /* CommitDetailController.swift */; };
 		BA4609D11CF95AB400D2415B /* SearchRepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4609CF1CF95AB400D2415B /* SearchRepoCell.swift */; };
 		BA4609D21CF95AB400D2415B /* SearchRepoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA4609D01CF95AB400D2415B /* SearchRepoCell.xib */; };
 		BA47B7451CE99B4A00CF3947 /* UserListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47B7441CE99B4A00CF3947 /* UserListController.swift */; };
@@ -105,6 +106,7 @@
 		BA3AD2111CCA245A0034B21E /* OpenCodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCodeTests.swift; sourceTree = "<group>"; };
 		BA3AD21D1CCA278B0034B21E /* Github.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Github.swift; sourceTree = "<group>"; };
 		BA3AD21F1CCA29B60034B21E /* HttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
+		BA4465741D068A55007AEC2F /* CommitDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommitDetailController.swift; path = Classes/CommitDetail/Controller/CommitDetailController.swift; sourceTree = "<group>"; };
 		BA4609CF1CF95AB400D2415B /* SearchRepoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchRepoCell.swift; path = Classes/Search/View/SearchRepoCell.swift; sourceTree = "<group>"; };
 		BA4609D01CF95AB400D2415B /* SearchRepoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchRepoCell.xib; path = Classes/Search/View/SearchRepoCell.xib; sourceTree = "<group>"; };
 		BA47B7441CE99B4A00CF3947 /* UserListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserListController.swift; path = Classes/UserList/Controller/UserListController.swift; sourceTree = "<group>"; };
@@ -285,6 +287,30 @@
 				BA3AD21D1CCA278B0034B21E /* Github.swift */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		BA4465701D0689DB007AEC2F /* CommitDetail */ = {
+			isa = PBXGroup;
+			children = (
+				BA4465721D0689FD007AEC2F /* View */,
+				BA4465711D0689EC007AEC2F /* Controller */,
+			);
+			name = CommitDetail;
+			sourceTree = "<group>";
+		};
+		BA4465711D0689EC007AEC2F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA4465741D068A55007AEC2F /* CommitDetailController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		BA4465721D0689FD007AEC2F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		BA4609CE1CF95A6900D2415B /* View */ = {
@@ -519,6 +545,7 @@
 		BA8618FD1CDF22F800BE9E9C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BA4465701D0689DB007AEC2F /* CommitDetail */,
 				BA715E031CFD382800887D73 /* My */,
 				BAC0557D1CFAA5B400DCD236 /* News */,
 				BA0ADD791CF83D5400A0B0F1 /* Search */,
@@ -832,6 +859,7 @@
 				BA47B7491CE99EC200CF3947 /* UserCell.swift in Sources */,
 				BA0ADD741CF836CE00A0B0F1 /* RepoCommitsController.swift in Sources */,
 				BAC5DF351CEC082300EB2EFE /* UserInfoController.swift in Sources */,
+				BA4465751D068A55007AEC2F /* CommitDetailController.swift in Sources */,
 				BA05E7471CFEDB7900855A9E /* MyLoginView.swift in Sources */,
 				BA3AD21E1CCA278B0034B21E /* Github.swift in Sources */,
 				BA715DFF1CFD287000887D73 /* NewsTopView.swift in Sources */,
