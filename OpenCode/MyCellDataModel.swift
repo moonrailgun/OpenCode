@@ -12,6 +12,11 @@ class MyCellDataModel{
     let title:String
     let image:String
     
+    init(){
+        self.title = ""
+        self.image = ""
+    }
+    
     init(title:String, image:String){
         self.title = title
         self.image = image

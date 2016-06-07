@@ -78,45 +78,65 @@ class MyController: UIViewController, UITableViewDelegate {
         
     }
     
+    //我的档案 － 代理
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if(indexPath.row == 0){
-            print("我的项目")
-            Github.getCurrentUserRepositories({ (data:AnyObject?) in
-                let controller = MyRepoController(style: .Plain)
-                controller.repositoryDataList = JSON(data!)
-                
-                OperationQueueHelper.operateInMainQueue({
-                    self.navigationController?.pushViewController(controller, animated: true)
+        if(indexPath.section == 0){
+            if(indexPath.row == 0){
+                print("我的事件")
+                if let username = self.profileView.userInfo["login"].string{
+                    Github.getUserEvents(username, completionHandler: { (data:AnyObject?) in
+                        if let d = data{
+                            let controller = UserEventsController()
+                            controller.eventData = JSON(d)
+                            OperationQueueHelper.operateInMainQueue({ 
+                                self.navigationController?.pushViewController(controller, animated: true)
+                            })
+                        }
+                    })
+                }
+            }
+        }
+        
+        if(indexPath.section == 1){
+            if(indexPath.row == 0){
+                print("我的项目")
+                Github.getCurrentUserRepositories({ (data:AnyObject?) in
+                    let controller = MyRepoController(style: .Plain)
+                    controller.repositoryDataList = JSON(data!)
+                    
+                    OperationQueueHelper.operateInMainQueue({
+                        self.navigationController?.pushViewController(controller, animated: true)
+                    })
                 })
-            })
-        }else if(indexPath.row == 1){
-            print("我的收藏")
-            Github.getCurrentUserStarred({ (data:AnyObject?) in
-                let controller = MyRepoController(style: .Plain)
-                controller.repositoryDataList = JSON(data!)
-                
-                OperationQueueHelper.operateInMainQueue({ 
-                    self.navigationController?.pushViewController(controller, animated: true)
+            }else if(indexPath.row == 1){
+                print("我的收藏")
+                Github.getCurrentUserStarred({ (data:AnyObject?) in
+                    let controller = MyRepoController(style: .Plain)
+                    controller.repositoryDataList = JSON(data!)
+                    
+                    OperationQueueHelper.operateInMainQueue({
+                        self.navigationController?.pushViewController(controller, animated: true)
+                    })
                 })
-            })
-        }else if(indexPath.row == 2){
-            print("我的粉丝")
-            Github.getCurrentUserFollowers({ (data:AnyObject?) in
-                let controller = UserListController()
-                controller.userListData = data
-                OperationQueueHelper.operateInMainQueue({ 
-                    self.navigationController?.pushViewController(controller, animated: true)
+            }else if(indexPath.row == 2){
+                print("我的粉丝")
+                Github.getCurrentUserFollowers({ (data:AnyObject?) in
+                    let controller = UserListController()
+                    controller.userListData = data
+                    OperationQueueHelper.operateInMainQueue({
+                        self.navigationController?.pushViewController(controller, animated: true)
+                    })
                 })
-            })
-        }else if(indexPath.row == 3){
-            print("我的关注")
-            Github.getCurrentUserFollowing({ (data:AnyObject?) in
-                let controller = UserListController()
-                controller.userListData = data
-                OperationQueueHelper.operateInMainQueue({
-                    self.navigationController?.pushViewController(controller, animated: true)
+            }else if(indexPath.row == 3){
+                print("我的关注")
+                Github.getCurrentUserFollowing({ (data:AnyObject?) in
+                    let controller = UserListController()
+                    controller.userListData = data
+                    OperationQueueHelper.operateInMainQueue({
+                        self.navigationController?.pushViewController(controller, animated: true)
+                    })
                 })
-            })
+            }
         }
     }
 

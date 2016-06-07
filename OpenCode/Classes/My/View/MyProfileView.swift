@@ -19,8 +19,8 @@ class MyProfileView: UIView, UITableViewDataSource {
     }
     */
     let MY_CELL_ID = "my"
-    lazy var tableView:UITableView = UITableView(frame: self.bounds, style: .Plain)
-    var tableDataSource = [MyCellDataModel]()
+    lazy var tableView:UITableView = UITableView(frame: self.bounds, style: .Grouped)
+    var userInfo:JSON = []
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,19 +34,12 @@ class MyProfileView: UIView, UITableViewDataSource {
     }
 
     func initData(){
-        tableView.dataSource = self
-        
-        tableDataSource.removeAll()
-        tableDataSource.append(MyCellDataModel(title: "我的项目", image: "repo"))
-        tableDataSource.append(MyCellDataModel(title: "我的收藏", image: "star"))
-        tableDataSource.append(MyCellDataModel(title: "我的粉丝", image: "team"))
-        tableDataSource.append(MyCellDataModel(title: "我的关注", image: "team"))
-        
         Github.getCurrentUserInfo { (data:AnyObject?) in
             print(JSON(data!))
             OperationQueueHelper.operateInMainQueue({ 
                 if let d = data{
                     let json = JSON(d)
+                    self.userInfo = json
                     if let header = self.tableView.tableHeaderView as? MyUserInfoHeader{
                         header.setData(NSURL(string: json["avatar_url"].string!)!, username: json["login"].string!)
                     }
@@ -59,28 +52,48 @@ class MyProfileView: UIView, UITableViewDataSource {
         self.addSubview(tableView)
         
         tableView.tableHeaderView = MyUserInfoHeader()
+        tableView.dataSource = self
+        tableView.sectionHeaderHeight = 0
+        tableView.sectionFooterHeight = 10
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableDataSource.count
+        let arr = [1,4]
+        return arr[section]
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier(MY_CELL_ID)
-        
+        //初始化
         if(cell == nil){
             cell = UITableViewCell(style: .Default, reuseIdentifier: MY_CELL_ID)
-            let model = self.tableDataSource[indexPath.row]
-            
-            cell?.textLabel?.text = model.title
-            cell?.imageView?.image = UIImage(named: model.image)
             cell?.accessoryType = .DisclosureIndicator
+            
+            var model:MyCellDataModel?
+            if(indexPath.section == 0){
+                model = MyCellDataModel(title: "我的事件", image: "commit")
+            }else if(indexPath.section == 1){
+                switch indexPath.row {
+                case 0:
+                    model = MyCellDataModel(title: "我的项目", image: "repo")
+                case 1:
+                    model = MyCellDataModel(title: "我的收藏", image: "star")
+                case 2:
+                    model = MyCellDataModel(title: "我的粉丝", image: "team")
+                case 3:
+                    model = MyCellDataModel(title: "我的关注", image: "team")
+                default:
+                    model = MyCellDataModel()
+                }
+            }
+            cell?.textLabel?.text = model!.title
+            cell?.imageView?.image = UIImage(named: model!.image)
         }
         
         return cell!
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
 }
