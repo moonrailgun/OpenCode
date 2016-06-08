@@ -47,9 +47,10 @@ class Github {
     class func login(username:String, password: String, completionHandler:(token:String?,statusCode: Int!,errorMsg:String?) -> ()) -> Void{
         let str = username + ":" + password
         let authorization = "Basic " + Base64.encrypt(str)!
+        let appid:String = UIDevice.currentDevice().identifierForVendor!.UUIDString
         var header = NSDictionary()
         header = ["Authorization": authorization, "Content-Type": "application/json"]
-        let data = "{\"note\":\"OpenCodeApp\"}"
+        let data = "{\"note\":\"OpenCodeApp[\(appid)]\"}"
         
         HttpRequest.sendAsyncPostRequest(NSURL(string: "https://api.github.com/authorizations")!, header: header, data: data) { (resp:NSURLResponse?, data:NSData?, error:NSError?) in
             if let httpResp = resp as? NSHTTPURLResponse{
