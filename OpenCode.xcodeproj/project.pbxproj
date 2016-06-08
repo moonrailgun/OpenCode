@@ -23,6 +23,7 @@
 		BA4465751D068A55007AEC2F /* CommitDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4465741D068A55007AEC2F /* CommitDetailController.swift */; };
 		BA44657A1D068F7D007AEC2F /* UserEventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4465791D068F7D007AEC2F /* UserEventsController.swift */; };
 		BA44657C1D0693EB007AEC2F /* GithubTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA44657B1D0693EB007AEC2F /* GithubTime.swift */; };
+		BA4465811D07C18C007AEC2F /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4465801D07C18C007AEC2F /* SettingsController.swift */; };
 		BA4609D11CF95AB400D2415B /* SearchRepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4609CF1CF95AB400D2415B /* SearchRepoCell.swift */; };
 		BA4609D21CF95AB400D2415B /* SearchRepoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA4609D01CF95AB400D2415B /* SearchRepoCell.xib */; };
 		BA47B7451CE99B4A00CF3947 /* UserListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47B7441CE99B4A00CF3947 /* UserListController.swift */; };
@@ -111,6 +112,7 @@
 		BA4465741D068A55007AEC2F /* CommitDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommitDetailController.swift; path = Classes/CommitDetail/Controller/CommitDetailController.swift; sourceTree = "<group>"; };
 		BA4465791D068F7D007AEC2F /* UserEventsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserEventsController.swift; path = Classes/UserEvents/Controller/UserEventsController.swift; sourceTree = "<group>"; };
 		BA44657B1D0693EB007AEC2F /* GithubTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubTime.swift; path = Classes/Other/GithubTime.swift; sourceTree = "<group>"; };
+		BA4465801D07C18C007AEC2F /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsController.swift; path = Classes/Settings/Controller/SettingsController.swift; sourceTree = "<group>"; };
 		BA4609CF1CF95AB400D2415B /* SearchRepoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchRepoCell.swift; path = Classes/Search/View/SearchRepoCell.swift; sourceTree = "<group>"; };
 		BA4609D01CF95AB400D2415B /* SearchRepoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchRepoCell.xib; path = Classes/Search/View/SearchRepoCell.xib; sourceTree = "<group>"; };
 		BA47B7441CE99B4A00CF3947 /* UserListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserListController.swift; path = Classes/UserList/Controller/UserListController.swift; sourceTree = "<group>"; };
@@ -329,6 +331,22 @@
 			isa = PBXGroup;
 			children = (
 				BA4465791D068F7D007AEC2F /* UserEventsController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		BA44657D1D07C139007AEC2F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				BA44657E1D07C143007AEC2F /* Controller */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		BA44657E1D07C143007AEC2F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA4465801D07C18C007AEC2F /* SettingsController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -566,6 +584,7 @@
 		BA8618FD1CDF22F800BE9E9C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BA44657D1D07C139007AEC2F /* Settings */,
 				BA4465761D068F3F007AEC2F /* UserEvents */,
 				BA4465701D0689DB007AEC2F /* CommitDetail */,
 				BA715E031CFD382800887D73 /* My */,
@@ -870,6 +889,7 @@
 				BA715E071CFD389C00887D73 /* MyController.swift in Sources */,
 				BA5AF83B1D02C3660015B601 /* NewsEventListView.swift in Sources */,
 				BA0ADD781CF839A000A0B0F1 /* RepoBranchController.swift in Sources */,
+				BA4465811D07C18C007AEC2F /* SettingsController.swift in Sources */,
 				BA647E081CF2F7C200DA369F /* FileBrowserController.swift in Sources */,
 				BA4609D11CF95AB400D2415B /* SearchRepoCell.swift in Sources */,
 				BA53E2DC1CFFD86900FD46F2 /* MyProfileView.swift in Sources */,

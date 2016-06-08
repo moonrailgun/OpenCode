@@ -137,6 +137,12 @@ class MyController: UIViewController, UITableViewDelegate {
                     })
                 })
             }
+        }else if(indexPath.section == 2){
+            if(indexPath.row == 0){
+                print("设置")
+                let controller = SettingsController()
+                self.navigationController?.pushViewController(controller, animated: true)
+            }
         }
     }
 

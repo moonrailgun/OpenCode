@@ -57,8 +57,12 @@ class MyProfileView: UIView, UITableViewDataSource {
         tableView.sectionFooterHeight = 10
     }
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 3
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let arr = [1,4]
+        let arr = [1,4,1]
         return arr[section]
     }
     
@@ -85,15 +89,13 @@ class MyProfileView: UIView, UITableViewDataSource {
                 default:
                     model = MyCellDataModel()
                 }
+            }else if(indexPath.section == 2){
+                model = MyCellDataModel(title: "设置", image: "settings")
             }
             cell?.textLabel?.text = model!.title
             cell?.imageView?.image = UIImage(named: model!.image)
         }
         
         return cell!
-    }
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
     }
 }
