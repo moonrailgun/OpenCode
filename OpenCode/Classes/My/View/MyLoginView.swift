@@ -17,15 +17,18 @@ class MyLoginView: UIView, UITextFieldDelegate {
         // Drawing code
     }
     */
+    var controller:UIViewController?
+    
     var avatarImageView:UIImageView?
     var usernameTextField:UITextField?
     var passwordTextField:UITextField?
     var loginBtn:UIButton?
     var registerBtn:UIButton?
 
-    override init(frame: CGRect) {
+    init(frame: CGRect, controller:UIViewController) {
         super.init(frame: frame)
         
+        self.controller = controller
         initView()
     }
     
@@ -84,8 +87,6 @@ class MyLoginView: UIView, UITextFieldDelegate {
     }
     
     func login(){
-        
-        
         if let _ = Github.getToken(){
             print("已经登陆过")
             return
@@ -96,17 +97,36 @@ class MyLoginView: UIView, UITextFieldDelegate {
         if(usernameTextField!.text != "" && passwordTextField!.text != ""){
             //Github.login(githubUsername.text, password: githubPassword.text)
             Github.login(usernameTextField!.text!, password: passwordTextField!.text!, completionHandler: { (token, statusCode, errorMsg) -> () in
-                if token != nil{
-                    Github.setToken(token!)
-                    print("显示档案页面")
-                    
-                    //关闭该页面
+                if(statusCode == 422){
+                    //已经登陆
+                    let alert = UIAlertController(title: "已经登陆", message: "是否重新登陆", preferredStyle: .Alert)
+                    alert.addAction(UIAlertAction(title: "确定", style: .Default, handler: { (action:UIAlertAction) in
+                        Github.clearToken()//清除登陆纪录
+                        self.login()
+                    }))
                     OperationQueueHelper.operateInMainQueue({ 
-                        self.removeFromSuperview()
+                        self.controller?.presentViewController(alert, animated: true, completion: nil)
                     })
+                }else if(statusCode == 201){
+                    if token != nil{
+                        Github.setToken(token!)
+                        print("显示档案页面")
+                        
+                        //关闭该页面
+                        OperationQueueHelper.operateInMainQueue({
+                            (self.controller as! MyController).initProfileView()
+                            self.removeFromSuperview()
+                        })
+                    }else{
+                        //提示出错
+                        print("出错 - token:\(token),code:\(statusCode),errorMsg:\(errorMsg)")
+                    }
                 }else{
-                    //提示出错
-                    print("出错 - token:\(token),code:\(statusCode),errorMsg:\(errorMsg)")
+                    let alert = UIAlertController(title: "登陆失败", message: "\(errorMsg != nil ? errorMsg! : "" )", preferredStyle: .Alert)
+                    alert.addAction(UIAlertAction(title: "确定", style: .Default, handler: nil))
+                    OperationQueueHelper.operateInMainQueue({ 
+                        self.controller?.presentViewController(alert, animated: true, completion: nil)
+                    })
                 }
             })
         } else {

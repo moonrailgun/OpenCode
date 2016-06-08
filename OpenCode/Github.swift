@@ -263,6 +263,10 @@ class Github {
         return timeStr
     }
     
+    class func clearToken(){
+        let ud = NSUserDefaults.standardUserDefaults()
+        ud.removeObjectForKey("GithubToken")
+    }
     class func setToken(token:String){
         let ud = NSUserDefaults.standardUserDefaults()
         ud.setObject(token, forKey: "GithubToken")

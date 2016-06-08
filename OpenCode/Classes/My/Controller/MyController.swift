@@ -12,7 +12,7 @@ import LTNavigationBar
 
 class MyController: UIViewController, UITableViewDelegate {
     
-    lazy var loginView:MyLoginView = MyLoginView(frame: self.view.bounds)
+    lazy var loginView:MyLoginView = MyLoginView(frame: self.view.bounds, controller:self)
     //lazy var profileView:MyProfileView = MyProfileView(frame: self.view.frame)
     lazy var profileView:MyProfileView = MyProfileView(frame: CGRectMake(0,-64,self.view.bounds.width,self.view.bounds.height + 20))
     
