@@ -25,6 +25,7 @@
 		BA44657C1D0693EB007AEC2F /* GithubTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA44657B1D0693EB007AEC2F /* GithubTime.swift */; };
 		BA4465811D07C18C007AEC2F /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4465801D07C18C007AEC2F /* SettingsController.swift */; };
 		BA4465831D094502007AEC2F /* AuthorizationsManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4465821D094502007AEC2F /* AuthorizationsManagerController.swift */; };
+		BA4465851D094844007AEC2F /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4465841D094844007AEC2F /* ProgressHUD.swift */; };
 		BA4609D11CF95AB400D2415B /* SearchRepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4609CF1CF95AB400D2415B /* SearchRepoCell.swift */; };
 		BA4609D21CF95AB400D2415B /* SearchRepoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA4609D01CF95AB400D2415B /* SearchRepoCell.xib */; };
 		BA47B7451CE99B4A00CF3947 /* UserListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47B7441CE99B4A00CF3947 /* UserListController.swift */; };
@@ -115,6 +116,7 @@
 		BA44657B1D0693EB007AEC2F /* GithubTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubTime.swift; path = Classes/Other/GithubTime.swift; sourceTree = "<group>"; };
 		BA4465801D07C18C007AEC2F /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsController.swift; path = Classes/Settings/Controller/SettingsController.swift; sourceTree = "<group>"; };
 		BA4465821D094502007AEC2F /* AuthorizationsManagerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthorizationsManagerController.swift; path = Classes/Settings/Controller/AuthorizationsManagerController.swift; sourceTree = "<group>"; };
+		BA4465841D094844007AEC2F /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressHUD.swift; path = Classes/Other/ProgressHUD.swift; sourceTree = "<group>"; };
 		BA4609CF1CF95AB400D2415B /* SearchRepoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchRepoCell.swift; path = Classes/Search/View/SearchRepoCell.swift; sourceTree = "<group>"; };
 		BA4609D01CF95AB400D2415B /* SearchRepoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchRepoCell.xib; path = Classes/Search/View/SearchRepoCell.xib; sourceTree = "<group>"; };
 		BA47B7441CE99B4A00CF3947 /* UserListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserListController.swift; path = Classes/UserList/Controller/UserListController.swift; sourceTree = "<group>"; };
@@ -572,6 +574,7 @@
 				BA7B2A0E1CE47D5200455F68 /* GlobalDefine.swift */,
 				BA79E0771CF5DF8300E86258 /* FlatColor.swift */,
 				BA44657B1D0693EB007AEC2F /* GithubTime.swift */,
+				BA4465841D094844007AEC2F /* ProgressHUD.swift */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -878,6 +881,7 @@
 			files = (
 				BA69EBE41CD4980C0090816C /* UserTableViewController.swift in Sources */,
 				BA715E0A1CFD3A6600887D73 /* MyCellDataModel.swift in Sources */,
+				BA4465851D094844007AEC2F /* ProgressHUD.swift in Sources */,
 				BA8DA3311CD080A500F9B391 /* Crypto.swift in Sources */,
 				BA5AF83D1D02C3780015B601 /* TrendingView.swift in Sources */,
 				BA6F3B121CCE478D00F6984B /* TimeHelper.swift in Sources */,

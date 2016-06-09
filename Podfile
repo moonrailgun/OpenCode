@@ -6,8 +6,9 @@ use_frameworks!
 target 'OpenCode' do
     pod 'SwiftyJSON'
     pod 'SDWebImage'
-    pod 'MJRefresh'
+    pod 'MJRefresh','3.1.0'
     pod 'LTNavigationBar'
+    pod 'SVProgressHUD'
 end
 
 target 'OpenCodeTests' do
