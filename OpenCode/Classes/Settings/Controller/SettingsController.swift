@@ -63,6 +63,22 @@ class SettingsController: UITableViewController {
         if(indexPath.section == 0){
             if(indexPath.row == 0){
                 print("授权管理")
+                
+                let alert = UIAlertController(title: "正在进行敏感操作", message: "请重新输入你的账户和密码，来确保本次操作是由账户所有者本人执行", preferredStyle: .Alert)
+                alert.addTextFieldWithConfigurationHandler({ (textField:UITextField) in
+                    textField.placeholder = "帐号"
+                })
+                alert.addTextFieldWithConfigurationHandler({ (textField:UITextField) in
+                    textField.placeholder = "密码"
+                    textField.secureTextEntry = true
+                })
+                alert.addAction(UIAlertAction(title: "取消", style: .Default, handler: nil))
+                alert.addAction(UIAlertAction(title: "确定", style: .Destructive, handler: { (action:UIAlertAction) in
+                    let username = alert.textFields?.first?.text
+                    let password = alert.textFields?.last?.text
+                    print("暂未处理。账户名\(username!)")
+                }))
+                self.presentViewController(alert, animated: true, completion: nil)
             }
             else if(indexPath.row == 1){
                 print("退出账户")

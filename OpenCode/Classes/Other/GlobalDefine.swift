@@ -17,4 +17,11 @@ class GlobalDefine{
     static func getScreenHeight()->CGFloat{
         return UIScreen.mainScreen().bounds.size.height
     }
+    
+    static func addEventListener(observer:AnyObject, selector: Selector, name:String?,object:AnyObject?){
+        NSNotificationCenter.defaultCenter().addObserver(observer, selector: selector, name: name, object: object)
+    }
+    static func removeEventListener(observer:AnyObject, name:String?,object:AnyObject?){
+        NSNotificationCenter.defaultCenter().removeObserver(observer, name: name, object: object)
+    }
 }
