@@ -67,7 +67,16 @@ class SettingsController: UITableViewController {
             else if(indexPath.row == 1){
                 print("退出账户")
                 
-                
+                let alert = UIAlertController(title: "登出", message: "是否要登出账户？", preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "取消", style: .Default, handler: nil))
+                alert.addAction(UIAlertAction(title: "确定", style: .Destructive, handler: { (action:UIAlertAction) in
+                    Github.logout({ () -> Void? in
+                        OperationQueueHelper.operateInGlobalQueue({
+                            self.navigationController?.popToRootViewControllerAnimated(true)
+                        })
+                    })
+                }))
+                self.presentViewController(alert, animated: true, completion: nil)
             }
         }
     }

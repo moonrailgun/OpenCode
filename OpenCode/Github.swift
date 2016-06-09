@@ -80,6 +80,12 @@ class Github {
 
         }
     }
+    //登出github
+    //TODO 暂时不删除服务端上的token
+    class func logout(completionHandler:()->Void?){
+        self.clearToken()
+        completionHandler()
+    }
     //获取当前用户信息
     class func getCurrentUserInfo(completionHandler:(AnyObject?) -> Void) {
         requestPrivateData("https://api.github.com/user", completionHandler: completionHandler)

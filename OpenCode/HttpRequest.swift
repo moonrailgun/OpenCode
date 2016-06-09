@@ -56,4 +56,13 @@ class HttpRequest{
         
         NSURLConnection.sendAsynchronousRequest(req, queue: NSOperationQueue(), completionHandler: completionHandler)
     }
+    
+    /*
+    发送DELETE请求
+    */
+    class func sendAsyncDeleteRequest(url:NSURL, completionHandler: (NSURLResponse?, NSData?, NSError?)->Void){
+        let req = NSMutableURLRequest(URL: url)
+        req.HTTPMethod = "DELETE"
+        NSURLConnection.sendAsynchronousRequest(req, queue: NSOperationQueue(), completionHandler: completionHandler)
+    }
 }

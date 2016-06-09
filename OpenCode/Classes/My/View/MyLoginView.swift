@@ -38,6 +38,7 @@ class MyLoginView: UIView, UITextFieldDelegate {
     
     func initView(){
         let bounds = self.bounds
+        self.backgroundColor = UIColor.whiteColor()
         
         let imageSize = CGSize(width: 100, height: 100)
         avatarImageView = UIImageView(frame: CGRect(x: bounds.width / 2 - imageSize.width / 2, y: 70, width: imageSize.width, height: imageSize.height))

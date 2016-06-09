@@ -23,3 +23,11 @@ extension UIView{
         return nil
     }
 }*/
+
+extension UIView{
+    func removeAllSubview(){
+        for view:UIView in self.subviews{
+            view.removeFromSuperview()
+        }
+    }
+}

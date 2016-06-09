@@ -32,6 +32,13 @@ class MyController: UIViewController, UITableViewDelegate {
     
     override func viewWillAppear(animated: Bool) {
         hideNav()
+        if let _:String = Github.getToken() {
+            //显示正常页
+            initProfileView()
+        }else{
+            //显示登陆页面
+            initLoginView()
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -44,10 +51,12 @@ class MyController: UIViewController, UITableViewDelegate {
     }
     
     func initLoginView() {
+        self.view.removeAllSubview()
         self.view.addSubview(loginView)
     }
     
     func initProfileView() {
+        self.view.removeAllSubview()
         profileView.tableView.delegate = self
         self.view.addSubview(profileView)
         
