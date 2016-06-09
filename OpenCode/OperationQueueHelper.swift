@@ -12,4 +12,7 @@ class OperationQueueHelper {
     class func operateInMainQueue(handler: ()->Void) {
         dispatch_sync(dispatch_get_main_queue(), handler)
     }
+    class func operateInGlobalQueue(handler: ()->Void) {
+        dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), handler)
+    }
 }

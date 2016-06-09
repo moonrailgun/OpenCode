@@ -24,6 +24,7 @@
 		BA44657A1D068F7D007AEC2F /* UserEventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4465791D068F7D007AEC2F /* UserEventsController.swift */; };
 		BA44657C1D0693EB007AEC2F /* GithubTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA44657B1D0693EB007AEC2F /* GithubTime.swift */; };
 		BA4465811D07C18C007AEC2F /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4465801D07C18C007AEC2F /* SettingsController.swift */; };
+		BA4465831D094502007AEC2F /* AuthorizationsManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4465821D094502007AEC2F /* AuthorizationsManagerController.swift */; };
 		BA4609D11CF95AB400D2415B /* SearchRepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4609CF1CF95AB400D2415B /* SearchRepoCell.swift */; };
 		BA4609D21CF95AB400D2415B /* SearchRepoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA4609D01CF95AB400D2415B /* SearchRepoCell.xib */; };
 		BA47B7451CE99B4A00CF3947 /* UserListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47B7441CE99B4A00CF3947 /* UserListController.swift */; };
@@ -113,6 +114,7 @@
 		BA4465791D068F7D007AEC2F /* UserEventsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserEventsController.swift; path = Classes/UserEvents/Controller/UserEventsController.swift; sourceTree = "<group>"; };
 		BA44657B1D0693EB007AEC2F /* GithubTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubTime.swift; path = Classes/Other/GithubTime.swift; sourceTree = "<group>"; };
 		BA4465801D07C18C007AEC2F /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsController.swift; path = Classes/Settings/Controller/SettingsController.swift; sourceTree = "<group>"; };
+		BA4465821D094502007AEC2F /* AuthorizationsManagerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthorizationsManagerController.swift; path = Classes/Settings/Controller/AuthorizationsManagerController.swift; sourceTree = "<group>"; };
 		BA4609CF1CF95AB400D2415B /* SearchRepoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchRepoCell.swift; path = Classes/Search/View/SearchRepoCell.swift; sourceTree = "<group>"; };
 		BA4609D01CF95AB400D2415B /* SearchRepoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchRepoCell.xib; path = Classes/Search/View/SearchRepoCell.xib; sourceTree = "<group>"; };
 		BA47B7441CE99B4A00CF3947 /* UserListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserListController.swift; path = Classes/UserList/Controller/UserListController.swift; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				BA4465801D07C18C007AEC2F /* SettingsController.swift */,
+				BA4465821D094502007AEC2F /* AuthorizationsManagerController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -908,6 +911,7 @@
 				BA6F3B101CCE3EA400F6984B /* OperationQueueHelper.swift in Sources */,
 				BAF7F9A01CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift in Sources */,
 				BA79E0781CF5DF8300E86258 /* FlatColor.swift in Sources */,
+				BA4465831D094502007AEC2F /* AuthorizationsManagerController.swift in Sources */,
 				BA5AF8391D02C3660015B601 /* NewsEventCell.swift in Sources */,
 				BA5F71A81CD350DC0043CBB5 /* RepositoryTableViewController.swift in Sources */,
 				BA3AD1FA1CCA245A0034B21E /* AppDelegate.swift in Sources */,

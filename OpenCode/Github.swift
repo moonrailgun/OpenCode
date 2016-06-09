@@ -84,6 +84,10 @@ class Github {
     class func getCurrentUserInfo(completionHandler:(AnyObject?) -> Void) {
         requestPrivateData("https://api.github.com/user", completionHandler: completionHandler)
     }
+    //获取当前用户所有授权
+    class func getCurrentUserAuthorizations(completionHandler:(AnyObject?) -> Void){
+        requestPrivateData("https://api.github.com/authorizations", completionHandler: completionHandler)
+    }
     //获取当前用户的项目列表数据
     class func getCurrentUserRepositories(completionHandler:(AnyObject?) -> Void){
         requestPrivateData("https://api.github.com/user/repos", completionHandler: completionHandler)

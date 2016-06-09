@@ -1,16 +1,18 @@
 //
-//  SettingsController.swift
+//  AuthorizationsManagerController.swift
 //  OpenCode
 //
-//  Created by 陈亮 on 16/6/8.
+//  Created by 陈亮 on 16/6/9.
 //  Copyright © 2016年 moonrailgun. All rights reserved.
 //
 
 import UIKit
+import SwiftyJSON
 
-class SettingsController: UITableViewController {
+class AuthorizationsManagerController: UITableViewController {
 
-    let SETTING_CELL_ID = "setting"
+    let AUTH_CELL_ID = "authorizations"
+    var data:JSON?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,46 +33,23 @@ class SettingsController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2
+        return 0
     }
 
+    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier(SETTING_CELL_ID)
-        
-        if(cell == nil){
-            cell = UITableViewCell(style: .Default, reuseIdentifier: SETTING_CELL_ID)
-            cell?.accessoryType = .DisclosureIndicator
-        }
-        
-        if(indexPath.section == 0){
-            if(indexPath.row == 0){
-                cell?.textLabel?.text = "授权管理"
-            }else{
-                cell?.textLabel?.text = "退出账户"
-                cell?.textLabel?.textColor = UIColor.alizarinFlatColor()
-            }
-        }
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
 
-        return cell!
+        // Configure the cell...
+
+        return cell
     }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if(indexPath.section == 0){
-            if(indexPath.row == 0){
-                print("授权管理")
-            }
-            else if(indexPath.row == 1){
-                print("退出账户")
-                
-                
-            }
-        }
-    }
+    */
 
     /*
     // Override to support conditional editing of the table view.
