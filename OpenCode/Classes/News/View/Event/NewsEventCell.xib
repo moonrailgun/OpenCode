@@ -20,7 +20,6 @@
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGr-BR-ftH">
                         <rect key="frame" x="56" y="26" width="231" height="65"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <string key="text">adsdasdasdaadsdasdasdaadsdasdasdaadsdasdasdaadsdasdasdaadsdasdasdaadsdasdasdaadsdasdasdaadsdasdasdaadsdasdasdaadsdasdasdaadsdasdasda</string>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>

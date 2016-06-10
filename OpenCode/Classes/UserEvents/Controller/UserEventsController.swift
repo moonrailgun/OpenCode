@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyJSON
 
+//数据来源:https://api.github.com/users/:username/events
 class UserEventsController: UIViewController, UITableViewDataSource {
     let USER_EVENT_CELL_ID = "user_event"
     lazy var tableView:UITableView = UITableView(frame: self.view.bounds, style: .Plain)
@@ -28,6 +29,8 @@ class UserEventsController: UIViewController, UITableViewDataSource {
     
     func initView(){
         tableView.dataSource = self
+        tableView.registerNib(UINib(nibName: "NewsEventCell", bundle: nil), forCellReuseIdentifier: USER_EVENT_CELL_ID)
+        tableView.rowHeight = 90
         self.view.addSubview(tableView)
     }
     
@@ -43,15 +46,39 @@ class UserEventsController: UIViewController, UITableViewDataSource {
         var cell = tableView.dequeueReusableCellWithIdentifier(USER_EVENT_CELL_ID)
         
         if(cell == nil){
-            cell = UITableViewCell(style: .Default, reuseIdentifier: USER_EVENT_CELL_ID)
+            cell = NewsEventCell(style: .Default, reuseIdentifier: USER_EVENT_CELL_ID)
             cell?.accessoryType = .DisclosureIndicator
-            
+        }
+        
+        if(eventData.count > 0){
             let data = self.eventData[indexPath.row]
-            cell?.textLabel?.text = data["type"].string
-            cell?.imageView?.sd_setImageWithURL(NSURL(string: data["actor"]["avatar_url"].string!)!)
+            if(data != []){
+                (cell as! NewsEventCell).setData(data["type"].string!, dateStr: data["created_at"].string!, userAvatarUrl: data["actor"]["avatar_url"].string!, descText: generateEventDesc(data))
+            }
         }
         
         return cell!
+    }
+    
+    func generateEventDesc(data:JSON) -> String{
+        var descMsg = ""//描述文本
+        let type = data["type"].string!
+        if(type == "PushEvent"){
+            if let commits = data["payload"]["commits"].array{
+                for commit in commits{
+                    if(descMsg != ""){
+                        descMsg += "------"
+                    }
+                    descMsg += commit["message"].string!
+                }
+            }
+        }else if(type == "WatchEvent"){
+            descMsg += data["payload"]["action"].string!
+        }else{
+            descMsg += type
+        }
+        
+        return descMsg
     }
     
 

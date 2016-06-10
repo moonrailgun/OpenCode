@@ -149,7 +149,7 @@ class MyController: UIViewController, UITableViewDelegate {
         }else if(indexPath.section == 2){
             if(indexPath.row == 0){
                 print("设置")
-                let controller = SettingsController()
+                let controller = SettingsController(style: .Grouped)
                 self.navigationController?.pushViewController(controller, animated: true)
             }
         }
