@@ -34,7 +34,7 @@ class NewsEventCell: UITableViewCell {
             print("未知的图标事件\(eventName)")
         }
         
-        self.dateLabel.text = dateStr
+        self.dateLabel.text = GithubTime(dateStr: dateStr).interval()
         if let url = NSURL(string: userAvatarUrl){//判定URL合法性
             self.userAvatarImage.sd_setImageWithURL(url, placeholderImage: UIImage())
         }

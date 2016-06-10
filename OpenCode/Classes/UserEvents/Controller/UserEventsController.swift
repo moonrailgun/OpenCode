@@ -28,6 +28,8 @@ class UserEventsController: UIViewController, UITableViewDataSource {
     }
     
     func initView(){
+        navigationItem.leftBarButtonItem?.title = ""
+        
         tableView.dataSource = self
         tableView.registerNib(UINib(nibName: "NewsEventCell", bundle: nil), forCellReuseIdentifier: USER_EVENT_CELL_ID)
         tableView.rowHeight = 90
@@ -54,6 +56,11 @@ class UserEventsController: UIViewController, UITableViewDataSource {
             let data = self.eventData[indexPath.row]
             if(data != []){
                 (cell as! NewsEventCell).setData(data["type"].string!, dateStr: data["created_at"].string!, userAvatarUrl: data["actor"]["avatar_url"].string!, descText: generateEventDesc(data))
+            }
+            
+            if(GithubTime(dateStr: data["created_at"].string!).getIntervalSecond() < 24 * 60 * 60){
+                //一天内的新事件
+                cell?.addSubview(NewBadge(frame: CGRectMake(cell!.frame.width - 20,0,20,20)))
             }
         }
         

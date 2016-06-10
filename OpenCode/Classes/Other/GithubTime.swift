@@ -11,7 +11,7 @@ import Foundation
 class GithubTime{
     let rawDateStr:String
     var date:NSDate?
-    init(dataStr raw:String){
+    init(dateStr raw:String){
         self.rawDateStr = raw
         
         parse()
@@ -67,5 +67,14 @@ class GithubTime{
         }else{
             return "刚刚"
         }
+    }
+    func getIntervalSecond()->NSTimeInterval{
+        if(date == nil){
+            parse()
+        }
+        
+        let now = NSDate()
+        let second = now.timeIntervalSinceDate(date!)
+        return second
     }
 }
