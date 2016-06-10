@@ -93,10 +93,13 @@ class MyController: UIViewController, UITableViewDelegate {
             if(indexPath.row == 0){
                 print("我的事件")
                 if let username = self.profileView.userInfo["login"].string{
+                    ProgressHUD.show()
                     Github.getUserEvents(username, completionHandler: { (data:AnyObject?) in
                         if let d = data{
                             let controller = UserEventsController()
                             controller.eventData = JSON(d)
+                            
+                            ProgressHUD.dismiss()
                             OperationQueueHelper.operateInMainQueue({ 
                                 self.navigationController?.pushViewController(controller, animated: true)
                             })
@@ -109,39 +112,49 @@ class MyController: UIViewController, UITableViewDelegate {
         if(indexPath.section == 1){
             if(indexPath.row == 0){
                 print("我的项目")
+                ProgressHUD.show()
                 Github.getCurrentUserRepositories({ (data:AnyObject?) in
                     let controller = MyRepoController(style: .Plain)
                     controller.repositoryDataList = JSON(data!)
                     
                     OperationQueueHelper.operateInMainQueue({
+                        ProgressHUD.dismiss()
                         self.navigationController?.pushViewController(controller, animated: true)
                     })
                 })
             }else if(indexPath.row == 1){
                 print("我的收藏")
+                ProgressHUD.show()
                 Github.getCurrentUserStarred({ (data:AnyObject?) in
                     let controller = MyRepoController(style: .Plain)
                     controller.repositoryDataList = JSON(data!)
                     
                     OperationQueueHelper.operateInMainQueue({
+                        ProgressHUD.dismiss()
                         self.navigationController?.pushViewController(controller, animated: true)
                     })
                 })
             }else if(indexPath.row == 2){
                 print("我的粉丝")
+                ProgressHUD.show()
                 Github.getCurrentUserFollowers({ (data:AnyObject?) in
                     let controller = UserListController()
                     controller.userListData = data
+                    
                     OperationQueueHelper.operateInMainQueue({
+                        ProgressHUD.dismiss()
                         self.navigationController?.pushViewController(controller, animated: true)
                     })
                 })
             }else if(indexPath.row == 3){
                 print("我的关注")
+                ProgressHUD.show()
                 Github.getCurrentUserFollowing({ (data:AnyObject?) in
                     let controller = UserListController()
                     controller.userListData = data
+                    
                     OperationQueueHelper.operateInMainQueue({
+                        ProgressHUD.dismiss()
                         self.navigationController?.pushViewController(controller, animated: true)
                     })
                 })
