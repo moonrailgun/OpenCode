@@ -227,7 +227,7 @@ class Github {
                 completionHandler(self.convertDataToJSONObj(d))
             }else{
                 print("\(url): 无法获取数据: resp:\(resp) data:\(data) error:\(error)")
-                completionHandler(nil)
+                //completionHandler(nil)//TODO 待处理
             }
         })
     }
@@ -240,7 +240,7 @@ class Github {
                     completionHandler(self.convertDataToJSONObj(d))
                 }else{
                     print("\(url): 无法获取数据: resp:\(resp) data:\(data) error:\(error)")
-                    completionHandler(nil)
+                    //completionHandler(nil)//TODO 待处理
                 }
             })
         } else{
