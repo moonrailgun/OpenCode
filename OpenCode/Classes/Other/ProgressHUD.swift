@@ -11,6 +11,7 @@ import SVProgressHUD
 
 class ProgressHUD{
     class func show(){
+        SVProgressHUD.setDefaultMaskType(.Clear)
         SVProgressHUD.show()
     }
     class func dismiss(){
