@@ -21,6 +21,7 @@ class MyProfileView: UIView, UITableViewDataSource {
     let MY_CELL_ID = "my"
     lazy var tableView:UITableView = UITableView(frame: self.bounds, style: .Grouped)
     var userInfo:JSON = []
+    var isLoadedFromNet = false//判定数据是否来源于网络
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,10 +35,27 @@ class MyProfileView: UIView, UITableViewDataSource {
     }
 
     func initData(){
+        if(isLoadedFromNet == true){
+            return
+        }
+        
+        self.loadUserInfo { (json:JSON) in
+            OperationQueueHelper.operateInGlobalQueue({
+                if(self.isLoadedFromNet == true){
+                    return
+                }
+                
+                if let header = self.tableView.tableHeaderView as? MyUserInfoHeader{
+                    header.setData(NSURL(string: json["avatar_url"].string!)!, username: json["login"].string!)
+                }
+            })
+        }
+        
         Github.getCurrentUserInfo { (data:AnyObject?) in
-            print(JSON(data!))
+            //print(JSON(data!))
             OperationQueueHelper.operateInMainQueue({ 
                 if let d = data{
+                    self.isLoadedFromNet = true
                     let json = JSON(d)
                     self.saveUserInfo(json)
                     self.userInfo = json
@@ -111,8 +129,15 @@ class MyProfileView: UIView, UITableViewDataSource {
         }
     }
     
-    func loadUserInfo(){
+    func loadUserInfo(completionHandler:(JSON) -> Void){
         let plistPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        //let data =
+        let filename = plistPath[0].stringByAppendingString("/user.txt")
+        
+        if(NSFileManager.defaultManager().fileExistsAtPath(filename)){
+            let data = NSData(contentsOfFile: filename)
+            let json = JSON(data: data!)
+            
+            completionHandler(json)
+        }
     }
 }
