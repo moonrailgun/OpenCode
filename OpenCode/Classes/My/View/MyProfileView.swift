@@ -39,6 +39,7 @@ class MyProfileView: UIView, UITableViewDataSource {
             OperationQueueHelper.operateInMainQueue({ 
                 if let d = data{
                     let json = JSON(d)
+                    self.saveUserInfo(json)
                     self.userInfo = json
                     if let header = self.tableView.tableHeaderView as? MyUserInfoHeader{
                         header.setData(NSURL(string: json["avatar_url"].string!)!, username: json["login"].string!)
@@ -97,5 +98,21 @@ class MyProfileView: UIView, UITableViewDataSource {
         }
         
         return cell!
+    }
+    
+    func saveUserInfo(userInfo:JSON){
+        let plistPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        let filename = plistPath[0].stringByAppendingString("/user.txt")
+        let data = NSString(string: userInfo.description)
+        do{
+            try data.writeToFile(filename, atomically: true, encoding: NSUTF8StringEncoding)
+        }catch{
+            print("写入失败\(error)")
+        }
+    }
+    
+    func loadUserInfo(){
+        let plistPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        //let data =
     }
 }
