@@ -60,7 +60,7 @@ class UserEventsController: UIViewController, UITableViewDataSource {
             
             if(GithubTime(dateStr: data["created_at"].string!).getIntervalSecond() < 24 * 60 * 60){
                 //一天内的新事件
-                cell?.addSubview(NewBadge(frame: CGRectMake(cell!.frame.width - 20,0,20,20)))
+                cell?.addSubview(NewBadge(frame: CGRectMake(cell!.frame.width - 10,0,10,10)))
             }
         }
         
