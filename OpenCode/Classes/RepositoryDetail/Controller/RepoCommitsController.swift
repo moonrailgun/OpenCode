@@ -74,6 +74,10 @@ class RepoCommitsController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(indexPath)
+        
+        if let d = self.data{
+            print(d)
+        }
     }
     
 

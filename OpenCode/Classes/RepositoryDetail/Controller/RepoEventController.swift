@@ -65,10 +65,10 @@ class RepoEventController: UIViewController, UITableViewDataSource, UITableViewD
             let event = d[indexPath.row]
             
             if let imgUrl = event["actor"]["avatar_url"].string{
-                cell.imageView?.image = UIImage(data: NSData(contentsOfURL: NSURL(string: imgUrl)!)!)
+                cell.imageView?.sd_setImageWithURL(NSURL(string: imgUrl))
             }
             cell.textLabel?.text = event["type"].string
-            cell.detailTextLabel?.text = event["created_at"].string
+            cell.detailTextLabel?.text = GithubTime(dateStr: event["created_at"].string!).onlyDay()
         }
         
         return cell
