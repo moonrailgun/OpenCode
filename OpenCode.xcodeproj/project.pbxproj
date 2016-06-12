@@ -20,7 +20,6 @@
 		BA3AD2121CCA245A0034B21E /* OpenCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD2111CCA245A0034B21E /* OpenCodeTests.swift */; };
 		BA3AD21E1CCA278B0034B21E /* Github.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD21D1CCA278B0034B21E /* Github.swift */; };
 		BA3AD2201CCA29B60034B21E /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD21F1CCA29B60034B21E /* HttpRequest.swift */; };
-		BA4465751D068A55007AEC2F /* CommitDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4465741D068A55007AEC2F /* CommitDetailController.swift */; };
 		BA44657A1D068F7D007AEC2F /* UserEventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4465791D068F7D007AEC2F /* UserEventsController.swift */; };
 		BA44657C1D0693EB007AEC2F /* GithubTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA44657B1D0693EB007AEC2F /* GithubTime.swift */; };
 		BA4465811D07C18C007AEC2F /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4465801D07C18C007AEC2F /* SettingsController.swift */; };
@@ -80,6 +79,7 @@
 		BAF47C1D1D01462B00F6A03B /* CodeBrowser.css in Resources */ = {isa = PBXBuildFile; fileRef = BAF47C1C1D01462B00F6A03B /* CodeBrowser.css */; };
 		BAF7F9A01CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF7F99F1CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift */; };
 		BAFB43981D0AAAE500D0E2C3 /* NewBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB43971D0AAAE500D0E2C3 /* NewBadge.swift */; };
+		BAFB439C1D0D23FC00D0E2C3 /* CommitDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB439B1D0D23FC00D0E2C3 /* CommitDetailController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,7 +112,6 @@
 		BA3AD2111CCA245A0034B21E /* OpenCodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCodeTests.swift; sourceTree = "<group>"; };
 		BA3AD21D1CCA278B0034B21E /* Github.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Github.swift; sourceTree = "<group>"; };
 		BA3AD21F1CCA29B60034B21E /* HttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
-		BA4465741D068A55007AEC2F /* CommitDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommitDetailController.swift; path = Classes/CommitDetail/Controller/CommitDetailController.swift; sourceTree = "<group>"; };
 		BA4465791D068F7D007AEC2F /* UserEventsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserEventsController.swift; path = Classes/UserEvents/Controller/UserEventsController.swift; sourceTree = "<group>"; };
 		BA44657B1D0693EB007AEC2F /* GithubTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubTime.swift; path = Classes/Other/GithubTime.swift; sourceTree = "<group>"; };
 		BA4465801D07C18C007AEC2F /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsController.swift; path = Classes/Settings/Controller/SettingsController.swift; sourceTree = "<group>"; };
@@ -172,6 +171,7 @@
 		BAF47C1C1D01462B00F6A03B /* CodeBrowser.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = CodeBrowser.css; path = CodeBrowser/CodeBrowser.css; sourceTree = "<group>"; };
 		BAF7F99F1CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryDetailTableViewController.swift; sourceTree = "<group>"; };
 		BAFB43971D0AAAE500D0E2C3 /* NewBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewBadge.swift; path = Classes/UserEvents/View/NewBadge.swift; sourceTree = "<group>"; };
+		BAFB439B1D0D23FC00D0E2C3 /* CommitDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommitDetailController.swift; path = Classes/RepositoryDetail/CommitDetail/Controller/CommitDetailController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,30 +299,6 @@
 				BA3AD21D1CCA278B0034B21E /* Github.swift */,
 			);
 			name = API;
-			sourceTree = "<group>";
-		};
-		BA4465701D0689DB007AEC2F /* CommitDetail */ = {
-			isa = PBXGroup;
-			children = (
-				BA4465721D0689FD007AEC2F /* View */,
-				BA4465711D0689EC007AEC2F /* Controller */,
-			);
-			name = CommitDetail;
-			sourceTree = "<group>";
-		};
-		BA4465711D0689EC007AEC2F /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				BA4465741D068A55007AEC2F /* CommitDetailController.swift */,
-			);
-			name = Controller;
-			sourceTree = "<group>";
-		};
-		BA4465721D0689FD007AEC2F /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = View;
 			sourceTree = "<group>";
 		};
 		BA4465761D068F3F007AEC2F /* UserEvents */ = {
@@ -595,7 +571,6 @@
 			children = (
 				BA44657D1D07C139007AEC2F /* Settings */,
 				BA4465761D068F3F007AEC2F /* UserEvents */,
-				BA4465701D0689DB007AEC2F /* CommitDetail */,
 				BA715E031CFD382800887D73 /* My */,
 				BAC0557D1CFAA5B400DCD236 /* News */,
 				BA0ADD791CF83D5400A0B0F1 /* Search */,
@@ -613,6 +588,7 @@
 		BA8619011CDF230E00BE9E9C /* RepositoryDetail */ = {
 			isa = PBXGroup;
 			children = (
+				BAFB43991D0D23A000D0E2C3 /* CommitDetail */,
 				BA8619031CDF25CA00BE9E9C /* View */,
 				BA8619021CDF236C00BE9E9C /* Controller */,
 			);
@@ -715,6 +691,22 @@
 				BAFB43971D0AAAE500D0E2C3 /* NewBadge.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		BAFB43991D0D23A000D0E2C3 /* CommitDetail */ = {
+			isa = PBXGroup;
+			children = (
+				BAFB439A1D0D23B400D0E2C3 /* Controller */,
+			);
+			name = CommitDetail;
+			sourceTree = "<group>";
+		};
+		BAFB439A1D0D23B400D0E2C3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BAFB439B1D0D23FC00D0E2C3 /* CommitDetailController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		D7F22D4ECA5475ECD3576BFE /* Pods */ = {
@@ -920,11 +912,11 @@
 				BA47B7491CE99EC200CF3947 /* UserCell.swift in Sources */,
 				BA0ADD741CF836CE00A0B0F1 /* RepoCommitsController.swift in Sources */,
 				BAC5DF351CEC082300EB2EFE /* UserInfoController.swift in Sources */,
-				BA4465751D068A55007AEC2F /* CommitDetailController.swift in Sources */,
 				BA05E7471CFEDB7900855A9E /* MyLoginView.swift in Sources */,
 				BA3AD21E1CCA278B0034B21E /* Github.swift in Sources */,
 				BA715DFF1CFD287000887D73 /* NewsTopView.swift in Sources */,
 				BA6F3B101CCE3EA400F6984B /* OperationQueueHelper.swift in Sources */,
+				BAFB439C1D0D23FC00D0E2C3 /* CommitDetailController.swift in Sources */,
 				BAF7F9A01CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift in Sources */,
 				BA79E0781CF5DF8300E86258 /* FlatColor.swift in Sources */,
 				BA4465831D094502007AEC2F /* AuthorizationsManagerController.swift in Sources */,
