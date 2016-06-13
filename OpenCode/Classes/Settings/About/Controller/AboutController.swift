@@ -38,12 +38,20 @@ class AboutController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(ABOUT_CELL_ID, forIndexPath: indexPath)
+        var cell = tableView.dequeueReusableCellWithIdentifier(ABOUT_CELL_ID)
         
-        cell.accessoryType = .DisclosureIndicator
-        cell.textLabel?.text = "关于开源"
+        if(cell == nil){
+            cell = UITableViewCell(style: .Default, reuseIdentifier: ABOUT_CELL_ID)
+            
+            if(indexPath.section == 0){
+                if(indexPath.row == 0){
+                    cell?.accessoryType = .DisclosureIndicator
+                    cell?.textLabel?.text = "关于开源"
+                }
+            }
+        }
         
-        return cell
+        return cell!
     }
 
     /*
