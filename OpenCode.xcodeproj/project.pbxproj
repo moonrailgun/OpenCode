@@ -80,6 +80,7 @@
 		BAF7F9A01CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF7F99F1CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift */; };
 		BAFB43981D0AAAE500D0E2C3 /* NewBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB43971D0AAAE500D0E2C3 /* NewBadge.swift */; };
 		BAFB439C1D0D23FC00D0E2C3 /* CommitDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB439B1D0D23FC00D0E2C3 /* CommitDetailController.swift */; };
+		BAFB43A11D0E83F100D0E2C3 /* AboutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB439F1D0E83F100D0E2C3 /* AboutController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +173,7 @@
 		BAF7F99F1CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryDetailTableViewController.swift; sourceTree = "<group>"; };
 		BAFB43971D0AAAE500D0E2C3 /* NewBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewBadge.swift; path = Classes/UserEvents/View/NewBadge.swift; sourceTree = "<group>"; };
 		BAFB439B1D0D23FC00D0E2C3 /* CommitDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommitDetailController.swift; path = Classes/RepositoryDetail/CommitDetail/Controller/CommitDetailController.swift; sourceTree = "<group>"; };
+		BAFB439F1D0E83F100D0E2C3 /* AboutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutController.swift; path = Classes/Settings/About/Controller/AboutController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,6 +323,7 @@
 		BA44657D1D07C139007AEC2F /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				BAFB439D1D0E83B800D0E2C3 /* About */,
 				BA44657E1D07C143007AEC2F /* Controller */,
 			);
 			name = Settings;
@@ -709,6 +712,22 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		BAFB439D1D0E83B800D0E2C3 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				BAFB439E1D0E83C600D0E2C3 /* Controller */,
+			);
+			name = About;
+			sourceTree = "<group>";
+		};
+		BAFB439E1D0E83C600D0E2C3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BAFB439F1D0E83F100D0E2C3 /* AboutController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		D7F22D4ECA5475ECD3576BFE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -882,6 +901,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAFB43A11D0E83F100D0E2C3 /* AboutController.swift in Sources */,
 				BA69EBE41CD4980C0090816C /* UserTableViewController.swift in Sources */,
 				BA715E0A1CFD3A6600887D73 /* MyCellDataModel.swift in Sources */,
 				BA4465851D094844007AEC2F /* ProgressHUD.swift in Sources */,

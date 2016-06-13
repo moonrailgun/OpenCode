@@ -31,12 +31,13 @@ class SettingsController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2
+        let arr = [2,1]
+        return arr[section]
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -50,9 +51,15 @@ class SettingsController: UITableViewController {
         if(indexPath.section == 0){
             if(indexPath.row == 0){
                 cell?.textLabel?.text = "授权管理"
-            }else{
+            }else if(indexPath.row == 1){
                 cell?.textLabel?.text = "退出账户"
                 cell?.textLabel?.textColor = UIColor.alizarinFlatColor()
+            }
+        }
+        
+        if(indexPath.section == 1){
+            if(indexPath.row == 0){
+                cell?.textLabel?.text = "关于"
             }
         }
 
@@ -76,7 +83,7 @@ class SettingsController: UITableViewController {
                 alert.addAction(UIAlertAction(title: "确定", style: .Destructive, handler: { (action:UIAlertAction) in
                     let username = alert.textFields?.first?.text
                     let password = alert.textFields?.last?.text
-                    print("暂未处理。账户名\(username!)")
+                    print("暂未处理。账户名\(username!)")//TODO
                 }))
                 self.presentViewController(alert, animated: true, completion: nil)
             }
@@ -93,6 +100,14 @@ class SettingsController: UITableViewController {
                     })
                 }))
                 self.presentViewController(alert, animated: true, completion: nil)
+            }
+        }
+        
+        if(indexPath.section == 1){
+            if(indexPath.row == 0){
+                //关于
+                print("关于")
+                self.navigationController?.pushViewController(AboutController(), animated: true)
             }
         }
     }
