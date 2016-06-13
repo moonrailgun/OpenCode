@@ -9,6 +9,7 @@ target 'OpenCode' do
     pod 'MJRefresh','3.1.0'
     pod 'LTNavigationBar'
     pod 'SVProgressHUD'
+    pod 'AFNetworking'
 end
 
 target 'OpenCodeTests' do
