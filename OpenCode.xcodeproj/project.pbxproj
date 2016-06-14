@@ -81,6 +81,7 @@
 		BAFB43981D0AAAE500D0E2C3 /* NewBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB43971D0AAAE500D0E2C3 /* NewBadge.swift */; };
 		BAFB439C1D0D23FC00D0E2C3 /* CommitDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB439B1D0D23FC00D0E2C3 /* CommitDetailController.swift */; };
 		BAFB43A11D0E83F100D0E2C3 /* AboutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB439F1D0E83F100D0E2C3 /* AboutController.swift */; };
+		BAFB43A81D0FA10E00D0E2C3 /* NotableList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB43A71D0FA10E00D0E2C3 /* NotableList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -174,6 +175,7 @@
 		BAFB43971D0AAAE500D0E2C3 /* NewBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewBadge.swift; path = Classes/UserEvents/View/NewBadge.swift; sourceTree = "<group>"; };
 		BAFB439B1D0D23FC00D0E2C3 /* CommitDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommitDetailController.swift; path = Classes/RepositoryDetail/CommitDetail/Controller/CommitDetailController.swift; sourceTree = "<group>"; };
 		BAFB439F1D0E83F100D0E2C3 /* AboutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutController.swift; path = Classes/Settings/About/Controller/AboutController.swift; sourceTree = "<group>"; };
+		BAFB43A71D0FA10E00D0E2C3 /* NotableList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotableList.swift; path = Classes/News/View/Notable/NotableList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -645,6 +647,7 @@
 		BAC055811CFAA64D00DCD236 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BAFB43A31D0F990B00D0E2C3 /* Notable */,
 				BA5AF8351D02C3530015B601 /* Trending */,
 				BA5AF8341D02C34D0015B601 /* Event */,
 				BA5AF8311D02C2D60015B601 /* Hot */,
@@ -726,6 +729,14 @@
 				BAFB439F1D0E83F100D0E2C3 /* AboutController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		BAFB43A31D0F990B00D0E2C3 /* Notable */ = {
+			isa = PBXGroup;
+			children = (
+				BAFB43A71D0FA10E00D0E2C3 /* NotableList.swift */,
+			);
+			name = Notable;
 			sourceTree = "<group>";
 		};
 		D7F22D4ECA5475ECD3576BFE /* Pods */ = {
@@ -906,6 +917,7 @@
 				BA715E0A1CFD3A6600887D73 /* MyCellDataModel.swift in Sources */,
 				BA4465851D094844007AEC2F /* ProgressHUD.swift in Sources */,
 				BA8DA3311CD080A500F9B391 /* Crypto.swift in Sources */,
+				BAFB43A81D0FA10E00D0E2C3 /* NotableList.swift in Sources */,
 				BA5AF83D1D02C3780015B601 /* TrendingView.swift in Sources */,
 				BA6F3B121CCE478D00F6984B /* TimeHelper.swift in Sources */,
 				BA8619051CDF289D00BE9E9C /* RepoDetailController.swift in Sources */,

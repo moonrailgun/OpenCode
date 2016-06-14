@@ -21,7 +21,7 @@ class NewsTopView: UIView {
     var delegate:NewsTopDelegate?
     var lastTouchBtnTag:Int = 100
     lazy var underLine = UIView(frame: CGRect(x: 10, y: 34, width: UIScreen.mainScreen().bounds.size.width / 4 - 20, height: 2))
-    let names = ["新鲜事","热门项目","趋势","暂定"]
+    let names = ["新鲜事","热门项目","趋势","名人"]
 
     override init(frame: CGRect) {
         super.init(frame: frame)

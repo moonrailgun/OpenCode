@@ -210,6 +210,14 @@ class Github {
     class func getRepoBranches(repoFullName:String, completionHandler:(AnyObject?) -> Void){
         requestPublicData("https://api.github.com/repos/\(repoFullName)/branches", completionHandler: completionHandler)
     }
+    //获取github名人列表
+    class func getNotableList(page:Int?,completionHandler:(AnyObject?) -> Void){
+        var url = "https://api.github.com/search/users?q=followers:>1000&sort=followers&order=desc"
+        if(page != nil){
+            url += "&page=\(page!)"
+        }
+        requestPublicData(url, completionHandler: completionHandler)
+    }
 
     //自定义地址的github api获取
     class func customRequest(url:String, isPublic:Bool, completionHandler:(AnyObject?) -> Void){
