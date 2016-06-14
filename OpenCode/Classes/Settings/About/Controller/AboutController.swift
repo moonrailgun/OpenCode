@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AboutController: UIViewController, UITableViewDataSource {
+class AboutController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     let ABOUT_CELL_ID = "about"
     lazy var tableView:UITableView = UITableView(frame: self.view.bounds, style: .Grouped)
     
@@ -26,6 +26,7 @@ class AboutController: UIViewController, UITableViewDataSource {
     
     func initView(){
         tableView.dataSource = self
+        tableView.delegate = self
         self.view.addSubview(tableView)
     }
     
@@ -34,7 +35,7 @@ class AboutController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 4
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -44,14 +45,24 @@ class AboutController: UIViewController, UITableViewDataSource {
             cell = UITableViewCell(style: .Default, reuseIdentifier: ABOUT_CELL_ID)
             
             if(indexPath.section == 0){
+                cell?.accessoryType = .DisclosureIndicator
                 if(indexPath.row == 0){
-                    cell?.accessoryType = .DisclosureIndicator
-                    cell?.textLabel?.text = "关于开源"
+                    cell?.textLabel?.text = "免责声明"
+                }else if(indexPath.row == 1){
+                    cell?.textLabel?.text = "关于热门定义"
+                }else if(indexPath.row == 2){
+                    cell?.textLabel?.text = "关于软件开源"
+                }else if(indexPath.row == 3){
+                    cell?.textLabel?.text = "开源组件使用许可"
                 }
             }
         }
         
         return cell!
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print(indexPath)
     }
 
     /*

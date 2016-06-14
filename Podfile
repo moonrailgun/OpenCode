@@ -10,6 +10,7 @@ target 'OpenCode' do
     pod 'LTNavigationBar'
     pod 'SVProgressHUD'
     pod 'AFNetworking'
+    pod 'TSMarkdownParser'
 end
 
 target 'OpenCodeTests' do

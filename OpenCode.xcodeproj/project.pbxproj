@@ -82,6 +82,7 @@
 		BAFB439C1D0D23FC00D0E2C3 /* CommitDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB439B1D0D23FC00D0E2C3 /* CommitDetailController.swift */; };
 		BAFB43A11D0E83F100D0E2C3 /* AboutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB439F1D0E83F100D0E2C3 /* AboutController.swift */; };
 		BAFB43A81D0FA10E00D0E2C3 /* NotableList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB43A71D0FA10E00D0E2C3 /* NotableList.swift */; };
+		BAFB43AC1D0FACFE00D0E2C3 /* MarkdownReaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB43AB1D0FACFE00D0E2C3 /* MarkdownReaderController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,6 +177,7 @@
 		BAFB439B1D0D23FC00D0E2C3 /* CommitDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommitDetailController.swift; path = Classes/RepositoryDetail/CommitDetail/Controller/CommitDetailController.swift; sourceTree = "<group>"; };
 		BAFB439F1D0E83F100D0E2C3 /* AboutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutController.swift; path = Classes/Settings/About/Controller/AboutController.swift; sourceTree = "<group>"; };
 		BAFB43A71D0FA10E00D0E2C3 /* NotableList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotableList.swift; path = Classes/News/View/Notable/NotableList.swift; sourceTree = "<group>"; };
+		BAFB43AB1D0FACFE00D0E2C3 /* MarkdownReaderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarkdownReaderController.swift; path = Classes/MarkdownReader/Controller/MarkdownReaderController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -582,6 +584,7 @@
 				BA505B071CF3FB7A00BE7EC9 /* Tool */,
 				BA647E051CF2F76800DA369F /* FileBrowser */,
 				BA5582BE1CF16FF600157000 /* CodeBrowser */,
+				BAFB43A91D0FACA900D0E2C3 /* MarkdownReader */,
 				BAC5DF2E1CEC044C00EB2EFE /* UserInfo */,
 				BA47B7421CE99B0000CF3947 /* UserList */,
 				BA7B2A0D1CE47D3500455F68 /* Other */,
@@ -737,6 +740,22 @@
 				BAFB43A71D0FA10E00D0E2C3 /* NotableList.swift */,
 			);
 			name = Notable;
+			sourceTree = "<group>";
+		};
+		BAFB43A91D0FACA900D0E2C3 /* MarkdownReader */ = {
+			isa = PBXGroup;
+			children = (
+				BAFB43AA1D0FACC700D0E2C3 /* Controller */,
+			);
+			name = MarkdownReader;
+			sourceTree = "<group>";
+		};
+		BAFB43AA1D0FACC700D0E2C3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BAFB43AB1D0FACFE00D0E2C3 /* MarkdownReaderController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		D7F22D4ECA5475ECD3576BFE /* Pods */ = {
@@ -962,6 +981,7 @@
 				BA8CEBE01CE74DF00044155A /* RepoDetailTableViewCell.swift in Sources */,
 				BA51C0571CF6A7C3005CCCC7 /* RepoEventCell.swift in Sources */,
 				BA8619071CDF2DD000BE9E9C /* RepoDescView.swift in Sources */,
+				BAFB43AC1D0FACFE00D0E2C3 /* MarkdownReaderController.swift in Sources */,
 				BA47B74E1CE9AE7D00CF3947 /* UserBaseInfo.swift in Sources */,
 				BAC5DF331CEC051800EB2EFE /* UserInfo.swift in Sources */,
 				BA0ADD7C1CF83DF200A0B0F1 /* SearchController.swift in Sources */,

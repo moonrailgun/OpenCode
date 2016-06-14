@@ -223,9 +223,11 @@ class RepoDetailController: UIViewController, UITableViewDataSource,UITableViewD
                 if(indexPath.section == 1){
                     if(indexPath.row == 0){
                         //查看事件
+                        ProgressHUD.show()
                         Github.getRepoEvents(repoFullName, completionHandler: {(data:AnyObject?) in
                             //print(JSON(data!))
-                            OperationQueueHelper.operateInMainQueue({ 
+                            OperationQueueHelper.operateInMainQueue({
+                                ProgressHUD.dismiss()
                                 let controller = RepoEventController()
                                 controller.rawData = data
                                 self.navigationController?.pushViewController(controller, animated: true)
@@ -236,9 +238,11 @@ class RepoDetailController: UIViewController, UITableViewDataSource,UITableViewD
                     
                     if(indexPath.row == 1){
                         //查看提问
+                        ProgressHUD.show()
                         Github.getRepoIssues(repoFullName, completionHandler: {(data:AnyObject?) in
                             //print(JSON(data!))
-                            OperationQueueHelper.operateInMainQueue({ 
+                            OperationQueueHelper.operateInMainQueue({
+                                ProgressHUD.dismiss()
                                 let controller = RepoIssuesController()
                                 controller.rawData = data
                                 self.navigationController?.pushViewController(controller, animated: true)
@@ -248,20 +252,25 @@ class RepoDetailController: UIViewController, UITableViewDataSource,UITableViewD
                     
                     if(indexPath.row == 2){
                         //README.md
+                        ProgressHUD.show()
                         Github.getRepoContent(repoFullName, path: "README.md", completionHandler: { (data:AnyObject?) in
                             if let d = data{
                                 let json = JSON(d)
                                 if(json["message"] == "Not Found"){
-                                    print("没有readme文件")
+                                    OperationQueueHelper.operateInMainQueue({
+                                        print("没有readme文件")
+                                        ProgressHUD.dismiss()
+                                    })
                                 }else{
                                     let content = json["content"].string
                                     if let c = content{
                                         let readme = Base64.decrypt(c)
                                         
                                         OperationQueueHelper.operateInMainQueue({
-                                            let codeBrowser = CodeBrowserController()
-                                            codeBrowser.code = readme
-                                            self.navigationController?.pushViewController(codeBrowser, animated: true)
+                                            ProgressHUD.dismiss()
+                                            let controller = MarkdownReaderController()
+                                            controller.setMarkdownStr(readme!)
+                                            self.navigationController?.pushViewController(controller, animated: true)
                                         })
                                     }
                                 }
@@ -272,9 +281,11 @@ class RepoDetailController: UIViewController, UITableViewDataSource,UITableViewD
                 else if(indexPath.section == 2){
                     if(indexPath.row == 0){
                         //提交纪录
+                        ProgressHUD.show()
                         Github.getRepoCommits(repoFullName, completionHandler: { (data:AnyObject?) in
                             //print(JSON(data!))
                             OperationQueueHelper.operateInMainQueue({
+                                ProgressHUD.dismiss()
                                 let controller = RepoCommitsController()
                                 controller.rawData = data
                                 self.navigationController?.pushViewController(controller, animated: true)
@@ -282,9 +293,11 @@ class RepoDetailController: UIViewController, UITableViewDataSource,UITableViewD
                         })
                     }else if(indexPath.row == 1){
                         //拉取请求
+                        ProgressHUD.show()
                         Github.getRepoPulls(repoFullName, completionHandler: { (data:AnyObject?) in
                             //print(JSON(data!))
                             OperationQueueHelper.operateInMainQueue({
+                                ProgressHUD.dismiss()
                                 let controller = RepoPullController()
                                 controller.rawData = data
                                 self.navigationController?.pushViewController(controller, animated: true)
@@ -292,9 +305,11 @@ class RepoDetailController: UIViewController, UITableViewDataSource,UITableViewD
                         })
                     }else if(indexPath.row == 2){
                         //查看分支
+                        ProgressHUD.show()
                         Github.getRepoBranches(repoFullName, completionHandler: { (data:AnyObject?) in
                             //print(JSON(data!))
                             OperationQueueHelper.operateInMainQueue({
+                                ProgressHUD.dismiss()
                                 let controller = RepoBranchController()
                                 controller.rawData = data
                                 self.navigationController?.pushViewController(controller, animated: true)
