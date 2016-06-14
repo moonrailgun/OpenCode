@@ -47,7 +47,7 @@ class NewsScrollView: UIScrollView {
         self.addSubview(view2)
         let view3 = TrendingView(frame: CGRect(x: 2 * screenWidth, y: 0, width: screenWidth, height: self.bounds.height))
         self.addSubview(view3)
-        let view4 = TrendingView(frame: CGRect(x: 3 * screenWidth, y: 0, width: screenWidth, height: self.bounds.height))
+        let view4 = NotableList(frame: CGRect(x: 3 * screenWidth, y: 0, width: screenWidth, height: self.bounds.height),controller:controller)
         self.addSubview(view4)
     }
     
