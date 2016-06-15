@@ -123,7 +123,7 @@ class QRCodeScanningController: UIViewController,AVCaptureMetadataOutputObjectsD
         if(session != nil){
             print("session 开始执行")
             session?.startRunning()
-            self.performSelectorOnMainThread(Selector("timerFired"), withObject: nil, waitUntilDone: false)
+            self.performSelectorOnMainThread(#selector(QRCodeScanningController.timerFired), withObject: nil, waitUntilDone: false)
         }
     }
     
