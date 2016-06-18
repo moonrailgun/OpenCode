@@ -83,6 +83,8 @@
 		BAFB43A11D0E83F100D0E2C3 /* AboutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB439F1D0E83F100D0E2C3 /* AboutController.swift */; };
 		BAFB43A81D0FA10E00D0E2C3 /* NotableList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB43A71D0FA10E00D0E2C3 /* NotableList.swift */; };
 		BAFB43AC1D0FACFE00D0E2C3 /* MarkdownReaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB43AB1D0FACFE00D0E2C3 /* MarkdownReaderController.swift */; };
+		BAFB43AE1D153A1000D0E2C3 /* ComponentUsageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB43AD1D153A1000D0E2C3 /* ComponentUsageController.swift */; };
+		BAFB43B31D153DD800D0E2C3 /* ComponentUsage.strings in Resources */ = {isa = PBXBuildFile; fileRef = BAFB43B21D153DD800D0E2C3 /* ComponentUsage.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,6 +180,8 @@
 		BAFB439F1D0E83F100D0E2C3 /* AboutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutController.swift; path = Classes/Settings/About/Controller/AboutController.swift; sourceTree = "<group>"; };
 		BAFB43A71D0FA10E00D0E2C3 /* NotableList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotableList.swift; path = Classes/News/View/Notable/NotableList.swift; sourceTree = "<group>"; };
 		BAFB43AB1D0FACFE00D0E2C3 /* MarkdownReaderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarkdownReaderController.swift; path = Classes/MarkdownReader/Controller/MarkdownReaderController.swift; sourceTree = "<group>"; };
+		BAFB43AD1D153A1000D0E2C3 /* ComponentUsageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComponentUsageController.swift; path = Classes/Settings/About/Controller/ComponentUsageController.swift; sourceTree = "<group>"; };
+		BAFB43B21D153DD800D0E2C3 /* ComponentUsage.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = ComponentUsage.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +267,7 @@
 		BA3AD1F71CCA245A0034B21E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BAFB43AF1D153B1700D0E2C3 /* Document */,
 				BA5582C21CF1735C00157000 /* CodeBrowser */,
 				BA3AD1F81CCA245A0034B21E /* Info.plist */,
 				BA79E0751CF5C49B00E86258 /* ToolList.plist */,
@@ -730,6 +735,7 @@
 			isa = PBXGroup;
 			children = (
 				BAFB439F1D0E83F100D0E2C3 /* AboutController.swift */,
+				BAFB43AD1D153A1000D0E2C3 /* ComponentUsageController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -756,6 +762,14 @@
 				BAFB43AB1D0FACFE00D0E2C3 /* MarkdownReaderController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		BAFB43AF1D153B1700D0E2C3 /* Document */ = {
+			isa = PBXGroup;
+			children = (
+				BAFB43B21D153DD800D0E2C3 /* ComponentUsage.strings */,
+			);
+			name = Document;
 			sourceTree = "<group>";
 		};
 		D7F22D4ECA5475ECD3576BFE /* Pods */ = {
@@ -856,6 +870,7 @@
 				BAF47C1D1D01462B00F6A03B /* CodeBrowser.css in Resources */,
 				BAF47C1B1D01462000F6A03B /* CodeLoading.gif in Resources */,
 				BA8D68631CF80C62002ED5E2 /* ToolCell.xib in Resources */,
+				BAFB43B31D153DD800D0E2C3 /* ComponentUsage.strings in Resources */,
 				BA47B74A1CE99EC200CF3947 /* UserCell.xib in Resources */,
 				BA3AD2011CCA245A0034B21E /* Main.storyboard in Resources */,
 				BA51C0581CF6A7C3005CCCC7 /* RepoEventCell.xib in Resources */,
@@ -964,6 +979,7 @@
 				BA0ADD741CF836CE00A0B0F1 /* RepoCommitsController.swift in Sources */,
 				BAC5DF351CEC082300EB2EFE /* UserInfoController.swift in Sources */,
 				BA05E7471CFEDB7900855A9E /* MyLoginView.swift in Sources */,
+				BAFB43AE1D153A1000D0E2C3 /* ComponentUsageController.swift in Sources */,
 				BA3AD21E1CCA278B0034B21E /* Github.swift in Sources */,
 				BA715DFF1CFD287000887D73 /* NewsTopView.swift in Sources */,
 				BA6F3B101CCE3EA400F6984B /* OperationQueueHelper.swift in Sources */,
