@@ -84,7 +84,8 @@
 		BAFB43A81D0FA10E00D0E2C3 /* NotableList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB43A71D0FA10E00D0E2C3 /* NotableList.swift */; };
 		BAFB43AC1D0FACFE00D0E2C3 /* MarkdownReaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB43AB1D0FACFE00D0E2C3 /* MarkdownReaderController.swift */; };
 		BAFB43AE1D153A1000D0E2C3 /* ComponentUsageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB43AD1D153A1000D0E2C3 /* ComponentUsageController.swift */; };
-		BAFB43B31D153DD800D0E2C3 /* ComponentUsage.strings in Resources */ = {isa = PBXBuildFile; fileRef = BAFB43B21D153DD800D0E2C3 /* ComponentUsage.strings */; };
+		BAFB43B51D153F1600D0E2C3 /* AboutOpenSource.strings in Resources */ = {isa = PBXBuildFile; fileRef = BAFB43B41D153F1600D0E2C3 /* AboutOpenSource.strings */; };
+		BAFB43B71D153F3200D0E2C3 /* ComponentUsage.strings in Resources */ = {isa = PBXBuildFile; fileRef = BAFB43B61D153F3200D0E2C3 /* ComponentUsage.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,7 +182,8 @@
 		BAFB43A71D0FA10E00D0E2C3 /* NotableList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotableList.swift; path = Classes/News/View/Notable/NotableList.swift; sourceTree = "<group>"; };
 		BAFB43AB1D0FACFE00D0E2C3 /* MarkdownReaderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarkdownReaderController.swift; path = Classes/MarkdownReader/Controller/MarkdownReaderController.swift; sourceTree = "<group>"; };
 		BAFB43AD1D153A1000D0E2C3 /* ComponentUsageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComponentUsageController.swift; path = Classes/Settings/About/Controller/ComponentUsageController.swift; sourceTree = "<group>"; };
-		BAFB43B21D153DD800D0E2C3 /* ComponentUsage.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = ComponentUsage.strings; sourceTree = "<group>"; };
+		BAFB43B41D153F1600D0E2C3 /* AboutOpenSource.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = AboutOpenSource.strings; path = Document/AboutOpenSource.strings; sourceTree = "<group>"; };
+		BAFB43B61D153F3200D0E2C3 /* ComponentUsage.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = ComponentUsage.strings; path = Document/ComponentUsage.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -767,7 +769,8 @@
 		BAFB43AF1D153B1700D0E2C3 /* Document */ = {
 			isa = PBXGroup;
 			children = (
-				BAFB43B21D153DD800D0E2C3 /* ComponentUsage.strings */,
+				BAFB43B61D153F3200D0E2C3 /* ComponentUsage.strings */,
+				BAFB43B41D153F1600D0E2C3 /* AboutOpenSource.strings */,
 			);
 			name = Document;
 			sourceTree = "<group>";
@@ -870,8 +873,9 @@
 				BAF47C1D1D01462B00F6A03B /* CodeBrowser.css in Resources */,
 				BAF47C1B1D01462000F6A03B /* CodeLoading.gif in Resources */,
 				BA8D68631CF80C62002ED5E2 /* ToolCell.xib in Resources */,
-				BAFB43B31D153DD800D0E2C3 /* ComponentUsage.strings in Resources */,
 				BA47B74A1CE99EC200CF3947 /* UserCell.xib in Resources */,
+				BAFB43B71D153F3200D0E2C3 /* ComponentUsage.strings in Resources */,
+				BAFB43B51D153F1600D0E2C3 /* AboutOpenSource.strings in Resources */,
 				BA3AD2011CCA245A0034B21E /* Main.storyboard in Resources */,
 				BA51C0581CF6A7C3005CCCC7 /* RepoEventCell.xib in Resources */,
 				BA5582CD1CF1827C00157000 /* CodeLoader.js in Resources */,
