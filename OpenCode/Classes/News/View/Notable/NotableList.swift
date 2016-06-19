@@ -45,7 +45,7 @@ class NotableList: UIView, UITableViewDataSource, UITableViewDelegate {
         Github.getNotableList(nil) { (data:AnyObject?) in
             if let d = data{
                 let json = JSON(d)
-                print("共\(json["total_count"].int!)个热门项目")
+                print("共\(json["total_count"].int!)个github名人")
                 let items = json["items"]
                 self.data = items
                 

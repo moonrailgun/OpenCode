@@ -161,6 +161,21 @@ class Github {
         }
         requestPublicData(url, completionHandler: completionHandler)
     }
+    //获取github近期热门项目
+    class func getGithubTrending(page:Int?, completionHandler:(AnyObject?) -> Void){
+        //获取距今7天时间的字符串
+        let now = NSDate()
+        let from = NSDate(timeInterval: -7 * 24 * 60 * 60, sinceDate: now)
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let dateStr = formatter.stringFromDate(from)
+        
+        var url = "https://api.github.com/search/repositories?q=stars:>500+pushed:>\(dateStr)&sort=updated"
+        if(page != nil){
+            url += "&page=\(page!)"
+        }
+        requestPublicData(url, completionHandler: completionHandler)
+    }
     //获取github代码搜索结果
     class func getGithubCodeSearch(query:String, page:Int?, perPage:Int?, sort:Int?, order:Int?, completionHandler:(AnyObject?) -> Void){
         var url:String = "https://api.github.com/search/code?q=\(query)"
