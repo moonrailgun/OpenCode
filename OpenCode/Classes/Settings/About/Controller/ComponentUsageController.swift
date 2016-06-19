@@ -11,21 +11,21 @@ import UIKit
 class ComponentUsageController: UIViewController {
 
     lazy var textView:UITextView = UITextView(frame: self.view.bounds, textContainer: nil)
+    var text:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        textView.font = UIFont.systemFontOfSize(16)
+        textView.textColor = UIColor.blackColor()
+        textView.text = text
         self.view.addSubview(textView)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func setTextContain(string:String){
-        self.textView.text = string
     }
     
 

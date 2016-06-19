@@ -63,6 +63,17 @@ class AboutController: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(indexPath)
+        
+        if(indexPath.section == 0){
+            if(indexPath.row == 3){
+                if let str = try? NSString(contentsOfFile: NSBundle.mainBundle().pathForResource("ComponentUsage", ofType: "txt")!, encoding: NSUTF8StringEncoding){
+                    let controller = ComponentUsageController()
+                    controller.text = str as String
+                    print(str as String)
+                    self.navigationController?.pushViewController(controller, animated: true)
+                }
+            }
+        }
     }
 
     /*
