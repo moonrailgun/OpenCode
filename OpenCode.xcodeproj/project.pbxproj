@@ -27,7 +27,7 @@
 		BA4465851D094844007AEC2F /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4465841D094844007AEC2F /* ProgressHUD.swift */; };
 		BA4609D11CF95AB400D2415B /* SearchRepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4609CF1CF95AB400D2415B /* SearchRepoCell.swift */; };
 		BA4609D21CF95AB400D2415B /* SearchRepoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA4609D01CF95AB400D2415B /* SearchRepoCell.xib */; };
-		BA47B7451CE99B4A00CF3947 /* UserListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47B7441CE99B4A00CF3947 /* UserListController.swift */; };
+		BA47B7451CE99B4A00CF3947 /* OldUserListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47B7441CE99B4A00CF3947 /* OldUserListController.swift */; };
 		BA47B7491CE99EC200CF3947 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47B7471CE99EC200CF3947 /* UserCell.swift */; };
 		BA47B74A1CE99EC200CF3947 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA47B7481CE99EC200CF3947 /* UserCell.xib */; };
 		BA47B74E1CE9AE7D00CF3947 /* UserBaseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47B74D1CE9AE7D00CF3947 /* UserBaseInfo.swift */; };
@@ -86,6 +86,10 @@
 		BAFB43AE1D153A1000D0E2C3 /* ComponentUsageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB43AD1D153A1000D0E2C3 /* ComponentUsageController.swift */; };
 		BAFB43B51D153F1600D0E2C3 /* AboutOpenSource.txt in Resources */ = {isa = PBXBuildFile; fileRef = BAFB43B41D153F1600D0E2C3 /* AboutOpenSource.txt */; };
 		BAFB43B71D153F3200D0E2C3 /* ComponentUsage.txt in Resources */ = {isa = PBXBuildFile; fileRef = BAFB43B61D153F3200D0E2C3 /* ComponentUsage.txt */; };
+		BAFB43B91D1BC8A300D0E2C3 /* UserListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB43B81D1BC8A300D0E2C3 /* UserListController.swift */; };
+		BAFB43BB1D1BC96600D0E2C3 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB43BA1D1BC96600D0E2C3 /* UserListView.swift */; };
+		BAFB43BE1D1BCA9400D0E2C3 /* UserListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB43BC1D1BCA9400D0E2C3 /* UserListCell.swift */; };
+		BAFB43BF1D1BCA9400D0E2C3 /* UserListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAFB43BD1D1BCA9400D0E2C3 /* UserListCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,7 +129,7 @@
 		BA4465841D094844007AEC2F /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressHUD.swift; path = Classes/Other/ProgressHUD.swift; sourceTree = "<group>"; };
 		BA4609CF1CF95AB400D2415B /* SearchRepoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchRepoCell.swift; path = Classes/Search/View/SearchRepoCell.swift; sourceTree = "<group>"; };
 		BA4609D01CF95AB400D2415B /* SearchRepoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchRepoCell.xib; path = Classes/Search/View/SearchRepoCell.xib; sourceTree = "<group>"; };
-		BA47B7441CE99B4A00CF3947 /* UserListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserListController.swift; path = Classes/UserList/Controller/UserListController.swift; sourceTree = "<group>"; };
+		BA47B7441CE99B4A00CF3947 /* OldUserListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OldUserListController.swift; path = Classes/UserList/Controller/OldUserListController.swift; sourceTree = "<group>"; };
 		BA47B7471CE99EC200CF3947 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserCell.swift; path = Classes/UserList/View/UserCell.swift; sourceTree = "<group>"; };
 		BA47B7481CE99EC200CF3947 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserCell.xib; path = Classes/UserList/View/UserCell.xib; sourceTree = "<group>"; };
 		BA47B74D1CE9AE7D00CF3947 /* UserBaseInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserBaseInfo.swift; path = Classes/UserList/Model/UserBaseInfo.swift; sourceTree = "<group>"; };
@@ -184,6 +188,10 @@
 		BAFB43AD1D153A1000D0E2C3 /* ComponentUsageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComponentUsageController.swift; path = Classes/Settings/About/Controller/ComponentUsageController.swift; sourceTree = "<group>"; };
 		BAFB43B41D153F1600D0E2C3 /* AboutOpenSource.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = AboutOpenSource.txt; path = Document/AboutOpenSource.txt; sourceTree = "<group>"; };
 		BAFB43B61D153F3200D0E2C3 /* ComponentUsage.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ComponentUsage.txt; path = Document/ComponentUsage.txt; sourceTree = "<group>"; };
+		BAFB43B81D1BC8A300D0E2C3 /* UserListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserListController.swift; path = Classes/UserList/Controller/UserListController.swift; sourceTree = "<group>"; };
+		BAFB43BA1D1BC96600D0E2C3 /* UserListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserListView.swift; path = Classes/UserList/View/UserListView.swift; sourceTree = "<group>"; };
+		BAFB43BC1D1BCA9400D0E2C3 /* UserListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserListCell.swift; path = Classes/UserList/View/UserListCell.swift; sourceTree = "<group>"; };
+		BAFB43BD1D1BCA9400D0E2C3 /* UserListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserListCell.xib; path = Classes/UserList/View/UserListCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -371,7 +379,8 @@
 		BA47B7431CE99B0800CF3947 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BA47B7441CE99B4A00CF3947 /* UserListController.swift */,
+				BA47B7441CE99B4A00CF3947 /* OldUserListController.swift */,
+				BAFB43B81D1BC8A300D0E2C3 /* UserListController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -381,6 +390,9 @@
 			children = (
 				BA47B7471CE99EC200CF3947 /* UserCell.swift */,
 				BA47B7481CE99EC200CF3947 /* UserCell.xib */,
+				BAFB43BA1D1BC96600D0E2C3 /* UserListView.swift */,
+				BAFB43BC1D1BCA9400D0E2C3 /* UserListCell.swift */,
+				BAFB43BD1D1BCA9400D0E2C3 /* UserListCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -882,6 +894,7 @@
 				BA4609D21CF95AB400D2415B /* SearchRepoCell.xib in Resources */,
 				BA79E0761CF5C49B00E86258 /* ToolList.plist in Resources */,
 				BA5AF83A1D02C3660015B601 /* NewsEventCell.xib in Resources */,
+				BAFB43BF1D1BCA9400D0E2C3 /* UserListCell.xib in Resources */,
 				BA3AD2061CCA245A0034B21E /* LaunchScreen.xib in Resources */,
 				BA5582C41CF173B400157000 /* CodeBrowser.html in Resources */,
 				BA3AD2031CCA245A0034B21E /* Images.xcassets in Resources */,
@@ -953,13 +966,14 @@
 				BAFB43A11D0E83F100D0E2C3 /* AboutController.swift in Sources */,
 				BA69EBE41CD4980C0090816C /* UserTableViewController.swift in Sources */,
 				BA715E0A1CFD3A6600887D73 /* MyCellDataModel.swift in Sources */,
+				BAFB43BB1D1BC96600D0E2C3 /* UserListView.swift in Sources */,
 				BA4465851D094844007AEC2F /* ProgressHUD.swift in Sources */,
 				BA8DA3311CD080A500F9B391 /* Crypto.swift in Sources */,
 				BAFB43A81D0FA10E00D0E2C3 /* NotableList.swift in Sources */,
 				BA5AF83D1D02C3780015B601 /* TrendingView.swift in Sources */,
 				BA6F3B121CCE478D00F6984B /* TimeHelper.swift in Sources */,
 				BA8619051CDF289D00BE9E9C /* RepoDetailController.swift in Sources */,
-				BA47B7451CE99B4A00CF3947 /* UserListController.swift in Sources */,
+				BA47B7451CE99B4A00CF3947 /* OldUserListController.swift in Sources */,
 				BA51C0541CF69B88005CCCC7 /* RepoIssuesController.swift in Sources */,
 				BA715E021CFD2EC800887D73 /* NewsTopDelegate.swift in Sources */,
 				BA505B0A1CF3FBB900BE7EC9 /* ToolController.swift in Sources */,
@@ -979,10 +993,12 @@
 				BA7CB1D41CEDF5ED004DDF42 /* UserInfoHeaderView.swift in Sources */,
 				BAC055831CFAA67C00DCD236 /* NewsScrollView.swift in Sources */,
 				BAFB43981D0AAAE500D0E2C3 /* NewBadge.swift in Sources */,
+				BAFB43BE1D1BCA9400D0E2C3 /* UserListCell.swift in Sources */,
 				BA47B7491CE99EC200CF3947 /* UserCell.swift in Sources */,
 				BA0ADD741CF836CE00A0B0F1 /* RepoCommitsController.swift in Sources */,
 				BAC5DF351CEC082300EB2EFE /* UserInfoController.swift in Sources */,
 				BA05E7471CFEDB7900855A9E /* MyLoginView.swift in Sources */,
+				BAFB43B91D1BC8A300D0E2C3 /* UserListController.swift in Sources */,
 				BAFB43AE1D153A1000D0E2C3 /* ComponentUsageController.swift in Sources */,
 				BA3AD21E1CCA278B0034B21E /* Github.swift in Sources */,
 				BA715DFF1CFD287000887D73 /* NewsTopView.swift in Sources */,
