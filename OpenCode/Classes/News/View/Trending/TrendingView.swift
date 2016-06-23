@@ -8,15 +8,20 @@
 
 import UIKit
 import SwiftyJSON
+import MJRefresh
 
 class TrendingView: UIView, UITableViewDataSource, UITableViewDelegate {
     
     let TRENDING_CELL_ID = "trending"
     lazy var tableView:UITableView = UITableView(frame: self.bounds, style: .Plain)
     var data:JSON?
+    var controller:UIViewController?
+    var currentMaxPage = 1
 
-    override init(frame: CGRect) {
+    init(frame: CGRect, controller:UIViewController?) {
         super.init(frame:frame)
+        
+        self.controller = controller
         
         initView()
         initData()
@@ -27,8 +32,14 @@ class TrendingView: UIView, UITableViewDataSource, UITableViewDelegate {
     }
     
     func initView(){
+        tableView.registerNib(UINib(nibName: "SearchRepoCell", bundle: nil), forCellReuseIdentifier: TRENDING_CELL_ID)
+        tableView.rowHeight = 130
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
+            self.currentMaxPage += 1
+            self.addonData(self.currentMaxPage)
+        })
         self.addSubview(tableView)
     }
     
@@ -55,17 +66,40 @@ class TrendingView: UIView, UITableViewDataSource, UITableViewDelegate {
         }
     }
     
+    func addonData(page:Int){
+        Github.getGithubTrending(page) { (data:AnyObject?) in
+            if let d = data{
+                let json = JSON(d)
+                print("加载新数据完毕,加载页码\(page)")
+                let items = json["items"]
+                
+                if(self.data != nil) {
+                    var tmp = self.data?.array
+                    for i in 0 ... items.count - 1{
+                        tmp!.append(items[i])
+                    }
+                    self.data = JSON(tmp!)
+                }
+                
+                OperationQueueHelper.operateInMainQueue({
+                    self.tableView.reloadData()
+                    self.tableView.mj_footer.endRefreshing()
+                })
+            }
+        }
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier(TRENDING_CELL_ID)
         
         if(cell == nil){
-            cell = UITableViewCell(style: .Default, reuseIdentifier: TRENDING_CELL_ID)
+            cell = SearchRepoCell(style: .Default, reuseIdentifier: TRENDING_CELL_ID)
             cell?.accessoryType = .DisclosureIndicator
         }
         
         if(data != nil){
             let item = data![indexPath.row]
-            cell?.textLabel?.text = item["name"].string
+            (cell as! SearchRepoCell).setData(item)
         }
         
         return cell!
@@ -85,6 +119,16 @@ class TrendingView: UIView, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(indexPath)
+        let item = self.data![indexPath.row]
+        if let repoFullName = item["full_name"].string{
+            Github.getRepoInfo(repoFullName, completionHandler: { (data:AnyObject?) in
+                let controller = RepoDetailController()
+                controller.repoDetailData = data
+                OperationQueueHelper.operateInMainQueue({
+                    self.controller?.navigationController?.pushViewController(controller, animated: true)
+                })
+            })
+        }
     }
     
     /*
