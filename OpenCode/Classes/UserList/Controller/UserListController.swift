@@ -7,16 +7,21 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class UserListController: UIViewController {
 
     lazy var collectionView:UserListView = UserListView(frame: self.view.bounds)
-    var userListData:AnyObject?
+    var userListData:[JSON]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if let data = userListData{
+            collectionView.userListData = data
+        }
+        
         self.view.addSubview(collectionView)
     }
 

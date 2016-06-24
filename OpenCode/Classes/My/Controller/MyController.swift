@@ -139,7 +139,7 @@ class MyController: UIViewController, UITableViewDelegate {
                 ProgressHUD.show()
                 Github.getCurrentUserFollowers({ (data:AnyObject?) in
                     let controller = UserListController()
-                    controller.userListData = data
+                    controller.userListData = JSON(data!).arrayValue
                     
                     OperationQueueHelper.operateInMainQueue({
                         ProgressHUD.dismiss()
@@ -151,7 +151,7 @@ class MyController: UIViewController, UITableViewDelegate {
                 ProgressHUD.show()
                 Github.getCurrentUserFollowing({ (data:AnyObject?) in
                     let controller = UserListController()
-                    controller.userListData = data
+                    controller.userListData = JSON(data!).arrayValue
                     
                     OperationQueueHelper.operateInMainQueue({
                         ProgressHUD.dismiss()

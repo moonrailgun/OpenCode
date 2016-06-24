@@ -7,14 +7,24 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class UserListCell: UICollectionViewCell {
 
-    static let size:CGSize = CGSize(width: 80, height: 80)
+    static let size:CGSize = CGSize(width: 80, height: 100)
     
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var label: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    func setData(data:JSON){
+        let avatar_url = data["avatar_url"].string!
+        let username = data["login"].string!
+        
+        image.sd_setImageWithURL(NSURL(string: avatar_url))
+        label.text = username
+    }
 }
