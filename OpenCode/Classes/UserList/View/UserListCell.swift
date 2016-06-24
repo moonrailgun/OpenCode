@@ -10,6 +10,8 @@ import UIKit
 
 class UserListCell: UICollectionViewCell {
 
+    static let size:CGSize = CGSize(width: 80, height: 80)
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

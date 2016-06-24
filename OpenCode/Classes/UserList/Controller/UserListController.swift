@@ -10,12 +10,14 @@ import UIKit
 
 class UserListController: UIViewController {
 
-    lazy var collection:UserListView = UserListView(frame: self.view.bounds)
+    lazy var collectionView:UserListView = UserListView(frame: self.view.bounds)
+    var userListData:AnyObject?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.view.addSubview(collectionView)
     }
 
     override func didReceiveMemoryWarning() {
