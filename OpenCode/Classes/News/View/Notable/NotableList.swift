@@ -117,5 +117,7 @@ class NotableList: UIView, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(indexPath)
+        
+        print(data![indexPath.row])
     }
 }

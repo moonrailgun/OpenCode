@@ -9,11 +9,12 @@
 import UIKit
 import SwiftyJSON
 
-class UserListView: UICollectionView, UICollectionViewDataSource {
+class UserListView: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegate {
     let USER_LIST_CELL = "userList"
     var userListData:[JSON]?
+    var controller:UIViewController?
     
-    init(frame:CGRect) {
+    init(frame:CGRect,controller:UIViewController?) {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = UserListCell.size
         flowLayout.scrollDirection = .Vertical
@@ -22,9 +23,12 @@ class UserListView: UICollectionView, UICollectionViewDataSource {
         flowLayout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)//section中内容与容器边缘的距离
         super.init(frame: frame, collectionViewLayout:flowLayout)
         
+        self.controller = controller
+        
         self.backgroundColor = UIColor.whiteColor()
         self.registerNib(UINib(nibName: "UserListCell", bundle: nil), forCellWithReuseIdentifier: USER_LIST_CELL)
         self.dataSource = self
+        self.delegate = self
         initData()
     }
     
@@ -60,5 +64,29 @@ class UserListView: UICollectionView, UICollectionViewDataSource {
         }
         
         return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        print(indexPath)
+        
+        if self.controller != nil{
+            let item = userListData![indexPath.row]
+            let username = item["login"].string!
+            
+            ProgressHUD.show()
+            Github.getUserInfo(username) { (data:AnyObject?) in
+                if let d = data {
+                    OperationQueueHelper.operateInMainQueue({
+                        ProgressHUD.dismiss()
+                        
+                        let controller = UserInfoController()
+                        controller.parseData(d)
+                        self.controller?.navigationController?.pushViewController(controller, animated: true)
+                    })
+                }else{
+                    ProgressHUD.dismiss()
+                }
+            }
+        }
     }
 }
