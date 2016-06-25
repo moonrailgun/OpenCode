@@ -114,7 +114,7 @@ class MyController: UIViewController, UITableViewDelegate {
                 print("我的项目")
                 ProgressHUD.show()
                 Github.getCurrentUserRepositories({ (data:AnyObject?) in
-                    let controller = MyRepoController(style: .Plain)
+                    let controller = RepoListController(style: .Plain)
                     controller.repositoryDataList = JSON(data!)
                     
                     OperationQueueHelper.operateInMainQueue({
@@ -126,7 +126,7 @@ class MyController: UIViewController, UITableViewDelegate {
                 print("我的收藏")
                 ProgressHUD.show()
                 Github.getCurrentUserStarred({ (data:AnyObject?) in
-                    let controller = MyRepoController(style: .Plain)
+                    let controller = RepoListController(style: .Plain)
                     controller.repositoryDataList = JSON(data!)
                     
                     OperationQueueHelper.operateInMainQueue({

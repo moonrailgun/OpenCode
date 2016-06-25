@@ -84,10 +84,18 @@ class UserInfoController: UIViewController, UITableViewDataSource,UITableViewDel
                 switch indexPath.row {
                 case 0:
                     print("事件")
+                    ProgressHUD.show()
                     Github.getUserEvents(username, completionHandler: { (data:AnyObject?) in
                         if let d = data{
                             let json = JSON(d)
-                            print(json)
+                            //print(json)
+                            
+                            OperationQueueHelper.operateInMainQueue({ 
+                                ProgressHUD.dismiss()
+                                let controller = UserEventsController()
+                                controller.eventData = json
+                                self.navigationController?.pushViewController(controller, animated: true)
+                            })
                         }
                     })
                 case 1:

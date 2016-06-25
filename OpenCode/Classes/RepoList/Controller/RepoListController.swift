@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class MyRepoController: UITableViewController {
+class RepoListController: UITableViewController {
     
     let REPO_CELL_ID = "repositoryCell"
     var repositoryDataList:JSON?

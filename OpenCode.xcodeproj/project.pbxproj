@@ -13,6 +13,7 @@
 		BA0ADD761CF838C500A0B0F1 /* RepoPullController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0ADD751CF838C500A0B0F1 /* RepoPullController.swift */; };
 		BA0ADD781CF839A000A0B0F1 /* RepoBranchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0ADD771CF839A000A0B0F1 /* RepoBranchController.swift */; };
 		BA0ADD7C1CF83DF200A0B0F1 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0ADD7B1CF83DF200A0B0F1 /* SearchController.swift */; };
+		BA0CCE201D1E7FE60009F02A /* RepoListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0CCE1F1D1E7FE60009F02A /* RepoListController.swift */; };
 		BA3AD1FA1CCA245A0034B21E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD1F91CCA245A0034B21E /* AppDelegate.swift */; };
 		BA3AD2011CCA245A0034B21E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD1FF1CCA245A0034B21E /* Main.storyboard */; };
 		BA3AD2031CCA245A0034B21E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD2021CCA245A0034B21E /* Images.xcassets */; };
@@ -57,7 +58,6 @@
 		BA715E021CFD2EC800887D73 /* NewsTopDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA715E011CFD2EC800887D73 /* NewsTopDelegate.swift */; };
 		BA715E071CFD389C00887D73 /* MyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA715E061CFD389C00887D73 /* MyController.swift */; };
 		BA715E0A1CFD3A6600887D73 /* MyCellDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA715E091CFD3A6600887D73 /* MyCellDataModel.swift */; };
-		BA75B46E1D002936008D2A3D /* MyRepoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA75B46D1D002936008D2A3D /* MyRepoController.swift */; };
 		BA79E02B1CF5946800E86258 /* ToolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79E02A1CF5946800E86258 /* ToolCell.swift */; };
 		BA79E0761CF5C49B00E86258 /* ToolList.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA79E0751CF5C49B00E86258 /* ToolList.plist */; };
 		BA79E0781CF5DF8300E86258 /* FlatColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79E0771CF5DF8300E86258 /* FlatColor.swift */; };
@@ -111,6 +111,7 @@
 		BA0ADD751CF838C500A0B0F1 /* RepoPullController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoPullController.swift; path = Classes/RepositoryDetail/Controller/RepoPullController.swift; sourceTree = "<group>"; };
 		BA0ADD771CF839A000A0B0F1 /* RepoBranchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoBranchController.swift; path = Classes/RepositoryDetail/Controller/RepoBranchController.swift; sourceTree = "<group>"; };
 		BA0ADD7B1CF83DF200A0B0F1 /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchController.swift; path = Classes/Search/Controller/SearchController.swift; sourceTree = "<group>"; };
+		BA0CCE1F1D1E7FE60009F02A /* RepoListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoListController.swift; path = Classes/RepoList/Controller/RepoListController.swift; sourceTree = "<group>"; };
 		BA3AD1F41CCA245A0034B21E /* OpenCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA3AD1F81CCA245A0034B21E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA3AD1F91CCA245A0034B21E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -159,7 +160,6 @@
 		BA715E011CFD2EC800887D73 /* NewsTopDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTopDelegate.swift; sourceTree = "<group>"; };
 		BA715E061CFD389C00887D73 /* MyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyController.swift; path = Classes/My/Controller/MyController.swift; sourceTree = "<group>"; };
 		BA715E091CFD3A6600887D73 /* MyCellDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCellDataModel.swift; sourceTree = "<group>"; };
-		BA75B46D1D002936008D2A3D /* MyRepoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyRepoController.swift; path = Classes/My/Controller/MyRepoController.swift; sourceTree = "<group>"; };
 		BA79E02A1CF5946800E86258 /* ToolCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToolCell.swift; path = Classes/Tool/View/ToolCell.swift; sourceTree = "<group>"; };
 		BA79E0751CF5C49B00E86258 /* ToolList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ToolList.plist; sourceTree = "<group>"; };
 		BA79E0771CF5DF8300E86258 /* FlatColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlatColor.swift; path = Classes/Other/FlatColor.swift; sourceTree = "<group>"; };
@@ -234,6 +234,22 @@
 			isa = PBXGroup;
 			children = (
 				BA0ADD7B1CF83DF200A0B0F1 /* SearchController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		BA0CCE1D1D1E7F4A0009F02A /* RepoList */ = {
+			isa = PBXGroup;
+			children = (
+				BA0CCE1E1D1E7F5A0009F02A /* Controller */,
+			);
+			name = RepoList;
+			sourceTree = "<group>";
+		};
+		BA0CCE1E1D1E7F5A0009F02A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA0CCE1F1D1E7FE60009F02A /* RepoListController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -541,7 +557,6 @@
 			isa = PBXGroup;
 			children = (
 				BA715E061CFD389C00887D73 /* MyController.swift */,
-				BA75B46D1D002936008D2A3D /* MyRepoController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -595,6 +610,7 @@
 		BA8618FD1CDF22F800BE9E9C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BA0CCE1D1D1E7F4A0009F02A /* RepoList */,
 				BA44657D1D07C139007AEC2F /* Settings */,
 				BA4465761D068F3F007AEC2F /* UserEvents */,
 				BA715E031CFD382800887D73 /* My */,
@@ -1004,6 +1020,7 @@
 				BA715DFF1CFD287000887D73 /* NewsTopView.swift in Sources */,
 				BA6F3B101CCE3EA400F6984B /* OperationQueueHelper.swift in Sources */,
 				BAFB439C1D0D23FC00D0E2C3 /* CommitDetailController.swift in Sources */,
+				BA0CCE201D1E7FE60009F02A /* RepoListController.swift in Sources */,
 				BAF7F9A01CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift in Sources */,
 				BA79E0781CF5DF8300E86258 /* FlatColor.swift in Sources */,
 				BA4465831D094502007AEC2F /* AuthorizationsManagerController.swift in Sources */,
@@ -1012,7 +1029,6 @@
 				BA3AD1FA1CCA245A0034B21E /* AppDelegate.swift in Sources */,
 				BA5582C11CF1706400157000 /* CodeBrowserController.swift in Sources */,
 				BAC055801CFAA60A00DCD236 /* NewsController.swift in Sources */,
-				BA75B46E1D002936008D2A3D /* MyRepoController.swift in Sources */,
 				BA7B2A0F1CE47D5200455F68 /* GlobalDefine.swift in Sources */,
 				BA8CEBE01CE74DF00044155A /* RepoDetailTableViewCell.swift in Sources */,
 				BA51C0571CF6A7C3005CCCC7 /* RepoEventCell.swift in Sources */,
