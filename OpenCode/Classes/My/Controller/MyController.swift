@@ -138,11 +138,10 @@ class MyController: UIViewController, UITableViewDelegate {
                 print("我的粉丝")
                 ProgressHUD.show()
                 Github.getCurrentUserFollowers({ (data:AnyObject?) in
-                    let controller = UserListController()
-                    controller.userListData = JSON(data!).arrayValue
-                    
                     OperationQueueHelper.operateInMainQueue({
                         ProgressHUD.dismiss()
+                        let controller = UserListController()
+                        controller.userListData = JSON(data!).arrayValue
                         self.navigationController?.pushViewController(controller, animated: true)
                     })
                 })

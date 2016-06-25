@@ -88,8 +88,7 @@ class UserInfoController: UIViewController, UITableViewDataSource,UITableViewDel
                     Github.getUserEvents(username, completionHandler: { (data:AnyObject?) in
                         if let d = data{
                             let json = JSON(d)
-                            //print(json)
-                            
+
                             OperationQueueHelper.operateInMainQueue({ 
                                 ProgressHUD.dismiss()
                                 let controller = UserEventsController()
@@ -108,10 +107,17 @@ class UserInfoController: UIViewController, UITableViewDataSource,UITableViewDel
                     })
                 case 2:
                     print("项目")
+                    ProgressHUD.show()
                     Github.getUserRepos(username, completionHandler: { (data:AnyObject?) in
                         if let d = data{
                             let json = JSON(d)
-                            print(json)
+                            
+                            OperationQueueHelper.operateInMainQueue({
+                                ProgressHUD.dismiss()
+                                let controller = RepoListController()
+                                controller.repositoryDataList = json
+                                self.navigationController?.pushViewController(controller, animated: true)
+                            })
                         }
                     })
                 case 3:
