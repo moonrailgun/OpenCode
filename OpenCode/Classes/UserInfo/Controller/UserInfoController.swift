@@ -78,18 +78,45 @@ class UserInfoController: UIViewController, UITableViewDataSource,UITableViewDel
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if(indexPath.section == 0){
-            switch indexPath.row {
-            case 0:
-                print("事件")
-            case 1:
-                print("组织")
-            case 2:
-                print("项目")
-            case 3:
-                print("gists")
-            default:
-                break
+        if(self.userInfoDate != nil){
+            let username = self.userInfoDate!.login
+            if(indexPath.section == 0){
+                switch indexPath.row {
+                case 0:
+                    print("事件")
+                    Github.getUserEvents(username, completionHandler: { (data:AnyObject?) in
+                        if let d = data{
+                            let json = JSON(d)
+                            print(json)
+                        }
+                    })
+                case 1:
+                    print("组织")
+                    Github.getUserOrgs(username, completionHandler: { (data:AnyObject?) in
+                        if let d = data{
+                            let json = JSON(d)
+                            print(json)
+                        }
+                    })
+                case 2:
+                    print("项目")
+                    Github.getUserRepos(username, completionHandler: { (data:AnyObject?) in
+                        if let d = data{
+                            let json = JSON(d)
+                            print(json)
+                        }
+                    })
+                case 3:
+                    print("gists")
+                    Github.getUserGists(username, completionHandler: { (data:AnyObject?) in
+                        if let d = data{
+                            let json = JSON(d)
+                            print(json)
+                        }
+                    })
+                default:
+                    break
+                }
             }
         }
     }

@@ -11,7 +11,7 @@ import SwiftyJSON
 
 class UserBaseInfo{
     var type:String = ""
-    var name:String = ""
+    var login:String = ""
     var id:Int = 0
     var avatarUrl:String = ""
     
@@ -28,7 +28,7 @@ class UserBaseInfo{
         let json = JSON(data)
         self.type = json["type"].string != nil ? json["type"].string! : ""
         self.id = json["id"].int!
-        self.name = json["login"].string!
+        self.login = json["login"].string!
         self.avatarUrl = json["avatar_url"].string!
         
         self.data = data

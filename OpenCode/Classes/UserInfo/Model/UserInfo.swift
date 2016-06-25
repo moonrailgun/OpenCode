@@ -10,6 +10,7 @@ import Foundation
 import SwiftyJSON
 
 class UserInfo: UserBaseInfo {
+    var name:String = ""
     var followers:Int = 0
     var following:Int = 0
     var email:String? = ""
@@ -37,7 +38,7 @@ class UserInfo: UserBaseInfo {
         if name != nil {
             self.name = name.string!
         }else{
-            print("name为登陆名：\(self.name)")
+            self.name = self.login
         }
         
         self.followers = json["followers"].int!

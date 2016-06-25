@@ -88,7 +88,7 @@ class OldUserListController: UIViewController, UITableViewDataSource, UITableVie
         if let c = cell as? UserCell{
             let index = indexPath.row
             let data = self.userList[index]
-            c.setData(UIImage(data: NSData(contentsOfURL: NSURL(string: data.avatarUrl)!)!)!, name: data.name)//TODO 需要懒加载
+            c.setData(UIImage(data: NSData(contentsOfURL: NSURL(string: data.avatarUrl)!)!)!, name: data.login)//TODO 需要懒加载
         }
 
         return cell
