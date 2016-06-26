@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import SDWebImage
 
 class OrgsListController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     let ORGS_CELL_ID = "orgs"
@@ -49,6 +50,16 @@ class OrgsListController: UIViewController, UITableViewDataSource, UITableViewDe
         
         if(cell == nil){
             cell = UITableViewCell(style: .Default, reuseIdentifier: ORGS_CELL_ID)
+            cell?.accessoryType = .DisclosureIndicator
+        }
+        
+        if(self.data != nil){
+            let item = self.data![indexPath.row]
+            cell?.textLabel?.text = item["login"].string
+            if let avatar_url = item["avatar_url"].string{
+                //cell?.imageView?.sd_setImageWithURL(NSURL(string: avatar_url))
+                cell?.imageView?.sd_setImageWithURL(NSURL(string: avatar_url))
+            }
         }
         
         return cell!

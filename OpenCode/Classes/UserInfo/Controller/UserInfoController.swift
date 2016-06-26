@@ -99,10 +99,18 @@ class UserInfoController: UIViewController, UITableViewDataSource,UITableViewDel
                     })
                 case 1:
                     print("组织")
+                    ProgressHUD.show()
                     Github.getUserOrgs(username, completionHandler: { (data:AnyObject?) in
                         if let d = data{
                             let json = JSON(d)
                             print(json)
+                            
+                            OperationQueueHelper.operateInMainQueue({ 
+                                ProgressHUD.dismiss()
+                                let controller = OrgsListController()
+                                controller.data = json.arrayValue
+                                self.navigationController?.pushViewController(controller, animated: true)
+                            })
                         }
                     })
                 case 2:
