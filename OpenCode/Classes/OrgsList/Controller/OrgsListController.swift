@@ -67,6 +67,21 @@ class OrgsListController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(indexPath)
+        if let login = self.data![indexPath.row]["login"].string{
+            ProgressHUD.show()
+            Github.getOrgsInfo(login, completionHandler: { (data:AnyObject?) in
+                let info = JSON(data!)
+                
+                OperationQueueHelper.operateInMainQueue({
+                    ProgressHUD.dismiss()
+                    let controller = OrgsDetailController()
+                    controller.orgsData = info
+                    self.navigationController?.pushViewController(controller, animated: true)
+                })
+            })
+        }
+        
+        
     }
 
     /*

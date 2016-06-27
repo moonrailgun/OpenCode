@@ -233,6 +233,10 @@ class Github {
         }
         requestPublicData(url, completionHandler: completionHandler)
     }
+    class func getOrgsInfo(orgsName:String, completionHandler:(AnyObject?) -> Void){
+        let url = "https://api.github.com/orgs/\(orgsName)"
+        requestPublicData(url, completionHandler: completionHandler)
+    }
 
     //自定义地址的github api获取
     class func customRequest(url:String, isPublic:Bool, completionHandler:(AnyObject?) -> Void){

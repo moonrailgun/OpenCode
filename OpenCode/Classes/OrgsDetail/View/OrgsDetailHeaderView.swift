@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class OrgsDetailHeaderView: UIView {
 
-    lazy var headerView:UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 150))
+    lazy var headerView:UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 180))
     var avatar:UIImageView?
     var name:UILabel?
+    var desc: UILabel?
     var followers:RepoInfoView?
     var following:RepoInfoView?
     
@@ -46,8 +48,13 @@ class OrgsDetailHeaderView: UIView {
         name!.textColor = UIColor.whiteColor()
         headerView.addSubview(name!)
         
-        self.followers = RepoInfoView(frame: CGRectMake(0, 150, headerView.frame.width / 2, 40), name: "粉丝", value: 0)
-        self.following = RepoInfoView(frame: CGRectMake(headerView.frame.width / 2, 150, headerView.frame.width / 2, 40), name: "关注", value: 0)
+        self.desc = UILabel(frame: CGRect(x: 0, y: 130, width: headerView.frame.width, height: 30))
+        name!.textAlignment = .Center
+        name!.textColor = UIColor.whiteColor()
+        headerView.addSubview(desc!)
+        
+        self.followers = RepoInfoView(frame: CGRectMake(0, headerView.frame.height, headerView.frame.width / 2, 40), name: "粉丝", value: 0)
+        self.following = RepoInfoView(frame: CGRectMake(headerView.frame.width / 2, headerView.frame.height, headerView.frame.width / 2, 40), name: "关注", value: 0)
         self.addSubview(followers!)
         self.addSubview(following!)
         
@@ -55,10 +62,11 @@ class OrgsDetailHeaderView: UIView {
         self.addSubview(headerView)
     }
     
-    func setData(avatar:UIImage, name:String,followersNum:Int, followingNum:Int) {
-        self.avatar?.image = avatar
-        self.name?.text = name
-        self.followers?.setValue(followersNum)
-        self.following?.setValue(followingNum)
+    func setData(orgsData:JSON) {
+        self.avatar?.sd_setImageWithURL(NSURL(string: orgsData["avatar_url"].string!))
+        self.name?.text = orgsData["login"].string!
+        self.desc?.text = orgsData["description"].string!
+        self.followers?.setValue(orgsData["followers"].int!)
+        self.following?.setValue(orgsData["following"].int!)
     }
 }

@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class OrgsDetailController: UIViewController {
 
     let ORGS_DETAIL_CELL_ID = "OrgsDetail"
+    lazy var tableView:UITableView = UITableView(frame: self.view.bounds, style: .Grouped)
+    var orgsData:JSON?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +28,13 @@ class OrgsDetailController: UIViewController {
     }
     
     func initView(){
+        self.view.addSubview(tableView)
         
+        let header = OrgsDetailHeaderView()
+        if(orgsData != nil){
+            header.setData(self.orgsData!)
+        }
+        tableView.tableHeaderView = header
     }
     
 
