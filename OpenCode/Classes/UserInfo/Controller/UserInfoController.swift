@@ -103,7 +103,6 @@ class UserInfoController: UIViewController, UITableViewDataSource,UITableViewDel
                     Github.getUserOrgs(username, completionHandler: { (data:AnyObject?) in
                         if let d = data{
                             let json = JSON(d)
-                            print(json)
                             
                             OperationQueueHelper.operateInMainQueue({ 
                                 ProgressHUD.dismiss()

@@ -27,7 +27,7 @@ class OrgsDetailHeaderView: UIView {
     */
     
     init(){
-        super.init(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: 200))
+        super.init(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: 230))
         
         initView()
     }
