@@ -31,6 +31,15 @@ class HttpRequest{
         NSURLConnection.sendAsynchronousRequest(NSURLRequest(URL: url), queue: NSOperationQueue(), completionHandler: completionHandler)
     }
     
+    class func sendAsyncRequest(url:NSURL, header: NSDictionary, completionHandler: (NSURLResponse?, NSData?, NSError?)->Void) {
+        let req = NSMutableURLRequest(URL: url)
+        req.HTTPMethod = "GET"
+        for aKey in header.allKeys{
+            req.setValue(header.objectForKey(aKey) as? String, forHTTPHeaderField: aKey as! String)
+        }
+        NSURLConnection.sendAsynchronousRequest(req, queue: NSOperationQueue(), completionHandler: completionHandler)
+    }
+    
     /*
     发送HTTP POST请求
     */
@@ -63,6 +72,15 @@ class HttpRequest{
     class func sendAsyncDeleteRequest(url:NSURL, completionHandler: (NSURLResponse?, NSData?, NSError?)->Void){
         let req = NSMutableURLRequest(URL: url)
         req.HTTPMethod = "DELETE"
+        NSURLConnection.sendAsynchronousRequest(req, queue: NSOperationQueue(), completionHandler: completionHandler)
+    }
+    class func sendAsyncDeleteRequest(url:NSURL, header: NSDictionary, completionHandler: (NSURLResponse?, NSData?, NSError?)->Void){
+        let req = NSMutableURLRequest(URL: url)
+        req.HTTPMethod = "DELETE"
+        //配置头
+        for aKey in header.allKeys{
+            req.setValue(header.objectForKey(aKey) as? String, forHTTPHeaderField: aKey as! String)
+        }
         NSURLConnection.sendAsynchronousRequest(req, queue: NSOperationQueue(), completionHandler: completionHandler)
     }
 }
