@@ -93,18 +93,20 @@ class MyLoginView: UIView, UITextFieldDelegate {
             return
         }
         
-        print("登陆 － 账号：\(usernameTextField!.text)")
+        let username = usernameTextField!.text!
+        let password = passwordTextField!.text!
+        print("登陆 － 账号：\(username)")
         
-        if(usernameTextField!.text != "" && passwordTextField!.text != ""){
+        if(username != "" && password != ""){
             //Github.login(githubUsername.text, password: githubPassword.text)
-            Github.login(usernameTextField!.text!, password: passwordTextField!.text!, completionHandler: { (token, statusCode, errorMsg) -> () in
+            Github.login(username, password: password, completionHandler: { (token, statusCode, errorMsg) -> () in
                 if(statusCode == 422){
                     //已经登陆
                     OperationQueueHelper.operateInMainQueue({
                         let alert = UIAlertController(title: "已经登陆", message: "是否重新登陆", preferredStyle: .Alert)
                         alert.addAction(UIAlertAction(title: "确定", style: .Default, handler: { (action:UIAlertAction) in
                             //登出
-                            Github.logout({ () -> Void? in
+                            Github.logout(username, password: password, completionHandler: { () -> Void? in
                                 self.login()
                             })
                         }))
