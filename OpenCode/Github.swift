@@ -77,14 +77,52 @@ class Github {
                 print("登录失败: \(message)")
                 completionHandler(token: nil, statusCode: 0, errorMsg: message.string)
             }
-
         }
     }
     //登出github
-    //TODO 暂时不删除服务端上的token
-    class func logout(completionHandler:()->Void?){
+    class func logout(username:String, password: String, completionHandler:()->Void?){
         self.clearToken()
-        completionHandler()
+        
+        //清除github服务器上数据
+        print("登出需要验证结果")
+        let str = username + ":" + password
+        let authorization = "Basic " + Base64.encrypt(str)!
+        let appid:String = UIDevice.currentDevice().identifierForVendor!.UUIDString
+        let appName = "OpenCodeApp[\(appid)]"
+        var header = NSDictionary()
+        header = ["Authorization": authorization, "Content-Type": "application/json"]
+        //获取列表
+        HttpRequest.sendAsyncRequest(NSURL(string: "https://api.github.com/authorizations")!, header: header) { (resp:NSURLResponse?, data:NSData?, err:NSError?) in
+            if let _ = resp as? NSHTTPURLResponse{
+                let json = JSON(data!)
+                let items = json.arrayValue
+                var tokenId = 0
+                for item in items{
+                    if(item["app"]["name"].string! == appName){
+                        tokenId = item["id"].int!
+                        break
+                    }
+                }
+                
+                if(tokenId != 0){
+                    //删除
+                    HttpRequest.sendAsyncDeleteRequest(NSURL(string: "https://api.github.com/authorizations")!,header:header, completionHandler: { (resp:NSURLResponse?, data:NSData?, err:NSError?) in
+                        if let _ = resp as? NSHTTPURLResponse{
+                            completionHandler()
+                        }else{
+                            print("删除失败")
+                        }
+                    })
+                }else{
+                    print("没有找到相关的token")
+                    completionHandler()
+                }
+            }else{
+                print("登出失败")
+            }
+        }
+        
+        
     }
     //获取当前用户信息
     class func getCurrentUserInfo(completionHandler:(AnyObject?) -> Void) {
