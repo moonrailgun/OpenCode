@@ -53,8 +53,8 @@ class OrgsDetailHeaderView: UIView {
         name!.textColor = UIColor.whiteColor()
         headerView.addSubview(desc!)
         
-        self.followers = RepoInfoView(frame: CGRectMake(0, headerView.frame.height, headerView.frame.width / 2, 40), name: "粉丝", value: 0)
-        self.following = RepoInfoView(frame: CGRectMake(headerView.frame.width / 2, headerView.frame.height, headerView.frame.width / 2, 40), name: "关注", value: 0)
+        self.followers = RepoInfoView(frame: CGRectMake(0, headerView.frame.height, headerView.frame.width / 2, 40), name: "团队项目", value: 0)
+        self.following = RepoInfoView(frame: CGRectMake(headerView.frame.width / 2, headerView.frame.height, headerView.frame.width / 2, 40), name: "代码片段", value: 0)
         self.addSubview(followers!)
         self.addSubview(following!)
         
@@ -66,7 +66,7 @@ class OrgsDetailHeaderView: UIView {
         self.avatar?.sd_setImageWithURL(NSURL(string: orgsData["avatar_url"].string!))
         self.name?.text = orgsData["login"].string!
         self.desc?.text = orgsData["description"].string!
-        self.followers?.setValue(orgsData["followers"].int!)
-        self.following?.setValue(orgsData["following"].int!)
+        self.followers?.setValue(orgsData["public_repos"].int!)
+        self.following?.setValue(orgsData["public_gists"].int!)
     }
 }
