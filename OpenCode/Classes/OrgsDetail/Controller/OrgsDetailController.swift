@@ -42,11 +42,12 @@ class OrgsDetailController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        let arr = [2,2,1]
+        return arr[section]
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -68,6 +69,10 @@ class OrgsDetailController: UIViewController, UITableViewDataSource, UITableView
                 }else if(indexPath.row == 1){
                     cell?.textLabel?.text = "提问"
                 }
+            }else if(indexPath.section == 2){
+                if(indexPath.row == 0){
+                    cell?.textLabel?.text = "博客"
+                }
             }
         }
         
@@ -76,6 +81,30 @@ class OrgsDetailController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(indexPath)
+        if(orgsData != nil){
+            if(indexPath.section == 0){
+                if(indexPath.row == 0){
+                    print("成员")
+                }else if(indexPath.row == 1){
+                    print("项目")
+                }
+            }else if(indexPath.section == 1){
+                if(indexPath.row == 0){
+                    print("事件")
+                }else if(indexPath.row == 1){
+                    print("提问")
+                }
+            }else if(indexPath.section == 2){
+                if(indexPath.row == 0){
+                    print("博客")
+                    if let url = orgsData!["blog"].string{
+                        UIApplication.sharedApplication().openURL(NSURL(string: url)!)
+                    }else{
+                        print("该组织没有博客")
+                    }
+                }
+            }
+        }
     }
     
 
