@@ -271,8 +271,29 @@ class Github {
         }
         requestPublicData(url, completionHandler: completionHandler)
     }
+    //获取组织信息
     class func getOrgsInfo(orgsName:String, completionHandler:(AnyObject?) -> Void){
         let url = "https://api.github.com/orgs/\(orgsName)"
+        requestPublicData(url, completionHandler: completionHandler)
+    }
+    //获取组织成员列表
+    class func getOrgsMemberList(orgsName:String, completionHandler:(AnyObject?) -> Void){
+        let url = "https://api.github.com/orgs/\(orgsName)/members"
+        requestPublicData(url, completionHandler: completionHandler)
+    }
+    //获取组织项目列表
+    class func getOrgsRepoList(orgsName:String, completionHandler:(AnyObject?) -> Void){
+        let url = "https://api.github.com/orgs/\(orgsName)/repos"
+        requestPublicData(url, completionHandler: completionHandler)
+    }
+    //获取组织事件列表
+    class func getOrgsEventList(orgsName:String, completionHandler:(AnyObject?) -> Void){
+        let url = "https://api.github.com/orgs/\(orgsName)/events"
+        requestPublicData(url, completionHandler: completionHandler)
+    }
+    //获取组织提问列表
+    class func getOrgsIssueList(orgsName:String, completionHandler:(AnyObject?) -> Void){
+        let url = "https://api.github.com/orgs/\(orgsName)/issues"
         requestPublicData(url, completionHandler: completionHandler)
     }
 
