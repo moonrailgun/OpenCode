@@ -15,9 +15,12 @@ class NewsEventCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var userAvatarImage: UIImageView!
     @IBOutlet weak var descText: UITextView!
+    @IBOutlet weak var newBadge: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        self.newBadge.hidden = true
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

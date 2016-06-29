@@ -15,8 +15,6 @@ class UserEventsController: UIViewController, UITableViewDataSource {
     lazy var tableView:UITableView = UITableView(frame: self.view.bounds, style: .Plain)
     var eventData:JSON = []
     
-    var newEvent = [NSIndexPath]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -60,12 +58,11 @@ class UserEventsController: UIViewController, UITableViewDataSource {
                 (cell as! NewsEventCell).setData(data["type"].string!, dateStr: data["created_at"].string!, userAvatarUrl: data["actor"]["avatar_url"].string!, descText: generateEventDesc(data))
             }
             
-            
-            if(GithubTime(dateStr: data["created_at"].string!).getIntervalSecond() < 24 * 60 * 60 && !newEvent.contains(indexPath)){
+            if(GithubTime(dateStr: data["created_at"].string!).getIntervalSecond() < 24 * 60 * 60){
                 //一天内的新事件
-                newEvent.append(indexPath)
-                cell?.addSubview(NewBadge(frame: CGRectMake(cell!.frame.width - 10,0,10,10)))
-                print(cell!.frame.width)
+                (cell as! NewsEventCell).newBadge.hidden = false
+            }else{
+                (cell as! NewsEventCell).newBadge.hidden = true
             }
         }
         

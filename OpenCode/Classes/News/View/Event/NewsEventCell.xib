@@ -32,15 +32,20 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BcZ-Sl-sjG">
                         <rect key="frame" x="36" y="10" width="16" height="16"/>
                     </imageView>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cgz-tW-OiL" customClass="NewBadge" customModule="OpenCode" customModuleProvider="target">
+                        <rect key="frame" x="310" y="0.0" width="10" height="10"/>
+                        <color key="backgroundColor" red="1" green="0.32644274639999998" blue="0.202241104" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
                 </subviews>
             </tableViewCellContentView>
             <connections>
                 <outlet property="dateLabel" destination="eja-GK-QQH" id="uiG-5W-Zf5"/>
                 <outlet property="descText" destination="gGr-BR-ftH" id="suM-Od-gsm"/>
                 <outlet property="eventImage" destination="BcZ-Sl-sjG" id="TLp-AO-QFO"/>
+                <outlet property="newBadge" destination="Cgz-tW-OiL" id="wRv-wS-4qs"/>
                 <outlet property="userAvatarImage" destination="7Ud-HW-YuQ" id="fsy-VB-7gN"/>
             </connections>
-            <point key="canvasLocation" x="299" y="321"/>
+            <point key="canvasLocation" x="314.5" y="321"/>
         </tableViewCell>
     </objects>
     <resources>
