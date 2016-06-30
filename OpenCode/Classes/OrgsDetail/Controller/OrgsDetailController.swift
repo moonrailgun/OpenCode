@@ -82,25 +82,37 @@ class OrgsDetailController: UIViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(indexPath)
         if(orgsData != nil){
-            if(indexPath.section == 0){
-                if(indexPath.row == 0){
-                    print("成员")
-                }else if(indexPath.row == 1){
-                    print("项目")
-                }
-            }else if(indexPath.section == 1){
-                if(indexPath.row == 0){
-                    print("事件")
-                }else if(indexPath.row == 1){
-                    print("提问")
-                }
-            }else if(indexPath.section == 2){
-                if(indexPath.row == 0){
-                    print("博客")
-                    if let url = orgsData!["blog"].string{
-                        UIApplication.sharedApplication().openURL(NSURL(string: url)!)
-                    }else{
-                        print("该组织没有博客")
+            if let orgsName = orgsData!["login"].string {
+                if(indexPath.section == 0){
+                    if(indexPath.row == 0){
+                        print("成员")
+                        ProgressHUD.show()
+                        Github.getOrgsMemberList(orgsName, completionHandler: { (data:AnyObject?) in
+                            ProgressHUD.dismiss()
+                            
+                            OperationQueueHelper.operateInMainQueue({ 
+                                let controller = UserListController()
+                                controller.userListData = JSON(data!).array
+                                self.navigationController?.pushViewController(controller, animated: true)
+                            })
+                        })
+                    }else if(indexPath.row == 1){
+                        print("项目")
+                    }
+                }else if(indexPath.section == 1){
+                    if(indexPath.row == 0){
+                        print("事件")
+                    }else if(indexPath.row == 1){
+                        print("提问")
+                    }
+                }else if(indexPath.section == 2){
+                    if(indexPath.row == 0){
+                        print("博客")
+                        if let url = orgsData!["blog"].string{
+                            UIApplication.sharedApplication().openURL(NSURL(string: url)!)
+                        }else{
+                            print("该组织没有博客")
+                        }
                     }
                 }
             }
