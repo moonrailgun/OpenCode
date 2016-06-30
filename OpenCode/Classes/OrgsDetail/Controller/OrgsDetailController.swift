@@ -85,23 +85,42 @@ class OrgsDetailController: UIViewController, UITableViewDataSource, UITableView
             if let orgsName = orgsData!["login"].string {
                 if(indexPath.section == 0){
                     if(indexPath.row == 0){
-                        print("成员")
+                        //print("成员")
                         ProgressHUD.show()
                         Github.getOrgsMemberList(orgsName, completionHandler: { (data:AnyObject?) in
-                            ProgressHUD.dismiss()
-                            
-                            OperationQueueHelper.operateInMainQueue({ 
+                            OperationQueueHelper.operateInMainQueue({
+                                ProgressHUD.dismiss()
                                 let controller = UserListController()
                                 controller.userListData = JSON(data!).array
                                 self.navigationController?.pushViewController(controller, animated: true)
                             })
                         })
                     }else if(indexPath.row == 1){
-                        print("项目")
+                        //print("项目")
+                        ProgressHUD.show()
+                        Github.getOrgsRepoList(orgsName, completionHandler: { (data:AnyObject?) in
+                            OperationQueueHelper.operateInMainQueue({ 
+                                ProgressHUD.dismiss()
+                                
+                                let controller = RepoListController()
+                                controller.repositoryDataList = JSON(data!)
+                                self.navigationController?.pushViewController(controller, animated: true)
+                            })
+                        })
                     }
                 }else if(indexPath.section == 1){
                     if(indexPath.row == 0){
-                        print("事件")
+                        //print("事件")
+                        ProgressHUD.show()
+                        Github.getOrgsEventList(orgsName, completionHandler: { (data:AnyObject?) in
+                            OperationQueueHelper.operateInMainQueue({
+                                ProgressHUD.dismiss()
+                                
+                                let controller = UserEventsController()
+                                controller.eventData = JSON(data!)
+                                self.navigationController?.pushViewController(controller, animated: true)
+                            })
+                        })
                     }else if(indexPath.row == 1){
                         print("提问")
                     }
