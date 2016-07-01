@@ -116,10 +116,16 @@ class ToolController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         print(indexPath)
         
-        if(indexPath.row == 0 && indexPath.section == 0){
-            print("二维码扫描器")
-            let controller = QRCodeController()
-            self.navigationController?.pushViewController(controller, animated: true)
+        if(indexPath.section == 0){
+            if(indexPath.row == 0){
+                print("二维码扫描器")
+                let controller = QRCodeController()
+                self.navigationController?.pushViewController(controller, animated: true)
+            }else if(indexPath.row == 1){
+                print("局域网扫描")
+                let controller = LANScanController()
+                self.navigationController?.pushViewController(controller, animated: true)
+            }
         }
     }
 

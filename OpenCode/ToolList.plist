@@ -4,6 +4,13 @@
 <dict>
 	<key>Tool</key>
 	<dict>
+		<key>LANScan</key>
+		<dict>
+			<key>Name</key>
+			<string>局域网扫描</string>
+			<key>Image</key>
+			<string></string>
+		</dict>
 		<key>QRCode</key>
 		<dict>
 			<key>Name</key>

@@ -103,6 +103,18 @@ class QRCodeScanningController: UIViewController,AVCaptureMetadataOutputObjectsD
         scanningResult?.editable = false
         scanningResult?.selectable = false
         self.view.addSubview(scanningResult!)
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "在网页中打开", style: UIBarButtonItemStyle.Plain, target: self, action: "openWithWeb:")
+    }
+    
+    func openWithWeb(){
+        if(self.lastScanningResult != ""){
+            if let url = NSURL(string: self.lastScanningResult){
+                UIApplication.sharedApplication().openURL(url)
+            }else{
+                print("不是一个合法的地址")
+            }
+        }
     }
     
     //扫描结果
