@@ -121,10 +121,12 @@ class TrendingView: UIView, UITableViewDataSource, UITableViewDelegate {
         print(indexPath)
         let item = self.data![indexPath.row]
         if let repoFullName = item["full_name"].string{
+            ProgressHUD.show()
             Github.getRepoInfo(repoFullName, completionHandler: { (data:AnyObject?) in
-                let controller = RepoDetailController()
-                controller.repoDetailData = data
                 OperationQueueHelper.operateInMainQueue({
+                    ProgressHUD.dismiss()
+                    let controller = RepoDetailController()
+                    controller.repoDetailData = data
                     self.controller?.navigationController?.pushViewController(controller, animated: true)
                 })
             })

@@ -68,29 +68,34 @@ class FileBrowserController: UIViewController, UITableViewDataSource, UITableVie
             let path = fileCell["path"].string
             if(type == "file"){
                 //打开代码浏览器
+                ProgressHUD.show()
                 Github.getRepoContent(self.repoFullName!, path: path!, completionHandler: { (data:AnyObject?) in
                     if let d = data{
-                        let j = JSON(d)
-                        
-                        if(j["type"] != "file"){
-                            print("文件类型出错")
-                            return
-                        }
-                        
-                        let codeBrowser = CodeBrowserController()
-                        codeBrowser.parseData(j["content"].string!, encoding: j["encoding"].string!)
                         OperationQueueHelper.operateInMainQueue({
+                            ProgressHUD.dismiss()
+                            
+                            let j = JSON(d)
+                            
+                            if(j["type"] != "file"){
+                                print("文件类型出错")
+                                return
+                            }
+                            
+                            let codeBrowser = CodeBrowserController()
+                            codeBrowser.parseData(j["content"].string!, encoding: j["encoding"].string!)
                             self.navigationController?.pushViewController(codeBrowser, animated: true)
                         })
                     }
                 })
             }else if(type == "dir"){
                 //继续浏览
+                ProgressHUD.show()
                 Github.getRepoContent(self.repoFullName!, path: path!, completionHandler: { (data:AnyObject?) in
-                    let fileBrowser = FileBrowserController()
-                    fileBrowser.loadData(self.repoFullName, data: data)
-                    fileBrowser.title = path!
                     OperationQueueHelper.operateInMainQueue({
+                        ProgressHUD.dismiss()
+                        let fileBrowser = FileBrowserController()
+                        fileBrowser.loadData(self.repoFullName, data: data)
+                        fileBrowser.title = path!
                         self.navigationController?.pushViewController(fileBrowser, animated: true)
                     })
                 })

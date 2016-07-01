@@ -56,11 +56,13 @@ class RepoDetailController: UIViewController, UITableViewDataSource,UITableViewD
         print("查看源码")
         if let data = repoDetailData{
             if let repoFullName = JSON(data)["full_name"].string {
+                ProgressHUD.show()
                 Github.getRepoContent(repoFullName, path: "", completionHandler: { (data:AnyObject?) in
                     let fileBrowser = FileBrowserController()
                     fileBrowser.loadData(repoFullName, data: data)
                     fileBrowser.title = repoFullName
                     OperationQueueHelper.operateInMainQueue({
+                        ProgressHUD.dismiss()
                         self.navigationController?.pushViewController(fileBrowser, animated: true)
                     })
                 })
@@ -206,8 +208,10 @@ class RepoDetailController: UIViewController, UITableViewDataSource,UITableViewD
             //owner
             if let username:String = JSON(self.repoDetailData!)["owner"]["login"].string{
                 print("owner:\(username)")
+                ProgressHUD.show()
                 Github.getUserInfo(username, completionHandler: { (data:AnyObject?) in
                     OperationQueueHelper.operateInMainQueue({
+                        ProgressHUD.dismiss()
                         if let d = data{
                             let controller = UserInfoController()
                             controller.parseData(d)

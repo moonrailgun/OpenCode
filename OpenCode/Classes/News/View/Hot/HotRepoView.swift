@@ -121,10 +121,12 @@ class HotRepoView: UIView, UITableViewDataSource, UITableViewDelegate {
         print(indexPath)
         let item = self.hotRepoData![indexPath.row]
         if let repoFullName = item["full_name"].string{
+            ProgressHUD.show()
             Github.getRepoInfo(repoFullName, completionHandler: { (data:AnyObject?) in
                 let controller = RepoDetailController()
                 controller.repoDetailData = data
-                OperationQueueHelper.operateInMainQueue({ 
+                OperationQueueHelper.operateInMainQueue({
+                    ProgressHUD.dismiss()
                     self.controller?.navigationController?.pushViewController(controller, animated: true)
                 })
             })

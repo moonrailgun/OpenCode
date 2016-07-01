@@ -50,6 +50,7 @@ class SearchController: UIViewController, UISearchBarDelegate, UITableViewDataSo
         
         self.searchBar!.resignFirstResponder()
         
+        ProgressHUD.show()
         Github.getGithubRepoSearch(searchText, page: nil) { (data:AnyObject?) in
             if let d = data{
                 let json = JSON(d)
@@ -57,7 +58,8 @@ class SearchController: UIViewController, UISearchBarDelegate, UITableViewDataSo
                 let items = json["items"]
                 self.searchResult = items
                 
-                OperationQueueHelper.operateInMainQueue({ 
+                OperationQueueHelper.operateInMainQueue({
+                    ProgressHUD.dismiss()
                     self.searchResultTable?.reloadData()
                 })
             }

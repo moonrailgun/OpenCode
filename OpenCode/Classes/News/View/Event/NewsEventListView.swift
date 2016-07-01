@@ -79,10 +79,12 @@ class NewsEventListView: UIView, UITableViewDataSource, UITableViewDelegate {
         if let d = dataArr{
             let item = d[indexPath.row]
             
+            ProgressHUD.show()
             Github.getRepoInfo(item["repo"]["name"].string!, completionHandler: { (data:AnyObject?) in
-                let controller = RepoDetailController()
-                controller.repoDetailData = data
-                OperationQueueHelper.operateInMainQueue({ 
+                OperationQueueHelper.operateInMainQueue({
+                    ProgressHUD.dismiss()
+                    let controller = RepoDetailController()
+                    controller.repoDetailData = data
                     self.controller?.navigationController?.pushViewController(controller, animated: true)
                 })
             })
