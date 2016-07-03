@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import LANScanner
+import PlainPing
 
 class LANScanController: UIViewController {
     let LAN_CELL_ID = "lan"
@@ -28,6 +28,15 @@ class LANScanController: UIViewController {
     func startScan(){
         print("尚未完成")
         print("本机IP:\(getIFAddresses())")
+        ping("www.baidu.com") { (timeElapsed, error) in
+            if let latency = timeElapsed {
+                print("latency (ms): \(latency)")
+            }
+            
+            if let error = error {
+                print("error: \(error.localizedFailureReason) \(error.localizedDescription)")
+            }
+        }
     }
     
     func getIFAddresses()->[String]{
@@ -54,6 +63,10 @@ class LANScanController: UIViewController {
         }
         
         return addresses
+    }
+    
+    func ping(hostname:String, completionHandler:(timeElapsed:Double?, error:NSError?) -> Void){
+        PlainPing.ping(hostname, withTimeout: 1.0, completionBlock: completionHandler)
     }
 
     /*
