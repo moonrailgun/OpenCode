@@ -11,7 +11,6 @@ import PlainPing
 
 class LANScanController: UIViewController {
     let LAN_CELL_ID = "lan"
-    var lanAddressList = [LANDevice]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,13 +27,22 @@ class LANScanController: UIViewController {
     func startScan(){
         print("尚未完成")
         print("本机IP:\(getIFAddresses())")
-        ping("www.baidu.com") { (timeElapsed, error) in
-            if let latency = timeElapsed {
-                print("latency (ms): \(latency)")
-            }
-            
-            if let error = error {
-                print("error: \(error.localizedFailureReason) \(error.localizedDescription)")
+        let localAddress:NSString = getIFAddresses()[0]
+        let a = localAddress.componentsSeparatedByString(".")
+        //TODO 添加子网掩码（目前为简单）
+        if(self.isIpAddressValid(localAddress) && a.count == 4){
+            for i in 0 ... 255{
+                let host = NSString(format: "%@.%@.%@.%d",a[0],a[1],a[2],i)
+                ping(host as String, completionHandler: { (timeElapsed, error) in
+                    if let latency = timeElapsed {
+                        print(host)
+                        print("latency (ms): \(latency)")
+                    }
+                    
+                    if let error = error {
+                        print("error: \(error.localizedFailureReason) \(error.localizedDescription)")
+                    }
+                })
             }
         }
     }
@@ -68,7 +76,17 @@ class LANScanController: UIViewController {
     func ping(hostname:String, completionHandler:(timeElapsed:Double?, error:NSError?) -> Void){
         PlainPing.ping(hostname, withTimeout: 1.0, completionBlock: completionHandler)
     }
-
+    
+    func isIpAddressValid(ipAddress:NSString)->Bool{
+        var pin = in_addr()
+        let success = inet_aton(ipAddress.UTF8String, &pin);
+        if (success == 1) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
