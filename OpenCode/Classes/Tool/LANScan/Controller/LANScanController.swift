@@ -29,7 +29,7 @@ class LANScanController: UIViewController {
         print("本机IP:\(getIFAddresses())")
         let localAddress:NSString = getIFAddresses()[0]
         let a = localAddress.componentsSeparatedByString(".")
-        //TODO 添加子网掩码（目前为简单）
+        //TODO 添加子网掩码(目前为简单)
         if(self.isIpAddressValid(localAddress) && a.count == 4){
             for i in 0 ... 255{
                 let host = NSString(format: "%@.%@.%@.%d",a[0],a[1],a[2],i)
