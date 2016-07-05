@@ -19,12 +19,25 @@ class LANScanController: UIViewController,UITableViewDataSource, LANScannerDeleg
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Refresh, target: self, action: "restartScan:")
+        
         tableView.dataSource = self
         self.view.addSubview(tableView)
         
-        self.title = "正在扫描"
-        let scanner = LANScanner(delegate: self, continuous: false)
-        scanner.startScan()
+        self.title = "正在扫描..."
+        scanner = LANScanner(delegate: self, continuous: false)
+        scanner!.startScan()
+        print("开始扫描")
+    }
+    
+    func restartScan(barButtonItem:UIBarButtonItem){
+        self.title = "正在扫描..."
+        
+        self.devices.removeAll()
+        self.tableView.reloadData()
+        
+        self.scanner?.stopScan()
+        self.scanner?.startScan()
         print("开始扫描")
     }
 
