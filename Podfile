@@ -11,7 +11,7 @@ target 'OpenCode' do
     pod 'SVProgressHUD'
     pod 'AFNetworking'
     pod 'TSMarkdownParser'
-    pod 'PlainPing'
+    pod 'LANScanner'
 end
 
 target 'OpenCodeTests' do
