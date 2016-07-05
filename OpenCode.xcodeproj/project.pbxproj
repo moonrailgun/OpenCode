@@ -18,6 +18,7 @@
 		BA0CCE281D2135E40009F02A /* OrgsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0CCE271D2135E40009F02A /* OrgsDetailController.swift */; };
 		BA0CCE2C1D2137510009F02A /* OrgsDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0CCE2B1D2137510009F02A /* OrgsDetailHeaderView.swift */; };
 		BA2BF3271D26789700DE9C8C /* LANScanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BF3261D26789700DE9C8C /* LANScanController.swift */; };
+		BA2BF33D1D2BF69C00DE9C8C /* PingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BF33C1D2BF69B00DE9C8C /* PingController.swift */; };
 		BA3AD1FA1CCA245A0034B21E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD1F91CCA245A0034B21E /* AppDelegate.swift */; };
 		BA3AD2011CCA245A0034B21E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD1FF1CCA245A0034B21E /* Main.storyboard */; };
 		BA3AD2031CCA245A0034B21E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD2021CCA245A0034B21E /* Images.xcassets */; };
@@ -121,6 +122,7 @@
 		BA0CCE2B1D2137510009F02A /* OrgsDetailHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrgsDetailHeaderView.swift; path = Classes/OrgsDetail/View/OrgsDetailHeaderView.swift; sourceTree = "<group>"; };
 		BA2BF3261D26789700DE9C8C /* LANScanController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LANScanController.swift; path = Classes/Tool/LANScan/Controller/LANScanController.swift; sourceTree = "<group>"; };
 		BA2BF32E1D2690B100DE9C8C /* OpenCode-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OpenCode-Bridging-Header.h"; sourceTree = "<group>"; };
+		BA2BF33C1D2BF69B00DE9C8C /* PingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PingController.swift; path = Classes/Tool/Ping/Controller/PingController.swift; sourceTree = "<group>"; };
 		BA3AD1F41CCA245A0034B21E /* OpenCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA3AD1F81CCA245A0034B21E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA3AD1F91CCA245A0034B21E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -328,6 +330,22 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		BA2BF33A1D2BF66000DE9C8C /* Ping */ = {
+			isa = PBXGroup;
+			children = (
+				BA2BF33B1D2BF66700DE9C8C /* Controller */,
+			);
+			name = Ping;
+			sourceTree = "<group>";
+		};
+		BA2BF33B1D2BF66700DE9C8C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA2BF33C1D2BF69B00DE9C8C /* PingController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		BA3AD1EB1CCA245A0034B21E = {
 			isa = PBXGroup;
 			children = (
@@ -515,6 +533,7 @@
 		BA505B071CF3FB7A00BE7EC9 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				BA2BF33A1D2BF66000DE9C8C /* Ping */,
 				BA2BF3231D266EC000DE9C8C /* LANScan */,
 				BA4F89E31D0409DB0051A525 /* QRCode */,
 				BA79E0291CF5944600E86258 /* View */,
@@ -1094,6 +1113,7 @@
 				BAC5DF351CEC082300EB2EFE /* UserInfoController.swift in Sources */,
 				BA05E7471CFEDB7900855A9E /* MyLoginView.swift in Sources */,
 				BAFB43B91D1BC8A300D0E2C3 /* UserListController.swift in Sources */,
+				BA2BF33D1D2BF69C00DE9C8C /* PingController.swift in Sources */,
 				BAFB43AE1D153A1000D0E2C3 /* ComponentUsageController.swift in Sources */,
 				BA2BF3271D26789700DE9C8C /* LANScanController.swift in Sources */,
 				BA3AD21E1CCA278B0034B21E /* Github.swift in Sources */,

@@ -118,10 +118,14 @@ class ToolController: UIViewController, UICollectionViewDataSource, UICollection
         
         if(indexPath.section == 0){
             if(indexPath.row == 0){
+                print("ping")
+                let controller = PingController()
+                self.navigationController?.pushViewController(controller, animated: true)
+            }else if(indexPath.row == 1){
                 print("二维码扫描器")
                 let controller = QRCodeController()
                 self.navigationController?.pushViewController(controller, animated: true)
-            }else if(indexPath.row == 1){
+            }else if(indexPath.row == 2){
                 print("局域网扫描")
                 let controller = LANScanController()
                 self.navigationController?.pushViewController(controller, animated: true)

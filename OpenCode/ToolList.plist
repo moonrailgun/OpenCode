@@ -4,6 +4,13 @@
 <dict>
 	<key>Tool</key>
 	<dict>
+		<key>Ping</key>
+		<dict>
+			<key>Name</key>
+			<string>Ping</string>
+			<key>Image</key>
+			<string></string>
+		</dict>
 		<key>LANScan</key>
 		<dict>
 			<key>Name</key>
