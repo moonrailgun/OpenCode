@@ -12,6 +12,7 @@ target 'OpenCode' do
     pod 'AFNetworking'
     pod 'TSMarkdownParser'
     pod 'LANScanner'
+    pod 'FSLineChart'
 end
 
 target 'OpenCodeTests' do
