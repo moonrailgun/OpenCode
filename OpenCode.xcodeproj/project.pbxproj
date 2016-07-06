@@ -31,6 +31,7 @@
 		BA4465811D07C18C007AEC2F /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4465801D07C18C007AEC2F /* SettingsController.swift */; };
 		BA4465831D094502007AEC2F /* AuthorizationsManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4465821D094502007AEC2F /* AuthorizationsManagerController.swift */; };
 		BA4465851D094844007AEC2F /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4465841D094844007AEC2F /* ProgressHUD.swift */; };
+		BA44EAAA1D2D3A77004CB29E /* PingDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA44EAA91D2D3A77004CB29E /* PingDetailController.swift */; };
 		BA4609D11CF95AB400D2415B /* SearchRepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4609CF1CF95AB400D2415B /* SearchRepoCell.swift */; };
 		BA4609D21CF95AB400D2415B /* SearchRepoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA4609D01CF95AB400D2415B /* SearchRepoCell.xib */; };
 		BA47B7451CE99B4A00CF3947 /* OldUserListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47B7441CE99B4A00CF3947 /* OldUserListController.swift */; };
@@ -139,6 +140,7 @@
 		BA4465801D07C18C007AEC2F /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsController.swift; path = Classes/Settings/Controller/SettingsController.swift; sourceTree = "<group>"; };
 		BA4465821D094502007AEC2F /* AuthorizationsManagerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthorizationsManagerController.swift; path = Classes/Settings/Controller/AuthorizationsManagerController.swift; sourceTree = "<group>"; };
 		BA4465841D094844007AEC2F /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressHUD.swift; path = Classes/Other/ProgressHUD.swift; sourceTree = "<group>"; };
+		BA44EAA91D2D3A77004CB29E /* PingDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PingDetailController.swift; path = Classes/Tool/Ping/Controller/PingDetailController.swift; sourceTree = "<group>"; };
 		BA4609CF1CF95AB400D2415B /* SearchRepoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchRepoCell.swift; path = Classes/Search/View/SearchRepoCell.swift; sourceTree = "<group>"; };
 		BA4609D01CF95AB400D2415B /* SearchRepoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchRepoCell.xib; path = Classes/Search/View/SearchRepoCell.xib; sourceTree = "<group>"; };
 		BA47B7441CE99B4A00CF3947 /* OldUserListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OldUserListController.swift; path = Classes/UserList/Controller/OldUserListController.swift; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				BA2BF33C1D2BF69B00DE9C8C /* PingController.swift */,
+				BA44EAA91D2D3A77004CB29E /* PingDetailController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1088,6 +1091,7 @@
 				BA8619051CDF289D00BE9E9C /* RepoDetailController.swift in Sources */,
 				BA47B7451CE99B4A00CF3947 /* OldUserListController.swift in Sources */,
 				BA51C0541CF69B88005CCCC7 /* RepoIssuesController.swift in Sources */,
+				BA44EAAA1D2D3A77004CB29E /* PingDetailController.swift in Sources */,
 				BA715E021CFD2EC800887D73 /* NewsTopDelegate.swift in Sources */,
 				BA505B0A1CF3FBB900BE7EC9 /* ToolController.swift in Sources */,
 				BA5AF8331D02C3490015B601 /* HotRepoView.swift in Sources */,

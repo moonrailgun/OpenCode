@@ -39,6 +39,20 @@ class PingController: UIViewController {
     }
     
     func startPing(){
+        if let address = pingHostAddress.text{
+            let temp = NSString(string: address)
+            let tempComponents = temp.componentsSeparatedByString(".")
+            if (address != "" && (temp.substringToIndex(3) == "http" || tempComponents.count >= 3)){
+                print(address)
+                let controller = PingDetailController()
+                controller.hostAddress = address
+                self.navigationController?.pushViewController(controller, animated: true)
+            }else{
+                let controller = UIAlertController(title: nil, message: "输入地址不合法", preferredStyle: .Alert)
+                controller.addAction(UIAlertAction(title: "确定", style: .Default, handler: nil))
+                self.presentViewController(controller, animated: true, completion: nil)
+            }
+        }
     }
     
 
