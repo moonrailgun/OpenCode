@@ -38,7 +38,7 @@ class SearchRepoCell: UITableViewCell {
         self.fullNameLabel.text = item["full_name"].string
         self.descriptionText.text = item["description"].string
         self.languageLabel.text = item["language"].string
-        self.updateTimeLabel.text = item["updated_at"].string
+        self.updateTimeLabel.text = GithubTime(dateStr: item["updated_at"].string!).onlyDay()
         self.starNumLabel.text = "\(item["stargazers_count"].int!) Stars"
         self.forkNumLabel.text = "\(item["forks"].int!) Forks"
     }
