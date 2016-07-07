@@ -119,7 +119,7 @@ class FileBrowserController: UIViewController, UITableViewDataSource, UITableVie
                 if(size != 0){
                     //文件
                     cell?.accessoryType = .None
-                    cell?.detailTextLabel?.text = size < 1024 ? "\(size)KB" : "\(size / 1024)MB"
+                    cell?.detailTextLabel?.text = size < 1024 ? "\(size)B" : "\(size / 1024)KB"
                 }else{
                     //文件夹
                     

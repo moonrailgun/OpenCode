@@ -22,7 +22,11 @@ class UserListCell: UICollectionViewCell {
 
     func setData(data:JSON){
         let avatar_url = data["avatar_url"].string!
-        let username = data["login"].string!
+        
+        var username = data["login"].string!
+        if let name = data["name"].string{
+            username = name
+        }
         
         image.sd_setImageWithURL(NSURL(string: avatar_url))
         label.text = username
