@@ -147,7 +147,7 @@ class RepoDetailController: UIViewController, UITableViewDataSource,UITableViewD
                 
                 cell.accessoryType = .DisclosureIndicator
                 cell.textLabel?.text = "拥有人"
-                cell.imageView?.image = UIImage(named: "box")
+                cell.imageView?.image = UIImage(named: "people")
                 
                 let size = cell.bounds
                 let detail = UILabel(frame: CGRect(x: size.width - 30 - 100, y: 0, width: 100, height: size.height))
@@ -168,13 +168,13 @@ class RepoDetailController: UIViewController, UITableViewDataSource,UITableViewD
             switch indexPath.row {
             case 0:
                 cell.textLabel?.text = "查看事件"
-                cell.imageView?.image = UIImage(named: "box")
+                cell.imageView?.image = UIImage(named: "commit")
             case 1:
                 cell.textLabel?.text = "查看提问"
-                cell.imageView?.image = UIImage(named: "box")
+                cell.imageView?.image = UIImage(named: "comment")
             case 2:
                 cell.textLabel?.text = "README.md"
-                cell.imageView?.image = UIImage(named: "box")
+                cell.imageView?.image = UIImage(named: "repo")
             default:
                 break
             }
@@ -183,13 +183,13 @@ class RepoDetailController: UIViewController, UITableViewDataSource,UITableViewD
             switch indexPath.row {
             case 0:
                 cell.textLabel?.text = "提交纪录"
-                cell.imageView?.image = UIImage(named: "box")
+                cell.imageView?.image = UIImage(named: "tag")
             case 1:
                 cell.textLabel?.text = "拉取请求"
-                cell.imageView?.image = UIImage(named: "box")
+                cell.imageView?.image = UIImage(named: "merge")
             case 2:
                 cell.textLabel?.text = "查看分支"
-                cell.imageView?.image = UIImage(named: "box")
+                cell.imageView?.image = UIImage(named: "fork")
             default:
                 break
             }

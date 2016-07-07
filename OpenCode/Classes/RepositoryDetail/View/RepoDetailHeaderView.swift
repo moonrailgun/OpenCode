@@ -79,17 +79,17 @@ class RepoDetailHeaderView: UIView {
         let descStartY:CGFloat = 250
         let descWidth =  floor(frame.width / 2)
         let descHeight:CGFloat = 40
-        self.repoDesc1 = RepoDescView(frame: CGRectMake(0, descStartY + descHeight*0, descWidth, 40), icon: UIImage(named: "box")!, desc: "")
+        self.repoDesc1 = RepoDescView(frame: CGRectMake(0, descStartY + descHeight*0, descWidth, 40), icon: UIImage(named: "watch")!, desc: "")
         repoDesc1!.backgroundColor = UIColor.whiteColor()
-        self.repoDesc2 = RepoDescView(frame: CGRectMake(descWidth, descStartY + descHeight*0, descWidth, 40), icon: UIImage(named: "box")!, desc: "")
+        self.repoDesc2 = RepoDescView(frame: CGRectMake(descWidth, descStartY + descHeight*0, descWidth, 40), icon: UIImage(named: "code")!, desc: "")
         repoDesc2!.backgroundColor = UIColor.whiteColor()
-        self.repoDesc3 = RepoDescView(frame: CGRectMake(0, descStartY + descHeight*1, descWidth, 40), icon: UIImage(named: "box")!, desc: "")
+        self.repoDesc3 = RepoDescView(frame: CGRectMake(0, descStartY + descHeight*1, descWidth, 40), icon: UIImage(named: "comment")!, desc: "")
         repoDesc3!.backgroundColor = UIColor.whiteColor()
-        self.repoDesc4 = RepoDescView(frame: CGRectMake(descWidth, descStartY + descHeight*1, descWidth, 40), icon: UIImage(named: "box")!, desc: "")
+        self.repoDesc4 = RepoDescView(frame: CGRectMake(descWidth, descStartY + descHeight*1, descWidth, 40), icon: UIImage(named: "fork")!, desc: "")
         repoDesc4!.backgroundColor = UIColor.whiteColor()
-        self.repoDesc5 = RepoDescView(frame: CGRectMake(0, descStartY + descHeight*2, descWidth, 40), icon: UIImage(named: "box")!, desc: "")
+        self.repoDesc5 = RepoDescView(frame: CGRectMake(0, descStartY + descHeight*2, descWidth, 40), icon: UIImage(named: "tag")!, desc: "")
         repoDesc5!.backgroundColor = UIColor.whiteColor()
-        self.repoDesc6 = RepoDescView(frame: CGRectMake(descWidth, descStartY + descHeight*2, descWidth, 40), icon: UIImage(named: "box")!, desc: "")			
+        self.repoDesc6 = RepoDescView(frame: CGRectMake(descWidth, descStartY + descHeight*2, descWidth, 40), icon: UIImage(named: "repo")!, desc: "")			
         repoDesc6!.backgroundColor = UIColor.whiteColor()
         self.addSubview(repoDesc1!)
         self.addSubview(repoDesc2!)
@@ -115,7 +115,7 @@ class RepoDetailHeaderView: UIView {
         self.repoDesc2?.descLabel.text = language
         self.repoDesc3?.descLabel.text = "\(issuesNum) Issues"
         self.repoDesc4?.descLabel.text = "\(branchNum) Branch"
-        self.repoDesc5?.descLabel.text = Github.parseGithubTime(createdDate)//TODO
+        self.repoDesc5?.descLabel.text = GithubTime(dateStr: createdDate).onlyDay()
         self.repoDesc6?.descLabel.text = size > 1024 ? "\(String(format: "%.2f", Float(size) / 1024))MB":"\(size)KB"
     }
 }
