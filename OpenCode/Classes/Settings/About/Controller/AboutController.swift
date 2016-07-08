@@ -65,12 +65,27 @@ class AboutController: UIViewController, UITableViewDataSource, UITableViewDeleg
         print(indexPath)
         
         if(indexPath.section == 0){
-            if(indexPath.row == 3){
-                if let str = try? NSString(contentsOfFile: NSBundle.mainBundle().pathForResource("ComponentUsage", ofType: "txt")!, encoding: NSUTF8StringEncoding){
+            if(indexPath.row == 2){
+                ProgressHUD.show()
+                if let str = try? NSString(contentsOfFile: NSBundle.mainBundle().pathForResource("AboutOpenSource", ofType: "txt")!, encoding: NSUTF8StringEncoding){
+                    ProgressHUD.dismiss()
                     let controller = ComponentUsageController()
                     controller.text = str as String
                     print(str as String)
                     self.navigationController?.pushViewController(controller, animated: true)
+                }else{
+                    ProgressHUD.dismiss()
+                }
+            }else if(indexPath.row == 3){
+                ProgressHUD.show()
+                if let str = try? NSString(contentsOfFile: NSBundle.mainBundle().pathForResource("ComponentUsage", ofType: "txt")!, encoding: NSUTF8StringEncoding){
+                    ProgressHUD.dismiss()
+                    let controller = ComponentUsageController()
+                    controller.text = str as String
+                    print(str as String)
+                    self.navigationController?.pushViewController(controller, animated: true)
+                }else{
+                    ProgressHUD.dismiss()
                 }
             }
         }
