@@ -11,7 +11,7 @@ target 'OpenCode' do
     pod 'SVProgressHUD'
     pod 'AFNetworking'
     pod 'TSMarkdownParser'
-    pod 'LANScanner'
+    pod 'LANScanner', :git => 'https://github.com/moonrailgun/LANScanner.git'
     pod 'FSLineChart'
 end
 
