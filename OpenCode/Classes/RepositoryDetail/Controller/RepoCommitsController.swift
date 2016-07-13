@@ -61,6 +61,7 @@ class RepoCommitsController: UIViewController, UITableViewDataSource, UITableVie
         
         if(cell == nil){
             cell = UITableViewCell(style: .Subtitle, reuseIdentifier: COMMIT_CELL_ID)
+            cell?.accessoryType = .DisclosureIndicator
         }
         
         if let d = self.data{
@@ -76,7 +77,11 @@ class RepoCommitsController: UIViewController, UITableViewDataSource, UITableVie
         print(indexPath)
         
         if let d = self.data{
-            print(d)
+            print(d[indexPath.row])
+            
+            let controller = CommitDetailController()
+            controller.commitData = d[indexPath.row]
+            self.navigationController?.pushViewController(controller, animated: true)
         }
     }
     

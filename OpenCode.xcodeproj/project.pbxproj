@@ -72,6 +72,7 @@
 		BA8619051CDF289D00BE9E9C /* RepoDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8619041CDF289D00BE9E9C /* RepoDetailController.swift */; };
 		BA8619071CDF2DD000BE9E9C /* RepoDescView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8619061CDF2DD000BE9E9C /* RepoDescView.swift */; };
 		BA8619091CDF31F000BE9E9C /* RepoInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8619081CDF31F000BE9E9C /* RepoInfoView.swift */; };
+		BA8882371D36408E00AD0E7F /* CommitDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8882361D36408E00AD0E7F /* CommitDetailController.swift */; };
 		BA8CEBDD1CE7480A0044155A /* RepoDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8CEBDC1CE7480A0044155A /* RepoDetailHeaderView.swift */; };
 		BA8CEBE01CE74DF00044155A /* RepoDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8CEBDE1CE74DF00044155A /* RepoDetailTableViewCell.swift */; };
 		BA8D68631CF80C62002ED5E2 /* ToolCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA8D68621CF80C62002ED5E2 /* ToolCell.xib */; };
@@ -85,7 +86,6 @@
 		BAF47C1D1D01462B00F6A03B /* CodeBrowser.css in Resources */ = {isa = PBXBuildFile; fileRef = BAF47C1C1D01462B00F6A03B /* CodeBrowser.css */; };
 		BAF7F9A01CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF7F99F1CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift */; };
 		BAFB43981D0AAAE500D0E2C3 /* NewBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB43971D0AAAE500D0E2C3 /* NewBadge.swift */; };
-		BAFB439C1D0D23FC00D0E2C3 /* CommitDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB439B1D0D23FC00D0E2C3 /* CommitDetailController.swift */; };
 		BAFB43A11D0E83F100D0E2C3 /* AboutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB439F1D0E83F100D0E2C3 /* AboutController.swift */; };
 		BAFB43A81D0FA10E00D0E2C3 /* NotableList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB43A71D0FA10E00D0E2C3 /* NotableList.swift */; };
 		BAFB43AC1D0FACFE00D0E2C3 /* MarkdownReaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB43AB1D0FACFE00D0E2C3 /* MarkdownReaderController.swift */; };
@@ -181,6 +181,7 @@
 		BA8619041CDF289D00BE9E9C /* RepoDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoDetailController.swift; path = Classes/RepositoryDetail/Controller/RepoDetailController.swift; sourceTree = "<group>"; };
 		BA8619061CDF2DD000BE9E9C /* RepoDescView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoDescView.swift; path = Classes/RepositoryDetail/View/RepoDescView.swift; sourceTree = "<group>"; };
 		BA8619081CDF31F000BE9E9C /* RepoInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoInfoView.swift; path = Classes/RepositoryDetail/View/RepoInfoView.swift; sourceTree = "<group>"; };
+		BA8882361D36408E00AD0E7F /* CommitDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommitDetailController.swift; path = Classes/CommitDetail/Controller/CommitDetailController.swift; sourceTree = "<group>"; };
 		BA8CEBDC1CE7480A0044155A /* RepoDetailHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoDetailHeaderView.swift; path = Classes/RepositoryDetail/View/RepoDetailHeaderView.swift; sourceTree = "<group>"; };
 		BA8CEBDE1CE74DF00044155A /* RepoDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoDetailTableViewCell.swift; path = Classes/RepositoryDetail/View/RepoDetailTableViewCell.swift; sourceTree = "<group>"; };
 		BA8D68621CF80C62002ED5E2 /* ToolCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ToolCell.xib; path = Classes/Tool/View/ToolCell.xib; sourceTree = "<group>"; };
@@ -194,7 +195,6 @@
 		BAF47C1C1D01462B00F6A03B /* CodeBrowser.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = CodeBrowser.css; path = CodeBrowser/CodeBrowser.css; sourceTree = "<group>"; };
 		BAF7F99F1CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryDetailTableViewController.swift; sourceTree = "<group>"; };
 		BAFB43971D0AAAE500D0E2C3 /* NewBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewBadge.swift; path = Classes/UserEvents/View/NewBadge.swift; sourceTree = "<group>"; };
-		BAFB439B1D0D23FC00D0E2C3 /* CommitDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommitDetailController.swift; path = Classes/RepositoryDetail/CommitDetail/Controller/CommitDetailController.swift; sourceTree = "<group>"; };
 		BAFB439F1D0E83F100D0E2C3 /* AboutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutController.swift; path = Classes/Settings/About/Controller/AboutController.swift; sourceTree = "<group>"; };
 		BAFB43A71D0FA10E00D0E2C3 /* NotableList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotableList.swift; path = Classes/News/View/Notable/NotableList.swift; sourceTree = "<group>"; };
 		BAFB43AB1D0FACFE00D0E2C3 /* MarkdownReaderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarkdownReaderController.swift; path = Classes/MarkdownReader/Controller/MarkdownReaderController.swift; sourceTree = "<group>"; };
@@ -707,6 +707,7 @@
 		BA8618FD1CDF22F800BE9E9C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BA8882321D363F9600AD0E7F /* CommitDetail */,
 				BA0CCE251D21359A0009F02A /* OrgsDetail */,
 				BA0CCE211D1FE0320009F02A /* OrgsList */,
 				BA0CCE1D1D1E7F4A0009F02A /* RepoList */,
@@ -731,7 +732,6 @@
 		BA8619011CDF230E00BE9E9C /* RepositoryDetail */ = {
 			isa = PBXGroup;
 			children = (
-				BAFB43991D0D23A000D0E2C3 /* CommitDetail */,
 				BA8619031CDF25CA00BE9E9C /* View */,
 				BA8619021CDF236C00BE9E9C /* Controller */,
 			);
@@ -762,6 +762,22 @@
 				BA51C0561CF6A7C3005CCCC7 /* RepoEventCell.xib */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		BA8882321D363F9600AD0E7F /* CommitDetail */ = {
+			isa = PBXGroup;
+			children = (
+				BA8882331D363FDF00AD0E7F /* Controller */,
+			);
+			name = CommitDetail;
+			sourceTree = "<group>";
+		};
+		BA8882331D363FDF00AD0E7F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA8882361D36408E00AD0E7F /* CommitDetailController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		BAC0557D1CFAA5B400DCD236 /* News */ = {
@@ -835,22 +851,6 @@
 				BAFB43971D0AAAE500D0E2C3 /* NewBadge.swift */,
 			);
 			name = View;
-			sourceTree = "<group>";
-		};
-		BAFB43991D0D23A000D0E2C3 /* CommitDetail */ = {
-			isa = PBXGroup;
-			children = (
-				BAFB439A1D0D23B400D0E2C3 /* Controller */,
-			);
-			name = CommitDetail;
-			sourceTree = "<group>";
-		};
-		BAFB439A1D0D23B400D0E2C3 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				BAFB439B1D0D23FC00D0E2C3 /* CommitDetailController.swift */,
-			);
-			name = Controller;
 			sourceTree = "<group>";
 		};
 		BAFB439D1D0E83B800D0E2C3 /* About */ = {
@@ -1105,6 +1105,7 @@
 				BA4609D11CF95AB400D2415B /* SearchRepoCell.swift in Sources */,
 				BA53E2DC1CFFD86900FD46F2 /* MyProfileView.swift in Sources */,
 				BA0ADD761CF838C500A0B0F1 /* RepoPullController.swift in Sources */,
+				BA8882371D36408E00AD0E7F /* CommitDetailController.swift in Sources */,
 				BA4F89E81D040EB80051A525 /* QRCodeScanningController.swift in Sources */,
 				BA4F89E61D040C860051A525 /* QRCodeController.swift in Sources */,
 				BA0CCE281D2135E40009F02A /* OrgsDetailController.swift in Sources */,
@@ -1124,7 +1125,6 @@
 				BA0CCE241D1FE0890009F02A /* OrgsListController.swift in Sources */,
 				BA715DFF1CFD287000887D73 /* NewsTopView.swift in Sources */,
 				BA6F3B101CCE3EA400F6984B /* OperationQueueHelper.swift in Sources */,
-				BAFB439C1D0D23FC00D0E2C3 /* CommitDetailController.swift in Sources */,
 				BA0CCE201D1E7FE60009F02A /* RepoListController.swift in Sources */,
 				BAF7F9A01CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift in Sources */,
 				BA79E0781CF5DF8300E86258 /* FlatColor.swift in Sources */,
