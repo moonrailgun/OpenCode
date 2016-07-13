@@ -248,6 +248,10 @@ class Github {
     class func getRepoIssues(repoFullName:String, completionHandler:(AnyObject?) -> Void){
         requestPublicData("https://api.github.com/repos/\(repoFullName)/issues",completionHandler: completionHandler)
     }
+    //获取项目内容列表
+    class func getRepoContrntList(repoFullName:String, path:String, completionHandler:(AnyObject?) -> Void){
+        requestPublicData("https://api.github.com/repos/\(repoFullName)/contents", completionHandler: completionHandler)
+    }
     //获取项目内容
     class func getRepoContent(repoFullName:String, path:String, completionHandler:(AnyObject?) -> Void){
         requestPublicData("https://api.github.com/repos/\(repoFullName)/contents/\(path)", completionHandler: completionHandler)
@@ -307,7 +311,12 @@ class Github {
     }
     //获取公开数据通用方法
     class private func requestPublicData(url: String, completionHandler:(AnyObject?) -> Void){
-        let _url = NSURL(string: url.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)
+        let token = getToken()
+        var urlStr = url
+        if(token != nil){
+            urlStr += token!
+        }
+        let _url = NSURL(string: urlStr.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)
         HttpRequest.sendAsyncRequest(_url!, completionHandler: { (resp:NSURLResponse?, data:NSData?, error:NSError?) -> Void in
             if let d = data{
                 completionHandler(self.convertDataToJSONObj(d))
