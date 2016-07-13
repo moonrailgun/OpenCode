@@ -314,7 +314,11 @@ class Github {
         let token = getToken()
         var urlStr = url
         if(token != nil){
-            urlStr += token!
+            if(urlStr.containsString("?")){
+                urlStr += "&access_token=\(token!)"
+            }else{
+                urlStr += "?access_token=\(token!)"
+            }
         }
         let _url = NSURL(string: urlStr.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)
         HttpRequest.sendAsyncRequest(_url!, completionHandler: { (resp:NSURLResponse?, data:NSData?, error:NSError?) -> Void in
