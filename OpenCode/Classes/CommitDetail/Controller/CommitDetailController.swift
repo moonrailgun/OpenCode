@@ -37,6 +37,11 @@ class CommitDetailController: UIViewController, UITableViewDataSource,UITableVie
     func initData(){
         if let data = commitData{
             self.sha = data["sha"].string!
+            let message = data["commit"]["message"].string!
+            let commentCount = data["commit"]["comment_count"].int!
+            let committerDate = data["commit"]["committer"]["date"].string!
+            let committerName = data["commit"]["committer"]["name"].string!
+            let committerEmail = data["commit"]["committer"]["email"].string!
             print(data)
         }
     }
