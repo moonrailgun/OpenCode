@@ -260,6 +260,10 @@ class Github {
     class func getRepoCommits(repoFullName:String, completionHandler:(AnyObject?) -> Void){
         requestPublicData("https://api.github.com/repos/\(repoFullName)/commits", completionHandler: completionHandler)
     }
+    //获取项目提交论评列表
+    class func getRepoCommitComments(repoFullName:String, sha:String, completionHandler:(AnyObject?) -> Void){
+        requestPublicData("https://api.github.com/repos/\(repoFullName)/commits/\(sha)/comments", completionHandler: completionHandler)
+    }
     //获取项目拉取
     class func getRepoPulls(repoFullName:String, completionHandler:(AnyObject?) -> Void){
         requestPublicData("https://api.github.com/repos/\(repoFullName)/pulls", completionHandler: completionHandler)

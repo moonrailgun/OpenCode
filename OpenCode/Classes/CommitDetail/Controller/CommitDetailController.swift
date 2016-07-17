@@ -9,12 +9,12 @@
 import UIKit
 import SwiftyJSON
 
-class CommitDetailController: UIViewController, UITableViewDataSource {
+class CommitDetailController: UIViewController, UITableViewDataSource,UITableViewDelegate {
     let COMMIT_DETAIL_CELL_ID = "commit"
     lazy var tableView:UITableView = UITableView(frame: self.view.bounds, style: .Grouped)
     var commitData:JSON?
+    var sha:String = ""
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,14 +30,14 @@ class CommitDetailController: UIViewController, UITableViewDataSource {
     
     func initView(){
         self.tableView.dataSource = self
+        self.tableView.delegate = self
         self.view.addSubview(tableView)
     }
     
     func initData(){
         if let data = commitData{
-            let sha = data["sha"].string!
-            let stats = data["stats"]
-            let files = data["files"]
+            self.sha = data["sha"].string!
+            print(data)
         }
     }
     
@@ -63,6 +63,20 @@ class CommitDetailController: UIViewController, UITableViewDataSource {
         }
         
         return cell!
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if(indexPath.section == 0){
+            if(indexPath.row == 0){
+                //查看评论
+                if(self.sha != ""){
+                    ProgressHUD.show()
+                    Github.customRequest(commitData!["comments_url"].string!, isPublic: true, completionHandler: { (data:AnyObject?) in
+                        print(data)
+                    })
+                }
+            }
+        }
     }
     
 
