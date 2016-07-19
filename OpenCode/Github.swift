@@ -56,7 +56,7 @@ class Github {
             if let httpResp = resp as? NSHTTPURLResponse{
                 switch httpResp.statusCode{
                 case 422:
-                    print("已经登录过了")
+                    print("已经登录过了，appid:\(appid)")
                     completionHandler(token: nil, statusCode: 422, errorMsg: nil)
                     break
                 case 201:

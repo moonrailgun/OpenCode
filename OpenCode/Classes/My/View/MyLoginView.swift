@@ -99,10 +99,12 @@ class MyLoginView: UIView, UITextFieldDelegate {
         
         if(username != "" && password != ""){
             //Github.login(githubUsername.text, password: githubPassword.text)
+            ProgressHUD.show()
             Github.login(username, password: password, completionHandler: { (token, statusCode, errorMsg) -> () in
-                if(statusCode == 422){
-                    //已经登陆
-                    OperationQueueHelper.operateInMainQueue({
+                OperationQueueHelper.operateInMainQueue({
+                    ProgressHUD.dismiss()
+                    if(statusCode == 422){
+                        //已经登陆
                         let alert = UIAlertController(title: "已经登陆", message: "是否重新登陆", preferredStyle: .Alert)
                         alert.addAction(UIAlertAction(title: "确定", style: .Default, handler: { (action:UIAlertAction) in
                             //登出
@@ -112,28 +114,24 @@ class MyLoginView: UIView, UITextFieldDelegate {
                         }))
                         alert.addAction(UIAlertAction(title: "取消", style: .Default, handler: nil))
                         self.controller?.presentViewController(alert, animated: true, completion: nil)
-                    })
-                }else if(statusCode == 201){
-                    if token != nil{
-                        Github.setToken(token!)
-                        print("显示档案页面")
-                        
-                        //关闭该页面
-                        OperationQueueHelper.operateInMainQueue({
+                    }else if(statusCode == 201){
+                        if token != nil{
+                            Github.setToken(token!)
+                            print("显示档案页面")
+                            
+                            //关闭该页面
                             (self.controller as! MyController).initProfileView()
                             self.removeFromSuperview()
-                        })
+                        }else{
+                            //提示出错
+                            print("出错 - token:\(token),code:\(statusCode),errorMsg:\(errorMsg)")
+                        }
                     }else{
-                        //提示出错
-                        print("出错 - token:\(token),code:\(statusCode),errorMsg:\(errorMsg)")
-                    }
-                }else{
-                    let alert = UIAlertController(title: "登陆失败", message: "\(errorMsg != nil ? errorMsg! : "" )", preferredStyle: .Alert)
-                    alert.addAction(UIAlertAction(title: "确定", style: .Default, handler: nil))
-                    OperationQueueHelper.operateInMainQueue({ 
+                        let alert = UIAlertController(title: "登陆失败", message: "\(errorMsg != nil ? errorMsg! : "" )", preferredStyle: .Alert)
+                        alert.addAction(UIAlertAction(title: "确定", style: .Default, handler: nil))
                         self.controller?.presentViewController(alert, animated: true, completion: nil)
-                    })
-                }
+                    }
+                })
             })
         } else {
             print("账号或密码不得为空")
