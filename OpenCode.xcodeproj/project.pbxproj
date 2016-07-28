@@ -17,6 +17,7 @@
 		BA0CCE241D1FE0890009F02A /* OrgsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0CCE231D1FE0890009F02A /* OrgsListController.swift */; };
 		BA0CCE281D2135E40009F02A /* OrgsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0CCE271D2135E40009F02A /* OrgsDetailController.swift */; };
 		BA0CCE2C1D2137510009F02A /* OrgsDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0CCE2B1D2137510009F02A /* OrgsDetailHeaderView.swift */; };
+		BA0DA13D1D49D5DF008B7D22 /* HttpRequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0DA13C1D49D5DF008B7D22 /* HttpRequestHelper.swift */; };
 		BA2BF3271D26789700DE9C8C /* LANScanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BF3261D26789700DE9C8C /* LANScanController.swift */; };
 		BA2BF33D1D2BF69C00DE9C8C /* PingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BF33C1D2BF69B00DE9C8C /* PingController.swift */; };
 		BA3AD1FA1CCA245A0034B21E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD1F91CCA245A0034B21E /* AppDelegate.swift */; };
@@ -121,6 +122,7 @@
 		BA0CCE231D1FE0890009F02A /* OrgsListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrgsListController.swift; path = Classes/OrgsList/Controller/OrgsListController.swift; sourceTree = "<group>"; };
 		BA0CCE271D2135E40009F02A /* OrgsDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrgsDetailController.swift; path = Classes/OrgsDetail/Controller/OrgsDetailController.swift; sourceTree = "<group>"; };
 		BA0CCE2B1D2137510009F02A /* OrgsDetailHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrgsDetailHeaderView.swift; path = Classes/OrgsDetail/View/OrgsDetailHeaderView.swift; sourceTree = "<group>"; };
+		BA0DA13C1D49D5DF008B7D22 /* HttpRequestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpRequestHelper.swift; path = Classes/Other/HttpRequestHelper.swift; sourceTree = "<group>"; };
 		BA2BF3261D26789700DE9C8C /* LANScanController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LANScanController.swift; path = Classes/Tool/LANScan/Controller/LANScanController.swift; sourceTree = "<group>"; };
 		BA2BF32E1D2690B100DE9C8C /* OpenCode-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OpenCode-Bridging-Header.h"; sourceTree = "<group>"; };
 		BA2BF33C1D2BF69B00DE9C8C /* PingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PingController.swift; path = Classes/Tool/Ping/Controller/PingController.swift; sourceTree = "<group>"; };
@@ -692,6 +694,7 @@
 				BA79E0771CF5DF8300E86258 /* FlatColor.swift */,
 				BA44657B1D0693EB007AEC2F /* GithubTime.swift */,
 				BA4465841D094844007AEC2F /* ProgressHUD.swift */,
+				BA0DA13C1D49D5DF008B7D22 /* HttpRequestHelper.swift */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -1098,6 +1101,7 @@
 				BA8619091CDF31F000BE9E9C /* RepoInfoView.swift in Sources */,
 				BA3AD2201CCA29B60034B21E /* HttpRequest.swift in Sources */,
 				BA715E071CFD389C00887D73 /* MyController.swift in Sources */,
+				BA0DA13D1D49D5DF008B7D22 /* HttpRequestHelper.swift in Sources */,
 				BA5AF83B1D02C3660015B601 /* NewsEventListView.swift in Sources */,
 				BA0ADD781CF839A000A0B0F1 /* RepoBranchController.swift in Sources */,
 				BA4465811D07C18C007AEC2F /* SettingsController.swift in Sources */,
