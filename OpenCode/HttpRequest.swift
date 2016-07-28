@@ -1,7 +1,7 @@
 //
 //  HttpRequest.swift
 //  OpenCode
-//
+//  ！！！弃用
 //  Created by 陈亮 on 16-4-22.
 //  Copyright (c) 2016年 moonrailgun. All rights reserved.
 //
@@ -83,4 +83,7 @@ class HttpRequest{
         }
         NSURLConnection.sendAsynchronousRequest(req, queue: NSOperationQueue(), completionHandler: completionHandler)
     }
+    
+    
+    
 }

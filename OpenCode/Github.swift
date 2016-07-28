@@ -324,27 +324,34 @@ class Github {
                 urlStr += "?access_token=\(token!)"
             }
         }
-        let _url = NSURL(string: urlStr.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)
-        HttpRequest.sendAsyncRequest(_url!, completionHandler: { (resp:NSURLResponse?, data:NSData?, error:NSError?) -> Void in
+
+        HttpRequestHelper.sendRequest(urlStr) { (data:NSData?, resp:NSURLResponse?, error:NSError?) in
             if let d = data{
                 completionHandler(self.convertDataToJSONObj(d))
             }else{
                 print("\(url): 无法获取数据: resp:\(resp) data:\(data) error:\(error)")
-                //completionHandler(nil)//TODO 待处理
+                completionHandler(nil)//TODO 待处理
             }
-        })
+        }
     }
     //获取私人数据通用方法
     class private func requestPrivateData(url:String, completionHandler:(AnyObject?) -> Void){
         if let token:String = getToken(){
-            let _url = NSURL(string: (url + "?access_token=\(token)").stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)
-            HttpRequest.sendAsyncRequest(_url!, completionHandler: { (resp:NSURLResponse?, data:NSData?, error:NSError?) -> Void in
+            var urlStr = url
+            if(urlStr.containsString("?")){
+                urlStr += "&access_token=\(token)"
+            }else{
+                urlStr += "?access_token=\(token)"
+            }
+            
+            HttpRequestHelper.sendRequest(urlStr, completionHandler: { (data:NSData?, resp:NSURLResponse?, error:NSError?) in
                 if let d = data{
                     completionHandler(self.convertDataToJSONObj(d))
                 }else{
                     print("\(url): 无法获取数据: resp:\(resp) data:\(data) error:\(error)")
-                    //completionHandler(nil)//TODO 待处理
+                    completionHandler(nil)//TODO 待处理
                 }
+
             })
         } else{
             print("\(url): token 不存在，无法获取数据")
