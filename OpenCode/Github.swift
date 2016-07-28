@@ -52,7 +52,8 @@ class Github {
         header = ["Authorization": authorization, "Content-Type": "application/json"]
         let data = "{\"note\":\"OpenCodeApp[\(appid)]\"}"
         
-        HttpRequest.sendAsyncPostRequest(NSURL(string: "https://api.github.com/authorizations")!, header: header, data: data) { (resp:NSURLResponse?, data:NSData?, error:NSError?) in
+        //构造私有请求
+        HttpRequestHelper.sendRequest("https://api.github.com/authorizations", method: HttpRequestMethod.POST, header: header, body: data) { (data:NSData?, resp:NSURLResponse?, error:NSError?) in
             if let httpResp = resp as? NSHTTPURLResponse{
                 switch httpResp.statusCode{
                 case 422:
@@ -92,7 +93,7 @@ class Github {
         var header = NSDictionary()
         header = ["Authorization": authorization, "Content-Type": "application/json"]
         //获取列表
-        HttpRequest.sendAsyncRequest(NSURL(string: "https://api.github.com/authorizations")!, header: header) { (resp:NSURLResponse?, data:NSData?, err:NSError?) in
+        HttpRequestHelper.sendRequest("https://api.github.com/authorizations", method: HttpRequestMethod.GET, header: header, body: "") { (data:NSData?, resp:NSURLResponse?, error:NSError?) in
             if let _ = resp as? NSHTTPURLResponse{
                 let json = JSON(data!)
                 let items = json.arrayValue
@@ -106,7 +107,7 @@ class Github {
                 
                 if(tokenId != 0){
                     //删除
-                    HttpRequest.sendAsyncDeleteRequest(NSURL(string: "https://api.github.com/authorizations")!,header:header, completionHandler: { (resp:NSURLResponse?, data:NSData?, err:NSError?) in
+                    HttpRequestHelper.sendRequest("https://api.github.com/authorizations", method: HttpRequestMethod.DELETE, header: header, body: "", completionHandler: { (data:NSData?, resp:NSURLResponse?, error:NSError?) in
                         if let _ = resp as? NSHTTPURLResponse{
                             completionHandler()
                         }else{
@@ -121,8 +122,6 @@ class Github {
                 print("登出失败")
             }
         }
-        
-        
     }
     //获取当前用户信息
     class func getCurrentUserInfo(completionHandler:(AnyObject?) -> Void) {
