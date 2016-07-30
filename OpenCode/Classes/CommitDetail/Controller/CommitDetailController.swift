@@ -44,10 +44,17 @@ class CommitDetailController: UIViewController, UITableViewDataSource,UITableVie
             let committerDate = data["commit"]["committer"]["date"].string!
             let committerName = data["commit"]["committer"]["name"].string!
             let committerEmail = data["commit"]["committer"]["email"].string!
-            let committerAvatar = data["committer"]["avatar_url"].string!
+            let committerAvatar = data["committer"]["avatar_url"].string
             print(data)
             
-            header.setData(NSURL(string: committerAvatar)!, name: committerName, commentNum: commentCount)
+            var committerAvatarUrl:NSURL?
+            if(committerAvatar != nil){
+                committerAvatarUrl = NSURL(string: committerAvatar!)
+            }else{
+                committerAvatarUrl = nil
+            }
+            
+            header.setData(committerAvatarUrl, name: committerName, commentNum: commentCount)
         }
     }
     

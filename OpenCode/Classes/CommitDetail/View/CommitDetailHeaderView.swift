@@ -49,8 +49,13 @@ class CommitDetailHeaderView: UIView {
         self.addSubview(commentCountIcon)
     }
     
-    func setData(avatartUrl:NSURL, name:String,commentNum:Int){
-        committerAvatar.sd_setImageWithURL(avatartUrl)
+    func setData(avatartUrl:NSURL?, name:String,commentNum:Int){
+        if(avatartUrl != nil){
+            committerAvatar.sd_setImageWithURL(avatartUrl)
+        }else{
+            //显示默认头像图
+            committerAvatar.image = UIImage(named: "github-logo")
+        }
         committerName.text = name
         commentCount.text = commentNum>99 ? "99+" : String(commentNum)
     }
