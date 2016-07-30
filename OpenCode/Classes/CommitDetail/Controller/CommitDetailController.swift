@@ -12,6 +12,7 @@ import SwiftyJSON
 class CommitDetailController: UIViewController, UITableViewDataSource,UITableViewDelegate {
     let COMMIT_DETAIL_CELL_ID = "commit"
     lazy var tableView:UITableView = UITableView(frame: self.view.bounds, style: .Grouped)
+    let header:CommitDetailHeaderView = CommitDetailHeaderView()
     var commitData:JSON?
     var sha:String = ""
     
@@ -31,6 +32,7 @@ class CommitDetailController: UIViewController, UITableViewDataSource,UITableVie
     func initView(){
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        tableView.tableHeaderView = header
         self.view.addSubview(tableView)
     }
     
@@ -42,7 +44,10 @@ class CommitDetailController: UIViewController, UITableViewDataSource,UITableVie
             let committerDate = data["commit"]["committer"]["date"].string!
             let committerName = data["commit"]["committer"]["name"].string!
             let committerEmail = data["commit"]["committer"]["email"].string!
+            let committerAvatar = data["committer"]["avatar_url"].string!
             print(data)
+            
+            header.setData(NSURL(string: committerAvatar)!, name: committerName, commentNum: commentCount)
         }
     }
     
@@ -77,7 +82,10 @@ class CommitDetailController: UIViewController, UITableViewDataSource,UITableVie
                 if(self.sha != ""){
                     ProgressHUD.show()
                     Github.customRequest(commitData!["comments_url"].string!, isPublic: true, completionHandler: { (data:AnyObject?) in
-                        print(data)
+                        OperationQueueHelper.operateInMainQueue({
+                            print(data)
+                            ProgressHUD.dismiss()
+                        })
                     })
                 }
             }

@@ -18,6 +18,7 @@
 		BA0CCE281D2135E40009F02A /* OrgsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0CCE271D2135E40009F02A /* OrgsDetailController.swift */; };
 		BA0CCE2C1D2137510009F02A /* OrgsDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0CCE2B1D2137510009F02A /* OrgsDetailHeaderView.swift */; };
 		BA0DA13D1D49D5DF008B7D22 /* HttpRequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0DA13C1D49D5DF008B7D22 /* HttpRequestHelper.swift */; };
+		BA1546B91D4C9066005EA460 /* CommitDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1546B81D4C9066005EA460 /* CommitDetailHeaderView.swift */; };
 		BA2BF3271D26789700DE9C8C /* LANScanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BF3261D26789700DE9C8C /* LANScanController.swift */; };
 		BA2BF33D1D2BF69C00DE9C8C /* PingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BF33C1D2BF69B00DE9C8C /* PingController.swift */; };
 		BA3AD1FA1CCA245A0034B21E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD1F91CCA245A0034B21E /* AppDelegate.swift */; };
@@ -122,6 +123,7 @@
 		BA0CCE271D2135E40009F02A /* OrgsDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrgsDetailController.swift; path = Classes/OrgsDetail/Controller/OrgsDetailController.swift; sourceTree = "<group>"; };
 		BA0CCE2B1D2137510009F02A /* OrgsDetailHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrgsDetailHeaderView.swift; path = Classes/OrgsDetail/View/OrgsDetailHeaderView.swift; sourceTree = "<group>"; };
 		BA0DA13C1D49D5DF008B7D22 /* HttpRequestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpRequestHelper.swift; path = Classes/Other/HttpRequestHelper.swift; sourceTree = "<group>"; };
+		BA1546B81D4C9066005EA460 /* CommitDetailHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommitDetailHeaderView.swift; path = Classes/CommitDetail/View/CommitDetailHeaderView.swift; sourceTree = "<group>"; };
 		BA2BF3261D26789700DE9C8C /* LANScanController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LANScanController.swift; path = Classes/Tool/LANScan/Controller/LANScanController.swift; sourceTree = "<group>"; };
 		BA2BF32E1D2690B100DE9C8C /* OpenCode-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OpenCode-Bridging-Header.h"; sourceTree = "<group>"; };
 		BA2BF33C1D2BF69B00DE9C8C /* PingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PingController.swift; path = Classes/Tool/Ping/Controller/PingController.swift; sourceTree = "<group>"; };
@@ -304,6 +306,14 @@
 			isa = PBXGroup;
 			children = (
 				BA0CCE2B1D2137510009F02A /* OrgsDetailHeaderView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		BA1546B71D4C8FD9005EA460 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA1546B81D4C9066005EA460 /* CommitDetailHeaderView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -767,6 +777,7 @@
 		BA8882321D363F9600AD0E7F /* CommitDetail */ = {
 			isa = PBXGroup;
 			children = (
+				BA1546B71D4C8FD9005EA460 /* View */,
 				BA8882331D363FDF00AD0E7F /* Controller */,
 			);
 			name = CommitDetail;
@@ -1111,6 +1122,7 @@
 				BA0CCE281D2135E40009F02A /* OrgsDetailController.swift in Sources */,
 				BA7CB1D41CEDF5ED004DDF42 /* UserInfoHeaderView.swift in Sources */,
 				BAC055831CFAA67C00DCD236 /* NewsScrollView.swift in Sources */,
+				BA1546B91D4C9066005EA460 /* CommitDetailHeaderView.swift in Sources */,
 				BAFB43981D0AAAE500D0E2C3 /* NewBadge.swift in Sources */,
 				BAFB43BE1D1BCA9400D0E2C3 /* UserListCell.swift in Sources */,
 				BA47B7491CE99EC200CF3947 /* UserCell.swift in Sources */,
