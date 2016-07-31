@@ -15,6 +15,7 @@ class CommitDetailController: UIViewController, UITableViewDataSource,UITableVie
     let header:CommitDetailHeaderView = CommitDetailHeaderView()
     var commitData:JSON?
     var sha:String = ""
+    var htmlUrl:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,7 @@ class CommitDetailController: UIViewController, UITableViewDataSource,UITableVie
         // Do any additional setup after loading the view.
         initView()
         initData()
+        initNavItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,9 +45,10 @@ class CommitDetailController: UIViewController, UITableViewDataSource,UITableVie
             let commentCount = data["commit"]["comment_count"].int!
             let committerDate = data["commit"]["committer"]["date"].string!
             let committerName = data["commit"]["committer"]["name"].string!
-            let committerEmail = data["commit"]["committer"]["email"].string!
+            //let committerEmail = data["commit"]["committer"]["email"].string!
             let committerAvatar = data["committer"]["avatar_url"].string
-            print(data)
+            self.htmlUrl = data["html_url"].string!
+            //print(data)
             
             var committerAvatarUrl:NSURL?
             if(committerAvatar != nil){
@@ -55,6 +58,17 @@ class CommitDetailController: UIViewController, UITableViewDataSource,UITableVie
             }
             
             header.setData(committerAvatarUrl, name: committerName,date: committerDate, commentNum: commentCount, message: message)
+        }
+    }
+    
+    func initNavItem(){
+        self.title = "提交详情"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "在网页中查看", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(CommitDetailController.openInSafari(_:)))
+    }
+    
+    func openInSafari(barButtonItem:UIBarButtonItem){
+        if(htmlUrl != ""){
+            UIApplication.sharedApplication().openURL(NSURL(string: htmlUrl)!)
         }
     }
     
