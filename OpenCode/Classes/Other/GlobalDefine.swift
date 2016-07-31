@@ -9,7 +9,8 @@
 import UIKit
 
 class GlobalDefine{
-    static let defineBackgroundColor = UIColor(red: 229/255, green: 229/255, blue: 229/255, alpha: 1)
+    static let defaultBackgroundColor = UIColor(red: 229/255, green: 229/255, blue: 229/255, alpha: 1)
+    static let iconGrey = UIColor(red: 189/255, green: 195/255, blue: 199/255, alpha: 1)//#bdc3c7
     
     static func getScreenWidth()->CGFloat{
         return UIScreen.mainScreen().bounds.size.width

@@ -72,10 +72,10 @@ class RepoDetailController: UIViewController, UITableViewDataSource,UITableViewD
     }
     
     func initView(){
-        self.view.backgroundColor = GlobalDefine.defineBackgroundColor
+        self.view.backgroundColor = GlobalDefine.defaultBackgroundColor
         
         self.view.addSubview(self.tableView!)
-        self.tableView!.backgroundColor = GlobalDefine.defineBackgroundColor
+        self.tableView!.backgroundColor = GlobalDefine.defaultBackgroundColor
         self.tableView!.registerClass(RepoDetailTableViewCell.self, forCellReuseIdentifier: MY_CELL_ID)
         
         self.tableView!.sectionHeaderHeight = 0;

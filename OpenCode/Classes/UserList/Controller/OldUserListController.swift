@@ -41,7 +41,7 @@ class OldUserListController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func initView(){
-        self.view.backgroundColor = GlobalDefine.defineBackgroundColor
+        self.view.backgroundColor = GlobalDefine.defaultBackgroundColor
         
         self.tableView.frame = self.view.bounds
         self.tableView.dataSource = self

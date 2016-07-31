@@ -54,7 +54,7 @@ class CommitDetailController: UIViewController, UITableViewDataSource,UITableVie
                 committerAvatarUrl = nil
             }
             
-            header.setData(committerAvatarUrl, name: committerName, commentNum: commentCount)
+            header.setData(committerAvatarUrl, name: committerName,date: committerDate, commentNum: commentCount, message: message)
         }
     }
     
