@@ -14,14 +14,27 @@ class PingDetailController: UIViewController {
     var hostAddress:String?
     var timer:NSTimer?
     var pingResult:[JSON] = []
-    let lineChartView:FSLineChart = FSLineChart(frame: CGRectMake(0,100,UIScreen.mainScreen().bounds.width,60))
+    let lineChartView:FSLineChart = FSLineChart(frame: CGRectMake(0,200,UIScreen.mainScreen().bounds.width,60))
     var lineChartData:[Int] = []
+    let currentTimeView:UILabel = UILabel(frame: CGRectMake((UIScreen.mainScreen().bounds.width - 60) / 2,150,60,30))
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor.whiteColor()
+        
+        
+        let currentTimeDesc = UILabel(frame: CGRectMake((UIScreen.mainScreen().bounds.width - 180) / 2,120,180,30))
+        currentTimeDesc.text = "当前延时(ms):"
+        currentTimeDesc.font = UIFont.systemFontOfSize(14)
+        currentTimeDesc.textAlignment = .Center
+        self.view.addSubview(currentTimeDesc)
+        currentTimeView.text = "0"
+        currentTimeView.textAlignment = .Center
+        currentTimeView.font = UIFont.systemFontOfSize(30)
+        self.view.addSubview(currentTimeView)
+        
         lineChartView.setChartData(lineChartData)
         self.view.addSubview(lineChartView)
         
@@ -66,6 +79,7 @@ class PingDetailController: UIViewController {
             //ping到
             let time = result["time"].int! > 2 ? 2 : result["time"].int!
             print("\(time)ms")
+            currentTimeView.text = String(time)
             self.lineChartData.append(time)
         }else{
             //没有
