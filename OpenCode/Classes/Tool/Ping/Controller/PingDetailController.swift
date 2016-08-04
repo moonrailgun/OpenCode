@@ -8,16 +8,22 @@
 
 import UIKit
 import SwiftyJSON
+import FSLineChart
 
 class PingDetailController: UIViewController {
     var hostAddress:String?
     var timer:NSTimer?
+    var pingResult:[JSON] = []
+    let lineChartView:FSLineChart = FSLineChart(frame: CGRectMake(0,100,UIScreen.mainScreen().bounds.width,60))
+    var lineChartData:[Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor.whiteColor()
+        lineChartView.setChartData(lineChartData)
+        self.view.addSubview(lineChartView)
         
         self.timer = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: #selector(self.ping), userInfo: nil, repeats: true)
     }
@@ -48,7 +54,6 @@ class PingDetailController: UIViewController {
     }
     
     func ping() {
-        print("a")
         if let address = hostAddress{
             SimplePingHelper.start(address, target: self, selector: #selector(self.pingResult(_:)))
         }
@@ -56,13 +61,20 @@ class PingDetailController: UIViewController {
     
     func pingResult(object:AnyObject){
         let result = JSON(object)
+        pingResult.append(result)
         if(result["status"] == true){
             //ping到
-            print(result["time"])
+            let time = result["time"].int! > 2 ? 2 : result["time"].int!
+            print("\(time)ms")
+            self.lineChartData.append(time)
         }else{
             //没有
             print(result["error"])
+            self.lineChartData.append(2)
         }
+        self.lineChartView.clearChartData()
+        self.lineChartView.setChartData(self.lineChartData)
+        self.lineChartView.animationDuration = 0
     }
     
     
