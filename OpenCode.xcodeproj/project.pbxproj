@@ -57,6 +57,7 @@
 		BA5AF83B1D02C3660015B601 /* NewsEventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5AF8381D02C3660015B601 /* NewsEventListView.swift */; };
 		BA5AF83D1D02C3780015B601 /* TrendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5AF83C1D02C3780015B601 /* TrendingView.swift */; };
 		BA5F71A81CD350DC0043CBB5 /* RepositoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5F71A61CD350DC0043CBB5 /* RepositoryTableViewController.swift */; };
+		BA6127C81D530AAB00C242D0 /* SimplePingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6127C71D530AAB00C242D0 /* SimplePingHelper.swift */; };
 		BA647E081CF2F7C200DA369F /* FileBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA647E071CF2F7C200DA369F /* FileBrowserController.swift */; };
 		BA69EBE41CD4980C0090816C /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69EBE31CD4980C0090816C /* UserTableViewController.swift */; };
 		BA6F3B101CCE3EA400F6984B /* OperationQueueHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F3B0F1CCE3EA400F6984B /* OperationQueueHelper.swift */; };
@@ -167,6 +168,7 @@
 		BA5AF8381D02C3660015B601 /* NewsEventListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsEventListView.swift; path = Classes/News/View/Event/NewsEventListView.swift; sourceTree = "<group>"; };
 		BA5AF83C1D02C3780015B601 /* TrendingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrendingView.swift; path = Classes/News/View/Trending/TrendingView.swift; sourceTree = "<group>"; };
 		BA5F71A61CD350DC0043CBB5 /* RepositoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewController.swift; sourceTree = "<group>"; };
+		BA6127C71D530AAB00C242D0 /* SimplePingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SimplePingHelper.swift; path = Classes/Tool/Ping/Model/SimplePingHelper.swift; sourceTree = "<group>"; };
 		BA647E071CF2F7C200DA369F /* FileBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileBrowserController.swift; path = Classes/FileBrowser/FileBrowserController.swift; sourceTree = "<group>"; };
 		BA69EBE31CD4980C0090816C /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
 		BA6F3B0F1CCE3EA400F6984B /* OperationQueueHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationQueueHelper.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 		BA2BF33A1D2BF66000DE9C8C /* Ping */ = {
 			isa = PBXGroup;
 			children = (
+				BA6127C61D530A5F00C242D0 /* Model */,
 				BA2BF33B1D2BF66700DE9C8C /* Controller */,
 			);
 			name = Ping;
@@ -623,6 +626,14 @@
 				BAF7F99F1CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift */,
 			);
 			name = Page;
+			sourceTree = "<group>";
+		};
+		BA6127C61D530A5F00C242D0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA6127C71D530AAB00C242D0 /* SimplePingHelper.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		BA647E051CF2F76800DA369F /* FileBrowser */ = {
@@ -1115,6 +1126,7 @@
 				BA647E081CF2F7C200DA369F /* FileBrowserController.swift in Sources */,
 				BA4609D11CF95AB400D2415B /* SearchRepoCell.swift in Sources */,
 				BA53E2DC1CFFD86900FD46F2 /* MyProfileView.swift in Sources */,
+				BA6127C81D530AAB00C242D0 /* SimplePingHelper.swift in Sources */,
 				BA0ADD761CF838C500A0B0F1 /* RepoPullController.swift in Sources */,
 				BA8882371D36408E00AD0E7F /* CommitDetailController.swift in Sources */,
 				BA4F89E81D040EB80051A525 /* QRCodeScanningController.swift in Sources */,
