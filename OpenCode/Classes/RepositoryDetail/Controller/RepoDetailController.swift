@@ -49,7 +49,7 @@ class RepoDetailController: UIViewController, UITableViewDataSource,UITableViewD
     
     func initNavItem(){
         self.title = "项目详情"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "查看源码", style: UIBarButtonItemStyle.Plain, target: self, action: "openSourceCode:")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "查看源码", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(RepoDetailController.openSourceCode(_:)))
     }
     
     func openSourceCode(barButtonItem:UIBarButtonItem) {
@@ -111,8 +111,9 @@ class RepoDetailController: UIViewController, UITableViewDataSource,UITableViewD
                 let date = json["created_at"].string
                 let isPrivate = json["private"].int
                 let size = json["size"].int
+                let defaultBranch = json["default_branch"].string
                 
-                headerView.setDescData(isPrivate != 0, language: language, issuesNum: issues!, branchNum: 0, createdDate: date!, size: size!)
+                headerView.setDescData(isPrivate != 0, language: language, issuesNum: issues!, defaultBranch: defaultBranch!, createdDate: date!, size: size!)
                 
                 self.ownerName = json["owner"]["login"].string
             }

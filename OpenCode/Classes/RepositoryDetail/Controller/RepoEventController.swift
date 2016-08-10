@@ -76,6 +76,7 @@ class RepoEventController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(indexPath)
+        print("未完成")
     }
     
     

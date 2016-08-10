@@ -110,11 +110,11 @@ class RepoDetailHeaderView: UIView {
         self.infoBlock3?.setValue(blockValue3!)
     }
     
-    func setDescData(isPrivate:Bool, language:String, issuesNum:Int, branchNum:Int, createdDate:String, size:Int){
+    func setDescData(isPrivate:Bool, language:String, issuesNum:Int, defaultBranch:String, createdDate:String, size:Int){
         self.repoDesc1?.descLabel.text = isPrivate ? "Private" : "Public"
         self.repoDesc2?.descLabel.text = language
         self.repoDesc3?.descLabel.text = "\(issuesNum) Issues"
-        self.repoDesc4?.descLabel.text = "\(branchNum) Branch"
+        self.repoDesc4?.descLabel.text = defaultBranch
         self.repoDesc5?.descLabel.text = GithubTime(dateStr: createdDate).onlyDay()
         self.repoDesc6?.descLabel.text = size > 1024 ? "\(String(format: "%.2f", Float(size) / 1024))MB":"\(size)KB"
     }

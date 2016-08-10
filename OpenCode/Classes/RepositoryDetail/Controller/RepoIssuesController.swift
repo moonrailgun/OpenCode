@@ -75,6 +75,7 @@ class RepoIssuesController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(indexPath)
+        print("未完成")
     }
     
 

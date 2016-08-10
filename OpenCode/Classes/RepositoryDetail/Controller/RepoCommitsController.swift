@@ -77,11 +77,13 @@ class RepoCommitsController: UIViewController, UITableViewDataSource, UITableVie
         print(indexPath)
         
         if let d = self.data{
-            print(d[indexPath.row])
+            //print(d[indexPath.row])
             
-            let controller = CommitDetailController()
-            controller.commitData = d[indexPath.row]
-            self.navigationController?.pushViewController(controller, animated: true)
+            OperationQueueHelper.operateInMainQueue({ 
+                let controller = CommitDetailController()
+                controller.commitData = d[indexPath.row]
+                self.navigationController?.pushViewController(controller, animated: true)
+            })
         }
     }
     

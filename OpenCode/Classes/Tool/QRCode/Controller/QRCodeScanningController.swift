@@ -104,10 +104,10 @@ class QRCodeScanningController: UIViewController,AVCaptureMetadataOutputObjectsD
         scanningResult?.selectable = false
         self.view.addSubview(scanningResult!)
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "在网页中打开", style: UIBarButtonItemStyle.Plain, target: self, action: "openWithWeb:")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "在网页中打开", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(QRCodeScanningController.openWithWeb(_:)))
     }
     
-    func openWithWeb(){
+    func openWithWeb(barButtonItem:UIBarButtonItem){
         if(self.lastScanningResult != ""){
             if let url = NSURL(string: self.lastScanningResult){
                 UIApplication.sharedApplication().openURL(url)
