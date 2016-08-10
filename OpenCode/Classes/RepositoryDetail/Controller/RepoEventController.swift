@@ -76,7 +76,12 @@ class RepoEventController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(indexPath)
-        print("未完成")
+        
+        OperationQueueHelper.operateInMainQueue { 
+            let controller = EventDetailController()
+            controller.data = self.data![indexPath.row]
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
     }
     
     
