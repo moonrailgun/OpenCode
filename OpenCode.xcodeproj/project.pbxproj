@@ -59,6 +59,7 @@
 		BA5F71A81CD350DC0043CBB5 /* RepositoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5F71A61CD350DC0043CBB5 /* RepositoryTableViewController.swift */; };
 		BA6127C81D530AAB00C242D0 /* SimplePingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6127C71D530AAB00C242D0 /* SimplePingHelper.swift */; };
 		BA6127CC1D5AF82F00C242D0 /* EventDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6127CB1D5AF82F00C242D0 /* EventDetailController.swift */; };
+		BA6127D01D5D62E000C242D0 /* HTMLFetchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6127CF1D5D62E000C242D0 /* HTMLFetchController.swift */; };
 		BA647E081CF2F7C200DA369F /* FileBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA647E071CF2F7C200DA369F /* FileBrowserController.swift */; };
 		BA69EBE41CD4980C0090816C /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69EBE31CD4980C0090816C /* UserTableViewController.swift */; };
 		BA6F3B101CCE3EA400F6984B /* OperationQueueHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F3B0F1CCE3EA400F6984B /* OperationQueueHelper.swift */; };
@@ -171,6 +172,7 @@
 		BA5F71A61CD350DC0043CBB5 /* RepositoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewController.swift; sourceTree = "<group>"; };
 		BA6127C71D530AAB00C242D0 /* SimplePingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SimplePingHelper.swift; path = Classes/Tool/Ping/Model/SimplePingHelper.swift; sourceTree = "<group>"; };
 		BA6127CB1D5AF82F00C242D0 /* EventDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventDetailController.swift; path = Classes/EventDetail/Controller/EventDetailController.swift; sourceTree = "<group>"; };
+		BA6127CF1D5D62E000C242D0 /* HTMLFetchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTMLFetchController.swift; path = Classes/Tool/HTMLFetch/Controller/HTMLFetchController.swift; sourceTree = "<group>"; };
 		BA647E071CF2F7C200DA369F /* FileBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileBrowserController.swift; path = Classes/FileBrowser/FileBrowserController.swift; sourceTree = "<group>"; };
 		BA69EBE31CD4980C0090816C /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
 		BA6F3B0F1CCE3EA400F6984B /* OperationQueueHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationQueueHelper.swift; sourceTree = "<group>"; };
@@ -550,6 +552,7 @@
 		BA505B071CF3FB7A00BE7EC9 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				BA6127CD1D5D627500C242D0 /* HTMLFetch */,
 				BA2BF33A1D2BF66000DE9C8C /* Ping */,
 				BA2BF3231D266EC000DE9C8C /* LANScan */,
 				BA4F89E31D0409DB0051A525 /* QRCode */,
@@ -650,6 +653,22 @@
 			isa = PBXGroup;
 			children = (
 				BA6127CB1D5AF82F00C242D0 /* EventDetailController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		BA6127CD1D5D627500C242D0 /* HTMLFetch */ = {
+			isa = PBXGroup;
+			children = (
+				BA6127CE1D5D628E00C242D0 /* Controller */,
+			);
+			name = HTMLFetch;
+			sourceTree = "<group>";
+		};
+		BA6127CE1D5D628E00C242D0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA6127CF1D5D62E000C242D0 /* HTMLFetchController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1160,6 +1179,7 @@
 				BA47B7491CE99EC200CF3947 /* UserCell.swift in Sources */,
 				BA0ADD741CF836CE00A0B0F1 /* RepoCommitsController.swift in Sources */,
 				BAC5DF351CEC082300EB2EFE /* UserInfoController.swift in Sources */,
+				BA6127D01D5D62E000C242D0 /* HTMLFetchController.swift in Sources */,
 				BA05E7471CFEDB7900855A9E /* MyLoginView.swift in Sources */,
 				BAFB43B91D1BC8A300D0E2C3 /* UserListController.swift in Sources */,
 				BA2BF33D1D2BF69C00DE9C8C /* PingController.swift in Sources */,

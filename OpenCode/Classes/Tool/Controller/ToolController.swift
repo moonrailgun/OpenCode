@@ -126,6 +126,10 @@ class ToolController: UIViewController, UICollectionViewDataSource, UICollection
                 let controller = QRCodeController()
                 self.navigationController?.pushViewController(controller, animated: true)
             }else if(indexPath.row == 2){
+                print("HTML源码查看")
+                let controller = HTMLFetchController()
+                self.navigationController?.pushViewController(controller, animated: true)
+            }else if(indexPath.row == 3){
                 print("局域网扫描")
                 let controller = LANScanController()
                 self.navigationController?.pushViewController(controller, animated: true)

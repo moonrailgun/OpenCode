@@ -4,6 +4,13 @@
 <dict>
 	<key>Tool</key>
 	<dict>
+		<key>HTMLFetch</key>
+		<dict>
+			<key>Name</key>
+			<string>HTML源码查看</string>
+			<key>Image</key>
+			<string></string>
+		</dict>
 		<key>Ping</key>
 		<dict>
 			<key>Name</key>
