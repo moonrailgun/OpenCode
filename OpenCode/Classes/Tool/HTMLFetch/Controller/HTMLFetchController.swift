@@ -33,6 +33,7 @@ class HTMLFetchController: UIViewController {
         self.htmlUrl?.placeholder = "在此输入网址"
         self.htmlUrl?.autocapitalizationType = .None
         self.htmlUrl?.autocorrectionType = .No
+        self.htmlUrl?.borderStyle = .RoundedRect
         self.view.addSubview(self.htmlUrl!)
         
         let fetchBtn = UIButton(type: .System)
@@ -41,13 +42,31 @@ class HTMLFetchController: UIViewController {
         fetchBtn.addTarget(self, action: #selector(self.fetch), forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(fetchBtn)
         
-        self.htmlCodeView = UITextView(frame: CGRectMake(0,90,frame.width,frame.height - 90))
+        self.htmlCodeView = UITextView(frame: CGRectMake(0,90,frame.width,frame.height - 90 - 44))
         self.view.addSubview(self.htmlCodeView!)
     }
     
     func fetch(){
         let url:String = htmlUrl!.text!
         print("fetch \(url)")
+        
+        ProgressHUD.show()
+        HttpRequestHelper.sendRequest(url) { (data:NSData?, resp:NSURLResponse?, err:NSError?) in
+            OperationQueueHelper.operateInMainQueue({ 
+                ProgressHUD.dismiss()
+                if(err != nil){
+                    print(err)
+                    self.htmlCodeView?.text = err?.description
+                    return
+                }
+                
+                if (data != nil){
+                    if let res = NSString(data: data!, encoding: NSUTF8StringEncoding){
+                        self.htmlCodeView?.text = String(res)
+                    }
+                }
+            })
+        }
     }
 
     /*
