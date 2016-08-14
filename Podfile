@@ -9,7 +9,6 @@ target 'OpenCode' do
     pod 'MJRefresh','3.1.0'
     pod 'LTNavigationBar'
     pod 'SVProgressHUD'
-    pod 'AFNetworking'
     pod 'TSMarkdownParser'
     pod 'LANScanner', :git => 'https://github.com/moonrailgun/LANScanner.git'
     pod 'FSLineChart'
