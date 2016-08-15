@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		130E96D280BE6059A868DF41 /* Pods_OpenCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4027B30C7A06F2720B5696F3 /* Pods_OpenCode.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		BA059F361D616D37008EDCFC /* GithubType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA059F351D616D37008EDCFC /* GithubType.swift */; };
 		BA05E7471CFEDB7900855A9E /* MyLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA05E7461CFEDB7900855A9E /* MyLoginView.swift */; };
 		BA0ADD741CF836CE00A0B0F1 /* RepoCommitsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0ADD731CF836CE00A0B0F1 /* RepoCommitsController.swift */; };
 		BA0ADD761CF838C500A0B0F1 /* RepoPullController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0ADD751CF838C500A0B0F1 /* RepoPullController.swift */; };
@@ -116,6 +117,7 @@
 		1BFEDCE35BCBCACC0660C755 /* Pods-OpenCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenCode.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OpenCode/Pods-OpenCode.debug.xcconfig"; sourceTree = "<group>"; };
 		4027B30C7A06F2720B5696F3 /* Pods_OpenCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A561EBFD5690366BF8E17C4D /* Pods-OpenCode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenCode.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenCode/Pods-OpenCode.release.xcconfig"; sourceTree = "<group>"; };
+		BA059F351D616D37008EDCFC /* GithubType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubType.swift; sourceTree = "<group>"; };
 		BA05E7461CFEDB7900855A9E /* MyLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyLoginView.swift; path = Classes/My/View/MyLoginView.swift; sourceTree = "<group>"; };
 		BA0ADD731CF836CE00A0B0F1 /* RepoCommitsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoCommitsController.swift; path = Classes/RepositoryDetail/Controller/RepoCommitsController.swift; sourceTree = "<group>"; };
 		BA0ADD751CF838C500A0B0F1 /* RepoPullController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoPullController.swift; path = Classes/RepositoryDetail/Controller/RepoPullController.swift; sourceTree = "<group>"; };
@@ -445,6 +447,7 @@
 			isa = PBXGroup;
 			children = (
 				BA3AD21D1CCA278B0034B21E /* Github.swift */,
+				BA059F351D616D37008EDCFC /* GithubType.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -1171,6 +1174,7 @@
 				BA4F89E81D040EB80051A525 /* QRCodeScanningController.swift in Sources */,
 				BA4F89E61D040C860051A525 /* QRCodeController.swift in Sources */,
 				BA0CCE281D2135E40009F02A /* OrgsDetailController.swift in Sources */,
+				BA059F361D616D37008EDCFC /* GithubType.swift in Sources */,
 				BA7CB1D41CEDF5ED004DDF42 /* UserInfoHeaderView.swift in Sources */,
 				BAC055831CFAA67C00DCD236 /* NewsScrollView.swift in Sources */,
 				BA1546B91D4C9066005EA460 /* CommitDetailHeaderView.swift in Sources */,
