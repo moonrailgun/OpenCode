@@ -77,11 +77,9 @@ class RepoEventController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(indexPath)
         
-        OperationQueueHelper.operateInMainQueue { 
-            let controller = EventDetailController()
-            controller.data = self.data![indexPath.row]
-            self.navigationController?.pushViewController(controller, animated: true)
-        }
+        let controller = EventDetailController()
+        controller.data = self.data![indexPath.row]
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     

@@ -47,8 +47,12 @@ class EventDetailController: UIViewController {
             if let dl = actor["display_login"].string{
                 name = dl
             }
-            let avatar = actor["avatar"].string!
-            self.avatar.sd_setImageWithURL(NSURL(string: avatar)!)
+            if let avatar = actor["avatar"].string{
+                self.avatar.sd_setImageWithURL(NSURL(string: avatar))
+            }else{
+                self.avatar.image = GlobalDefine.defaultAvatar
+            }
+            
             self.name.text = name
             self.date.text = date.long()
             print(type)

@@ -345,7 +345,8 @@ class Github {
             
             HttpRequestHelper.sendRequest(urlStr, completionHandler: { (data:NSData?, resp:NSURLResponse?, error:NSError?) in
                 if let d = data{
-                    completionHandler(self.convertDataToJSONObj(d))
+                    //completionHandler(self.convertDataToJSONObj(d))
+                    completionHandler(d)
                 }else{
                     print("\(url): 无法获取数据: resp:\(resp) data:\(data) error:\(error)")
                     completionHandler(nil)//TODO 待处理
