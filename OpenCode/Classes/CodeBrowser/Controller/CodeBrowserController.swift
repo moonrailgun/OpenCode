@@ -31,13 +31,33 @@ class CodeBrowserController: UIViewController, UIWebViewDelegate {
         self.webView = UIWebView(frame: self.view.bounds)
         self.webView?.delegate = self
         self.view.addSubview(webView!)
-        
+        /*
         let url = NSBundle.mainBundle().URLForResource("CodeBrowser", withExtension: "html")
-        self.webView?.loadRequest(NSURLRequest(URL: url!))
+        self.webView?.loadRequest(NSURLRequest(URL: url!))*/
+        
+        loadHtml()
+    }
+    
+    func loadHtml(){
+        if var c = code{
+            //处理转译
+            c = c.stringByReplacingOccurrencesOfString("\n", withString: "<br/>", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            c = c.stringByReplacingOccurrencesOfString("'", withString: "\'", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            //c = c.stringByReplacingOccurrencesOfString("\'", withString: "\\'", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            
+            var html:String = ""
+            html = "<body><div><pre><code>"
+            html += c
+            html += "</pre></code></div></body>"
+            
+            webView?.loadHTMLString(html, baseURL: nil)
+        }else{
+            print("发生错误，没有获取到代码")
+        }
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
-        var script:String
+        /*var script:String
         if var c = code{
             //处理转译
             c = c.stringByReplacingOccurrencesOfString("\n", withString: "<br/>", options: NSStringCompareOptions.LiteralSearch, range: nil)
@@ -50,8 +70,9 @@ class CodeBrowserController: UIViewController, UIWebViewDelegate {
         }
         
         print(script)
-        webView.stringByEvaluatingJavaScriptFromString(script)
+        webView.stringByEvaluatingJavaScriptFromString(script)*/
     }
+    
     func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
         print("网页加载失败:\(error)")
     }
