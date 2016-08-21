@@ -28,6 +28,8 @@
 		BA3AD2061CCA245A0034B21E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD2041CCA245A0034B21E /* LaunchScreen.xib */; };
 		BA3AD2121CCA245A0034B21E /* OpenCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD2111CCA245A0034B21E /* OpenCodeTests.swift */; };
 		BA3AD21E1CCA278B0034B21E /* Github.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD21D1CCA278B0034B21E /* Github.swift */; };
+		BA3E536B1D6A735E00BC538E /* default.min.css in Resources */ = {isa = PBXBuildFile; fileRef = BA3E53691D6A735E00BC538E /* default.min.css */; };
+		BA3E536C1D6A735E00BC538E /* highlight.min.js in Resources */ = {isa = PBXBuildFile; fileRef = BA3E536A1D6A735E00BC538E /* highlight.min.js */; };
 		BA44657A1D068F7D007AEC2F /* UserEventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4465791D068F7D007AEC2F /* UserEventsController.swift */; };
 		BA44657C1D0693EB007AEC2F /* GithubTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA44657B1D0693EB007AEC2F /* GithubTime.swift */; };
 		BA4465811D07C18C007AEC2F /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4465801D07C18C007AEC2F /* SettingsController.swift */; };
@@ -50,8 +52,6 @@
 		BA53E2DC1CFFD86900FD46F2 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA53E2DB1CFFD86900FD46F2 /* MyProfileView.swift */; };
 		BA53E2DE1CFFDCCE00FD46F2 /* MyUserInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA53E2DD1CFFDCCE00FD46F2 /* MyUserInfoHeader.swift */; };
 		BA5582C11CF1706400157000 /* CodeBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5582C01CF1706400157000 /* CodeBrowserController.swift */; };
-		BA5582C41CF173B400157000 /* CodeBrowser.html in Resources */ = {isa = PBXBuildFile; fileRef = BA5582C31CF173B400157000 /* CodeBrowser.html */; };
-		BA5582CD1CF1827C00157000 /* CodeLoader.js in Resources */ = {isa = PBXBuildFile; fileRef = BA5582CC1CF1827C00157000 /* CodeLoader.js */; };
 		BA5AF8331D02C3490015B601 /* HotRepoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5AF8321D02C3490015B601 /* HotRepoView.swift */; };
 		BA5AF8391D02C3660015B601 /* NewsEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5AF8361D02C3660015B601 /* NewsEventCell.swift */; };
 		BA5AF83A1D02C3660015B601 /* NewsEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA5AF8371D02C3660015B601 /* NewsEventCell.xib */; };
@@ -87,8 +87,6 @@
 		BAC5DF331CEC051800EB2EFE /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC5DF321CEC051800EB2EFE /* UserInfo.swift */; };
 		BAC5DF351CEC082300EB2EFE /* UserInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC5DF341CEC082300EB2EFE /* UserInfoController.swift */; };
 		BAF47C191D01387300F6A03B /* UIViewAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF47C181D01387300F6A03B /* UIViewAdditions.swift */; };
-		BAF47C1B1D01462000F6A03B /* CodeLoading.gif in Resources */ = {isa = PBXBuildFile; fileRef = BAF47C1A1D01462000F6A03B /* CodeLoading.gif */; };
-		BAF47C1D1D01462B00F6A03B /* CodeBrowser.css in Resources */ = {isa = PBXBuildFile; fileRef = BAF47C1C1D01462B00F6A03B /* CodeBrowser.css */; };
 		BAF7F9A01CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF7F99F1CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift */; };
 		BAFB43981D0AAAE500D0E2C3 /* NewBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB43971D0AAAE500D0E2C3 /* NewBadge.swift */; };
 		BAFB43A11D0E83F100D0E2C3 /* AboutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB439F1D0E83F100D0E2C3 /* AboutController.swift */; };
@@ -142,6 +140,8 @@
 		BA3AD2101CCA245A0034B21E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA3AD2111CCA245A0034B21E /* OpenCodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCodeTests.swift; sourceTree = "<group>"; };
 		BA3AD21D1CCA278B0034B21E /* Github.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Github.swift; sourceTree = "<group>"; };
+		BA3E53691D6A735E00BC538E /* default.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = default.min.css; path = CodeBrowser/default.min.css; sourceTree = "<group>"; };
+		BA3E536A1D6A735E00BC538E /* highlight.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = highlight.min.js; path = CodeBrowser/highlight.min.js; sourceTree = "<group>"; };
 		BA4465791D068F7D007AEC2F /* UserEventsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserEventsController.swift; path = Classes/UserEvents/Controller/UserEventsController.swift; sourceTree = "<group>"; };
 		BA44657B1D0693EB007AEC2F /* GithubTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubTime.swift; path = Classes/Other/GithubTime.swift; sourceTree = "<group>"; };
 		BA4465801D07C18C007AEC2F /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsController.swift; path = Classes/Settings/Controller/SettingsController.swift; sourceTree = "<group>"; };
@@ -164,8 +164,6 @@
 		BA53E2DB1CFFD86900FD46F2 /* MyProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyProfileView.swift; path = Classes/My/View/MyProfileView.swift; sourceTree = "<group>"; };
 		BA53E2DD1CFFDCCE00FD46F2 /* MyUserInfoHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyUserInfoHeader.swift; path = Classes/My/View/MyUserInfoHeader.swift; sourceTree = "<group>"; };
 		BA5582C01CF1706400157000 /* CodeBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CodeBrowserController.swift; path = Classes/CodeBrowser/Controller/CodeBrowserController.swift; sourceTree = "<group>"; };
-		BA5582C31CF173B400157000 /* CodeBrowser.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = CodeBrowser.html; path = CodeBrowser/CodeBrowser.html; sourceTree = "<group>"; };
-		BA5582CC1CF1827C00157000 /* CodeLoader.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = CodeLoader.js; path = CodeBrowser/CodeLoader.js; sourceTree = "<group>"; };
 		BA5AF8321D02C3490015B601 /* HotRepoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HotRepoView.swift; path = Classes/News/View/Hot/HotRepoView.swift; sourceTree = "<group>"; };
 		BA5AF8361D02C3660015B601 /* NewsEventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsEventCell.swift; path = Classes/News/View/Event/NewsEventCell.swift; sourceTree = "<group>"; };
 		BA5AF8371D02C3660015B601 /* NewsEventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsEventCell.xib; path = Classes/News/View/Event/NewsEventCell.xib; sourceTree = "<group>"; };
@@ -201,8 +199,6 @@
 		BAC5DF321CEC051800EB2EFE /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInfo.swift; path = Classes/UserInfo/Model/UserInfo.swift; sourceTree = "<group>"; };
 		BAC5DF341CEC082300EB2EFE /* UserInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInfoController.swift; path = Classes/UserInfo/Controller/UserInfoController.swift; sourceTree = "<group>"; };
 		BAF47C181D01387300F6A03B /* UIViewAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewAdditions.swift; sourceTree = "<group>"; };
-		BAF47C1A1D01462000F6A03B /* CodeLoading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = CodeLoading.gif; path = CodeBrowser/CodeLoading.gif; sourceTree = "<group>"; };
-		BAF47C1C1D01462B00F6A03B /* CodeBrowser.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = CodeBrowser.css; path = CodeBrowser/CodeBrowser.css; sourceTree = "<group>"; };
 		BAF7F99F1CD8B8AF0071C5F6 /* RepositoryDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryDetailTableViewController.swift; sourceTree = "<group>"; };
 		BAFB43971D0AAAE500D0E2C3 /* NewBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewBadge.swift; path = Classes/UserEvents/View/NewBadge.swift; sourceTree = "<group>"; };
 		BAFB439F1D0E83F100D0E2C3 /* AboutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutController.swift; path = Classes/Settings/About/Controller/AboutController.swift; sourceTree = "<group>"; };
@@ -592,10 +588,8 @@
 		BA5582C21CF1735C00157000 /* CodeBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				BAF47C1C1D01462B00F6A03B /* CodeBrowser.css */,
-				BAF47C1A1D01462000F6A03B /* CodeLoading.gif */,
-				BA5582CC1CF1827C00157000 /* CodeLoader.js */,
-				BA5582C31CF173B400157000 /* CodeBrowser.html */,
+				BA3E53691D6A735E00BC538E /* default.min.css */,
+				BA3E536A1D6A735E00BC538E /* highlight.min.js */,
 			);
 			name = CodeBrowser;
 			sourceTree = "<group>";
@@ -1061,22 +1055,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAF47C1D1D01462B00F6A03B /* CodeBrowser.css in Resources */,
-				BAF47C1B1D01462000F6A03B /* CodeLoading.gif in Resources */,
 				BA8D68631CF80C62002ED5E2 /* ToolCell.xib in Resources */,
 				BA47B74A1CE99EC200CF3947 /* UserCell.xib in Resources */,
+				BA3E536B1D6A735E00BC538E /* default.min.css in Resources */,
 				BAFB43B71D153F3200D0E2C3 /* ComponentUsage.txt in Resources */,
 				BAFB43B51D153F1600D0E2C3 /* AboutOpenSource.txt in Resources */,
 				BA3AD2011CCA245A0034B21E /* Main.storyboard in Resources */,
 				BA51C0581CF6A7C3005CCCC7 /* RepoEventCell.xib in Resources */,
-				BA5582CD1CF1827C00157000 /* CodeLoader.js in Resources */,
 				BA4609D21CF95AB400D2415B /* SearchRepoCell.xib in Resources */,
 				BA79E0761CF5C49B00E86258 /* ToolList.plist in Resources */,
 				BA5AF83A1D02C3660015B601 /* NewsEventCell.xib in Resources */,
 				BAFB43BF1D1BCA9400D0E2C3 /* UserListCell.xib in Resources */,
 				BA3AD2061CCA245A0034B21E /* LaunchScreen.xib in Resources */,
-				BA5582C41CF173B400157000 /* CodeBrowser.html in Resources */,
 				BA3AD2031CCA245A0034B21E /* Images.xcassets in Resources */,
+				BA3E536C1D6A735E00BC538E /* highlight.min.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
