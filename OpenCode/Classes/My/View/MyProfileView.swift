@@ -40,19 +40,20 @@ class MyProfileView: UIView, UITableViewDataSource {
         }
         
         self.loadUserInfo { (json:JSON) in
-            OperationQueueHelper.operateInGlobalQueue({
-                if(self.isLoadedFromNet == true){
-                    return
-                }
-                
-                if let header = self.tableView.tableHeaderView as? MyUserInfoHeader{
-                    header.setData(NSURL(string: json["avatar_url"].string!)!, username: json["login"].string!)
-                }
-            })
+            if( json.count > 0){
+                OperationQueueHelper.operateInGlobalQueue({
+                    if(self.isLoadedFromNet == true){
+                        return
+                    }
+                    
+                    if let header = self.tableView.tableHeaderView as? MyUserInfoHeader{
+                        header.setData(NSURL(string: json["avatar_url"].string!)!, username: json["login"].string!)
+                    }
+                })
+            }
         }
         
         Github.getCurrentUserInfo { (data:AnyObject?) in
-            //print(JSON(data!))
             OperationQueueHelper.operateInMainQueue({ 
                 if let d = data{
                     self.isLoadedFromNet = true
