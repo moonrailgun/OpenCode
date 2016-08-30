@@ -13,6 +13,7 @@ class EventDetailController: UIViewController {
     
     var data:JSON?
     
+    let eventType:UILabel = UILabel(frame:CGRectMake(0,160,GlobalDefine.getScreenWidth(),40))
     let avatar:UIImageView = UIImageView(frame: CGRectMake(20, 200, 100, 100))
     let name:UILabel = UILabel(frame: CGRectMake(140,220,200,40))
     let date:UILabel = UILabel(frame: CGRectMake(140,260,200,40))
@@ -32,6 +33,8 @@ class EventDetailController: UIViewController {
     
     func initView(){
         self.view.backgroundColor = UIColor.whiteColor()
+        eventType.font = UIFont.systemFontOfSize(16)
+        self.view.addSubview(eventType)
         self.view.addSubview(avatar)
         self.view.addSubview(name)
         date.textColor = GlobalDefine.iconGrey
@@ -52,10 +55,9 @@ class EventDetailController: UIViewController {
             }else{
                 self.avatar.image = GlobalDefine.defaultAvatar
             }
-            
+            self.eventType.text = type
             self.name.text = name
             self.date.text = date.long()
-            print(type)
         }
     }
 
