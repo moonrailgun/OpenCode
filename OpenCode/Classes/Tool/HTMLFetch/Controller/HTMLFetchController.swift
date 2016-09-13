@@ -25,6 +25,10 @@ class HTMLFetchController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     func initView(){
         self.view.backgroundColor = UIColor.whiteColor()
         let frame = self.view.frame
@@ -43,12 +47,17 @@ class HTMLFetchController: UIViewController {
         self.view.addSubview(fetchBtn)
         
         self.htmlCodeView = UITextView(frame: CGRectMake(0,90,frame.width,frame.height - 90 - 44))
+        self.htmlCodeView?.editable = false
+        self.htmlCodeView?.selectable = false
         self.view.addSubview(self.htmlCodeView!)
     }
     
     func fetch(){
         let url:String = htmlUrl!.text!
         print("fetch \(url)")
+        
+        //收起键盘
+        self.htmlUrl?.resignFirstResponder()
         
         ProgressHUD.show()
         HttpRequestHelper.sendRequest(url) { (data:NSData?, resp:NSURLResponse?, err:NSError?) in
