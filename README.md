@@ -1,6 +1,21 @@
 # OpenCode
 一个Github的Swift版本客户端
 
+# 开发环境安装
+```bash
+# 安装pod
+sudo gem install cocoapods 
+pod setup
+
+#下载项目
+git clone https://github.com/moonrailgun/OpenCode.git
+cd OpenCode
+pod install
+```
+
+# 关于github
+本项目完全使用github 第三版api 不会在中途截获任何关于用户的任何信息。
+
 # 关于开源
 本作品基于GPLv2开源协议进行开源。在本开源协议下。有如下重要原则：
 
